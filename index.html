@@ -185,7 +185,54 @@
   nav.top ol li:last-child::after { content: ''; margin: 0; }
   nav.top a { color: var(--muted); text-decoration: none; transition: color var(--dur-fast); }
   nav.top a:hover { color: var(--ink); }
-  @media (max-width: 720px) { nav.top ol { display: none; } }
+
+  /* Burger toggle (hidden on desktop) */
+  .nav-toggle {
+    display: none;
+    appearance: none; -webkit-appearance: none;
+    background: none; border: 0; cursor: pointer;
+    width: 2.25em; height: 2.25em; padding: 0;
+    align-items: center; justify-content: center;
+    color: var(--ink); border-radius: 5px;
+  }
+  .nav-toggle .bars { position: relative; display: block; width: 1.15em; height: 1.6px; }
+  .nav-toggle .bars,
+  .nav-toggle .bars::before,
+  .nav-toggle .bars::after {
+    background: currentColor; border-radius: 2px;
+    transition: transform var(--dur-fast) var(--ease-out), opacity var(--dur-fast) var(--ease-out);
+  }
+  .nav-toggle .bars::before, .nav-toggle .bars::after {
+    content: ''; position: absolute; left: 0; width: 100%; height: 1.6px;
+  }
+  .nav-toggle .bars::before { top: -5px; }
+  .nav-toggle .bars::after { top: 5px; }
+  nav.top.menu-open .nav-toggle .bars { background: transparent; }
+  nav.top.menu-open .nav-toggle .bars::before { transform: translateY(5px) rotate(45deg); }
+  nav.top.menu-open .nav-toggle .bars::after { transform: translateY(-5px) rotate(-45deg); }
+
+  @media (max-width: 720px) {
+    .nav-toggle { display: inline-flex; }
+    nav.top .inner { position: relative; }
+    nav.top ol {
+      position: absolute; top: 100%; left: 0; right: 0;
+      flex-direction: column; align-items: stretch; gap: 0;
+      background: color-mix(in oklab, var(--bg) 97%, transparent);
+      backdrop-filter: saturate(160%) blur(8px);
+      -webkit-backdrop-filter: saturate(160%) blur(8px);
+      border-bottom: 1px solid var(--line);
+      padding: var(--s-2) var(--gutter) var(--s-3);
+      transform: translateY(-8px); opacity: 0; pointer-events: none;
+      transition: opacity var(--dur-fast) var(--ease-out), transform var(--dur-fast) var(--ease-out);
+    }
+    nav.top.menu-open ol { transform: none; opacity: 1; pointer-events: auto; }
+    nav.top ol li { width: 100%; }
+    nav.top ol li::after { content: ''; margin: 0; }
+    nav.top ol li a { display: block; padding: var(--s-2) 0; font-size: var(--t-body); }
+    /* Keep menu links legible over the hero color flip */
+    nav.top.menu-open ol li a { color: var(--muted); }
+    nav.top.menu-open ol li a:hover { color: var(--ink); }
+  }
 
   /* Section + headings */
   main > section { padding: var(--s-8) 0; border-top: 1px solid var(--line); }
@@ -332,6 +379,7 @@
   }
   body.over-hero nav.top .who { color: oklch(0.985 0.005 200); }
   body.over-hero nav.top .who .mark { background: oklch(0.985 0.005 200); }
+  body.over-hero nav.top .nav-toggle { color: oklch(0.985 0.005 200); }
   body.over-hero nav.top a { color: oklch(0.85 0.020 200 / 0.85); }
   body.over-hero nav.top a:hover { color: oklch(0.985 0.005 200); }
   body.over-hero nav.top ol li::after { color: oklch(0.65 0.025 200 / 0.6); }
@@ -443,28 +491,12 @@
   .venture .v-icon .ico { width: 100%; height: 100%; }
 
   /* ---------- Built items: kind icon ---------- */
-  .built dt {
-    grid-template-columns: 9rem 1.5em 1fr !important;
-    column-gap: var(--s-3) !important;
-  }
-  .built dt .b-icon {
+  .built-card .b-icon {
     color: var(--primary);
     display: inline-flex; align-items: center; justify-content: center;
     width: 1.25em; height: 1.25em;
-    transform: translateY(0.1em);
   }
-  .built dt .b-icon .ico { width: 100%; height: 100%; }
-  .built dd { padding-left: calc(9rem + 1.5em + var(--s-3) * 2) !important; }
-  @media (max-width: 640px) {
-    .built dt {
-      grid-template-columns: 1.25em 1fr !important;
-      grid-template-rows: auto auto;
-    }
-    .built dt .kind { grid-column: 1 / -1; grid-row: 1; }
-    .built dt .b-icon { grid-column: 1; grid-row: 2; }
-    .built dt .name { grid-column: 2; grid-row: 2; }
-    .built dd { padding-left: 0 !important; }
-  }
+  .built-card .b-icon .ico { width: 100%; height: 100%; }
 
   /* ---------- Contact: social icons ---------- */
   .contact-links {
@@ -603,21 +635,38 @@
     details.venture .v-chevron { grid-column: 3; grid-row: 1; }
   }
 
-  /* ---------- Receipts: inline prose ---------- */
-  .receipts-prose p {
-    font-size: var(--t-lead);
+  /* ---------- Receipts: boxed 2-column grid ---------- */
+  .receipts-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: var(--s-3);
+    max-width: 52rem;
+  }
+  .receipt-card {
+    border: 1px solid var(--line);
+    border-radius: 5px;
+    padding: var(--s-4);
+    background: var(--bg);
+    transition: border-color var(--dur-fast) var(--ease-out);
+  }
+  .receipt-card:hover { border-color: var(--faint); }
+  .receipt-card .r-metric {
+    font-size: var(--t-h3);
+    font-weight: 600;
+    color: var(--ink);
+    font-variant-numeric: tabular-nums;
+    letter-spacing: -0.02em;
+    line-height: 1.1;
+    margin-bottom: 0.4em;
+  }
+  .receipt-card .r-body {
+    font-size: var(--t-small);
     color: var(--muted);
     font-weight: 300;
-    line-height: 1.55;
-    max-width: 38rem;
+    line-height: 1.5;
   }
-  .receipts-prose p strong, .receipts-prose p b {
-    color: var(--ink);
-    font-weight: 600;
-    font-variant-numeric: tabular-nums;
-    letter-spacing: -0.01em;
-  }
-  .receipts-prose p .src { color: var(--ink); font-weight: 500; }
+  .receipt-card .r-body .src { color: var(--ink); font-weight: 500; }
+  @media (max-width: 640px) { .receipts-grid { grid-template-columns: 1fr; } }
   sup.fn {
     font-size: 0.65em; vertical-align: super; line-height: 0;
     margin-left: 0.1em; color: var(--primary);
@@ -627,45 +676,45 @@
     background: none; padding: 0;
   }
 
-  /* ---------- What I've built: kind + name + note ---------- */
-  .built {
-    display: grid; grid-template-columns: 1fr; gap: 0;
-  }
-  .built dt {
+  /* ---------- What I've built: boxed 2-column grid ---------- */
+  .built-grid {
     display: grid;
-    grid-template-columns: 9rem 1fr;
-    column-gap: var(--s-4);
-    padding-top: var(--s-4);
-    align-items: baseline;
+    grid-template-columns: repeat(2, 1fr);
+    gap: var(--s-3);
   }
-  .built dt .kind {
+  .built-card {
+    display: flex; flex-direction: column;
+    border: 1px solid var(--line);
+    border-radius: 5px;
+    padding: var(--s-4);
+    background: var(--bg);
+    transition: border-color var(--dur-fast) var(--ease-out);
+  }
+  .built-card:hover { border-color: var(--faint); }
+  .built-card .b-head {
+    display: flex; align-items: center; gap: 0.55em;
+    margin-bottom: var(--s-2);
+  }
+  .built-card .kind {
     font-size: var(--t-micro);
     font-weight: 500;
     color: var(--faint);
     letter-spacing: var(--ls-label);
     text-transform: uppercase;
-    padding-top: 0.2em;
   }
-  .built dt .name {
+  .built-card .name {
     font-size: 1.1rem;
     font-weight: 600;
     letter-spacing: -0.015em;
+    margin-bottom: 0.4em;
   }
-  .built dd {
-    padding-left: calc(9rem + var(--s-4));
-    padding-bottom: var(--s-4);
-    border-bottom: 1px solid var(--line);
+  .built-card .note {
+    font-size: var(--t-small);
     color: var(--muted);
-    font-size: 0.97rem;
-    line-height: 1.55;
-    max-width: 56ch;
+    font-weight: 300;
+    line-height: 1.5;
   }
-  .built dt:first-of-type { padding-top: 0; }
-  @media (max-width: 640px) {
-    .built dt { grid-template-columns: 1fr; }
-    .built dd { padding-left: 0; }
-    .built dt .kind { padding-top: 0; margin-bottom: 0.2em; }
-  }
+  @media (max-width: 640px) { .built-grid { grid-template-columns: 1fr; } }
 
   /* ---------- Brands inline ---------- */
   .brands-line {
@@ -888,7 +937,10 @@
   <nav class="top" aria-label="Primary">
     <div class="inner">
       <div class="who"><span class="mark" aria-hidden="true"></span>Aditya Indra Bayu</div>
-      <ol>
+      <button class="nav-toggle" id="nav-toggle" type="button" aria-label="Open menu" aria-expanded="false" aria-controls="nav-menu">
+        <span class="bars" aria-hidden="true"></span>
+      </button>
+      <ol id="nav-menu">
         <li><a href="#ventures">Ventures</a></li>
         <li><a href="#receipts">Receipts</a></li>
         <li><a href="#built">Built</a></li>
@@ -911,10 +963,9 @@
         </div>
         <h1 class="reveal d1">I start, operate, and scale ventures <em>across industries.</em></h1>
         <p class="lede reveal d2">
-          I'm Aditya (Andrew) Indra Bayu. I build companies. I name the brand, stand up the
-          site, wire the funnel, ship the AI tools they run on, then take an operating seat
-          until the venture finds revenue. <strong>Education. Maritime. Agency. Film. AI products.</strong>
-          Same playbook, different industries.
+          Aditya (Andrew) Indra Bayu builds companies. He names the brand, ships the site and
+          funnel, builds the AI tools they run on, then takes an operating seat until the venture
+          finds revenue. <strong>Education. Maritime. Agency. Film. AI products.</strong>
         </p>
         <p class="receipts reveal d3">
           <b>Rp156B</b> revenue milestone at Wall Street English Indonesia<sup class="fn"><a href="#n1">1</a></sup>.
@@ -1169,26 +1220,39 @@
     <section id="receipts" aria-label="Selected receipts">
       <div class="wrap">
         <h2 class="reveal">Receipts.</h2>
-        <div class="receipts-prose reveal d1">
-          <p>
-            At <span class="src">Wall Street English Indonesia</span>, I was brought in as
-            strategic partner to <strong>rebuild the strategy framework and company metrics</strong>,
-            helping the business return to profit and hit an all-time-high revenue mark of
-            <b>Rp156&nbsp;billion</b> within 1.5 years<sup class="fn"><a href="#n1">1</a></sup>.
-            At <span class="src">Hacktiv8</span>, I contributed to <b>+200%</b> course-registration
-            growth<sup class="fn"><a href="#n1">1</a></sup>.
-            At <span class="src">Aboitiz / KicauFest</span>, I helped run three seasons of community
-            campaigns reaching <b>10M+</b> people and growing the community by <b>30K+</b><sup class="fn"><a href="#n1">1</a></sup>.
-            At <span class="src">HypeBuzz</span>, viral content campaigns hit <b>3.1M</b> TikTok
-            views and <b>670K</b> engagement<sup class="fn"><a href="#n1">1</a></sup>.
-            <span class="src">Calibreworks</span> earned a place in <b>Clutch.co's Top 100</b>
-            digital agencies. <span class="src">Kinema</span> ships service-as-software for
-            film &amp; IP clients in Indonesia, packaging audience analysis, box-office
-            prediction, and showtime tracking into one operating layer. Through
-            <span class="src">We Are Infiniti</span>, I've supported <b>300+</b> business
-            owners and brands, and mentored <b>50+</b> young entrepreneurs through
-            <span class="src">Growthlab Academy</span>.
-          </p>
+        <div class="receipts-grid reveal d1">
+          <div class="receipt-card">
+            <div class="r-metric">Rp156B</div>
+            <p class="r-body">Revenue all-time high at <span class="src">Wall Street English Indonesia</span>, rebuilt strategy and metrics back to profit within 1.5 years.<sup class="fn"><a href="#n1">1</a></sup></p>
+          </div>
+          <div class="receipt-card">
+            <div class="r-metric">+200%</div>
+            <p class="r-body">Course-registration growth at <span class="src">Hacktiv8</span>.<sup class="fn"><a href="#n1">1</a></sup></p>
+          </div>
+          <div class="receipt-card">
+            <div class="r-metric">10M+</div>
+            <p class="r-body">Reach across three seasons of <span class="src">Aboitiz / KicauFest</span> community campaigns, growing the community by 30K+.<sup class="fn"><a href="#n1">1</a></sup></p>
+          </div>
+          <div class="receipt-card">
+            <div class="r-metric">3.1M</div>
+            <p class="r-body">TikTok views from viral content campaigns at <span class="src">HypeBuzz</span>, with 670K engagement.<sup class="fn"><a href="#n1">1</a></sup></p>
+          </div>
+          <div class="receipt-card">
+            <div class="r-metric">Top 100</div>
+            <p class="r-body"><span class="src">Calibreworks</span> placed in Clutch.co's Top 100 digital agencies.</p>
+          </div>
+          <div class="receipt-card">
+            <div class="r-metric">300+</div>
+            <p class="r-body">Business owners and brands supported through <span class="src">We Are Infiniti</span>.</p>
+          </div>
+          <div class="receipt-card">
+            <div class="r-metric">50+</div>
+            <p class="r-body">Young entrepreneurs mentored through <span class="src">Growthlab Academy</span>.</p>
+          </div>
+          <div class="receipt-card">
+            <div class="r-metric">Film &amp; IP</div>
+            <p class="r-body"><span class="src">Kinema</span> ships service-as-software: audience analysis, box-office prediction, and showtime tracking in one operating layer.</p>
+          </div>
         </div>
       </div>
     </section>
@@ -1196,53 +1260,80 @@
     <!-- BUILT (Tools + Frameworks) -->
     <section id="built" aria-label="Tools and frameworks I built">
       <div class="wrap">
-        <h2 class="reveal">Tools and frameworks I built.</h2>
+        <h2 class="reveal">Tools and frameworks.</h2>
         <p class="prose reveal d1" style="color:var(--muted);max-width:48ch;margin-bottom:var(--s-6);">
           One person can't run eight ventures by hand. The stack below is what makes
           it possible. AI copilots, ads engines, content systems, and proprietary
           frameworks. The same tooling runs across the entire portfolio.
         </p>
 
-        <dl class="built reveal d2">
-          <dt><span class="kind">AI Copilot</span><span class="b-icon" aria-hidden="true"><svg class="ico"><use href="#i-copilot"/></svg></span><span class="name">William 3.0</span></dt>
-          <dd>Growth and revenue copilot for funnel analysis, campaign review, KPI tracking, and revenue forecasting. The first AI I trust to read a P&amp;L.</dd>
-
-          <dt><span class="kind">Agent System</span><span class="b-icon" aria-hidden="true"><svg class="ico"><use href="#i-network"/></svg></span><span class="name">Andrew Bayu Agent System v1</span></dt>
-          <dd>Personal AI operating system. Encodes my strategic thinking, tone, marketing logic, and decision heuristics into a single multi-mode agent.</dd>
-
-          <dt><span class="kind">Framework</span><span class="b-icon" aria-hidden="true"><svg class="ico"><use href="#i-target"/></svg></span><span class="name">Level Ads Framework</span></dt>
-          <dd>Proprietary paid-ads framework. Levels of awareness mapped to funnel stages mapped to creative angles. Budget allocation, creative testing, and signal-based scaling, in one operating playbook. Used across every brand I run ads for.</dd>
-
-          <dt><span class="kind">Creative Kit</span><span class="b-icon" aria-hidden="true"><svg class="ico"><use href="#i-zap"/></svg></span><span class="name">Ad-in-a-Box Kit</span></dt>
-          <dd>AI-powered production kit for hooks, angles, and rapid creative variants. Built for founders who can't afford a creative team yet.</dd>
-
-          <dt><span class="kind">Content System</span><span class="b-icon" aria-hidden="true"><svg class="ico"><use href="#i-stack"/></svg></span><span class="name">ContentStrategist Toolkit</span></dt>
-          <dd>Persona worksheets, strategy cards, content routes, a hook library, and AI prompts. Productised by Growthlab.</dd>
-
-          <dt><span class="kind">Framework</span><span class="b-icon" aria-hidden="true"><svg class="ico"><use href="#i-network"/></svg></span><span class="name">Growth Curve Method</span></dt>
-          <dd>Pillar, supporting, and content routes. The content framework that moves brands from random posting to a system.</dd>
-
-          <dt><span class="kind">Framework</span><span class="b-icon" aria-hidden="true"><svg class="ico"><use href="#i-network"/></svg></span><span class="name">AEO / AIO Strategy</span></dt>
-          <dd>Answer-Engine and AI Optimization. Content built to be retrieved, summarized, and recommended by AI systems. Written for the post-Google era.</dd>
-
-          <dt><span class="kind">Framework</span><span class="b-icon" aria-hidden="true"><svg class="ico"><use href="#i-network"/></svg></span><span class="name">Revenue Engine Model</span></dt>
-          <dd>Enterprise B2B growth engine. Inbound, outbound, ABM, SDR motion, partnership, upsell, and RevOps in one operating layout.</dd>
-
-          <dt><span class="kind">Web App</span><span class="b-icon" aria-hidden="true"><svg class="ico"><use href="#i-window"/></svg></span><span class="name">PeakMind</span></dt>
-          <dd>Gamified, Duolingo-style IQ and potential assessment. Archetype results, randomized question logic.</dd>
-
-          <dt><span class="kind">Generative</span><span class="b-icon" aria-hidden="true"><svg class="ico"><use href="#i-spark"/></svg></span><span class="name">CharaGen2</span></dt>
-          <dd>AI character generator with 400B+ combinations. Built for storytelling, games, and creative ideation.</dd>
-
-          <dt><span class="kind">Content Generator</span><span class="b-icon" aria-hidden="true"><svg class="ico"><use href="#i-pen"/></svg></span><span class="name">Xniper</span></dt>
-          <dd>AI-powered content generator for marketing teams. Briefs in, on-brand articles, hooks, and angles out. Vite + React + Tailwind, Gemini for the model, Firebase for the workspace. Live at <a class="link" href="https://xniperapp.vercel.app" target="_blank" rel="noopener">xniperapp.vercel.app</a>.</dd>
-
-          <dt><span class="kind">Maritime AI</span><span class="b-icon" aria-hidden="true"><svg class="ico"><use href="#i-ship"/></svg></span><span class="name">Arxea</span></dt>
-          <dd>AI-assisted ship visualization in React and Gemini. Semi-trimaran hulls, cross-section logic, concept design for IMI.</dd>
-
-          <dt><span class="kind">Platform</span><span class="b-icon" aria-hidden="true"><svg class="ico"><use href="#i-hub"/></svg></span><span class="name">Skelup</span></dt>
-          <dd>AI solopreneur hub. A workspace for independent founders to build, automate, and scale with AI.</dd>
-        </dl>
+        <div class="built-grid reveal d2">
+          <div class="built-card">
+            <div class="b-head"><span class="b-icon" aria-hidden="true"><svg class="ico"><use href="#i-copilot"/></svg></span><span class="kind">AI Copilot</span></div>
+            <div class="name">William 3.0</div>
+            <p class="note">Growth and revenue copilot for funnel analysis, campaign review, KPI tracking, and revenue forecasting. Reliable enough to read a P&amp;L.</p>
+          </div>
+          <div class="built-card">
+            <div class="b-head"><span class="b-icon" aria-hidden="true"><svg class="ico"><use href="#i-network"/></svg></span><span class="kind">Agent System</span></div>
+            <div class="name">Andrew Bayu Agent System v1</div>
+            <p class="note">Personal AI operating system. Encodes Aditya's strategic thinking, tone, marketing logic, and decision heuristics into a single multi-mode agent.</p>
+          </div>
+          <div class="built-card">
+            <div class="b-head"><span class="b-icon" aria-hidden="true"><svg class="ico"><use href="#i-target"/></svg></span><span class="kind">Framework</span></div>
+            <div class="name">Level Ads Framework</div>
+            <p class="note">Proprietary paid-ads framework. Levels of awareness mapped to funnel stages mapped to creative angles. Budget allocation, creative testing, and signal-based scaling, in one operating playbook. Used across every brand in the portfolio.</p>
+          </div>
+          <div class="built-card">
+            <div class="b-head"><span class="b-icon" aria-hidden="true"><svg class="ico"><use href="#i-zap"/></svg></span><span class="kind">Creative Kit</span></div>
+            <div class="name">Ad-in-a-Box Kit</div>
+            <p class="note">AI-powered production kit for hooks, angles, and rapid creative variants. Built for founders who can't afford a creative team yet.</p>
+          </div>
+          <div class="built-card">
+            <div class="b-head"><span class="b-icon" aria-hidden="true"><svg class="ico"><use href="#i-stack"/></svg></span><span class="kind">Content System</span></div>
+            <div class="name">ContentStrategist Toolkit</div>
+            <p class="note">Persona worksheets, strategy cards, content routes, a hook library, and AI prompts. Productised by Growthlab.</p>
+          </div>
+          <div class="built-card">
+            <div class="b-head"><span class="b-icon" aria-hidden="true"><svg class="ico"><use href="#i-network"/></svg></span><span class="kind">Framework</span></div>
+            <div class="name">Growth Curve Method</div>
+            <p class="note">Pillar, supporting, and content routes. The content framework that moves brands from random posting to a system.</p>
+          </div>
+          <div class="built-card">
+            <div class="b-head"><span class="b-icon" aria-hidden="true"><svg class="ico"><use href="#i-network"/></svg></span><span class="kind">Framework</span></div>
+            <div class="name">AEO / AIO Strategy</div>
+            <p class="note">Answer-Engine and AI Optimization. Content built to be retrieved, summarized, and recommended by AI systems. Written for the post-Google era.</p>
+          </div>
+          <div class="built-card">
+            <div class="b-head"><span class="b-icon" aria-hidden="true"><svg class="ico"><use href="#i-network"/></svg></span><span class="kind">Framework</span></div>
+            <div class="name">Revenue Engine Model</div>
+            <p class="note">Enterprise B2B growth engine. Inbound, outbound, ABM, SDR motion, partnership, upsell, and RevOps in one operating layout.</p>
+          </div>
+          <div class="built-card">
+            <div class="b-head"><span class="b-icon" aria-hidden="true"><svg class="ico"><use href="#i-window"/></svg></span><span class="kind">Web App</span></div>
+            <div class="name">PeakMind</div>
+            <p class="note">Gamified, Duolingo-style IQ and potential assessment. Archetype results, randomized question logic.</p>
+          </div>
+          <div class="built-card">
+            <div class="b-head"><span class="b-icon" aria-hidden="true"><svg class="ico"><use href="#i-spark"/></svg></span><span class="kind">Generative</span></div>
+            <div class="name">CharaGen2</div>
+            <p class="note">AI character generator with 400B+ combinations. Built for storytelling, games, and creative ideation.</p>
+          </div>
+          <div class="built-card">
+            <div class="b-head"><span class="b-icon" aria-hidden="true"><svg class="ico"><use href="#i-pen"/></svg></span><span class="kind">Content Generator</span></div>
+            <div class="name">Xniper</div>
+            <p class="note">AI-powered content generator for marketing teams. Briefs in, on-brand articles, hooks, and angles out. Vite + React + Tailwind, Gemini for the model, Firebase for the workspace. Live at <a class="link" href="https://xniperapp.vercel.app" target="_blank" rel="noopener">xniperapp.vercel.app</a>.</p>
+          </div>
+          <div class="built-card">
+            <div class="b-head"><span class="b-icon" aria-hidden="true"><svg class="ico"><use href="#i-ship"/></svg></span><span class="kind">Maritime AI</span></div>
+            <div class="name">Arxea</div>
+            <p class="note">AI-assisted ship visualization in React and Gemini. Semi-trimaran hulls, cross-section logic, concept design for IMI.</p>
+          </div>
+          <div class="built-card">
+            <div class="b-head"><span class="b-icon" aria-hidden="true"><svg class="ico"><use href="#i-hub"/></svg></span><span class="kind">Platform</span></div>
+            <div class="name">Skelup</div>
+            <p class="note">AI solopreneur hub. A workspace for independent founders to build, automate, and scale with AI.</p>
+          </div>
+        </div>
       </div>
     </section>
 
@@ -1388,6 +1479,22 @@
     document.addEventListener('scroll', updateNav, { passive: true });
     updateNav();
 
+    /* ---------- Mobile burger menu ---------- */
+    const navToggle = document.getElementById('nav-toggle');
+    const navMenu = document.getElementById('nav-menu');
+    if (navToggle && navMenu) {
+      const closeMenu = () => {
+        nav.classList.remove('menu-open');
+        navToggle.setAttribute('aria-expanded', 'false');
+      };
+      navToggle.addEventListener('click', () => {
+        const open = nav.classList.toggle('menu-open');
+        navToggle.setAttribute('aria-expanded', open ? 'true' : 'false');
+      });
+      navMenu.querySelectorAll('a').forEach((a) => a.addEventListener('click', closeMenu));
+      document.addEventListener('keydown', (e) => { if (e.key === 'Escape') closeMenu(); });
+    }
+
     /* ---------- Scroll reveal ---------- */
     if (!reduced) {
       const io = new IntersectionObserver((entries) => {
@@ -1491,77 +1598,64 @@
         uniform vec2  u_mouse;     // 0..1, smoothed
         uniform float u_mouseAmp;  // 0..1 cursor activity
 
-        // hash + value noise (iq)
-        vec2 hash2(vec2 p) {
-          p = vec2(dot(p, vec2(127.1, 311.7)), dot(p, vec2(269.5, 183.3)));
-          return -1.0 + 2.0 * fract(sin(p) * 43758.5453123);
-        }
-        float noise(vec2 p) {
-          vec2 i = floor(p);
-          vec2 f = fract(p);
-          vec2 u = f * f * (3.0 - 2.0 * f);
-          return mix(
-            mix(dot(hash2(i + vec2(0.0, 0.0)), f - vec2(0.0, 0.0)),
-                dot(hash2(i + vec2(1.0, 0.0)), f - vec2(1.0, 0.0)), u.x),
-            mix(dot(hash2(i + vec2(0.0, 1.0)), f - vec2(0.0, 1.0)),
-                dot(hash2(i + vec2(1.0, 1.0)), f - vec2(1.0, 1.0)), u.x),
-            u.y);
-        }
-        float fbm(vec2 p) {
-          float v = 0.0;
-          float a = 0.5;
-          for (int i = 0; i < 5; i++) {
-            v += a * noise(p);
-            p *= 2.02;
-            a *= 0.5;
-          }
-          return v;
-        }
-
         // sRGB approximations of OKLCH brand teal stops
-        // these were precomputed; the shader interpolates in linear-ish sRGB
-        const vec3 cDeep   = vec3(0.020, 0.062, 0.082);  // L 0.12, c 0.04
-        const vec3 cBase   = vec3(0.045, 0.135, 0.170);  // L 0.20, c 0.06
-        const vec3 cMid    = vec3(0.095, 0.245, 0.295);  // L 0.32, c 0.085
-        const vec3 cBright = vec3(0.230, 0.495, 0.540);  // L 0.56, c 0.10
-        const vec3 cMint   = vec3(0.530, 0.770, 0.770);  // L 0.78, c 0.07
+        const vec3 cDeep   = vec3(0.016, 0.054, 0.074);
+        const vec3 cBase   = vec3(0.040, 0.120, 0.155);
+        const vec3 cBright = vec3(0.230, 0.495, 0.540);
+        const vec3 cMint   = vec3(0.560, 0.790, 0.790);
 
         void main() {
           vec2 uv = gl_FragCoord.xy / u_res.xy;
-          vec2 p = uv * 2.0 - 1.0;
-          p.x *= u_res.x / u_res.y;
+          float aspect = u_res.x / u_res.y;
 
-          float t = u_time * 0.06;
+          vec2 p = uv;        p.x *= aspect;
+          vec2 m = u_mouse;   m.x *= aspect;
+          float t = u_time;
 
-          // cursor pull
-          vec2 m = u_mouse * 2.0 - 1.0;
-          m.x *= u_res.x / u_res.y;
+          // gentle global parallax toward cursor (depth)
+          p += (u_mouse - 0.5) * vec2(aspect, 1.0) * 0.015 * (0.4 + 0.6 * u_mouseAmp);
+
+          // deep teal diagonal base
+          float bg = clamp(uv.x * 0.55 + (1.0 - uv.y) * 0.75, 0.0, 1.0);
+          vec3 col = mix(cDeep, cBase, bg);
+
+          // --- dot grid ---
+          float cell = 0.05;
+
+          // displacement: slow wave + cursor pull
+          vec2 warp = 0.005 * vec2(sin(p.y * 16.0 + t * 0.6),
+                                   cos(p.x * 16.0 + t * 0.5));
           float md = length(p - m);
-          float pull = exp(-md * 1.4) * (0.35 + 0.65 * u_mouseAmp);
+          float pull = exp(-md * md * 5.0) * (0.35 + 0.65 * u_mouseAmp);
+          warp += (m - p) * pull * 0.14;
 
-          // domain warp x2
-          vec2 q = vec2(
-            fbm(p * 1.10 + vec2(t * 1.3, 0.0)),
-            fbm(p * 1.10 + vec2(0.0, t * 1.1))
-          );
-          q += pull * (m - p) * 0.6;
+          vec2 gp  = (p + warp) / cell;
+          vec2 gid = floor(gp);
+          vec2 gf  = fract(gp) - 0.5;
+          float d  = length(gf);
 
-          vec2 r = vec2(
-            fbm(p + q + vec2(1.7, 9.2) + 0.13 * t),
-            fbm(p + q + vec2(8.3, 2.8) + 0.11 * t)
-          );
-          float n = fbm(p + 2.0 * r);
-          n = smoothstep(-0.6, 0.9, n);
+          // subtle per-dot twinkle
+          float tw = 0.5 + 0.5 * sin(t * 1.1 + gid.x * 0.7 + gid.y * 0.5);
 
-          vec3 col = cDeep;
-          col = mix(col, cBase,   smoothstep(0.05, 0.35, n));
-          col = mix(col, cMid,    smoothstep(0.35, 0.65, n));
-          col = mix(col, cBright, smoothstep(0.62, 0.85, n));
-          col = mix(col, cMint,   smoothstep(0.85, 0.98, n) * 0.45);
+          float radius  = 0.12 + 0.05 * tw;
+          float dotMask = smoothstep(radius, radius * 0.45, d);
+
+          // cursor glow + concentric ripple
+          float glow   = exp(-md * md * 4.0) * (0.4 + 0.6 * u_mouseAmp);
+          float ripple = sin(md * 26.0 - t * 3.5) * exp(-md * 2.2) * u_mouseAmp;
+
+          vec3  dotCol   = mix(cBright * 0.55, cMint, clamp(glow + ripple * 0.5, 0.0, 1.0));
+          float dotAlpha = dotMask * (0.20 + 0.30 * tw + glow * 0.9 + max(ripple, 0.0) * 0.6);
+          col = mix(col, dotCol, clamp(dotAlpha, 0.0, 1.0));
+
+          // faint blueprint grid lines
+          vec2 lf = abs(fract(gp) - 0.5);
+          float line = smoothstep(0.48, 0.5, max(lf.x, lf.y));
+          col += cBright * line * 0.02;
 
           // soft radial vignette pulled toward upper-left for editorial weight
           vec2 vc = uv - vec2(0.34, 0.42);
-          vc.x *= u_res.x / u_res.y;
+          vc.x *= aspect;
           float vig = smoothstep(1.25, 0.10, length(vc));
           col *= 0.55 + 0.55 * vig;
 
