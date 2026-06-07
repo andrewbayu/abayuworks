@@ -86,7 +86,51 @@ nav.top ol li::after { content: '·'; color: var(--faint); margin-left: var(--s-
 nav.top ol li:last-child::after { content: ''; margin: 0; }
 nav.top a { color: var(--muted); text-decoration: none; transition: color var(--dur-fast); }
 nav.top a:hover, nav.top a[aria-current="page"] { color: var(--ink); }
-@media (max-width: 560px) { nav.top ol { gap: var(--s-2); } nav.top ol li::after { margin-left: var(--s-2); } }
+
+/* Burger toggle (hidden on desktop) — mirrors the homepage */
+.nav-toggle {
+  display: none;
+  appearance: none; -webkit-appearance: none;
+  background: none; border: 0; cursor: pointer;
+  width: 2.25em; height: 2.25em; padding: 0;
+  align-items: center; justify-content: center;
+  color: var(--ink); border-radius: 5px;
+}
+.nav-toggle .bars { position: relative; display: block; width: 1.15em; height: 1.6px; }
+.nav-toggle .bars,
+.nav-toggle .bars::before,
+.nav-toggle .bars::after {
+  background: currentColor; border-radius: 2px;
+  transition: transform var(--dur-fast) var(--ease-out), opacity var(--dur-fast) var(--ease-out);
+}
+.nav-toggle .bars::before, .nav-toggle .bars::after {
+  content: ''; position: absolute; left: 0; width: 100%; height: 1.6px;
+}
+.nav-toggle .bars::before { top: -5px; }
+.nav-toggle .bars::after { top: 5px; }
+nav.top.menu-open .nav-toggle .bars { background: transparent; }
+nav.top.menu-open .nav-toggle .bars::before { transform: translateY(5px) rotate(45deg); }
+nav.top.menu-open .nav-toggle .bars::after { transform: translateY(-5px) rotate(-45deg); }
+
+@media (max-width: 720px) {
+  .nav-toggle { display: inline-flex; }
+  nav.top .inner { position: relative; }
+  nav.top ol {
+    position: absolute; top: 100%; left: 0; right: 0;
+    flex-direction: column; align-items: stretch; gap: 0;
+    background: color-mix(in oklab, var(--bg) 97%, transparent);
+    backdrop-filter: saturate(160%) blur(8px);
+    -webkit-backdrop-filter: saturate(160%) blur(8px);
+    border-bottom: 1px solid var(--line);
+    padding: var(--s-2) var(--gutter) var(--s-3);
+    transform: translateY(-8px); opacity: 0; pointer-events: none;
+    transition: opacity var(--dur-fast) var(--ease-out), transform var(--dur-fast) var(--ease-out);
+  }
+  nav.top.menu-open ol { transform: none; opacity: 1; pointer-events: auto; }
+  nav.top ol li { width: 100%; }
+  nav.top ol li::after { content: ''; margin: 0; }
+  nav.top ol li a { display: block; padding: var(--s-2) 0; font-size: var(--t-body); }
+}
 
 /* ---------- Page header ---------- */
 .page-head { padding: var(--s-8) 0 var(--s-6); border-bottom: 1px solid var(--line); }
