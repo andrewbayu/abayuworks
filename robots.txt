@@ -1,0 +1,8 @@
+User-agent: *
+Allow: /
+Disallow: /.claude/
+Disallow: /PRODUCT.md
+Disallow: /DESIGN.md
+Disallow: /.deploy.py
+
+Sitemap: https://aditya-bayu.netlify.app/sitemap.xml
