@@ -1,0 +1,26 @@
+# Claude / impeccable harness — local-only, never published
+.claude/
+.impeccable/
+
+# Strategic docs — kept locally, not pushed
+PRODUCT.md
+DESIGN.md
+
+# Deploy helpers — local-only
+.deploy.py
+.deploy.zip
+.netlify/
+
+# OS / editor cruft
+.DS_Store
+Thumbs.db
+*.swp
+*.swo
+.vscode/
+.idea/
+
+# Node (in case anything ever needs it)
+node_modules/
+npm-debug.log
+.env
+.env.local

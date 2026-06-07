@@ -1,0 +1,1259 @@
+<!DOCTYPE html>
+<html lang="en" class="no-js">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Aditya Indra Bayu · Venture Builder</title>
+<meta name="description" content="Aditya (Andrew) Indra Bayu. Venture builder and Fractional CMO. CEO of Calibreworks (Clutch.co top 100), Head of Digital Marketing at Gentem, CMO at PT Inovasi Maritim Indonesia, founder of We Are Infiniti and Growthlab Academy. Digital growth with AI integration." />
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
+<style>
+  /* ---------- Design tokens (per DESIGN.md) ---------- */
+  :root {
+    /* Surface */
+    --bg:        oklch(1.000 0.000 0);
+    --surface:   oklch(0.985 0.003 220);
+
+    /* Ink */
+    --ink:       oklch(0.180 0.010 220);
+    --muted:     oklch(0.460 0.012 220);
+    --faint:     oklch(0.620 0.008 220);
+    --line:      oklch(0.920 0.005 220);
+
+    /* Brand mark */
+    --primary:   oklch(0.420 0.095 200);
+    --primary-h: oklch(0.345 0.100 200);
+    --on-primary: oklch(1.000 0.000 0);
+
+    /* Type */
+    --font-sans: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+    --t-micro:   0.78rem;
+    --t-small:   0.875rem;
+    --t-body:    1.0625rem;
+    --t-lead:    clamp(1.15rem, 1.7vw, 1.35rem);
+    --t-h3:      1.4rem;
+    --t-h2:      clamp(1.8rem, 3.6vw, 2.55rem);
+    --t-h1:      clamp(2.5rem, 6vw, 4.6rem);
+    --ls-display: -0.035em;
+    --ls-body:    -0.005em;
+    --ls-label:   0.04em;
+
+    /* Space scale */
+    --s-1: 0.5rem; --s-2: 0.75rem; --s-3: 1rem; --s-4: 1.5rem;
+    --s-5: 2rem;   --s-6: 3rem;    --s-7: 4.5rem; --s-8: 7rem;
+
+    /* Page */
+    --max-prose: 34rem;
+    --max-page:  62rem;
+    --gutter:    1.5rem;
+
+    /* Motion */
+    --ease-out:  cubic-bezier(0.16, 1, 0.3, 1);
+    --dur-fast:  220ms;
+    --dur-med:   520ms;
+  }
+
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+  html { scroll-behavior: smooth; }
+
+  body {
+    font-family: var(--font-sans);
+    font-size: var(--t-body);
+    line-height: 1.6;
+    letter-spacing: var(--ls-body);
+    color: var(--ink);
+    background: var(--bg);
+    -webkit-font-smoothing: antialiased;
+    text-rendering: optimizeLegibility;
+    font-feature-settings: 'cv11', 'ss01', 'ss03';
+  }
+
+  ::selection { background: var(--ink); color: var(--bg); }
+
+  /* ---------- Page chrome ---------- */
+  .wrap {
+    max-width: var(--max-page);
+    margin: 0 auto;
+    padding: 0 var(--gutter);
+  }
+  .prose { max-width: var(--max-prose); }
+
+  /* Top nav: plain text, mid-dot separators */
+  nav.top {
+    position: fixed; top: 0; left: 0; right: 0; z-index: 50;
+    backdrop-filter: saturate(160%) blur(8px);
+    -webkit-backdrop-filter: saturate(160%) blur(8px);
+    background: color-mix(in oklab, var(--bg) 82%, transparent);
+    border-bottom: 1px solid transparent;
+    transition: border-color var(--dur-fast) var(--ease-out);
+  }
+  nav.top.scrolled { border-bottom-color: var(--line); }
+  nav.top .inner {
+    max-width: var(--max-page); margin: 0 auto; padding: var(--s-3) var(--gutter);
+    display: flex; align-items: center; justify-content: space-between;
+    font-size: var(--t-small);
+  }
+  nav.top .who { font-weight: 600; letter-spacing: -0.015em; }
+  nav.top .who .mark {
+    display: inline-block; width: 0.55em; height: 0.55em;
+    background: var(--primary); margin-right: 0.45em; vertical-align: 0.05em;
+  }
+  nav.top ol { list-style: none; display: flex; gap: var(--s-3); align-items: center; }
+  nav.top ol li::after { content: '·'; color: var(--faint); margin-left: var(--s-3); }
+  nav.top ol li:last-child::after { content: ''; margin: 0; }
+  nav.top a { color: var(--muted); text-decoration: none; transition: color var(--dur-fast); }
+  nav.top a:hover { color: var(--ink); }
+  @media (max-width: 720px) { nav.top ol { display: none; } }
+
+  /* Section + headings */
+  main > section { padding: var(--s-8) 0; border-top: 1px solid var(--line); }
+  main > section:first-child { border-top: 0; padding-top: var(--s-7); }
+  @media (max-width: 640px) { main > section { padding: var(--s-7) 0; } }
+
+  h1, h2, h3 { text-wrap: balance; }
+  h1 {
+    font-size: var(--t-h1);
+    font-weight: 600;
+    letter-spacing: var(--ls-display);
+    line-height: 1.02;
+    margin-bottom: var(--s-5);
+  }
+  h2 {
+    font-size: var(--t-h2);
+    font-weight: 600;
+    letter-spacing: -0.025em;
+    line-height: 1.08;
+    margin-bottom: var(--s-4);
+  }
+  h3 {
+    font-size: var(--t-h3);
+    font-weight: 600;
+    letter-spacing: -0.018em;
+    margin-bottom: var(--s-2);
+  }
+  p { text-wrap: pretty; }
+  p + p { margin-top: var(--s-3); }
+
+  /* Inline links: teal mark, animated underline */
+  a.link, .prose a {
+    color: var(--ink);
+    text-decoration: none;
+    background-image: linear-gradient(var(--primary), var(--primary));
+    background-repeat: no-repeat;
+    background-position: 0 100%;
+    background-size: 100% 1px;
+    padding-bottom: 1px;
+    transition: color var(--dur-fast) var(--ease-out), background-size var(--dur-fast) var(--ease-out);
+  }
+  a.link:hover, .prose a:hover { color: var(--primary); background-size: 100% 2px; }
+
+  /* ---------- Hero (WebGL fluid block) ---------- */
+  header.hero {
+    position: relative;
+    isolation: isolate;
+    overflow: hidden;
+    padding-top: clamp(8rem, 22vh, 13rem);
+    padding-bottom: clamp(5rem, 12vh, 8rem);
+    color: oklch(0.985 0.005 200);
+    background:
+      radial-gradient(
+        ellipse 140% 90% at 30% 35%,
+        oklch(0.40 0.10 200) 0%,
+        oklch(0.28 0.085 200) 35%,
+        oklch(0.16 0.055 205) 80%,
+        oklch(0.12 0.04 210) 100%
+      );
+  }
+  header.hero > .wrap-inner {
+    position: relative;
+    z-index: 1;
+    max-width: var(--max-page);
+    margin: 0 auto;
+    padding: 0 var(--gutter);
+  }
+  header.hero canvas#hero-canvas {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 0;
+    display: block;
+    pointer-events: none;
+  }
+  /* Override the section-top border so the dark block reads as a single sheet */
+  main > section#now { border-top: 0; }
+
+  header.hero .who-line {
+    display: flex; align-items: center; gap: var(--s-3);
+    font-size: var(--t-small);
+    color: oklch(0.85 0.020 200 / 0.85);
+    margin-bottom: var(--s-5);
+  }
+  header.hero .who-line .role {
+    font-weight: 500;
+    color: oklch(0.985 0.005 200);
+    letter-spacing: -0.005em;
+  }
+  header.hero .who-line .mark {
+    display: inline-block; width: 0.55em; height: 0.55em;
+    background: oklch(0.985 0.005 200);
+  }
+  header.hero h1 {
+    max-width: 22ch;
+    color: oklch(0.985 0.005 200);
+  }
+  /* The accent em — soft mint highlight on dark teal */
+  header.hero h1 em {
+    color: oklch(0.85 0.13 195);
+    font-style: normal;
+  }
+  header.hero .lede {
+    font-size: var(--t-lead);
+    color: oklch(0.88 0.018 200 / 0.85);
+    font-weight: 300;
+    line-height: 1.45;
+    max-width: 48ch;
+    margin-top: var(--s-5);
+  }
+  header.hero .lede strong {
+    color: oklch(0.985 0.005 200);
+    font-weight: 500;
+  }
+  header.hero .receipts {
+    margin-top: var(--s-6);
+    font-size: var(--t-small);
+    color: oklch(0.78 0.020 200 / 0.78);
+    letter-spacing: var(--ls-label);
+    text-transform: none;
+  }
+  header.hero .receipts b {
+    color: oklch(0.985 0.005 200);
+    font-weight: 600;
+    font-variant-numeric: tabular-nums;
+  }
+  /* Footnote anchors on dark bg */
+  header.hero sup.fn { color: oklch(0.80 0.12 195); }
+  header.hero sup.fn a { color: inherit; }
+
+  /* If WebGL is unavailable or reduced-motion is on, the radial-gradient
+     bg already paints a perfectly readable dark teal hero. */
+  @media (prefers-reduced-motion: reduce) {
+    header.hero canvas#hero-canvas { display: none; }
+  }
+  html.no-webgl header.hero canvas#hero-canvas { display: none; }
+
+  /* The fixed top nav over the dark hero: tint the backdrop dark */
+  nav.top { transition: background var(--dur-fast) var(--ease-out), border-color var(--dur-fast) var(--ease-out); }
+  body.over-hero nav.top {
+    background: color-mix(in oklab, oklch(0.16 0.05 205) 70%, transparent);
+    border-bottom-color: transparent;
+  }
+  body.over-hero nav.top .who { color: oklch(0.985 0.005 200); }
+  body.over-hero nav.top .who .mark { background: oklch(0.985 0.005 200); }
+  body.over-hero nav.top a { color: oklch(0.85 0.020 200 / 0.85); }
+  body.over-hero nav.top a:hover { color: oklch(0.985 0.005 200); }
+  body.over-hero nav.top ol li::after { color: oklch(0.65 0.025 200 / 0.6); }
+
+  /* ---------- Icons ---------- */
+  .ico {
+    display: inline-block; vertical-align: middle;
+    width: 1.125em; height: 1.125em;
+    flex-shrink: 0;
+    color: currentColor;
+  }
+  .ico-md { width: 1.25em; height: 1.25em; }
+  .ico-lg { width: 1.5em;  height: 1.5em;  }
+
+  /* ---------- "Now" status board ---------- */
+  .now-header {
+    display: flex; align-items: center; gap: var(--s-2);
+    margin-bottom: var(--s-5);
+  }
+  .now-header .tag {
+    font-size: var(--t-micro);
+    font-weight: 600;
+    letter-spacing: var(--ls-label);
+    text-transform: uppercase;
+    color: var(--primary);
+    display: inline-flex; align-items: center; gap: 0.5em;
+  }
+  .now-header .pulse-dot {
+    width: 0.55em; height: 0.55em; border-radius: 50%;
+    background: var(--primary);
+    box-shadow: 0 0 0 0 color-mix(in oklab, var(--primary) 60%, transparent);
+    animation: pulse 2.4s var(--ease-out) infinite;
+  }
+  @keyframes pulse {
+    0%   { box-shadow: 0 0 0 0 color-mix(in oklab, var(--primary) 60%, transparent); }
+    70%  { box-shadow: 0 0 0 10px color-mix(in oklab, var(--primary) 0%, transparent); }
+    100% { box-shadow: 0 0 0 0 color-mix(in oklab, var(--primary) 0%, transparent); }
+  }
+  @media (prefers-reduced-motion: reduce) { .now-header .pulse-dot { animation: none; } }
+  .now-header .sep { color: var(--faint); font-size: var(--t-micro); }
+  .now-header .when {
+    font-size: var(--t-micro);
+    font-weight: 500;
+    color: var(--faint);
+    letter-spacing: var(--ls-label);
+    text-transform: uppercase;
+  }
+
+  .now-board {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 1px;
+    background: var(--line);
+    border: 1px solid var(--line);
+  }
+  .now-card {
+    background: var(--bg);
+    padding: var(--s-4) var(--s-4) var(--s-3);
+    display: flex; flex-direction: column; gap: var(--s-1);
+    transition: background var(--dur-fast) var(--ease-out);
+  }
+  .now-card:hover { background: color-mix(in oklab, var(--primary) 3.5%, var(--bg)); }
+  .now-card .head {
+    display: flex; align-items: center; gap: 0.6em;
+    color: var(--primary);
+  }
+  .now-card .head .role {
+    font-size: var(--t-micro);
+    font-weight: 600;
+    letter-spacing: var(--ls-label);
+    text-transform: uppercase;
+    color: var(--primary);
+  }
+  .now-card .org {
+    font-size: 1.05rem;
+    font-weight: 600;
+    letter-spacing: -0.015em;
+    color: var(--ink);
+    line-height: 1.25;
+  }
+  .now-card .note {
+    font-size: 0.9rem;
+    color: var(--muted);
+    line-height: 1.5;
+    margin-top: var(--s-1);
+  }
+
+  /* The CTA card */
+  .now-card.cta-card {
+    background: color-mix(in oklab, var(--primary) 5%, var(--bg));
+    position: relative;
+  }
+  .now-card.cta-card::before {
+    content: ""; position: absolute; left: 0; top: 0; bottom: 0; width: 3px;
+    background: var(--primary);
+  }
+  .now-card.cta-card:hover { background: color-mix(in oklab, var(--primary) 9%, var(--bg)); }
+  .now-card.cta-card .org { color: var(--primary); }
+  .now-card.cta-card .head .role { color: var(--ink); }
+
+  /* ---------- Venture icon styling ---------- */
+  .venture .v-icon {
+    display: inline-flex;
+    align-items: center; justify-content: center;
+    color: var(--primary);
+    width: 1.8em; height: 1.8em;
+    transform: translateY(0.15em);
+  }
+  .venture .v-icon .ico { width: 100%; height: 100%; }
+
+  /* ---------- Built items: kind icon ---------- */
+  .built dt {
+    grid-template-columns: 9rem 1.5em 1fr !important;
+    column-gap: var(--s-3) !important;
+  }
+  .built dt .b-icon {
+    color: var(--primary);
+    display: inline-flex; align-items: center; justify-content: center;
+    width: 1.25em; height: 1.25em;
+    transform: translateY(0.1em);
+  }
+  .built dt .b-icon .ico { width: 100%; height: 100%; }
+  .built dd { padding-left: calc(9rem + 1.5em + var(--s-3) * 2) !important; }
+  @media (max-width: 640px) {
+    .built dt {
+      grid-template-columns: 1.25em 1fr !important;
+      grid-template-rows: auto auto;
+    }
+    .built dt .kind { grid-column: 1 / -1; grid-row: 1; }
+    .built dt .b-icon { grid-column: 1; grid-row: 2; }
+    .built dt .name { grid-column: 2; grid-row: 2; }
+    .built dd { padding-left: 0 !important; }
+  }
+
+  /* ---------- Contact: social icons ---------- */
+  .contact-links {
+    display: flex; flex-wrap: wrap;
+    gap: var(--s-3) var(--s-4);
+    align-items: center;
+    margin-top: var(--s-3);
+  }
+  .contact-links .cta { gap: 0.65em; }
+  .contact-links .cta .ico { width: 1.1em; height: 1.1em; }
+  .contact-links .social {
+    display: inline-flex; align-items: center; gap: 0.5em;
+    font-size: var(--t-body);
+    color: var(--muted);
+    text-decoration: none;
+    transition: color var(--dur-fast) var(--ease-out);
+  }
+  .contact-links .social .ico { width: 1.15em; height: 1.15em; color: var(--faint); transition: color var(--dur-fast) var(--ease-out); }
+  .contact-links .social:hover { color: var(--ink); }
+  .contact-links .social:hover .ico { color: var(--primary); }
+
+  /* ---------- How I work ---------- */
+  .how-grid {
+    display: grid;
+    grid-template-columns: 12rem 1fr;
+    gap: var(--s-6);
+    align-items: start;
+  }
+  .how-grid h2 { margin: 0; max-width: 10ch; }
+  .how-grid .prose p { color: var(--muted); }
+  .how-grid .prose p strong { color: var(--ink); font-weight: 500; }
+  @media (max-width: 720px) { .how-grid { grid-template-columns: 1fr; gap: var(--s-4); } }
+
+  /* ---------- Ventures: definition list ---------- */
+  .ventures { margin-top: var(--s-3); }
+  .venture {
+    display: grid;
+    grid-template-columns: 2em 1fr 9rem;
+    column-gap: var(--s-4);
+    row-gap: var(--s-2);
+    padding: var(--s-5) 0;
+    border-bottom: 1px solid var(--line);
+    align-items: baseline;
+    transition: background var(--dur-fast) var(--ease-out);
+  }
+  .venture:first-of-type { border-top: 1px solid var(--line); }
+  .venture:hover { background: color-mix(in oklab, var(--primary) 3%, transparent); }
+  .venture:hover .v-icon { transform: translateY(0.15em) scale(1.08); }
+  .venture .v-icon { transition: transform var(--dur-fast) var(--ease-out); }
+  .venture .name {
+    font-size: var(--t-h3);
+    font-weight: 600;
+    letter-spacing: -0.018em;
+  }
+  .venture .role {
+    display: block;
+    font-size: var(--t-small);
+    color: var(--muted);
+    font-weight: 400;
+    margin-top: 0.2em;
+    letter-spacing: -0.005em;
+  }
+  .venture .scope {
+    grid-column: 2;
+    color: var(--muted);
+    font-size: 0.97rem;
+    line-height: 1.55;
+    max-width: 58ch;
+    margin-top: var(--s-1);
+  }
+  .venture .tag {
+    grid-row: 1;
+    grid-column: 3;
+    font-size: var(--t-small);
+    color: var(--faint);
+    text-align: right;
+    letter-spacing: -0.005em;
+    white-space: nowrap;
+    font-variant-numeric: tabular-nums;
+  }
+  @media (max-width: 720px) {
+    .venture { grid-template-columns: 2em 1fr; }
+    .venture .tag { grid-row: auto; grid-column: 2; text-align: left; color: var(--faint); }
+  }
+
+  /* ---------- Receipts: inline prose ---------- */
+  .receipts-prose p {
+    font-size: var(--t-lead);
+    color: var(--muted);
+    font-weight: 300;
+    line-height: 1.55;
+    max-width: 38rem;
+  }
+  .receipts-prose p strong, .receipts-prose p b {
+    color: var(--ink);
+    font-weight: 600;
+    font-variant-numeric: tabular-nums;
+    letter-spacing: -0.01em;
+  }
+  .receipts-prose p .src { color: var(--ink); font-weight: 500; }
+  sup.fn {
+    font-size: 0.65em; vertical-align: super; line-height: 0;
+    margin-left: 0.1em; color: var(--primary);
+  }
+  sup.fn a {
+    color: inherit; text-decoration: none;
+    background: none; padding: 0;
+  }
+
+  /* ---------- What I've built: kind + name + note ---------- */
+  .built {
+    display: grid; grid-template-columns: 1fr; gap: 0;
+  }
+  .built dt {
+    display: grid;
+    grid-template-columns: 9rem 1fr;
+    column-gap: var(--s-4);
+    padding-top: var(--s-4);
+    align-items: baseline;
+  }
+  .built dt .kind {
+    font-size: var(--t-micro);
+    font-weight: 500;
+    color: var(--faint);
+    letter-spacing: var(--ls-label);
+    text-transform: uppercase;
+    padding-top: 0.2em;
+  }
+  .built dt .name {
+    font-size: 1.1rem;
+    font-weight: 600;
+    letter-spacing: -0.015em;
+  }
+  .built dd {
+    padding-left: calc(9rem + var(--s-4));
+    padding-bottom: var(--s-4);
+    border-bottom: 1px solid var(--line);
+    color: var(--muted);
+    font-size: 0.97rem;
+    line-height: 1.55;
+    max-width: 56ch;
+  }
+  .built dt:first-of-type { padding-top: 0; }
+  @media (max-width: 640px) {
+    .built dt { grid-template-columns: 1fr; }
+    .built dd { padding-left: 0; }
+    .built dt .kind { padding-top: 0; margin-bottom: 0.2em; }
+  }
+
+  /* ---------- Brands inline ---------- */
+  .brands-line {
+    font-size: var(--t-body);
+    color: var(--muted);
+    max-width: 44rem;
+    line-height: 1.7;
+  }
+  .brands-line b { color: var(--ink); font-weight: 500; }
+
+  /* ---------- Contact ---------- */
+  #contact { padding-bottom: var(--s-7); }
+  #contact h2 { max-width: 16ch; }
+  #contact .lede {
+    font-size: var(--t-lead);
+    color: var(--muted);
+    font-weight: 300;
+    max-width: 36rem;
+    line-height: 1.5;
+    margin-bottom: var(--s-5);
+  }
+  .cta {
+    display: inline-flex; align-items: center; gap: 0.5em;
+    background: var(--primary); color: var(--on-primary);
+    padding: 0.85em 1.4em;
+    font-size: var(--t-body);
+    font-weight: 500;
+    letter-spacing: -0.005em;
+    text-decoration: none;
+    transition: background var(--dur-fast) var(--ease-out), transform var(--dur-fast) var(--ease-out);
+  }
+  .cta:hover { background: var(--primary-h); transform: translateY(-2px); }
+  .cta:focus-visible { outline: 2px solid var(--ink); outline-offset: 3px; }
+  .also {
+    display: inline-flex; gap: var(--s-4); margin-left: var(--s-4);
+    color: var(--muted); font-size: var(--t-body); align-items: center;
+  }
+  @media (max-width: 560px) {
+    .also { margin-left: 0; margin-top: var(--s-3); display: flex; flex-wrap: wrap; }
+  }
+
+  /* ---------- Footnotes ---------- */
+  .notes {
+    padding: var(--s-6) 0 var(--s-5);
+    border-top: 1px solid var(--line);
+    font-size: var(--t-small);
+    color: var(--faint);
+    line-height: 1.6;
+  }
+  .notes ol { padding-left: 1.2em; }
+  .notes li { margin-bottom: var(--s-1); }
+  .notes li:target { color: var(--ink); }
+
+  footer {
+    padding: var(--s-4) 0 var(--s-5);
+    border-top: 1px solid var(--line);
+    display: flex; justify-content: space-between; align-items: center;
+    font-size: var(--t-small); color: var(--faint);
+    flex-wrap: wrap; gap: var(--s-2);
+  }
+  footer .who-line { display: flex; gap: var(--s-2); align-items: center; }
+  footer .who-line .mark {
+    display: inline-block; width: 0.5em; height: 0.5em;
+    background: var(--primary);
+  }
+
+  /* ---------- Motion: visible by default, enhanced on entry ---------- */
+  .reveal { transform: translateY(12px); opacity: 0; transition: transform var(--dur-med) var(--ease-out), opacity var(--dur-med) var(--ease-out); }
+  .reveal.in { transform: none; opacity: 1; }
+  .reveal.d1 { transition-delay: 60ms; }
+  .reveal.d2 { transition-delay: 120ms; }
+  .reveal.d3 { transition-delay: 180ms; }
+
+  /* If JS never runs, content is visible. */
+  html.no-js .reveal { transform: none; opacity: 1; }
+
+  @media (prefers-reduced-motion: reduce) {
+    .reveal { transform: none; opacity: 1; transition: opacity 200ms linear; }
+    html { scroll-behavior: auto; }
+    .cta:hover { transform: none; }
+  }
+
+  /* Focus visibility */
+  :focus-visible {
+    outline: 2px solid var(--primary);
+    outline-offset: 3px;
+    border-radius: 2px;
+  }
+</style>
+</head>
+<body>
+  <a href="#main" class="link" style="position:absolute;left:-9999px;top:0;">Skip to content</a>
+
+  <!-- Icon sprite. 18x18 viewBox via 24x24 paths. -->
+  <svg width="0" height="0" style="position:absolute" aria-hidden="true" focusable="false">
+    <defs>
+      <symbol id="i-building" viewBox="0 0 24 24"><path d="M4 21V7l8-3 8 3v14M9 21v-8h6v8" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" fill="none"/><circle cx="9" cy="10" r=".7" fill="currentColor"/><circle cx="15" cy="10" r=".7" fill="currentColor"/></symbol>
+      <symbol id="i-edu" viewBox="0 0 24 24"><path d="M2 9l10-5 10 5-10 5L2 9z" stroke="currentColor" stroke-width="1.5" stroke-linejoin="round" fill="none"/><path d="M6 11v5c0 2 3 3.5 6 3.5s6-1.5 6-3.5v-5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" fill="none"/></symbol>
+      <symbol id="i-anchor" viewBox="0 0 24 24"><circle cx="12" cy="5.5" r="2.5" stroke="currentColor" stroke-width="1.5" fill="none"/><path d="M12 8v13M8 12h8M4 16c0 3 3.5 5 8 5s8-2 8-5l-2.5 1.2M4 16l2.5 1.2" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" fill="none"/></symbol>
+      <symbol id="i-books" viewBox="0 0 24 24"><path d="M4 4h6v16H4zM10 4h6v16h-6zM16 4l3.5.6L17 20l-3.5-.6" stroke="currentColor" stroke-width="1.5" stroke-linejoin="round" fill="none"/></symbol>
+      <symbol id="i-spark" viewBox="0 0 24 24"><path d="M12 3v3M12 18v3M3 12h3M18 12h3M5.6 5.6l2.1 2.1M16.3 16.3l2.1 2.1M5.6 18.4l2.1-2.1M16.3 7.7l2.1-2.1" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" fill="none"/></symbol>
+      <symbol id="i-copilot" viewBox="0 0 24 24"><path d="M4 6a2 2 0 012-2h12a2 2 0 012 2v9a2 2 0 01-2 2h-4l-3.5 3.5V17H6a2 2 0 01-2-2V6z" stroke="currentColor" stroke-width="1.5" stroke-linejoin="round" fill="none"/><circle cx="9" cy="10.5" r=".9" fill="currentColor"/><circle cx="12" cy="10.5" r=".9" fill="currentColor"/><circle cx="15" cy="10.5" r=".9" fill="currentColor"/></symbol>
+      <symbol id="i-network" viewBox="0 0 24 24"><circle cx="6" cy="6" r="2" stroke="currentColor" stroke-width="1.5" fill="none"/><circle cx="18" cy="6" r="2" stroke="currentColor" stroke-width="1.5" fill="none"/><circle cx="12" cy="18" r="2" stroke="currentColor" stroke-width="1.5" fill="none"/><path d="M7.5 7.5L11 16.5M16.5 7.5L13 16.5M8 6h8" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" fill="none"/></symbol>
+      <symbol id="i-target" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9" stroke="currentColor" stroke-width="1.5" fill="none"/><circle cx="12" cy="12" r="5" stroke="currentColor" stroke-width="1.5" fill="none"/><circle cx="12" cy="12" r="1.5" fill="currentColor"/></symbol>
+      <symbol id="i-zap" viewBox="0 0 24 24"><path d="M13 2L4 14h7l-1 8 9-12h-7l1-8z" stroke="currentColor" stroke-width="1.5" stroke-linejoin="round" fill="none"/></symbol>
+      <symbol id="i-stack" viewBox="0 0 24 24"><rect x="3" y="4" width="18" height="4" rx="1" stroke="currentColor" stroke-width="1.5" fill="none"/><rect x="3" y="10" width="18" height="4" rx="1" stroke="currentColor" stroke-width="1.5" fill="none"/><rect x="3" y="16" width="18" height="4" rx="1" stroke="currentColor" stroke-width="1.5" fill="none"/></symbol>
+      <symbol id="i-window" viewBox="0 0 24 24"><rect x="3" y="4" width="18" height="16" rx="2" stroke="currentColor" stroke-width="1.5" fill="none"/><path d="M3 9h18" stroke="currentColor" stroke-width="1.5" fill="none"/><circle cx="6.5" cy="6.5" r=".7" fill="currentColor"/><circle cx="9" cy="6.5" r=".7" fill="currentColor"/><circle cx="11.5" cy="6.5" r=".7" fill="currentColor"/></symbol>
+      <symbol id="i-ship" viewBox="0 0 24 24"><path d="M3 18l1.5 3h15L21 18M5 18V9l7-3 7 3v9M12 6V3" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" fill="none"/></symbol>
+      <symbol id="i-hub" viewBox="0 0 24 24"><circle cx="12" cy="12" r="3" stroke="currentColor" stroke-width="1.5" fill="none"/><path d="M12 2v4M12 18v4M2 12h4M18 12h4M5 5l2.5 2.5M16.5 16.5L19 19M5 19l2.5-2.5M16.5 7.5L19 5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" fill="none"/></symbol>
+      <symbol id="i-pulse" viewBox="0 0 24 24"><path d="M3 12h4l3-8 4 16 3-8h4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" fill="none"/></symbol>
+      <symbol id="i-mail" viewBox="0 0 24 24"><rect x="3" y="5" width="18" height="14" rx="2" stroke="currentColor" stroke-width="1.5" fill="none"/><path d="M3 7l9 6 9-6" stroke="currentColor" stroke-width="1.5" stroke-linejoin="round" fill="none"/></symbol>
+      <symbol id="i-linkedin" viewBox="0 0 24 24"><rect x="3" y="3" width="18" height="18" rx="3" stroke="currentColor" stroke-width="1.5" fill="none"/><path d="M8 10.5V17M12 17v-3.5c0-1.4 1-2.5 2.5-2.5S17 12.1 17 13.5V17" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" fill="none"/><circle cx="8" cy="7.5" r=".9" fill="currentColor"/></symbol>
+      <symbol id="i-instagram" viewBox="0 0 24 24"><rect x="3" y="3" width="18" height="18" rx="5" stroke="currentColor" stroke-width="1.5" fill="none"/><circle cx="12" cy="12" r="4" stroke="currentColor" stroke-width="1.5" fill="none"/><circle cx="17.5" cy="6.5" r=".9" fill="currentColor"/></symbol>
+      <symbol id="i-tiktok" viewBox="0 0 24 24"><path d="M14 4v9.5c0 2.5-2 4.5-4.5 4.5S5 16 5 13.5 7 9 9.5 9c.5 0 1 .1 1.5.3" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" fill="none"/><path d="M14 4c.5 2.5 2.5 4.5 5 4.5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" fill="none"/></symbol>
+      <symbol id="i-arrow" viewBox="0 0 24 24"><path d="M5 12h14M13 6l6 6-6 6" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" fill="none"/></symbol>
+    </defs>
+  </svg>
+
+  <nav class="top" aria-label="Primary">
+    <div class="inner">
+      <div class="who"><span class="mark" aria-hidden="true"></span>Aditya Indra Bayu</div>
+      <ol>
+        <li><a href="#ventures">Ventures</a></li>
+        <li><a href="#receipts">Receipts</a></li>
+        <li><a href="#built">Built</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ol>
+    </div>
+  </nav>
+
+  <main id="main">
+
+    <!-- HERO -->
+    <header class="hero">
+      <canvas id="hero-canvas" aria-hidden="true"></canvas>
+      <div class="wrap-inner">
+        <div class="who-line reveal">
+          <span class="mark" aria-hidden="true"></span>
+          <span class="role">Venture Builder · Fractional CMO</span>
+          <span>·</span>
+          <span>South Tangerang, Indonesia</span>
+        </div>
+        <h1 class="reveal d1">I start, operate, and scale ventures <em>across industries.</em></h1>
+        <p class="lede reveal d2">
+          I'm Aditya (Andrew) Indra Bayu. I build companies. I name the brand, stand up the
+          site, wire the funnel, ship the AI tools they run on, then take an operating seat
+          until the venture finds revenue. <strong>Education. Maritime. Agency. SaaS. AI products.</strong>
+          Same playbook, different verticals.
+        </p>
+        <p class="receipts reveal d3">
+          <b>Rp156B</b> revenue milestone at Wall Street English Indonesia<sup class="fn"><a href="#n1">1</a></sup>.
+          <b>+200%</b> registration growth at Hacktiv8<sup class="fn"><a href="#n1">1</a></sup>.
+          Calibreworks: <b>Clutch.co Top 100</b> digital agencies.
+          Nine ventures across four verticals.
+        </p>
+      </div>
+    </header>
+
+    <!-- NOW -->
+    <section id="now" aria-label="Current focus">
+      <div class="wrap">
+        <div class="now-header reveal">
+          <span class="tag"><span class="pulse-dot" aria-hidden="true"></span>Now</span>
+          <span class="sep">·</span>
+          <span class="when">Active operating commitments</span>
+        </div>
+
+        <div class="now-board reveal d1">
+
+          <article class="now-card">
+            <div class="head">
+              <svg class="ico" aria-hidden="true"><use href="#i-edu"/></svg>
+              <span class="role">Head of Digital Marketing</span>
+            </div>
+            <div class="org">Gentem Lifelong Learning</div>
+            <p class="note">AI integration across Wall Street English Indonesia, CURIOOkids, and INDIES.</p>
+          </article>
+
+          <article class="now-card">
+            <div class="head">
+              <svg class="ico" aria-hidden="true"><use href="#i-anchor"/></svg>
+              <span class="role">Chief Marketing Officer</span>
+            </div>
+            <div class="org">PT Inovasi Maritim Indonesia</div>
+            <p class="note">Positioning the yard for B2G patrol and fisheries vessels.</p>
+          </article>
+
+          <article class="now-card">
+            <div class="head">
+              <svg class="ico" aria-hidden="true"><use href="#i-building"/></svg>
+              <span class="role">CEO &amp; Founder</span>
+            </div>
+            <div class="org">Calibreworks · We Are Infiniti</div>
+            <p class="note">The agency layer that ships every other venture.</p>
+          </article>
+
+          <article class="now-card cta-card">
+            <div class="head">
+              <svg class="ico" aria-hidden="true"><use href="#i-pulse"/></svg>
+              <span class="role">Available · Fractional CMO</span>
+            </div>
+            <div class="org">For digital-agency owners scaling past 100 clients.</div>
+            <p class="note">Open to engagements now. <a class="link" href="#contact">Get in touch &rarr;</a></p>
+          </article>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- HOW I WORK -->
+    <section id="how">
+      <div class="wrap">
+        <div class="how-grid">
+          <h2 class="reveal">How I work.</h2>
+          <div class="prose reveal d1">
+            <p>
+              I don't pitch decks and walk away. <strong>I start the company. I name the brand.
+              I architect the funnel. I build the AI tools the venture runs on. I stay on the
+              cap table, or the operating seat, until it ships.</strong>
+            </p>
+            <p>
+              Some ventures I own outright. Some I co-build. Some I run as CMO inside someone
+              else's company. In every case, I'm inside the machine, not beside it. That is
+              the only meaningful difference between a venture builder and a consultant.
+            </p>
+            <p>
+              I trained as an engineer, freelanced through college, then ran sales in Singapore
+              from 2014 to 2016, finishing as head of outbound. I came back to Indonesia, founded
+              Enderworks, evolved it into Calibreworks, and have been building ventures ever since.
+              Operator instincts, engineering brain, builder hands.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- VENTURES -->
+    <section id="ventures" aria-label="Venture portfolio">
+      <div class="wrap">
+        <h2 class="reveal">The venture portfolio.</h2>
+        <p class="prose reveal d1" style="color:var(--muted);max-width:48ch;margin-bottom:var(--s-5);">
+          Nine ventures across agency, education, maritime, and AI. Title, role, and what the
+          venture actually is.
+        </p>
+
+        <div class="ventures reveal d2">
+
+          <article class="venture">
+            <span class="v-icon" aria-hidden="true"><svg class="ico"><use href="#i-building"/></svg></span>
+            <div>
+              <span class="name">Calibreworks</span>
+              <span class="role">Chief Executive Officer · evolved from Enderworks (2016)</span>
+            </div>
+            <span class="tag">Agency · Owned</span>
+            <p class="scope">
+              Full-service digital agency in South Tangerang. App development, creative,
+              digital marketing, lead generation, social, and web. Listed in
+              <strong>Clutch.co's Top 100 digital agencies</strong>.
+            </p>
+          </article>
+
+          <article class="venture">
+            <span class="v-icon" aria-hidden="true"><svg class="ico"><use href="#i-building"/></svg></span>
+            <div>
+              <span class="name">We Are Infiniti</span>
+              <span class="role">Founder &amp; Operator · PT Infiniti Media Galaksi</span>
+            </div>
+            <span class="tag">Agency · Owned</span>
+            <p class="scope">
+              Digital growth, creative, branding, and web-development agency. The internal
+              engine I use to ship every other venture, while serving 300+ external brands.
+            </p>
+          </article>
+
+          <article class="venture">
+            <span class="v-icon" aria-hidden="true"><svg class="ico"><use href="#i-edu"/></svg></span>
+            <div>
+              <span class="name">Growthlab Academy</span>
+              <span class="role">Founder · learn.growthlab.co.id</span>
+            </div>
+            <span class="tag">EdTech · Owned</span>
+            <p class="scope">
+              EdTech venture productising my own playbooks. ContentStrategist Toolkit, Growth
+              Curve Method, and a mentoring layer for founders and marketers.
+            </p>
+          </article>
+
+          <article class="venture">
+            <span class="v-icon" aria-hidden="true"><svg class="ico"><use href="#i-anchor"/></svg></span>
+            <div>
+              <span class="name">PT Inovasi Maritim Indonesia</span>
+              <span class="role">Chief Marketing Officer · operating partner</span>
+            </div>
+            <span class="tag">Maritime · Operator</span>
+            <p class="scope">
+              Operating-seat venture in maritime and shipbuilding. Patrol boats, fiberglass
+              speedboats, steel fishing vessels, B2G solutions. I built the brand and the
+              demand engine around custom design, TKDN, and local after-sales.
+            </p>
+          </article>
+
+          <article class="venture">
+            <span class="v-icon" aria-hidden="true"><svg class="ico"><use href="#i-books"/></svg></span>
+            <div>
+              <span class="name">Gentem Lifelong Learning</span>
+              <span class="role">Acting Head of Digital Marketing · WSE, CURIOOkids, INDIES</span>
+            </div>
+            <span class="tag">Education · Operator</span>
+            <p class="scope">
+              Embedded operator role across a multi-brand education group. Owned the funnel
+              from traffic to lead, SQL, appointment, show, and paid enrollment.
+            </p>
+          </article>
+
+          <article class="venture">
+            <span class="v-icon" aria-hidden="true"><svg class="ico"><use href="#i-edu"/></svg></span>
+            <div>
+              <span class="name">Genstarkids</span>
+              <span class="role">Founder · children's education brand (ages 3–12)</span>
+            </div>
+            <span class="tag">EdTech · Owned</span>
+            <p class="scope">
+              Built end-to-end. Brand, site, paid-appointment model, RIASEC-style profiling.
+              Early pilot returned Rp14.5M from Rp5.7M ad spend across 20 paid appointments.
+            </p>
+          </article>
+
+          <article class="venture">
+            <span class="v-icon" aria-hidden="true"><svg class="ico"><use href="#i-ship"/></svg></span>
+            <div>
+              <span class="name">Vantara Boat</span>
+              <span class="role">Founder · fiberglass boat brand concept</span>
+            </div>
+            <span class="tag">Maritime · Owned</span>
+            <p class="scope">
+              Speedboats, sport-fishing, and passenger boats. Brand positioning, visual
+              direction, and maritime go-to-market. Incubated alongside the IMI operating work.
+            </p>
+          </article>
+
+          <article class="venture">
+            <span class="v-icon" aria-hidden="true"><svg class="ico"><use href="#i-spark"/></svg></span>
+            <div>
+              <span class="name">Street Talk, UrbanLuxe Atelier, Skelup</span>
+              <span class="role">Founder · brand and product concepts in incubation</span>
+            </div>
+            <span class="tag">Multi · Incubating</span>
+            <p class="scope">
+              A speaking-first English brand, a premium retail concept, and an AI solopreneur
+              hub. Each built from positioning to product concept inside my venture lab.
+            </p>
+          </article>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- RECEIPTS -->
+    <section id="receipts" aria-label="Selected receipts">
+      <div class="wrap">
+        <h2 class="reveal">Receipts.</h2>
+        <div class="receipts-prose reveal d1">
+          <p>
+            At <span class="src">Wall Street English Indonesia</span>, I was brought in as
+            strategic partner to <strong>rebuild the strategy framework and company metrics</strong>,
+            helping the business return to profit and hit an all-time-high revenue mark of
+            <b>Rp156&nbsp;billion</b> within 1.5 years<sup class="fn"><a href="#n1">1</a></sup>.
+            At <span class="src">Hacktiv8</span>, I contributed to <b>+200%</b> course-registration
+            growth<sup class="fn"><a href="#n1">1</a></sup>.
+            At <span class="src">Aboitiz / KicauFest</span>, I helped run three seasons of community
+            campaigns reaching <b>10M+</b> people and growing the community by <b>30K+</b><sup class="fn"><a href="#n1">1</a></sup>.
+            At <span class="src">HypeBuzz</span>, viral content campaigns hit <b>3.1M</b> TikTok
+            views and <b>670K</b> engagement<sup class="fn"><a href="#n1">1</a></sup>.
+            <span class="src">Calibreworks</span> earned a place in <b>Clutch.co's Top 100</b>
+            digital agencies. Through <span class="src">We Are Infiniti</span>, I've supported
+            <b>300+</b> business owners and brands, and mentored <b>50+</b> young entrepreneurs
+            through <span class="src">Growthlab Academy</span>.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- BUILT (Tools + Frameworks) -->
+    <section id="built" aria-label="Tools and frameworks I built">
+      <div class="wrap">
+        <h2 class="reveal">Tools and frameworks I built.</h2>
+        <p class="prose reveal d1" style="color:var(--muted);max-width:48ch;margin-bottom:var(--s-6);">
+          One person can't run eight ventures by hand. The stack below is what makes
+          it possible. AI copilots, ads engines, content systems, and proprietary
+          frameworks. The same tooling runs across the entire portfolio.
+        </p>
+
+        <dl class="built reveal d2">
+          <dt><span class="kind">AI Copilot</span><span class="b-icon" aria-hidden="true"><svg class="ico"><use href="#i-copilot"/></svg></span><span class="name">William 3.0</span></dt>
+          <dd>Growth and revenue copilot for funnel analysis, campaign review, KPI tracking, and revenue forecasting. The first AI I trust to read a P&amp;L.</dd>
+
+          <dt><span class="kind">Agent System</span><span class="b-icon" aria-hidden="true"><svg class="ico"><use href="#i-network"/></svg></span><span class="name">Andrew Bayu Agent System v1</span></dt>
+          <dd>Personal AI operating system. Encodes my strategic thinking, tone, marketing logic, and decision heuristics into a single multi-mode agent.</dd>
+
+          <dt><span class="kind">Ads Engine</span><span class="b-icon" aria-hidden="true"><svg class="ico"><use href="#i-target"/></svg></span><span class="name">Andromeda Ads Engine</span></dt>
+          <dd>Proprietary paid-ads system. Funnel planning, creative testing, budget allocation, and signal-based scaling. Used across every brand I run ads for.</dd>
+
+          <dt><span class="kind">Creative Kit</span><span class="b-icon" aria-hidden="true"><svg class="ico"><use href="#i-zap"/></svg></span><span class="name">Ad-in-a-Box Kit</span></dt>
+          <dd>AI-powered production kit for hooks, angles, and rapid creative variants. Built for founders who can't afford a creative team yet.</dd>
+
+          <dt><span class="kind">Content System</span><span class="b-icon" aria-hidden="true"><svg class="ico"><use href="#i-stack"/></svg></span><span class="name">ContentStrategist Toolkit</span></dt>
+          <dd>Persona worksheets, strategy cards, content routes, a hook library, and AI prompts. Productised by Growthlab.</dd>
+
+          <dt><span class="kind">Framework</span><span class="b-icon" aria-hidden="true"><svg class="ico"><use href="#i-network"/></svg></span><span class="name">Growth Curve Method</span></dt>
+          <dd>Pillar, supporting, and content routes. The content framework that moves brands from random posting to a system.</dd>
+
+          <dt><span class="kind">Framework</span><span class="b-icon" aria-hidden="true"><svg class="ico"><use href="#i-network"/></svg></span><span class="name">AEO / AIO Strategy</span></dt>
+          <dd>Answer-Engine and AI Optimization. Content built to be retrieved, summarized, and recommended by AI systems. Written for the post-Google era.</dd>
+
+          <dt><span class="kind">Framework</span><span class="b-icon" aria-hidden="true"><svg class="ico"><use href="#i-network"/></svg></span><span class="name">Revenue Engine Model</span></dt>
+          <dd>Enterprise B2B growth engine. Inbound, outbound, ABM, SDR motion, partnership, upsell, and RevOps in one operating layout.</dd>
+
+          <dt><span class="kind">Web App</span><span class="b-icon" aria-hidden="true"><svg class="ico"><use href="#i-window"/></svg></span><span class="name">PeakMind</span></dt>
+          <dd>Gamified, Duolingo-style IQ and potential assessment. Archetype results, randomized question logic.</dd>
+
+          <dt><span class="kind">Generative</span><span class="b-icon" aria-hidden="true"><svg class="ico"><use href="#i-spark"/></svg></span><span class="name">CharaGen2</span></dt>
+          <dd>AI character generator with 400B+ combinations. Built for storytelling, games, and creative ideation.</dd>
+
+          <dt><span class="kind">Maritime AI</span><span class="b-icon" aria-hidden="true"><svg class="ico"><use href="#i-ship"/></svg></span><span class="name">Arxea</span></dt>
+          <dd>AI-assisted ship visualization in React and Gemini. Semi-trimaran hulls, cross-section logic, concept design for IMI.</dd>
+
+          <dt><span class="kind">Platform</span><span class="b-icon" aria-hidden="true"><svg class="ico"><use href="#i-hub"/></svg></span><span class="name">Skelup</span></dt>
+          <dd>AI solopreneur hub. A workspace for independent founders to build, automate, and scale with AI.</dd>
+        </dl>
+      </div>
+    </section>
+
+    <!-- BRANDS LINE -->
+    <section id="brands" aria-label="Brands in the lab">
+      <div class="wrap">
+        <h2 class="reveal">Brands in the lab.</h2>
+        <p class="brands-line reveal d1">
+          Designed end-to-end inside the venture lab: <b>Calibreworks</b>, <b>We Are Infiniti</b>,
+          <b>Growthlab</b>, <b>Genstarkids</b>, <b>Vantara Boat</b>, <b>Street Talk</b>,
+          <b>UrbanLuxe Atelier</b>, <b>Skelup</b>, <b>GenAcePrep</b>. Operating-seat brands:
+          <b>PT Inovasi Maritim</b>, <b>Wall Street English Indonesia</b>, <b>CURIOOkids</b>,
+          <b>INDIES</b>. A venture builder's job is not to pick winners. It is to make winners.
+        </p>
+      </div>
+    </section>
+
+    <!-- CONTACT -->
+    <section id="contact" aria-label="Contact">
+      <div class="wrap">
+        <h2 class="reveal">Have a venture to build?</h2>
+        <p class="lede reveal d1">
+          Hire me as a fractional CMO. Co-build a new company. Take an operator seat. Plug
+          my AI stack into an existing brand. If it's a venture worth building, I want to
+          hear about it.
+        </p>
+        <div class="contact-links reveal d2">
+          <a class="cta" href="mailto:andrew.bayu23@gmail.com">
+            <svg class="ico" aria-hidden="true"><use href="#i-mail"/></svg>
+            <span>andrew.bayu23@gmail.com</span>
+            <svg class="ico" aria-hidden="true"><use href="#i-arrow"/></svg>
+          </a>
+          <a class="social" href="https://www.linkedin.com/in/aditya-indra-bayu-38a11271/" target="_blank" rel="noopener">
+            <svg class="ico" aria-hidden="true"><use href="#i-linkedin"/></svg>
+            <span>LinkedIn</span>
+          </a>
+          <a class="social" href="https://instagram.com/adityaindra.bayu" target="_blank" rel="noopener">
+            <svg class="ico" aria-hidden="true"><use href="#i-instagram"/></svg>
+            <span>Instagram</span>
+          </a>
+          <a class="social" href="https://www.tiktok.com/@adityaindra.bayu" target="_blank" rel="noopener">
+            <svg class="ico" aria-hidden="true"><use href="#i-tiktok"/></svg>
+            <span>TikTok</span>
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <!-- FOOTNOTES -->
+    <section class="notes" aria-label="Notes">
+      <div class="wrap">
+        <ol>
+          <li id="n1">
+            Reported case figures (Rp156B, +200% registrations, reach and engagement counts)
+            reflect contributions to team outcomes during the engagements described, not
+            sole-authored results.
+          </li>
+        </ol>
+      </div>
+    </section>
+
+  </main>
+
+  <footer class="wrap">
+    <span class="who-line"><span class="mark" aria-hidden="true"></span> © 2026 Aditya Indra Bayu</span>
+    <span>Venture Builder · Indonesia</span>
+  </footer>
+
+  <script>
+    document.documentElement.classList.remove('no-js');
+    const reduced = matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+    /* ---------- Nav: border on scroll + over-hero color flip ---------- */
+    const nav = document.querySelector('nav.top');
+    const hero = document.querySelector('header.hero');
+    const updateNav = () => {
+      const scrolledPast = window.scrollY > 4;
+      nav.classList.toggle('scrolled', scrolledPast);
+      const heroRect = hero.getBoundingClientRect();
+      const overHero = heroRect.bottom > 40;
+      document.body.classList.toggle('over-hero', overHero);
+    };
+    document.addEventListener('scroll', updateNav, { passive: true });
+    updateNav();
+
+    /* ---------- Scroll reveal ---------- */
+    if (!reduced) {
+      const io = new IntersectionObserver((entries) => {
+        entries.forEach((e) => {
+          if (e.isIntersecting) {
+            e.target.classList.add('in');
+            io.unobserve(e.target);
+          }
+        });
+      }, { threshold: 0.12, rootMargin: '0px 0px -8% 0px' });
+      document.querySelectorAll('.reveal').forEach((el) => io.observe(el));
+    } else {
+      document.querySelectorAll('.reveal').forEach((el) => el.classList.add('in'));
+    }
+
+    /* ---------- WebGL fluid hero ---------- */
+    (() => {
+      if (reduced) return; // Static gradient is the reduced-motion mode.
+
+      const canvas = document.getElementById('hero-canvas');
+      if (!canvas) return;
+      const gl = canvas.getContext('webgl', { antialias: false, alpha: true, premultipliedAlpha: false, powerPreference: 'low-power' });
+      if (!gl) { document.documentElement.classList.add('no-webgl'); return; }
+
+      const VERT = `
+        attribute vec2 a_pos;
+        void main() { gl_Position = vec4(a_pos, 0.0, 1.0); }
+      `;
+
+      const FRAG = `
+        precision highp float;
+        uniform float u_time;
+        uniform vec2  u_res;
+        uniform vec2  u_mouse;     // 0..1, smoothed
+        uniform float u_mouseAmp;  // 0..1 cursor activity
+
+        // hash + value noise (iq)
+        vec2 hash2(vec2 p) {
+          p = vec2(dot(p, vec2(127.1, 311.7)), dot(p, vec2(269.5, 183.3)));
+          return -1.0 + 2.0 * fract(sin(p) * 43758.5453123);
+        }
+        float noise(vec2 p) {
+          vec2 i = floor(p);
+          vec2 f = fract(p);
+          vec2 u = f * f * (3.0 - 2.0 * f);
+          return mix(
+            mix(dot(hash2(i + vec2(0.0, 0.0)), f - vec2(0.0, 0.0)),
+                dot(hash2(i + vec2(1.0, 0.0)), f - vec2(1.0, 0.0)), u.x),
+            mix(dot(hash2(i + vec2(0.0, 1.0)), f - vec2(0.0, 1.0)),
+                dot(hash2(i + vec2(1.0, 1.0)), f - vec2(1.0, 1.0)), u.x),
+            u.y);
+        }
+        float fbm(vec2 p) {
+          float v = 0.0;
+          float a = 0.5;
+          for (int i = 0; i < 5; i++) {
+            v += a * noise(p);
+            p *= 2.02;
+            a *= 0.5;
+          }
+          return v;
+        }
+
+        // sRGB approximations of OKLCH brand teal stops
+        // these were precomputed; the shader interpolates in linear-ish sRGB
+        const vec3 cDeep   = vec3(0.020, 0.062, 0.082);  // L 0.12, c 0.04
+        const vec3 cBase   = vec3(0.045, 0.135, 0.170);  // L 0.20, c 0.06
+        const vec3 cMid    = vec3(0.095, 0.245, 0.295);  // L 0.32, c 0.085
+        const vec3 cBright = vec3(0.230, 0.495, 0.540);  // L 0.56, c 0.10
+        const vec3 cMint   = vec3(0.530, 0.770, 0.770);  // L 0.78, c 0.07
+
+        void main() {
+          vec2 uv = gl_FragCoord.xy / u_res.xy;
+          vec2 p = uv * 2.0 - 1.0;
+          p.x *= u_res.x / u_res.y;
+
+          float t = u_time * 0.06;
+
+          // cursor pull
+          vec2 m = u_mouse * 2.0 - 1.0;
+          m.x *= u_res.x / u_res.y;
+          float md = length(p - m);
+          float pull = exp(-md * 1.4) * (0.35 + 0.65 * u_mouseAmp);
+
+          // domain warp x2
+          vec2 q = vec2(
+            fbm(p * 1.10 + vec2(t * 1.3, 0.0)),
+            fbm(p * 1.10 + vec2(0.0, t * 1.1))
+          );
+          q += pull * (m - p) * 0.6;
+
+          vec2 r = vec2(
+            fbm(p + q + vec2(1.7, 9.2) + 0.13 * t),
+            fbm(p + q + vec2(8.3, 2.8) + 0.11 * t)
+          );
+          float n = fbm(p + 2.0 * r);
+          n = smoothstep(-0.6, 0.9, n);
+
+          vec3 col = cDeep;
+          col = mix(col, cBase,   smoothstep(0.05, 0.35, n));
+          col = mix(col, cMid,    smoothstep(0.35, 0.65, n));
+          col = mix(col, cBright, smoothstep(0.62, 0.85, n));
+          col = mix(col, cMint,   smoothstep(0.85, 0.98, n) * 0.45);
+
+          // soft radial vignette pulled toward upper-left for editorial weight
+          vec2 vc = uv - vec2(0.34, 0.42);
+          vc.x *= u_res.x / u_res.y;
+          float vig = smoothstep(1.25, 0.10, length(vc));
+          col *= 0.55 + 0.55 * vig;
+
+          // gentle grain to dissolve banding
+          float g = (fract(sin(dot(gl_FragCoord.xy, vec2(12.9898, 78.233))) * 43758.5453) - 0.5) * 0.012;
+          col += g;
+
+          gl_FragColor = vec4(col, 1.0);
+        }
+      `;
+
+      const compile = (type, src) => {
+        const s = gl.createShader(type);
+        gl.shaderSource(s, src); gl.compileShader(s);
+        if (!gl.getShaderParameter(s, gl.COMPILE_STATUS)) {
+          console.warn('shader compile:', gl.getShaderInfoLog(s));
+          return null;
+        }
+        return s;
+      };
+      const vs = compile(gl.VERTEX_SHADER, VERT);
+      const fs = compile(gl.FRAGMENT_SHADER, FRAG);
+      if (!vs || !fs) { document.documentElement.classList.add('no-webgl'); return; }
+      const prog = gl.createProgram();
+      gl.attachShader(prog, vs); gl.attachShader(prog, fs); gl.linkProgram(prog);
+      if (!gl.getProgramParameter(prog, gl.LINK_STATUS)) { document.documentElement.classList.add('no-webgl'); return; }
+      gl.useProgram(prog);
+
+      // fullscreen quad
+      const buf = gl.createBuffer();
+      gl.bindBuffer(gl.ARRAY_BUFFER, buf);
+      gl.bufferData(gl.ARRAY_BUFFER, new Float32Array([-1, -1,  1, -1,  -1, 1,  1, 1]), gl.STATIC_DRAW);
+      const loc = gl.getAttribLocation(prog, 'a_pos');
+      gl.enableVertexAttribArray(loc);
+      gl.vertexAttribPointer(loc, 2, gl.FLOAT, false, 0, 0);
+
+      const uTime  = gl.getUniformLocation(prog, 'u_time');
+      const uRes   = gl.getUniformLocation(prog, 'u_res');
+      const uMouse = gl.getUniformLocation(prog, 'u_mouse');
+      const uAmp   = gl.getUniformLocation(prog, 'u_mouseAmp');
+
+      // smoothed mouse + activity decay
+      let mx = 0.5, my = 0.5, tx = 0.5, ty = 0.5, amp = 0.0;
+      const onMove = (e) => {
+        const rect = canvas.getBoundingClientRect();
+        if (rect.bottom < 0) return;
+        tx = (e.clientX - rect.left) / rect.width;
+        ty = 1.0 - (e.clientY - rect.top) / rect.height;
+        tx = Math.max(0, Math.min(1, tx));
+        ty = Math.max(0, Math.min(1, ty));
+        amp = Math.min(1, amp + 0.18);
+      };
+      window.addEventListener('pointermove', onMove, { passive: true });
+
+      // size handling with capped DPR for perf
+      const resize = () => {
+        const rect = canvas.getBoundingClientRect();
+        const dpr = Math.min(window.devicePixelRatio || 1, 1.5);
+        const w = Math.max(1, Math.floor(rect.width * dpr));
+        const h = Math.max(1, Math.floor(rect.height * dpr));
+        if (canvas.width !== w || canvas.height !== h) {
+          canvas.width = w; canvas.height = h;
+          gl.viewport(0, 0, w, h);
+        }
+      };
+      resize();
+      window.addEventListener('resize', resize, { passive: true });
+
+      // pause off-screen
+      let visible = true;
+      const vio = new IntersectionObserver((entries) => {
+        entries.forEach((e) => { visible = e.isIntersecting; });
+      }, { threshold: 0 });
+      vio.observe(canvas);
+
+      // pause when tab hidden
+      document.addEventListener('visibilitychange', () => { visible = !document.hidden && visible; });
+
+      const t0 = performance.now();
+      let last = t0;
+      const frame = (now) => {
+        const dt = Math.min(64, now - last) / 1000;
+        last = now;
+        if (visible) {
+          // smooth mouse
+          mx += (tx - mx) * Math.min(1, dt * 4.5);
+          my += (ty - my) * Math.min(1, dt * 4.5);
+          amp = Math.max(0, amp - dt * 0.55);
+
+          resize();
+          gl.uniform1f(uTime, (now - t0) / 1000);
+          gl.uniform2f(uRes, canvas.width, canvas.height);
+          gl.uniform2f(uMouse, mx, my);
+          gl.uniform1f(uAmp, amp);
+          gl.drawArrays(gl.TRIANGLE_STRIP, 0, 4);
+        }
+        requestAnimationFrame(frame);
+      };
+      requestAnimationFrame(frame);
+    })();
+  </script>
+</body>
+</html>
