@@ -419,27 +419,39 @@
   @media (max-width: 720px) { .how-grid { grid-template-columns: 1fr; gap: var(--s-4); } }
 
   /* ---------- Ventures: definition list ---------- */
+  /* ---------- Ventures: accordion ---------- */
   .ventures { margin-top: var(--s-3); }
-  .venture {
-    display: grid;
-    grid-template-columns: 2em 1fr 9rem;
-    column-gap: var(--s-4);
-    row-gap: var(--s-2);
-    padding: var(--s-5) 0;
+  details.venture {
     border-bottom: 1px solid var(--line);
-    align-items: baseline;
     transition: background var(--dur-fast) var(--ease-out);
   }
-  .venture:first-of-type { border-top: 1px solid var(--line); }
-  .venture:hover { background: color-mix(in oklab, var(--primary) 3%, transparent); }
-  .venture:hover .v-icon { transform: translateY(0.15em) scale(1.08); }
-  .venture .v-icon { transition: transform var(--dur-fast) var(--ease-out); }
-  .venture .name {
-    font-size: var(--t-h3);
+  details.venture:first-of-type { border-top: 1px solid var(--line); }
+  details.venture:hover { background: color-mix(in oklab, var(--primary) 3%, transparent); }
+  details.venture[open] { background: color-mix(in oklab, var(--primary) 2.5%, transparent); }
+
+  details.venture > summary {
+    list-style: none;
+    cursor: pointer;
+    display: grid;
+    grid-template-columns: 2em 1fr 9rem 1.5em;
+    column-gap: var(--s-4);
+    align-items: center;
+    padding: var(--s-4) 0;
+    user-select: none;
+  }
+  details.venture > summary::-webkit-details-marker { display: none; }
+  details.venture > summary::marker { content: ""; }
+
+  details.venture:hover .v-icon { transform: translateY(0) scale(1.08); }
+  details.venture .v-icon { transition: transform var(--dur-fast) var(--ease-out); transform: translateY(0); }
+
+  details.venture .name {
+    font-size: 1.15rem;
     font-weight: 600;
     letter-spacing: -0.018em;
+    line-height: 1.25;
   }
-  .venture .role {
+  details.venture .role {
     display: block;
     font-size: var(--t-small);
     color: var(--muted);
@@ -447,17 +459,7 @@
     margin-top: 0.2em;
     letter-spacing: -0.005em;
   }
-  .venture .scope {
-    grid-column: 2;
-    color: var(--muted);
-    font-size: 0.97rem;
-    line-height: 1.55;
-    max-width: 58ch;
-    margin-top: var(--s-1);
-  }
-  .venture .tag {
-    grid-row: 1;
-    grid-column: 3;
+  details.venture .tag {
     font-size: var(--t-small);
     color: var(--faint);
     text-align: right;
@@ -465,9 +467,60 @@
     white-space: nowrap;
     font-variant-numeric: tabular-nums;
   }
+  details.venture .v-chevron {
+    display: inline-flex; align-items: center; justify-content: center;
+    color: var(--faint);
+    width: 1em; height: 1em;
+    transition: transform var(--dur-fast) var(--ease-out), color var(--dur-fast) var(--ease-out);
+  }
+  details.venture:hover .v-chevron { color: var(--ink); }
+  details.venture[open] .v-chevron { transform: rotate(90deg); color: var(--primary); }
+
+  details.venture > .scope {
+    color: var(--muted);
+    font-size: 0.97rem;
+    line-height: 1.55;
+    max-width: 58ch;
+    padding: 0 0 var(--s-5) calc(2em + var(--s-4));
+    margin-top: calc(-1 * var(--s-2));
+  }
+
+  /* Accordion-controls row */
+  .ventures-controls {
+    display: flex; gap: var(--s-3);
+    margin: 0 0 var(--s-3);
+    align-items: center;
+  }
+  .ventures-controls button {
+    appearance: none;
+    background: none;
+    border: 1px solid var(--line);
+    border-radius: 100px;
+    padding: 0.45em 0.95em;
+    font: inherit;
+    font-size: var(--t-small);
+    font-weight: 500;
+    color: var(--muted);
+    cursor: pointer;
+    transition: all var(--dur-fast) var(--ease-out);
+  }
+  .ventures-controls button:hover {
+    border-color: var(--ink); color: var(--ink);
+  }
+  .ventures-controls button[aria-pressed="true"] {
+    border-color: var(--primary); color: var(--primary);
+  }
+
   @media (max-width: 720px) {
-    .venture { grid-template-columns: 2em 1fr; }
-    .venture .tag { grid-row: auto; grid-column: 2; text-align: left; color: var(--faint); }
+    details.venture > summary {
+      grid-template-columns: 2em 1fr 1.5em;
+      grid-template-rows: auto auto;
+      row-gap: var(--s-1);
+    }
+    details.venture .v-icon { grid-column: 1; grid-row: 1; }
+    details.venture summary > div { grid-column: 2; grid-row: 1; }
+    details.venture .tag { grid-column: 2; grid-row: 2; text-align: left; color: var(--faint); }
+    details.venture .v-chevron { grid-column: 3; grid-row: 1; }
   }
 
   /* ---------- Receipts: inline prose ---------- */
@@ -574,6 +627,103 @@
     .also { margin-left: 0; margin-top: var(--s-3); display: flex; flex-wrap: wrap; }
   }
 
+  /* ---------- Inquiry form ---------- */
+  .form-divider {
+    display: flex; align-items: center; gap: var(--s-3);
+    margin: var(--s-6) 0 var(--s-5);
+    color: var(--faint);
+    font-size: var(--t-micro);
+    font-weight: 600;
+    letter-spacing: var(--ls-label);
+    text-transform: uppercase;
+  }
+  .form-divider::before, .form-divider::after {
+    content: ""; flex: 1; height: 1px; background: var(--line);
+  }
+
+  .inquiry-form {
+    display: flex; flex-direction: column; gap: var(--s-3);
+    text-align: left;
+    max-width: 36rem;
+    margin: 0 auto;
+  }
+  .inquiry-form .field-row {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: var(--s-3);
+  }
+  @media (max-width: 560px) {
+    .inquiry-form .field-row { grid-template-columns: 1fr; }
+  }
+  .inquiry-form .field {
+    display: flex; flex-direction: column; gap: 0.4em;
+  }
+  .inquiry-form .label {
+    font-size: var(--t-micro);
+    font-weight: 500;
+    color: var(--muted);
+    letter-spacing: 0.02em;
+  }
+  .inquiry-form .label .req { color: var(--primary); margin-left: 0.2em; }
+  .inquiry-form input,
+  .inquiry-form select,
+  .inquiry-form textarea {
+    font: inherit;
+    font-size: var(--t-body);
+    color: var(--ink);
+    background: var(--bg);
+    border: 1px solid var(--line);
+    border-radius: 6px;
+    padding: 0.7em 0.9em;
+    transition: border-color var(--dur-fast) var(--ease-out), box-shadow var(--dur-fast) var(--ease-out);
+    width: 100%;
+    appearance: none;
+    -webkit-appearance: none;
+  }
+  .inquiry-form select {
+    background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%236b6b6b' stroke-width='1.5' stroke-linecap='round' stroke-linejoin='round'><path d='M6 9l6 6 6-6'/></svg>");
+    background-repeat: no-repeat;
+    background-position: right 0.9em center;
+    background-size: 1.1em;
+    padding-right: 2.4em;
+  }
+  .inquiry-form textarea { resize: vertical; min-height: 7em; }
+  .inquiry-form input:focus,
+  .inquiry-form select:focus,
+  .inquiry-form textarea:focus {
+    border-color: var(--primary);
+    box-shadow: 0 0 0 3px color-mix(in oklab, var(--primary) 18%, transparent);
+    outline: none;
+  }
+  .inquiry-form button[type="submit"] {
+    align-self: flex-start;
+    margin-top: var(--s-2);
+  }
+  .inquiry-form button[disabled] { opacity: 0.55; cursor: progress; }
+
+  .form-status {
+    min-height: 1.2em;
+    font-size: var(--t-small);
+    color: var(--muted);
+    text-align: left;
+  }
+  .form-status.ok { color: var(--primary); font-weight: 500; }
+  .form-status.err { color: oklch(0.55 0.18 25); font-weight: 500; }
+
+  .form-success {
+    text-align: left;
+    padding: var(--s-5);
+    border: 1px solid color-mix(in oklab, var(--primary) 30%, var(--line));
+    background: color-mix(in oklab, var(--primary) 4%, var(--bg));
+    border-radius: 8px;
+  }
+  .form-success h3 {
+    display: flex; align-items: center; gap: 0.55em;
+    color: var(--primary);
+    margin-bottom: var(--s-2);
+  }
+  .form-success p { color: var(--muted); }
+
   /* ---------- Footnotes ---------- */
   .notes {
     padding: var(--s-6) 0 var(--s-5);
@@ -650,6 +800,8 @@
       <symbol id="i-arrow" viewBox="0 0 24 24"><path d="M5 12h14M13 6l6 6-6 6" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" fill="none"/></symbol>
       <symbol id="i-clapper" viewBox="0 0 24 24"><path d="M3 9h18v10a1 1 0 01-1 1H4a1 1 0 01-1-1V9zM3 9l2-5h14l2 5M7 4l1.5 5M12 4l1.5 5M17 4l1.5 5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" fill="none"/></symbol>
       <symbol id="i-pen" viewBox="0 0 24 24"><path d="M4 20l1.5-4.5L15 6l4 4-9.5 9.5L5 21l-1-1zM13 8l3 3" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" fill="none"/><path d="M18.5 4.5l1 1" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" fill="none"/></symbol>
+      <symbol id="i-chevron" viewBox="0 0 24 24"><path d="M9 6l6 6-6 6" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" fill="none"/></symbol>
+      <symbol id="i-send" viewBox="0 0 24 24"><path d="M21 3L3 11l7 3 3 7L21 3zM10 14l5-5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" fill="none"/></symbol>
     </defs>
   </svg>
 
@@ -760,12 +912,6 @@
               else's company. In every case, I'm inside the machine, not beside it. That is
               the only meaningful difference between a venture builder and a consultant.
             </p>
-            <p>
-              I trained as an engineer, freelanced through college, then ran sales in Singapore
-              from 2014 to 2016, finishing as head of outbound. I came back to Indonesia, founded
-              Enderworks, evolved it into Calibreworks, and have been building ventures ever since.
-              Operator instincts, engineering brain, builder hands.
-            </p>
           </div>
         </div>
       </div>
@@ -775,133 +921,165 @@
     <section id="ventures" aria-label="Venture portfolio">
       <div class="wrap">
         <h2 class="reveal">The venture portfolio.</h2>
-        <p class="prose reveal d1" style="color:var(--muted);max-width:48ch;margin-bottom:var(--s-5);">
+        <p class="prose reveal d1" style="color:var(--muted);max-width:48ch;margin-bottom:var(--s-4);">
           Ten ventures across agency, education, maritime, film, and AI. Title, role, and what
-          the venture actually is.
+          the venture actually is. Tap any row to open.
         </p>
+
+        <div class="ventures-controls reveal d1" role="group" aria-label="Expand or collapse all ventures">
+          <button type="button" data-vc="expand">Expand all</button>
+          <button type="button" data-vc="collapse">Collapse all</button>
+        </div>
 
         <div class="ventures reveal d2">
 
-          <article class="venture">
-            <span class="v-icon" aria-hidden="true"><svg class="ico"><use href="#i-building"/></svg></span>
-            <div>
-              <span class="name">Calibreworks</span>
-              <span class="role">Chief Executive Officer · evolved from Enderworks (2016)</span>
-            </div>
-            <span class="tag">Agency · Owned</span>
+          <details class="venture">
+            <summary>
+              <span class="v-icon" aria-hidden="true"><svg class="ico"><use href="#i-building"/></svg></span>
+              <div>
+                <span class="name">Calibreworks</span>
+                <span class="role">Chief Executive Officer · evolved from Enderworks (2016)</span>
+              </div>
+              <span class="tag">Agency · Owned</span>
+              <span class="v-chevron" aria-hidden="true"><svg class="ico"><use href="#i-chevron"/></svg></span>
+            </summary>
             <p class="scope">
               Full-service digital agency in South Tangerang. App development, creative,
               digital marketing, lead generation, social, and web. Listed in
               <strong>Clutch.co's Top 100 digital agencies</strong>.
             </p>
-          </article>
+          </details>
 
-          <article class="venture">
-            <span class="v-icon" aria-hidden="true"><svg class="ico"><use href="#i-building"/></svg></span>
-            <div>
-              <span class="name">We Are Infiniti</span>
-              <span class="role">Founder &amp; Operator · PT Infiniti Media Galaksi</span>
-            </div>
-            <span class="tag">Agency · Owned</span>
+          <details class="venture">
+            <summary>
+              <span class="v-icon" aria-hidden="true"><svg class="ico"><use href="#i-building"/></svg></span>
+              <div>
+                <span class="name">We Are Infiniti</span>
+                <span class="role">Founder &amp; Operator · PT Infiniti Media Galaksi</span>
+              </div>
+              <span class="tag">Agency · Owned</span>
+              <span class="v-chevron" aria-hidden="true"><svg class="ico"><use href="#i-chevron"/></svg></span>
+            </summary>
             <p class="scope">
               Digital growth, creative, branding, and web-development agency. The internal
               engine I use to ship every other venture, while serving 300+ external brands.
             </p>
-          </article>
+          </details>
 
-          <article class="venture">
-            <span class="v-icon" aria-hidden="true"><svg class="ico"><use href="#i-edu"/></svg></span>
-            <div>
-              <span class="name">Growthlab Academy</span>
-              <span class="role">Founder · learn.growthlab.co.id</span>
-            </div>
-            <span class="tag">EdTech · Owned</span>
+          <details class="venture">
+            <summary>
+              <span class="v-icon" aria-hidden="true"><svg class="ico"><use href="#i-edu"/></svg></span>
+              <div>
+                <span class="name">Growthlab Academy</span>
+                <span class="role">Founder · learn.growthlab.co.id</span>
+              </div>
+              <span class="tag">EdTech · Owned</span>
+              <span class="v-chevron" aria-hidden="true"><svg class="ico"><use href="#i-chevron"/></svg></span>
+            </summary>
             <p class="scope">
               EdTech venture productising my own playbooks. ContentStrategist Toolkit, Growth
               Curve Method, and a mentoring layer for founders and marketers.
             </p>
-          </article>
+          </details>
 
-          <article class="venture">
-            <span class="v-icon" aria-hidden="true"><svg class="ico"><use href="#i-anchor"/></svg></span>
-            <div>
-              <span class="name">PT Inovasi Maritim Indonesia</span>
-              <span class="role">Chief Marketing Officer · operating partner</span>
-            </div>
-            <span class="tag">Maritime · Operator</span>
+          <details class="venture">
+            <summary>
+              <span class="v-icon" aria-hidden="true"><svg class="ico"><use href="#i-anchor"/></svg></span>
+              <div>
+                <span class="name">PT Inovasi Maritim Indonesia</span>
+                <span class="role">Chief Marketing Officer · operating partner</span>
+              </div>
+              <span class="tag">Maritime · Operator</span>
+              <span class="v-chevron" aria-hidden="true"><svg class="ico"><use href="#i-chevron"/></svg></span>
+            </summary>
             <p class="scope">
               Operating-seat venture in maritime and shipbuilding. Patrol boats, fiberglass
               speedboats, steel fishing vessels, B2G solutions. I built the brand and the
               demand engine around custom design, TKDN, and local after-sales.
             </p>
-          </article>
+          </details>
 
-          <article class="venture">
-            <span class="v-icon" aria-hidden="true"><svg class="ico"><use href="#i-books"/></svg></span>
-            <div>
-              <span class="name">Gentem Lifelong Learning</span>
-              <span class="role">Acting Head of Digital Marketing · WSE, CURIOOkids, INDIES</span>
-            </div>
-            <span class="tag">Education · Operator</span>
+          <details class="venture">
+            <summary>
+              <span class="v-icon" aria-hidden="true"><svg class="ico"><use href="#i-books"/></svg></span>
+              <div>
+                <span class="name">Gentem Lifelong Learning</span>
+                <span class="role">Acting Head of Digital Marketing · WSE, CURIOOkids, INDIES</span>
+              </div>
+              <span class="tag">Education · Operator</span>
+              <span class="v-chevron" aria-hidden="true"><svg class="ico"><use href="#i-chevron"/></svg></span>
+            </summary>
             <p class="scope">
               Embedded operator role across a multi-brand education group. Owned the funnel
               from traffic to lead, SQL, appointment, show, and paid enrollment.
             </p>
-          </article>
+          </details>
 
-          <article class="venture">
-            <span class="v-icon" aria-hidden="true"><svg class="ico"><use href="#i-edu"/></svg></span>
-            <div>
-              <span class="name">Genstarkids</span>
-              <span class="role">Founder · children's education brand (ages 3–12)</span>
-            </div>
-            <span class="tag">EdTech · Owned</span>
+          <details class="venture">
+            <summary>
+              <span class="v-icon" aria-hidden="true"><svg class="ico"><use href="#i-edu"/></svg></span>
+              <div>
+                <span class="name">Genstarkids</span>
+                <span class="role">Founder · children's education brand (ages 3–12)</span>
+              </div>
+              <span class="tag">EdTech · Owned</span>
+              <span class="v-chevron" aria-hidden="true"><svg class="ico"><use href="#i-chevron"/></svg></span>
+            </summary>
             <p class="scope">
               Built end-to-end. Brand, site, paid-appointment model, RIASEC-style profiling.
               Early pilot returned Rp14.5M from Rp5.7M ad spend across 20 paid appointments.
             </p>
-          </article>
+          </details>
 
-          <article class="venture">
-            <span class="v-icon" aria-hidden="true"><svg class="ico"><use href="#i-clapper"/></svg></span>
-            <div>
-              <span class="name">Kinema</span>
-              <span class="role">Founder &amp; super admin · film marketing platform</span>
-            </div>
-            <span class="tag">Film · Owned</span>
+          <details class="venture">
+            <summary>
+              <span class="v-icon" aria-hidden="true"><svg class="ico"><use href="#i-clapper"/></svg></span>
+              <div>
+                <span class="name">Kinema</span>
+                <span class="role">Founder &amp; super admin · film marketing platform</span>
+              </div>
+              <span class="tag">Film · Owned</span>
+              <span class="v-chevron" aria-hidden="true"><svg class="ico"><use href="#i-chevron"/></svg></span>
+            </summary>
             <p class="scope">
               Service-as-software for film &amp; IP clients. The Kinema team uses it
               internally to deliver audience analysis, box-office prediction, FIB decks,
               and visibility tracking. Multi-tenant Firebase auth, Gemini-powered analysis,
               real-time showtime data scraped from jadwalnonton.com.
             </p>
-          </article>
+          </details>
 
-          <article class="venture">
-            <span class="v-icon" aria-hidden="true"><svg class="ico"><use href="#i-ship"/></svg></span>
-            <div>
-              <span class="name">Vantara Boat</span>
-              <span class="role">Founder · fiberglass boat brand concept</span>
-            </div>
-            <span class="tag">Maritime · Owned</span>
+          <details class="venture">
+            <summary>
+              <span class="v-icon" aria-hidden="true"><svg class="ico"><use href="#i-ship"/></svg></span>
+              <div>
+                <span class="name">Vantara Boat</span>
+                <span class="role">Founder · fiberglass boat brand concept</span>
+              </div>
+              <span class="tag">Maritime · Owned</span>
+              <span class="v-chevron" aria-hidden="true"><svg class="ico"><use href="#i-chevron"/></svg></span>
+            </summary>
             <p class="scope">
               Speedboats, sport-fishing, and passenger boats. Brand positioning, visual
               direction, and maritime go-to-market. Incubated alongside the IMI operating work.
             </p>
-          </article>
+          </details>
 
-          <article class="venture">
-            <span class="v-icon" aria-hidden="true"><svg class="ico"><use href="#i-spark"/></svg></span>
-            <div>
-              <span class="name">Street Talk, UrbanLuxe Atelier, Skelup</span>
-              <span class="role">Founder · brand and product concepts in incubation</span>
-            </div>
-            <span class="tag">Multi · Incubating</span>
+          <details class="venture">
+            <summary>
+              <span class="v-icon" aria-hidden="true"><svg class="ico"><use href="#i-spark"/></svg></span>
+              <div>
+                <span class="name">Street Talk, UrbanLuxe Atelier, Skelup</span>
+                <span class="role">Founder · brand and product concepts in incubation</span>
+              </div>
+              <span class="tag">Multi · Incubating</span>
+              <span class="v-chevron" aria-hidden="true"><svg class="ico"><use href="#i-chevron"/></svg></span>
+            </summary>
             <p class="scope">
               A speaking-first English brand, a premium retail concept, and an AI solopreneur
               hub. Each built from positioning to product concept inside my venture lab.
             </p>
-          </article>
+          </details>
 
         </div>
       </div>
@@ -1013,9 +1191,9 @@
           hear about it.
         </p>
         <div class="contact-links reveal d2">
-          <a class="cta" href="mailto:andrew.bayu23@gmail.com">
+          <a class="cta" href="mailto:hi.andrewbayu@gmail.com">
             <svg class="ico" aria-hidden="true"><use href="#i-mail"/></svg>
-            <span>andrew.bayu23@gmail.com</span>
+            <span>hi.andrewbayu@gmail.com</span>
             <svg class="ico" aria-hidden="true"><use href="#i-arrow"/></svg>
           </a>
           <a class="social" href="https://www.linkedin.com/in/aditya-indra-bayu-38a11271/" target="_blank" rel="noopener">
@@ -1030,6 +1208,65 @@
             <svg class="ico" aria-hidden="true"><use href="#i-tiktok"/></svg>
             <span>TikTok</span>
           </a>
+        </div>
+
+        <div class="form-divider reveal d2"><span>Or send a structured inquiry</span></div>
+
+        <form name="contact" method="POST" data-netlify="true" netlify-honeypot="bot-field"
+              class="inquiry-form reveal d2" id="inquiry-form">
+          <input type="hidden" name="form-name" value="contact" />
+          <p hidden><label>Don't fill this out if you're human: <input name="bot-field" /></label></p>
+
+          <div class="field-row">
+            <label class="field">
+              <span class="label">Your name<span class="req" aria-hidden="true">*</span></span>
+              <input type="text" name="name" required autocomplete="name" />
+            </label>
+            <label class="field">
+              <span class="label">Email<span class="req" aria-hidden="true">*</span></span>
+              <input type="email" name="email" required autocomplete="email" />
+            </label>
+          </div>
+
+          <label class="field">
+            <span class="label">Company / role (optional)</span>
+            <input type="text" name="company" autocomplete="organization" placeholder="e.g. Head of Marketing at Acme" />
+          </label>
+
+          <label class="field">
+            <span class="label">Engagement type<span class="req" aria-hidden="true">*</span></span>
+            <select name="engagement_type" required>
+              <option value="" disabled selected>What are you looking for?</option>
+              <option value="fractional-cmo">Fractional CMO</option>
+              <option value="co-build-venture">Co-build a venture</option>
+              <option value="ai-stack-license">Plug your AI stack into our brand</option>
+              <option value="agency-services">Calibreworks / We Are Infiniti agency services</option>
+              <option value="speaking-mentoring">Speaking / mentoring</option>
+              <option value="other">Something else</option>
+            </select>
+          </label>
+
+          <label class="field">
+            <span class="label">What you'd like to discuss<span class="req" aria-hidden="true">*</span></span>
+            <textarea name="message" rows="5" required
+                      placeholder="A few sentences about the brand, the stage, and what you're trying to unblock."></textarea>
+          </label>
+
+          <button type="submit" class="cta">
+            <svg class="ico" aria-hidden="true"><use href="#i-send"/></svg>
+            <span>Send inquiry</span>
+            <svg class="ico" aria-hidden="true"><use href="#i-arrow"/></svg>
+          </button>
+
+          <div class="form-status" role="status" aria-live="polite"></div>
+        </form>
+
+        <div class="form-success reveal" id="form-success" hidden>
+          <h3>
+            <svg class="ico" aria-hidden="true"><use href="#i-pulse"/></svg>
+            Inquiry received.
+          </h3>
+          <p>Thanks for reaching out. I'll reply from <strong>hi.andrewbayu@gmail.com</strong> within 48 hours.</p>
         </div>
       </div>
     </section>
@@ -1085,6 +1322,73 @@
     } else {
       document.querySelectorAll('.reveal').forEach((el) => el.classList.add('in'));
     }
+
+    /* ---------- Ventures: expand-all / collapse-all controls ---------- */
+    (() => {
+      const ctrls = document.querySelectorAll('.ventures-controls button');
+      const ventures = document.querySelectorAll('details.venture');
+      if (!ctrls.length || !ventures.length) return;
+      const sync = () => {
+        const allOpen = [...ventures].every(d => d.open);
+        const allClosed = [...ventures].every(d => !d.open);
+        ctrls.forEach(b => {
+          if (b.dataset.vc === 'expand') b.setAttribute('aria-pressed', allOpen);
+          if (b.dataset.vc === 'collapse') b.setAttribute('aria-pressed', allClosed);
+        });
+      };
+      ctrls.forEach(b => b.addEventListener('click', () => {
+        const open = b.dataset.vc === 'expand';
+        ventures.forEach(d => { d.open = open; });
+        sync();
+      }));
+      ventures.forEach(d => d.addEventListener('toggle', sync));
+      sync();
+    })();
+
+    /* ---------- Inquiry form: AJAX submit + inline success ---------- */
+    (() => {
+      const form = document.getElementById('inquiry-form');
+      const success = document.getElementById('form-success');
+      if (!form) return;
+      const status = form.querySelector('.form-status');
+      const submit = form.querySelector('button[type="submit"]');
+
+      form.addEventListener('submit', async (e) => {
+        e.preventDefault();
+        status.className = 'form-status';
+        status.textContent = 'Sending…';
+        submit.disabled = true;
+
+        try {
+          const data = new FormData(form);
+          // honeypot trip
+          if (data.get('bot-field')) {
+            // pretend success to a bot
+            form.hidden = true; success.hidden = false;
+            success.scrollIntoView({ behavior: 'smooth', block: 'center' });
+            return;
+          }
+          const body = new URLSearchParams();
+          for (const [k, v] of data.entries()) body.append(k, v);
+
+          const resp = await fetch('/', {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
+            body: body.toString()
+          });
+          if (!resp.ok) throw new Error('HTTP ' + resp.status);
+
+          form.hidden = true;
+          success.hidden = false;
+          success.classList.add('in'); // make sure reveal isn't blocking
+          success.scrollIntoView({ behavior: 'smooth', block: 'center' });
+        } catch (err) {
+          status.className = 'form-status err';
+          status.textContent = 'Could not send. Email hi.andrewbayu@gmail.com directly, or try again in a moment.';
+          submit.disabled = false;
+        }
+      });
+    })();
 
     /* ---------- WebGL fluid hero ---------- */
     (() => {
