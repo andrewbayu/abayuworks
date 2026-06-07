@@ -58,8 +58,12 @@
   <nav class="top" aria-label="Primary">
     <div class="inner">
       <a class="who" href="/"><span class="mark" aria-hidden="true"></span>Aditya Indra Bayu</a>
-      <ol>
+      <button class="nav-toggle" id="nav-toggle" type="button" aria-label="Open menu" aria-expanded="false" aria-controls="nav-menu">
+        <span class="bars" aria-hidden="true"></span>
+      </button>
+      <ol id="nav-menu">
         <li><a href="/#ventures">Ventures</a></li>
+        <li><a href="/#receipts">Receipts</a></li>
         <li><a href="/#built">Built</a></li>
         <li><a href="/blog/">Writing</a></li>
         <li><a href="/#contact">Contact</a></li>
@@ -128,6 +132,8 @@
     <span><span class="mark" aria-hidden="true"></span>© 2026 Aditya Indra Bayu</span>
     <span>Venture Builder · Indonesia · <a class="link" href="/">home</a></span>
   </footer>
+
+  <script src="/blog/nav.js" defer></script>
 
 </body>
 </html>
