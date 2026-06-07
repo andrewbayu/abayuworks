@@ -491,28 +491,12 @@
   .venture .v-icon .ico { width: 100%; height: 100%; }
 
   /* ---------- Built items: kind icon ---------- */
-  .built dt {
-    grid-template-columns: 9rem 1.5em 1fr !important;
-    column-gap: var(--s-3) !important;
-  }
-  .built dt .b-icon {
+  .built-card .b-icon {
     color: var(--primary);
     display: inline-flex; align-items: center; justify-content: center;
     width: 1.25em; height: 1.25em;
-    transform: translateY(0.1em);
   }
-  .built dt .b-icon .ico { width: 100%; height: 100%; }
-  .built dd { padding-left: calc(9rem + 1.5em + var(--s-3) * 2) !important; }
-  @media (max-width: 640px) {
-    .built dt {
-      grid-template-columns: 1.25em 1fr !important;
-      grid-template-rows: auto auto;
-    }
-    .built dt .kind { grid-column: 1 / -1; grid-row: 1; }
-    .built dt .b-icon { grid-column: 1; grid-row: 2; }
-    .built dt .name { grid-column: 2; grid-row: 2; }
-    .built dd { padding-left: 0 !important; }
-  }
+  .built-card .b-icon .ico { width: 100%; height: 100%; }
 
   /* ---------- Contact: social icons ---------- */
   .contact-links {
@@ -692,45 +676,45 @@
     background: none; padding: 0;
   }
 
-  /* ---------- What I've built: kind + name + note ---------- */
-  .built {
-    display: grid; grid-template-columns: 1fr; gap: 0;
-  }
-  .built dt {
+  /* ---------- What I've built: boxed 2-column grid ---------- */
+  .built-grid {
     display: grid;
-    grid-template-columns: 9rem 1fr;
-    column-gap: var(--s-4);
-    padding-top: var(--s-4);
-    align-items: baseline;
+    grid-template-columns: repeat(2, 1fr);
+    gap: var(--s-3);
   }
-  .built dt .kind {
+  .built-card {
+    display: flex; flex-direction: column;
+    border: 1px solid var(--line);
+    border-radius: 5px;
+    padding: var(--s-4);
+    background: var(--bg);
+    transition: border-color var(--dur-fast) var(--ease-out);
+  }
+  .built-card:hover { border-color: var(--faint); }
+  .built-card .b-head {
+    display: flex; align-items: center; gap: 0.55em;
+    margin-bottom: var(--s-2);
+  }
+  .built-card .kind {
     font-size: var(--t-micro);
     font-weight: 500;
     color: var(--faint);
     letter-spacing: var(--ls-label);
     text-transform: uppercase;
-    padding-top: 0.2em;
   }
-  .built dt .name {
+  .built-card .name {
     font-size: 1.1rem;
     font-weight: 600;
     letter-spacing: -0.015em;
+    margin-bottom: 0.4em;
   }
-  .built dd {
-    padding-left: calc(9rem + var(--s-4));
-    padding-bottom: var(--s-4);
-    border-bottom: 1px solid var(--line);
+  .built-card .note {
+    font-size: var(--t-small);
     color: var(--muted);
-    font-size: 0.97rem;
-    line-height: 1.55;
-    max-width: 56ch;
+    font-weight: 300;
+    line-height: 1.5;
   }
-  .built dt:first-of-type { padding-top: 0; }
-  @media (max-width: 640px) {
-    .built dt { grid-template-columns: 1fr; }
-    .built dd { padding-left: 0; }
-    .built dt .kind { padding-top: 0; margin-bottom: 0.2em; }
-  }
+  @media (max-width: 640px) { .built-grid { grid-template-columns: 1fr; } }
 
   /* ---------- Brands inline ---------- */
   .brands-line {
@@ -1276,53 +1260,80 @@
     <!-- BUILT (Tools + Frameworks) -->
     <section id="built" aria-label="Tools and frameworks I built">
       <div class="wrap">
-        <h2 class="reveal">Tools and frameworks I built.</h2>
+        <h2 class="reveal">Tools and frameworks.</h2>
         <p class="prose reveal d1" style="color:var(--muted);max-width:48ch;margin-bottom:var(--s-6);">
           One person can't run eight ventures by hand. The stack below is what makes
           it possible. AI copilots, ads engines, content systems, and proprietary
           frameworks. The same tooling runs across the entire portfolio.
         </p>
 
-        <dl class="built reveal d2">
-          <dt><span class="kind">AI Copilot</span><span class="b-icon" aria-hidden="true"><svg class="ico"><use href="#i-copilot"/></svg></span><span class="name">William 3.0</span></dt>
-          <dd>Growth and revenue copilot for funnel analysis, campaign review, KPI tracking, and revenue forecasting. The first AI I trust to read a P&amp;L.</dd>
-
-          <dt><span class="kind">Agent System</span><span class="b-icon" aria-hidden="true"><svg class="ico"><use href="#i-network"/></svg></span><span class="name">Andrew Bayu Agent System v1</span></dt>
-          <dd>Personal AI operating system. Encodes my strategic thinking, tone, marketing logic, and decision heuristics into a single multi-mode agent.</dd>
-
-          <dt><span class="kind">Framework</span><span class="b-icon" aria-hidden="true"><svg class="ico"><use href="#i-target"/></svg></span><span class="name">Level Ads Framework</span></dt>
-          <dd>Proprietary paid-ads framework. Levels of awareness mapped to funnel stages mapped to creative angles. Budget allocation, creative testing, and signal-based scaling, in one operating playbook. Used across every brand I run ads for.</dd>
-
-          <dt><span class="kind">Creative Kit</span><span class="b-icon" aria-hidden="true"><svg class="ico"><use href="#i-zap"/></svg></span><span class="name">Ad-in-a-Box Kit</span></dt>
-          <dd>AI-powered production kit for hooks, angles, and rapid creative variants. Built for founders who can't afford a creative team yet.</dd>
-
-          <dt><span class="kind">Content System</span><span class="b-icon" aria-hidden="true"><svg class="ico"><use href="#i-stack"/></svg></span><span class="name">ContentStrategist Toolkit</span></dt>
-          <dd>Persona worksheets, strategy cards, content routes, a hook library, and AI prompts. Productised by Growthlab.</dd>
-
-          <dt><span class="kind">Framework</span><span class="b-icon" aria-hidden="true"><svg class="ico"><use href="#i-network"/></svg></span><span class="name">Growth Curve Method</span></dt>
-          <dd>Pillar, supporting, and content routes. The content framework that moves brands from random posting to a system.</dd>
-
-          <dt><span class="kind">Framework</span><span class="b-icon" aria-hidden="true"><svg class="ico"><use href="#i-network"/></svg></span><span class="name">AEO / AIO Strategy</span></dt>
-          <dd>Answer-Engine and AI Optimization. Content built to be retrieved, summarized, and recommended by AI systems. Written for the post-Google era.</dd>
-
-          <dt><span class="kind">Framework</span><span class="b-icon" aria-hidden="true"><svg class="ico"><use href="#i-network"/></svg></span><span class="name">Revenue Engine Model</span></dt>
-          <dd>Enterprise B2B growth engine. Inbound, outbound, ABM, SDR motion, partnership, upsell, and RevOps in one operating layout.</dd>
-
-          <dt><span class="kind">Web App</span><span class="b-icon" aria-hidden="true"><svg class="ico"><use href="#i-window"/></svg></span><span class="name">PeakMind</span></dt>
-          <dd>Gamified, Duolingo-style IQ and potential assessment. Archetype results, randomized question logic.</dd>
-
-          <dt><span class="kind">Generative</span><span class="b-icon" aria-hidden="true"><svg class="ico"><use href="#i-spark"/></svg></span><span class="name">CharaGen2</span></dt>
-          <dd>AI character generator with 400B+ combinations. Built for storytelling, games, and creative ideation.</dd>
-
-          <dt><span class="kind">Content Generator</span><span class="b-icon" aria-hidden="true"><svg class="ico"><use href="#i-pen"/></svg></span><span class="name">Xniper</span></dt>
-          <dd>AI-powered content generator for marketing teams. Briefs in, on-brand articles, hooks, and angles out. Vite + React + Tailwind, Gemini for the model, Firebase for the workspace. Live at <a class="link" href="https://xniperapp.vercel.app" target="_blank" rel="noopener">xniperapp.vercel.app</a>.</dd>
-
-          <dt><span class="kind">Maritime AI</span><span class="b-icon" aria-hidden="true"><svg class="ico"><use href="#i-ship"/></svg></span><span class="name">Arxea</span></dt>
-          <dd>AI-assisted ship visualization in React and Gemini. Semi-trimaran hulls, cross-section logic, concept design for IMI.</dd>
-
-          <dt><span class="kind">Platform</span><span class="b-icon" aria-hidden="true"><svg class="ico"><use href="#i-hub"/></svg></span><span class="name">Skelup</span></dt>
-          <dd>AI solopreneur hub. A workspace for independent founders to build, automate, and scale with AI.</dd>
-        </dl>
+        <div class="built-grid reveal d2">
+          <div class="built-card">
+            <div class="b-head"><span class="b-icon" aria-hidden="true"><svg class="ico"><use href="#i-copilot"/></svg></span><span class="kind">AI Copilot</span></div>
+            <div class="name">William 3.0</div>
+            <p class="note">Growth and revenue copilot for funnel analysis, campaign review, KPI tracking, and revenue forecasting. Reliable enough to read a P&amp;L.</p>
+          </div>
+          <div class="built-card">
+            <div class="b-head"><span class="b-icon" aria-hidden="true"><svg class="ico"><use href="#i-network"/></svg></span><span class="kind">Agent System</span></div>
+            <div class="name">Andrew Bayu Agent System v1</div>
+            <p class="note">Personal AI operating system. Encodes Aditya's strategic thinking, tone, marketing logic, and decision heuristics into a single multi-mode agent.</p>
+          </div>
+          <div class="built-card">
+            <div class="b-head"><span class="b-icon" aria-hidden="true"><svg class="ico"><use href="#i-target"/></svg></span><span class="kind">Framework</span></div>
+            <div class="name">Level Ads Framework</div>
+            <p class="note">Proprietary paid-ads framework. Levels of awareness mapped to funnel stages mapped to creative angles. Budget allocation, creative testing, and signal-based scaling, in one operating playbook. Used across every brand in the portfolio.</p>
+          </div>
+          <div class="built-card">
+            <div class="b-head"><span class="b-icon" aria-hidden="true"><svg class="ico"><use href="#i-zap"/></svg></span><span class="kind">Creative Kit</span></div>
+            <div class="name">Ad-in-a-Box Kit</div>
+            <p class="note">AI-powered production kit for hooks, angles, and rapid creative variants. Built for founders who can't afford a creative team yet.</p>
+          </div>
+          <div class="built-card">
+            <div class="b-head"><span class="b-icon" aria-hidden="true"><svg class="ico"><use href="#i-stack"/></svg></span><span class="kind">Content System</span></div>
+            <div class="name">ContentStrategist Toolkit</div>
+            <p class="note">Persona worksheets, strategy cards, content routes, a hook library, and AI prompts. Productised by Growthlab.</p>
+          </div>
+          <div class="built-card">
+            <div class="b-head"><span class="b-icon" aria-hidden="true"><svg class="ico"><use href="#i-network"/></svg></span><span class="kind">Framework</span></div>
+            <div class="name">Growth Curve Method</div>
+            <p class="note">Pillar, supporting, and content routes. The content framework that moves brands from random posting to a system.</p>
+          </div>
+          <div class="built-card">
+            <div class="b-head"><span class="b-icon" aria-hidden="true"><svg class="ico"><use href="#i-network"/></svg></span><span class="kind">Framework</span></div>
+            <div class="name">AEO / AIO Strategy</div>
+            <p class="note">Answer-Engine and AI Optimization. Content built to be retrieved, summarized, and recommended by AI systems. Written for the post-Google era.</p>
+          </div>
+          <div class="built-card">
+            <div class="b-head"><span class="b-icon" aria-hidden="true"><svg class="ico"><use href="#i-network"/></svg></span><span class="kind">Framework</span></div>
+            <div class="name">Revenue Engine Model</div>
+            <p class="note">Enterprise B2B growth engine. Inbound, outbound, ABM, SDR motion, partnership, upsell, and RevOps in one operating layout.</p>
+          </div>
+          <div class="built-card">
+            <div class="b-head"><span class="b-icon" aria-hidden="true"><svg class="ico"><use href="#i-window"/></svg></span><span class="kind">Web App</span></div>
+            <div class="name">PeakMind</div>
+            <p class="note">Gamified, Duolingo-style IQ and potential assessment. Archetype results, randomized question logic.</p>
+          </div>
+          <div class="built-card">
+            <div class="b-head"><span class="b-icon" aria-hidden="true"><svg class="ico"><use href="#i-spark"/></svg></span><span class="kind">Generative</span></div>
+            <div class="name">CharaGen2</div>
+            <p class="note">AI character generator with 400B+ combinations. Built for storytelling, games, and creative ideation.</p>
+          </div>
+          <div class="built-card">
+            <div class="b-head"><span class="b-icon" aria-hidden="true"><svg class="ico"><use href="#i-pen"/></svg></span><span class="kind">Content Generator</span></div>
+            <div class="name">Xniper</div>
+            <p class="note">AI-powered content generator for marketing teams. Briefs in, on-brand articles, hooks, and angles out. Vite + React + Tailwind, Gemini for the model, Firebase for the workspace. Live at <a class="link" href="https://xniperapp.vercel.app" target="_blank" rel="noopener">xniperapp.vercel.app</a>.</p>
+          </div>
+          <div class="built-card">
+            <div class="b-head"><span class="b-icon" aria-hidden="true"><svg class="ico"><use href="#i-ship"/></svg></span><span class="kind">Maritime AI</span></div>
+            <div class="name">Arxea</div>
+            <p class="note">AI-assisted ship visualization in React and Gemini. Semi-trimaran hulls, cross-section logic, concept design for IMI.</p>
+          </div>
+          <div class="built-card">
+            <div class="b-head"><span class="b-icon" aria-hidden="true"><svg class="ico"><use href="#i-hub"/></svg></span><span class="kind">Platform</span></div>
+            <div class="name">Skelup</div>
+            <p class="note">AI solopreneur hub. A workspace for independent founders to build, automate, and scale with AI.</p>
+          </div>
+        </div>
       </div>
     </section>
 
