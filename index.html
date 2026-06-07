@@ -1598,77 +1598,64 @@
         uniform vec2  u_mouse;     // 0..1, smoothed
         uniform float u_mouseAmp;  // 0..1 cursor activity
 
-        // hash + value noise (iq)
-        vec2 hash2(vec2 p) {
-          p = vec2(dot(p, vec2(127.1, 311.7)), dot(p, vec2(269.5, 183.3)));
-          return -1.0 + 2.0 * fract(sin(p) * 43758.5453123);
-        }
-        float noise(vec2 p) {
-          vec2 i = floor(p);
-          vec2 f = fract(p);
-          vec2 u = f * f * (3.0 - 2.0 * f);
-          return mix(
-            mix(dot(hash2(i + vec2(0.0, 0.0)), f - vec2(0.0, 0.0)),
-                dot(hash2(i + vec2(1.0, 0.0)), f - vec2(1.0, 0.0)), u.x),
-            mix(dot(hash2(i + vec2(0.0, 1.0)), f - vec2(0.0, 1.0)),
-                dot(hash2(i + vec2(1.0, 1.0)), f - vec2(1.0, 1.0)), u.x),
-            u.y);
-        }
-        float fbm(vec2 p) {
-          float v = 0.0;
-          float a = 0.5;
-          for (int i = 0; i < 5; i++) {
-            v += a * noise(p);
-            p *= 2.02;
-            a *= 0.5;
-          }
-          return v;
-        }
-
         // sRGB approximations of OKLCH brand teal stops
-        // these were precomputed; the shader interpolates in linear-ish sRGB
-        const vec3 cDeep   = vec3(0.020, 0.062, 0.082);  // L 0.12, c 0.04
-        const vec3 cBase   = vec3(0.045, 0.135, 0.170);  // L 0.20, c 0.06
-        const vec3 cMid    = vec3(0.095, 0.245, 0.295);  // L 0.32, c 0.085
-        const vec3 cBright = vec3(0.230, 0.495, 0.540);  // L 0.56, c 0.10
-        const vec3 cMint   = vec3(0.530, 0.770, 0.770);  // L 0.78, c 0.07
+        const vec3 cDeep   = vec3(0.016, 0.054, 0.074);
+        const vec3 cBase   = vec3(0.040, 0.120, 0.155);
+        const vec3 cBright = vec3(0.230, 0.495, 0.540);
+        const vec3 cMint   = vec3(0.560, 0.790, 0.790);
 
         void main() {
           vec2 uv = gl_FragCoord.xy / u_res.xy;
-          vec2 p = uv * 2.0 - 1.0;
-          p.x *= u_res.x / u_res.y;
+          float aspect = u_res.x / u_res.y;
 
-          float t = u_time * 0.06;
+          vec2 p = uv;        p.x *= aspect;
+          vec2 m = u_mouse;   m.x *= aspect;
+          float t = u_time;
 
-          // cursor pull
-          vec2 m = u_mouse * 2.0 - 1.0;
-          m.x *= u_res.x / u_res.y;
+          // gentle global parallax toward cursor (depth)
+          p += (u_mouse - 0.5) * vec2(aspect, 1.0) * 0.015 * (0.4 + 0.6 * u_mouseAmp);
+
+          // deep teal diagonal base
+          float bg = clamp(uv.x * 0.55 + (1.0 - uv.y) * 0.75, 0.0, 1.0);
+          vec3 col = mix(cDeep, cBase, bg);
+
+          // --- dot grid ---
+          float cell = 0.05;
+
+          // displacement: slow wave + cursor pull
+          vec2 warp = 0.005 * vec2(sin(p.y * 16.0 + t * 0.6),
+                                   cos(p.x * 16.0 + t * 0.5));
           float md = length(p - m);
-          float pull = exp(-md * 1.4) * (0.35 + 0.65 * u_mouseAmp);
+          float pull = exp(-md * md * 5.0) * (0.35 + 0.65 * u_mouseAmp);
+          warp += (m - p) * pull * 0.14;
 
-          // domain warp x2
-          vec2 q = vec2(
-            fbm(p * 1.10 + vec2(t * 1.3, 0.0)),
-            fbm(p * 1.10 + vec2(0.0, t * 1.1))
-          );
-          q += pull * (m - p) * 0.6;
+          vec2 gp  = (p + warp) / cell;
+          vec2 gid = floor(gp);
+          vec2 gf  = fract(gp) - 0.5;
+          float d  = length(gf);
 
-          vec2 r = vec2(
-            fbm(p + q + vec2(1.7, 9.2) + 0.13 * t),
-            fbm(p + q + vec2(8.3, 2.8) + 0.11 * t)
-          );
-          float n = fbm(p + 2.0 * r);
-          n = smoothstep(-0.6, 0.9, n);
+          // subtle per-dot twinkle
+          float tw = 0.5 + 0.5 * sin(t * 1.1 + gid.x * 0.7 + gid.y * 0.5);
 
-          vec3 col = cDeep;
-          col = mix(col, cBase,   smoothstep(0.05, 0.35, n));
-          col = mix(col, cMid,    smoothstep(0.35, 0.65, n));
-          col = mix(col, cBright, smoothstep(0.62, 0.85, n));
-          col = mix(col, cMint,   smoothstep(0.85, 0.98, n) * 0.45);
+          float radius  = 0.12 + 0.05 * tw;
+          float dotMask = smoothstep(radius, radius * 0.45, d);
+
+          // cursor glow + concentric ripple
+          float glow   = exp(-md * md * 4.0) * (0.4 + 0.6 * u_mouseAmp);
+          float ripple = sin(md * 26.0 - t * 3.5) * exp(-md * 2.2) * u_mouseAmp;
+
+          vec3  dotCol   = mix(cBright * 0.55, cMint, clamp(glow + ripple * 0.5, 0.0, 1.0));
+          float dotAlpha = dotMask * (0.20 + 0.30 * tw + glow * 0.9 + max(ripple, 0.0) * 0.6);
+          col = mix(col, dotCol, clamp(dotAlpha, 0.0, 1.0));
+
+          // faint blueprint grid lines
+          vec2 lf = abs(fract(gp) - 0.5);
+          float line = smoothstep(0.48, 0.5, max(lf.x, lf.y));
+          col += cBright * line * 0.02;
 
           // soft radial vignette pulled toward upper-left for editorial weight
           vec2 vc = uv - vec2(0.34, 0.42);
-          vc.x *= u_res.x / u_res.y;
+          vc.x *= aspect;
           float vig = smoothstep(1.25, 0.10, length(vc));
           col *= 0.55 + 0.55 * vig;
 
