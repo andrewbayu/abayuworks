@@ -1,45 +1,23 @@
-# Writing (/blog) — how to add a post
+# Writing (/blog)
 
-Hand-authored, no build step. Every page is plain HTML linking the shared
-stylesheet at `/blog/style.css`, so you never copy CSS into a post.
+Hand-authored, no build step. Every page is plain HTML that links the shared
+stylesheet `/blog/style.css` and shared `/blog/nav.js`, so you never copy CSS or
+nav code into a post.
 
-## Add a new post
+## How to add a post
 
-1. **Create the folder + page**
+The full, canonical playbook lives in **[`/GUIDELINES.md`](../GUIDELINES.md) → §2 "Add a new article"**.
 
-   Copy the template:
-   ```
-   cp -r blog/wall-street-english-turnaround blog/<your-slug>
-   ```
-   Open `blog/<your-slug>/index.html` and update, near the top:
-   - `<title>` and `<meta name="description">`
-   - `<link rel="canonical">` → `https://aditya-bayu.netlify.app/blog/<your-slug>/`
-   - the `og:*` and `twitter:*` tags (title, description, url)
-   - the **JSON-LD** block: `headline`, `description`, `datePublished`,
-     `dateModified`, `url`, `mainEntityOfPage.@id`
-   Then write the body inside `<article>`.
-
-2. **List it** on `blog/index.html` — copy a `<li class="post-item">` block,
-   point it at `/blog/<your-slug>/`, newest on top.
-
-3. **Add it to the sitemap** — add a `<url>` entry in `/sitemap.xml`.
-
-4. **Ship it**
-   ```
-   git add -A && git commit -m "Post: <title>" && git push
-   ```
-   Live in ~10s (Netlify auto-deploy).
+Quick version:
+1. `cp -r blog/wall-street-english-turnaround blog/<your-slug>` (this is the template).
+2. Update the `<head>`: title, description, canonical, OG/Twitter, JSON-LD.
+3. Write the body inside `<article>`.
+4. Add a `<li class="post-item">` to `blog/index.html` (newest on top).
+5. Add the URL to `/sitemap.xml`.
+6. `git add -A && git commit -m "Post: <title>" && git push` → live in ~10s.
 
 ## Conventions
-- URLs are folder-style: `/blog/<slug>/` (clean, no `.html`).
-- Slugs: lowercase, hyphenated, stable. If you must rename, add a redirect
-  in `netlify.toml` so the old URL doesn't 404.
-- Voice + brand rules follow the homepage (see `LASTMEM.md`).
-- Keep the case-claim disclaimer line on any post citing figures.
-- Reusable building blocks in `style.css`: `.figure-grid`/`.figure-card`
-  (metric tiles), `.callout`, `.tags`, `blockquote`.
-
-## Optional upgrades later
-- Per-article OG image instead of the shared `/og-image.png`.
-- An RSS feed at `/blog/rss.xml` (good for distribution + AEO).
-- An `llms.txt` pointing at your articles.
+- URLs are folder-style: `/blog/<slug>/`. Slugs lowercase, hyphenated, stable.
+- If you rename a slug, add a redirect in `netlify.toml` so the old URL doesn't 404.
+- Reusable building blocks are in `style.css` (`.figure-grid`, `.callout`, `.tags`, `blockquote`).
+- Voice, SEO, and honesty rules: see `/GUIDELINES.md`.

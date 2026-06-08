@@ -1,6 +1,8 @@
 # LASTMEM — Project Memory for AI Agents
 
 > If you're an AI agent opening this repo cold, **read this file first.** It's the handoff doc Aditya leaves himself between sessions. Skim the top, then read sections that match the task.
+>
+> For the stable **rules and step-by-step playbooks** (how to add an article, edit the homepage, SEO/honesty checklists), see **`GUIDELINES.md`**. This file (LASTMEM) is current *state + history*; GUIDELINES is the *rulebook*.
 
 Last updated: 2026-06-07 by Claude. Big session: switched the whole site to **third-person voice**, rebuilt receipts and tools as **boxed 2-column grids**, replaced the WebGL hero with an **animated colored gradient + cursor spotlight**, added a **mobile burger menu**, and shipped a **/blog (Writing) section** with the first case studies. Several earlier rules in this doc were deliberately reversed this session — they're updated below.
 
