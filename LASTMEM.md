@@ -119,9 +119,12 @@ This session Aditya repeatedly chose flashier/more-structured over the original 
 
 ### Writing / blog
 - `/blog/` listing + articles at `/blog/<slug>/`. Hand-authored, no build step, shared `blog/style.css` + `blog/nav.js`.
-- Articles live so far:
-  - `wall-street-english-turnaround` — WSE strategy/metrics rebuild. **DRAFT, facts need Aditya's review.**
-  - `aboitiz-gold-coin-kicaufest` — Gold Coin / KicauFest community case study (written from the Projects & Campaign deck). **DRAFT, review facts.**
+- Articles live so far (5, all written from the Projects & Campaign deck — **DRAFTS, facts need Aditya's review**):
+  - `hypebuzz-brand-from-zero` — HypeBuzz trend-media brand built from zero (3.1M views, 5.2M reach, 670K engagement).
+  - `hacktiv8-scholarship-pr-campaign` — Hacktiv8 data-science scholarship, PR + performance, 8X ROAS.
+  - `bpr-triastra-rebrand` — BPR Hisobhan → BPR Triastra rebrand, #BeraniBerubah.
+  - `aboitiz-gold-coin-kicaufest` — Gold Coin / KicauFest community case study.
+  - `wall-street-english-turnaround` — WSE strategy/metrics rebuild.
 - Each post has: unique title/description, canonical, OG + Twitter, **BlogPosting JSON-LD**, disclaimer line. Listing has CollectionPage JSON-LD.
 - To add a post: see `blog/README.md`.
 
@@ -145,11 +148,10 @@ WSE Rp156B / Hacktiv8 +200% / Aboitiz·KicauFest 10M+ reach + 30K+ community / H
 ## 📌 Pending / open items
 
 - **Finish the third-person sweep.** Still likely first-person: the hero **h1** ("I start, operate, and scale ventures…"), the **How I work** section, and **Contact** copy. The receipts + tools grids are already neutralized.
-- **More case studies from the deck.** Source: `Aditya Indra Bayu - Projects & Campaign.pdf` (21-page deck Aditya uploaded). Strong candidates still to write: **Hacktiv8** (ROAS 8X, 12 national media), **BPR Hisobhan → #BeraniBerubah rebrand**, **We Are Infiniti** (brand from zero). A "Selected work" roundup could cover Bank Jateng, GermKiller, SilkyGirl (Genmatte launch), CIMB Niaga.
-- **Reconcile two data conflicts before publishing more receipts:**
-  1. **3.1M views / 670K engagement** — the deck attributes these to **We Are Infiniti**, but the homepage credits them to **HypeBuzz**. Confirm which is correct (avoid double-claiming).
-  2. **WSE revenue** — deck says **>$10M revenue / 300K leads**; homepage says **Rp156B**. Same account, different framings. Pick the canonical number.
-- **Both existing blog drafts need Aditya's fact review** before being treated as final.
+- **More case studies from the deck.** Source: `Aditya Indra Bayu - Projects & Campaign.pdf` (21-page deck Aditya uploaded). Still to write: **We Are Infiniti** (the agency itself — use the "brand/agency from zero, 300+ business owners" angle, NOT the HypeBuzz numbers, see resolved conflict below). A "Selected work" roundup could cover Bank Jateng, GermKiller, SilkyGirl (Genmatte launch), CIMB Niaga. (Done already: HypeBuzz, Hacktiv8, BPR Triastra, Aboitiz/KicauFest, WSE.)
+- **RESOLVED — 3.1M views / 670K engagement = HypeBuzz.** Aditya confirmed these are HypeBuzz's, not We Are Infiniti's. The deck's "We Are Infiniti" stat pages are actually HypeBuzz's brand metrics (HypeBuzz = the "brand built from zero"; We Are Infiniti is the agency watermark). Homepage is already correct. So a We Are Infiniti post must NOT reuse those numbers.
+- **Still open — WSE revenue framing.** Deck says **>$10M revenue / 300K leads**; homepage says **Rp156B**. Same account, different framings. Pick the canonical number with Aditya.
+- **All 5 blog drafts need Aditya's fact review** before being treated as final.
 - **Netlify form email notification** (still not done). Dashboard step: Forms → `contact` → Settings & usage → Outgoing notifications → Add Email → `hi.andrewbayu@gmail.com`. Can't be done from the code sandbox (no Netlify token, no dashboard access). Aditya said he'd set it up.
 - **Per-article OG images** (currently reuse the shared one), an **RSS feed** + **llms.txt** for the blog (good for AEO) — nice-to-haves.
 - **Google Search Console** sitemap submission. Future: custom domain.
@@ -174,18 +176,17 @@ WSE Rp156B / Hacktiv8 +200% / Aboitiz·KicauFest 10M+ reach + 30K+ community / H
 ## 📜 Recent commits (most recent first)
 
 ```
+d021190  Post: HypeBuzz trend-media brand-from-zero case study
+0981402  Merge: Hacktiv8 and BPR Triastra case studies
+9802f53  Merge: add GUIDELINES.md rulebook and playbooks
+42e469f  Merge: update LASTMEM handoff doc
 6a7595c  Merge: consistent nav across homepage and blog
-b0d68da  Make blog nav consistent with homepage: add Receipts link + burger menu
 a8ad02a  Merge: add Writing/blog section + KicauFest case study
-e1e66b6  Post: KicauFest / Gold Coin (Aboitiz) case study
-1af5d1e  Add hand-authored /blog: shared CSS, listing, case-study template, sitemap + nav link
 e84aeba  Merge: animated colored gradient hero with cursor spotlight
-16a8a46  Hero: replace WebGL with animated colored gradient + cursor spotlight
-62092be  Tools & frameworks as boxed 2-col grid; neutralize first-person copy
-208acb9  Receipts as boxed 2-col grid; add responsive burger menu
-03bab03  Hero lede: switch to third person, tighten copy
-23d4e15  Ship SEO pack (previous session)
+d1f43f9  Merge: third-person hero, boxed receipts + tools grids, burger menu
+23d4e15  Ship SEO pack (earlier session)
 ```
+Blog now has 5 case studies (HypeBuzz, Hacktiv8, BPR Triastra, Aboitiz/KicauFest, WSE). See `GUIDELINES.md` for how to add more.
 
 ---
 
