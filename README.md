@@ -6,7 +6,7 @@ Static `index.html`, no build step. Deploys to Netlify on push.
 
 ## Live
 
-- **Production:** https://aditya-bayu.netlify.app
+- **Production:** https://adityabayu.com
 
 ## Stack
 

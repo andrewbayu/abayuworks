@@ -4,7 +4,7 @@ The canonical rulebook. Follow this to keep the site consistent.
 Pair it with `LASTMEM.md` (which tracks current *state* and history);
 this file holds the stable *rules* and step-by-step *playbooks*.
 
-- **Live:** https://aditya-bayu.netlify.app
+- **Live:** https://adityabayu.com
 - **Deploy:** push to `main` → Netlify auto-deploys in ~10s. No build step.
 - **Homepage:** `index.html` (inline CSS + JS).
 - **Writing/blog:** `/blog/` — hand-authored HTML, shared `blog/style.css` + `blog/nav.js`.
@@ -50,7 +50,7 @@ Articles live at `/blog/<slug>/index.html`. One folder per post = clean URL `/bl
 2. **Update the `<head>`** in `blog/<your-slug>/index.html` — change ALL of these to match the post:
    - `<title>` → `<Post title> · Aditya Indra Bayu`
    - `<meta name="description">` (1–2 sentences, ~150 chars)
-   - `<link rel="canonical">` → `https://aditya-bayu.netlify.app/blog/<your-slug>/`
+   - `<link rel="canonical">` → `https://adityabayu.com/blog/<your-slug>/`
    - `og:title`, `og:description`, `og:url`
    - `twitter:title`, `twitter:description`
    - the **JSON-LD** block: `headline`, `description`, `datePublished`, `dateModified`, `url`, `mainEntityOfPage.@id`
