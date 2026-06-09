@@ -438,7 +438,7 @@
   .now-header .when {
     font-size: var(--t-micro);
     font-weight: 500;
-    color: var(--faint);
+    color: var(--muted);
     letter-spacing: var(--ls-label);
     text-transform: uppercase;
   }
@@ -588,7 +588,7 @@
   }
   details.venture .tag {
     font-size: var(--t-small);
-    color: var(--faint);
+    color: var(--muted);
     text-align: right;
     letter-spacing: -0.005em;
     white-space: nowrap;
@@ -646,7 +646,7 @@
     }
     details.venture .v-icon { grid-column: 1; grid-row: 1; }
     details.venture summary > div { grid-column: 2; grid-row: 1; }
-    details.venture .tag { grid-column: 2; grid-row: 2; text-align: left; color: var(--faint); }
+    details.venture .tag { grid-column: 2; grid-row: 2; text-align: left; color: var(--muted); }
     details.venture .v-chevron { grid-column: 3; grid-row: 1; }
   }
 
@@ -713,7 +713,7 @@
   .built-card .kind {
     font-size: var(--t-micro);
     font-weight: 500;
-    color: var(--faint);
+    color: var(--muted);
     letter-spacing: var(--ls-label);
     text-transform: uppercase;
   }
@@ -775,7 +775,7 @@
   .form-divider {
     display: flex; align-items: center; gap: var(--s-3);
     margin: var(--s-6) 0 var(--s-5);
-    color: var(--faint);
+    color: var(--muted);
     font-size: var(--t-micro);
     font-weight: 600;
     letter-spacing: var(--ls-label);
@@ -883,7 +883,7 @@
     padding: var(--s-6) 0 var(--s-5);
     border-top: 1px solid var(--line);
     font-size: var(--t-small);
-    color: var(--faint);
+    color: var(--muted);
     line-height: 1.6;
   }
   .notes ol { padding-left: 1.2em; }
@@ -894,7 +894,7 @@
     padding: var(--s-4) 0 var(--s-5);
     border-top: 1px solid var(--line);
     display: flex; justify-content: space-between; align-items: center;
-    font-size: var(--t-small); color: var(--faint);
+    font-size: var(--t-small); color: var(--muted);
     flex-wrap: wrap; gap: var(--s-2);
   }
   footer .who-line { display: flex; gap: var(--s-2); align-items: center; }
@@ -925,10 +925,23 @@
     outline-offset: 3px;
     border-radius: 2px;
   }
+
+  /* Skip link: off-screen until focused, then pinned top-left and visible */
+  .skip-link {
+    position: absolute; left: var(--s-3); top: var(--s-3);
+    z-index: 100;
+    transform: translateY(-150%);
+    background: var(--ink); color: var(--bg);
+    padding: 0.55em 0.9em; border-radius: 5px;
+    font-size: var(--t-small); font-weight: 500;
+    text-decoration: none;
+    transition: transform var(--dur-fast) var(--ease-out);
+  }
+  .skip-link:focus { transform: translateY(0); outline: 2px solid var(--primary); outline-offset: 2px; }
 </style>
 </head>
 <body>
-  <a href="#main" class="link" style="position:absolute;left:-9999px;top:0;">Skip to content</a>
+  <a href="#main" class="skip-link">Skip to content</a>
 
   <!-- Icon sprite. 18x18 viewBox via 24x24 paths. -->
   <svg width="0" height="0" style="position:absolute" aria-hidden="true" focusable="false">

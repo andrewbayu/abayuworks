@@ -24,6 +24,7 @@ this file holds the stable *rules* and step-by-step *playbooks*.
 - **Font:** Inter only (300–700). Weight does the hierarchy.
 - **Color:** white surface, near-black ink, single teal accent. Use the tokens, never hardcode hex:
   `--ink --muted --faint --line --primary --primary-h --bg`.
+- **Contrast (WCAG AA):** `--faint` is only 3.63:1 on white, so it is **decorative-only**: borders, separator dots (`·`), and icons. **Never use `--faint` for text** (labels, captions, meta rows). Use `--muted` (7.09:1) for quiet/secondary text. Body text is `--ink` (18.8:1). `--primary` on white is 7.81:1.
 - **Cards/boxes:** `border-radius: 5px`, 1px `--line` border, hover darkens border to `--faint`.
 - **Sections:** h2 + hairline divider. No tiny uppercase "eyebrow" labels above every section. No `01/02/03` numbering without a real sequence.
 - **Consistency across pages:** every page (homepage + all blog pages) uses the SAME nav: `Ventures · Receipts · Built · Writing · Contact`, with the burger menu on mobile. Blog pages link homepage sections with absolute paths (`/#receipts`).

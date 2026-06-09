@@ -63,6 +63,19 @@ a { color: inherit; }
 
 .wrap { max-width: var(--max-page); margin: 0 auto; padding: 0 var(--gutter); }
 
+/* Skip link: off-screen until focused, then pinned top-left and visible */
+.skip-link {
+  position: absolute; left: var(--s-3); top: var(--s-3);
+  z-index: 100;
+  transform: translateY(-150%);
+  background: var(--ink); color: var(--bg);
+  padding: 0.55em 0.9em; border-radius: 5px;
+  font-size: var(--t-small); font-weight: 500;
+  text-decoration: none;
+  transition: transform var(--dur-fast) var(--ease-out);
+}
+.skip-link:focus { transform: translateY(0); outline: 2px solid var(--primary); outline-offset: 2px; }
+
 /* ---------- Top nav (mirrors the homepage) ---------- */
 nav.top {
   position: sticky; top: 0; z-index: 50;
@@ -154,7 +167,7 @@ nav.top.menu-open .nav-toggle .bars::after { transform: translateY(-5px) rotate(
   box-shadow: 0 8px 28px oklch(0.18 0.01 220 / 0.07);
 }
 .post-item .post-meta {
-  font-size: var(--t-micro); color: var(--faint);
+  font-size: var(--t-micro); color: var(--muted);
   letter-spacing: var(--ls-label); text-transform: uppercase;
   display: flex; gap: var(--s-3); flex-wrap: wrap; margin-bottom: var(--s-3);
 }
@@ -185,7 +198,7 @@ nav.top.menu-open .nav-toggle .bars::after { transform: translateY(-5px) rotate(
 .article { padding: var(--s-7) 0 var(--s-8); }
 .article-head { max-width: var(--max-prose); margin: 0 auto var(--s-6); }
 .article-head .post-meta {
-  font-size: var(--t-micro); color: var(--faint);
+  font-size: var(--t-micro); color: var(--muted);
   letter-spacing: var(--ls-label); text-transform: uppercase;
   display: flex; gap: var(--s-3); flex-wrap: wrap; margin-bottom: var(--s-4);
 }
@@ -206,7 +219,7 @@ nav.top.menu-open .nav-toggle .bars::after { transform: translateY(-5px) rotate(
   color: var(--muted); font-style: italic;
 }
 .prose figure img { width: 100%; height: auto; border-radius: 5px; border: 1px solid var(--line); }
-.prose figure figcaption { font-size: var(--t-small); color: var(--faint); margin-top: var(--s-2); }
+.prose figure figcaption { font-size: var(--t-small); color: var(--muted); margin-top: var(--s-2); }
 .prose .callout {
   border: 1px solid var(--line); border-radius: 5px; padding: var(--s-4);
   background: color-mix(in oklab, var(--primary) 4%, var(--bg));
