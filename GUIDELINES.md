@@ -161,3 +161,29 @@ If a component is missing, add it to `blog/style.css` (not inline), using the to
 - [ ] Figures pass the honesty rules (§6); disclaimer present
 - [ ] Looked at it (local render or deploy preview), desktop AND mobile
 - [ ] Updated `LASTMEM.md` if the change is material
+
+---
+
+## 9. Session ID rule (applies to every AI agent/session)
+
+Every session — regardless of which AI is used — must generate a unique **session ID** and record it in `LASTMEM.md` before closing.
+
+**Format:** 2 uppercase letters + 3 digits. Examples: `KM847`, `PX302`, `AA018`.
+
+**Generate one in Python:**
+```python
+import random, string
+letters = [c for c in 'ABCDEFGHJKLMNPQRSTUVWXYZ']
+sid = random.choice(letters) + random.choice(letters) + ''.join(random.choices(string.digits, k=3))
+print(sid)  # e.g. KM847
+```
+
+**Where to record it in `LASTMEM.md`:**
+```
+## 🔖 Session log
+| ID    | Date       | Agent  | Summary of changes |
+|-------|------------|--------|--------------------|
+| AA018 | 2026-06-09 | Claude | Third-person sweep, inquiry ref ID |
+```
+
+**Start of next session:** confirm the last session ID from LASTMEM before doing any work. This proves the handoff doc is current.

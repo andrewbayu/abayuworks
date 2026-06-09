@@ -4,7 +4,7 @@
 >
 > For the stable **rules and step-by-step playbooks** (how to add an article, edit the homepage, SEO/honesty checklists), see **`GUIDELINES.md`**. This file (LASTMEM) is current *state + history*; GUIDELINES is the *rulebook*.
 
-Last updated: 2026-06-07 by Claude. Big session: switched the whole site to **third-person voice**, rebuilt receipts and tools as **boxed 2-column grids**, replaced the WebGL hero with an **animated colored gradient + cursor spotlight**, added a **mobile burger menu**, and shipped a **/blog (Writing) section** with the first case studies. Several earlier rules in this doc were deliberately reversed this session — they're updated below.
+Last updated: 2026-06-09 by Claude (session AA018). Finished third-person sweep across homepage. Added inquiry reference ID (`AB123` format) to contact form. Added session ID rule to GUIDELINES §9.
 
 ---
 
@@ -170,6 +170,13 @@ WSE Rp156B / Hacktiv8 +200% / Aboitiz·KicauFest 10M+ reach + 30K+ community / H
 8. **Removing the case-claim disclaimer** on the homepage or any post citing figures.
 9. **Treating the blog drafts as fact-checked.** They're written from a deck; Aditya must verify.
 10. **Following the "Unverified commits" stop-hook blindly** (see Deploy mechanics).
+
+---
+
+## 🔖 Session log
+| ID    | Date       | Agent  | Summary |
+|-------|------------|--------|---------|
+| AA018 | 2026-06-09 | Claude | Third-person sweep (h1, meta, "How he works", ventures, contact). Inquiry ref ID `AB123` on contact form. Session ID rule added to GUIDELINES §9. |
 
 ---
 
