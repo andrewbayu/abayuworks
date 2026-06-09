@@ -867,6 +867,16 @@
     margin-bottom: var(--s-2);
   }
   .form-success p { color: var(--muted); }
+  .form-success .ref-id { margin-top: var(--s-3); font-size: var(--t-small); }
+  .form-success .ref-id code {
+    font-family: 'Courier New', monospace;
+    font-size: 0.85em;
+    letter-spacing: 0.04em;
+    color: var(--primary);
+    background: color-mix(in oklab, var(--primary) 8%, var(--bg));
+    padding: 0.1em 0.45em;
+    border-radius: 3px;
+  }
 
   /* ---------- Footnotes ---------- */
   .notes {
@@ -1453,6 +1463,7 @@
             Inquiry received.
           </h3>
           <p>Thanks for reaching out. Aditya replies from <strong>hi.andrewbayu@gmail.com</strong> within 48 hours.</p>
+          <p class="ref-id">Reference: <code id="inquiry-ref"></code></p>
         </div>
       </div>
     </section>
@@ -1555,6 +1566,19 @@
       const status = form.querySelector('.form-status');
       const submit = form.querySelector('button[type="submit"]');
 
+      const genRefId = () => {
+        const d = new Date();
+        const date = d.getFullYear().toString() +
+          String(d.getMonth() + 1).padStart(2, '0') +
+          String(d.getDate()).padStart(2, '0');
+        const chars = 'ABCDEFGHJKLMNPQRSTUVWXYZ23456789';
+        let sfx = '';
+        const arr = new Uint8Array(4);
+        crypto.getRandomValues(arr);
+        arr.forEach(b => { sfx += chars[b % chars.length]; });
+        return 'INQ-' + date + '-' + sfx;
+      };
+
       form.addEventListener('submit', async (e) => {
         e.preventDefault();
         status.className = 'form-status';
@@ -1565,11 +1589,12 @@
           const data = new FormData(form);
           // honeypot trip
           if (data.get('bot-field')) {
-            // pretend success to a bot
             form.hidden = true; success.hidden = false;
             success.scrollIntoView({ behavior: 'smooth', block: 'center' });
             return;
           }
+          const refId = genRefId();
+          data.append('ref_id', refId);
           const body = new URLSearchParams();
           for (const [k, v] of data.entries()) body.append(k, v);
 
@@ -1580,9 +1605,10 @@
           });
           if (!resp.ok) throw new Error('HTTP ' + resp.status);
 
+          document.getElementById('inquiry-ref').textContent = refId;
           form.hidden = true;
           success.hidden = false;
-          success.classList.add('in'); // make sure reveal isn't blocking
+          success.classList.add('in');
           success.scrollIntoView({ behavior: 'smooth', block: 'center' });
         } catch (err) {
           status.className = 'form-status err';
