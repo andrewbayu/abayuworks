@@ -1,5 +1,7 @@
 # Claude / impeccable harness — local-only, never published
-.claude/
+# (except project-level skills, which we DO want to commit)
+.claude/*
+!.claude/skills/
 .impeccable/
 
 # Strategic docs — kept locally, not pushed
