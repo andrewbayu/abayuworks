@@ -162,20 +162,42 @@
   }
   .prose { max-width: var(--max-prose); }
 
-  /* Top nav: plain text, mid-dot separators */
+  /* Top nav */
   nav.top {
     position: fixed; top: 0; left: 0; right: 0; z-index: 50;
     backdrop-filter: saturate(160%) blur(8px);
     -webkit-backdrop-filter: saturate(160%) blur(8px);
     background: color-mix(in oklab, var(--bg) 82%, transparent);
     border-bottom: 1px solid transparent;
-    transition: border-color var(--dur-fast) var(--ease-out);
+    transition: border-color var(--dur-fast) var(--ease-out),
+                background var(--dur-fast) var(--ease-out);
   }
   nav.top.scrolled { border-bottom-color: var(--line); }
   nav.top .inner {
     max-width: var(--max-page); margin: 0 auto; padding: var(--s-3) var(--gutter);
     display: flex; align-items: center; justify-content: space-between;
     font-size: var(--t-small);
+    border: 1px solid transparent; border-radius: 0;
+    transition:
+      max-width var(--dur-med) var(--ease-out),
+      padding var(--dur-fast) var(--ease-out),
+      border-radius var(--dur-med) var(--ease-out),
+      background var(--dur-fast) var(--ease-out),
+      box-shadow var(--dur-fast) var(--ease-out),
+      border-color var(--dur-fast) var(--ease-out),
+      margin-top var(--dur-fast) var(--ease-out);
+  }
+  /* Floating pill nav — activates after hero */
+  nav.top.pill .inner {
+    max-width: 600px;
+    border-radius: 100px;
+    background: color-mix(in oklab, var(--bg) 92%, transparent);
+    backdrop-filter: saturate(180%) blur(14px);
+    -webkit-backdrop-filter: saturate(180%) blur(14px);
+    box-shadow: 0 4px 24px oklch(0 0 0 / 0.10), 0 1px 4px oklch(0 0 0 / 0.06);
+    border-color: var(--line);
+    padding: var(--s-2) var(--s-5);
+    margin-top: 10px;
   }
   nav.top .who { font-weight: 600; letter-spacing: -0.015em; }
   nav.top .who .mark {
@@ -185,8 +207,22 @@
   nav.top ol { list-style: none; display: flex; gap: var(--s-3); align-items: center; }
   nav.top ol li::after { content: '·'; color: var(--faint); margin-left: var(--s-3); }
   nav.top ol li:last-child::after { content: ''; margin: 0; }
-  nav.top a { color: var(--muted); text-decoration: none; transition: color var(--dur-fast); }
+  nav.top a {
+    color: var(--muted); text-decoration: none;
+    transition: color var(--dur-fast) var(--ease-out);
+    position: relative;
+  }
+  nav.top a::after {
+    content: ''; position: absolute;
+    bottom: -2px; left: 0; right: 0; height: 1.5px;
+    background: var(--primary);
+    transform: scaleX(0); transform-origin: center;
+    transition: transform var(--dur-fast) var(--ease-out);
+  }
   nav.top a:hover { color: var(--ink); }
+  nav.top a:hover::after { transform: scaleX(1); }
+  nav.top a.active { color: var(--ink); }
+  nav.top a.active::after { transform: scaleX(1); }
 
   /* Burger toggle (hidden on desktop) */
   .nav-toggle {
@@ -219,14 +255,17 @@
     nav.top ol {
       position: absolute; top: 100%; left: 0; right: 0;
       flex-direction: column; align-items: stretch; gap: 0;
-      background: color-mix(in oklab, var(--bg) 97%, transparent);
-      backdrop-filter: saturate(160%) blur(8px);
-      -webkit-backdrop-filter: saturate(160%) blur(8px);
+      background: color-mix(in oklab, var(--bg) 92%, transparent);
+      backdrop-filter: saturate(200%) blur(16px);
+      -webkit-backdrop-filter: saturate(200%) blur(16px);
       border-bottom: 1px solid var(--line);
+      border-radius: 0 0 14px 14px;
+      box-shadow: 0 8px 28px oklch(0 0 0 / 0.08);
       padding: var(--s-2) var(--gutter) var(--s-3);
       transform: translateY(-8px); opacity: 0; pointer-events: none;
       transition: opacity var(--dur-fast) var(--ease-out), transform var(--dur-fast) var(--ease-out);
     }
+    nav.top.pill ol { border-radius: 0 0 20px 20px; }
     nav.top.menu-open ol { transform: none; opacity: 1; pointer-events: auto; }
     nav.top ol li { width: 100%; }
     nav.top ol li::after { content: ''; margin: 0; }
@@ -234,6 +273,11 @@
     /* Keep menu links legible over the hero color flip */
     nav.top.menu-open ol li a { color: var(--muted); }
     nav.top.menu-open ol li a:hover { color: var(--ink); }
+    /* Disable pill on mobile */
+    nav.top.pill .inner {
+      max-width: 100%; border-radius: 0; box-shadow: none;
+      border-color: transparent; padding: var(--s-3) var(--gutter); margin-top: 0;
+    }
   }
 
   /* Section + headings */
@@ -278,7 +322,11 @@
   }
   a.link:hover, .prose a:hover { color: var(--primary); background-size: 100% 2px; }
 
-  /* ---------- Hero (WebGL fluid block) ---------- */
+  /* Animatable CSS custom properties for the spotlight */
+  @property --mx { syntax: '<percentage>'; inherits: false; initial-value: 50%; }
+  @property --my { syntax: '<percentage>'; inherits: false; initial-value: 35%; }
+
+  /* ---------- Hero ---------- */
   header.hero {
     position: relative;
     isolation: isolate;
@@ -288,21 +336,58 @@
     color: oklch(0.985 0.005 200);
     --mx: 50%; --my: 35%; --hover: 0;
     background-color: oklch(0.14 0.06 250);
-    background-image: linear-gradient(
-      125deg,
-      oklch(0.34 0.13 195) 0%,
-      oklch(0.27 0.14 220) 28%,
-      oklch(0.24 0.15 280) 52%,
-      oklch(0.19 0.11 255) 76%,
-      oklch(0.13 0.06 250) 100%
-    );
-    background-size: 220% 220%;
-    animation: heroShift 20s ease-in-out infinite alternate;
+    background-image:
+      url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='200' height='200'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='200' height='200' filter='url(%23n)' opacity='0.04'/%3E%3C/svg%3E"),
+      linear-gradient(
+        125deg,
+        oklch(0.34 0.13 195) 0%,
+        oklch(0.27 0.14 220) 28%,
+        oklch(0.24 0.15 280) 52%,
+        oklch(0.19 0.11 255) 76%,
+        oklch(0.13 0.06 250) 100%
+      );
+    background-size: 200px 200px, 220% 220%;
+    animation: heroShift 20s ease-in-out infinite alternate,
+               spotDrift 20s ease-in-out infinite;
   }
   @keyframes heroShift {
-    0%   { background-position:   0% 50%; }
-    50%  { background-position: 100%  0%; }
-    100% { background-position:  50% 100%; }
+    0%   { background-position: 0% 0%, 0% 50%; }
+    50%  { background-position: 0% 0%, 100% 0%; }
+    100% { background-position: 0% 0%, 50% 100%; }
+  }
+  @keyframes spotDrift {
+    0%   { --mx: 28%; --my: 22%; }
+    25%  { --mx: 74%; --my: 44%; }
+    50%  { --mx: 55%; --my: 74%; }
+    75%  { --mx: 20%; --my: 60%; }
+    100% { --mx: 28%; --my: 22%; }
+  }
+  @keyframes meshDrift {
+    0%   { transform: translate(0%,   0%)  rotate(0deg);  }
+    33%  { transform: translate(4%,  -5%)  rotate(4deg);  }
+    66%  { transform: translate(-4%,  4%)  rotate(-3deg); }
+    100% { transform: translate(3%,   6%)  rotate(7deg);  }
+  }
+  @keyframes shimmerText {
+    from { background-position: 200% center; }
+    to   { background-position: -200% center; }
+  }
+  @keyframes scrollBounce {
+    0%, 100% { transform: translateY(0);   opacity: 0.55; }
+    50%       { transform: translateY(7px); opacity: 0.82; }
+  }
+
+  /* Mesh gradient blobs layer — depth + aurora feel */
+  header.hero::before {
+    content: "";
+    position: absolute; inset: 0; z-index: 0;
+    pointer-events: none;
+    background:
+      radial-gradient(ellipse 55% 45% at 18% 28%, oklch(0.55 0.20 185 / 0.28), transparent 65%),
+      radial-gradient(ellipse 45% 55% at 82% 72%, oklch(0.38 0.22 270 / 0.22), transparent 65%),
+      radial-gradient(ellipse 38% 42% at 62% 12%, oklch(0.48 0.16 240 / 0.20), transparent 65%);
+    animation: meshDrift 28s ease-in-out infinite alternate;
+    mix-blend-mode: screen;
   }
   /* cursor-following spotlight, brightens on hover */
   header.hero::after {
@@ -350,11 +435,36 @@
     max-width: 22ch;
     color: oklch(0.985 0.005 200);
   }
-  /* The accent em — soft mint highlight on dark teal */
   header.hero h1 em {
     color: oklch(0.85 0.13 195);
     font-style: normal;
   }
+  /* Kinetic shimmer on the accent word — progressive enhancement */
+  @supports (-webkit-background-clip: text) {
+    header.hero h1 em {
+      background: linear-gradient(90deg,
+        oklch(0.85 0.13 195) 0%,
+        oklch(0.96 0.08 178) 30%,
+        oklch(0.80 0.20 200) 60%,
+        oklch(0.85 0.13 195) 100%
+      );
+      background-size: 200% auto;
+      -webkit-background-clip: text;
+      background-clip: text;
+      -webkit-text-fill-color: transparent;
+      animation: shimmerText 5s linear infinite;
+    }
+  }
+
+  /* Scroll indicator cue */
+  header.hero .hero-scroll-cue {
+    margin-top: var(--s-4);
+    color: oklch(0.78 0.020 200 / 0.55);
+    display: block; width: fit-content;
+    animation: scrollBounce 2.4s ease-in-out infinite;
+    transition: opacity 400ms var(--ease-out);
+  }
+  header.hero .hero-scroll-cue.hidden { opacity: 0; }
   header.hero .lede {
     font-size: var(--t-lead);
     color: oklch(0.88 0.018 200 / 0.85);
@@ -407,9 +517,11 @@
   }
   header.hero .hero-scroll:hover { color: oklch(0.985 0.005 200); }
 
-  /* Pause the drifting gradient for reduced-motion; the static gradient stays readable. */
   @media (prefers-reduced-motion: reduce) {
     header.hero { animation: none; }
+    header.hero::before { animation: none; }
+    header.hero h1 em { animation: none; }
+    header.hero .hero-scroll-cue { animation: none; }
   }
 
   /* The fixed top nav over the dark hero: tint the backdrop dark */
@@ -1090,6 +1202,9 @@
           </a>
           <a class="hero-scroll" href="#now">See current work</a>
         </div>
+        <div class="hero-scroll-cue" aria-hidden="true">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M6 9l6 6 6-6"/></svg>
+        </div>
       </div>
     </header>
 
@@ -1584,7 +1699,7 @@
     document.documentElement.classList.remove('no-js');
     const reduced = matchMedia('(prefers-reduced-motion: reduce)').matches;
 
-    /* ---------- Nav: border on scroll + over-hero color flip ---------- */
+    /* ---------- Nav: scroll state + over-hero flip + floating pill ---------- */
     const nav = document.querySelector('nav.top');
     const hero = document.querySelector('header.hero');
     const updateNav = () => {
@@ -1593,6 +1708,7 @@
       const heroRect = hero.getBoundingClientRect();
       const overHero = heroRect.bottom > 40;
       document.body.classList.toggle('over-hero', overHero);
+      nav.classList.toggle('pill', !overHero && scrolledPast);
     };
     document.addEventListener('scroll', updateNav, { passive: true });
     updateNav();
@@ -1709,10 +1825,11 @@
       });
     })();
 
-    /* ---------- Hero: animated colored gradient + cursor spotlight ---------- */
+    /* ---------- Hero: gradient + auto-drift spotlight + scroll cue ---------- */
     (() => {
       const heroEl = document.querySelector('header.hero');
       if (!heroEl) return;
+      // JS drives spotlight on hover; CSS animation drives it when idle
       heroEl.addEventListener('pointermove', (e) => {
         const r = heroEl.getBoundingClientRect();
         heroEl.style.setProperty('--mx', (((e.clientX - r.left) / r.width) * 100) + '%');
@@ -1721,9 +1838,32 @@
       heroEl.addEventListener('pointerenter', () => heroEl.style.setProperty('--hover', '1'));
       heroEl.addEventListener('pointerleave', () => {
         heroEl.style.setProperty('--hover', '0');
-        heroEl.style.setProperty('--mx', '50%');
-        heroEl.style.setProperty('--my', '35%');
+        // Remove inline overrides so CSS spotDrift animation resumes
+        heroEl.style.removeProperty('--mx');
+        heroEl.style.removeProperty('--my');
       });
+      // Hide scroll cue after user scrolls
+      const scrollCue = heroEl.querySelector('.hero-scroll-cue');
+      if (scrollCue) {
+        const hideCue = () => scrollCue.classList.toggle('hidden', window.scrollY > 80);
+        document.addEventListener('scroll', hideCue, { passive: true });
+      }
+    })();
+
+    /* ---------- Active nav link tracking ---------- */
+    (() => {
+      const sections = document.querySelectorAll('main > section[id]');
+      const links = document.querySelectorAll('nav.top ol a[href^="#"]');
+      if (!sections.length || !links.length) return;
+      const io = new IntersectionObserver((entries) => {
+        entries.forEach((e) => {
+          if (e.isIntersecting) {
+            const id = e.target.id;
+            links.forEach((a) => a.classList.toggle('active', a.getAttribute('href') === '#' + id));
+          }
+        });
+      }, { threshold: 0.4, rootMargin: '-15% 0px -15% 0px' });
+      sections.forEach((s) => io.observe(s));
     })();
   </script>
 </body>
