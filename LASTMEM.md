@@ -16,7 +16,7 @@ Last updated: 2026-06-07 by Claude. Big session: switched the whole site to **th
 
 **Voice is now THIRD person.** "Aditya builds companies," not "I build companies." This reversed the original first-person rule (Aditya asked for it mid-session; the first-person voice read as cringe to him). Most of the homepage is converted; a few spots may remain (see pending).
 
-**Live.** https://aditya-bayu.netlify.app
+**Live.** https://adityabayu.com
 **Repo.** https://github.com/andrewbayu/abayuworks (public)
 **Netlify admin.** https://app.netlify.com/projects/aditya-bayu
 **Local path.** `C:\Users\andre\Website-1`
@@ -57,7 +57,7 @@ NOT in the repo (local-only, in `.gitignore`): `PRODUCT.md`, `DESIGN.md`, `.clau
 git add -A
 git commit -m "what you changed"
 git push            # to main → live in ~10s
-# Live at https://aditya-bayu.netlify.app
+# Live at https://adityabayu.com
 ```
 
 No build step. Netlify publishes the repo root as-is.
