@@ -4,7 +4,7 @@
 >
 > For the stable **rules and step-by-step playbooks** (how to add an article, edit the homepage, SEO/honesty checklists), see **`GUIDELINES.md`**. This file (LASTMEM) is current *state + history*; GUIDELINES is the *rulebook*.
 
-Last updated: 2026-06-09 by Claude (session CF198). Added new case study: Jakarta dental clinic multi-branch growth (6→10 branches, 120→421 leads/month, Rp300M/month, 6-7x ROAS). Brand kept generic. Draft pending Aditya's review (clinic name, date, attribution).
+Last updated: 2026-06-09 by Claude (session CT692). Visual design + UX pack: spring card-hover lift on receipt/built cards, hero CTA button, larger receipt metrics, native dark mode, built grid 3-col, smooth accordion expand (interpolate-size), cursor-pointer on CTA card, reading progress bar CSS for blog.
 
 ---
 
@@ -177,6 +177,7 @@ WSE Rp156B / Hacktiv8 +200% / Aboitiz·KicauFest 10M+ reach + 30K+ community / H
 ## 🔖 Session log
 | ID    | Date       | Agent  | Summary |
 |-------|------------|--------|---------|
+| CT692 | 2026-06-09 | Claude | Visual design + UX pack: spring card-hover lift (receipt + built cards), hero CTA button, larger receipt metrics (clamp 1.8–2.4rem), native dark mode, built grid 3-col desktop, smooth accordion expand (interpolate-size), cursor-pointer on CTA card, reading progress bar CSS restored for blog. |
 | NH693 | 2026-06-09 | Claude | Installed ui-ux-pro-max skill (committed to repo). Ran its a11y audit. Fixes: skip-link now reveals on focus (homepage + all 7 blog pages, with `#main` targets); `--faint`-as-text (3.63:1, fails AA) swapped to `--muted` (7:1) everywhere it was used for labels/captions/footnotes/footer. Contrast rule added to GUIDELINES §1. |
 | CF198 | 2026-06-09 | Claude | New blog post: Jakarta dental clinic 6→10 branches case study. Listed on /blog/, added to sitemap. Brand kept generic (source did not name the clinic). |
 | AA018 | 2026-06-09 | Claude | Third-person sweep (h1, meta, "How he works", ventures, contact). Inquiry ref ID `AB123` on contact form. Session ID rule added to GUIDELINES §9. |

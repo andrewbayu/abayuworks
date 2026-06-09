@@ -132,6 +132,8 @@
     --ease-out:  cubic-bezier(0.16, 1, 0.3, 1);
     --dur-fast:  220ms;
     --dur-med:   520ms;
+    --ease-spring: cubic-bezier(0.25, 1.2, 0.5, 1);
+    --shadow-hover: 0 6px 20px oklch(0.420 0.095 200 / 0.08);
   }
 
   *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
@@ -381,6 +383,30 @@
   header.hero sup.fn { color: oklch(0.80 0.12 195); }
   header.hero sup.fn a { color: inherit; }
 
+  /* Hero CTA button (white on dark hero) */
+  header.hero .hero-actions {
+    display: flex; align-items: center; gap: var(--s-4);
+    margin-top: var(--s-6); flex-wrap: wrap;
+  }
+  header.hero .hero-btn {
+    background: oklch(0.985 0.005 200);
+    color: oklch(0.180 0.010 220);
+    border-radius: 3px;
+    font-weight: 600;
+  }
+  header.hero .hero-btn:hover {
+    background: oklch(0.930 0.010 200);
+    transform: translateY(-2px);
+  }
+  header.hero .hero-scroll {
+    font-size: var(--t-small);
+    color: oklch(0.78 0.020 200 / 0.78);
+    text-decoration: none;
+    display: inline-flex; align-items: center; gap: 0.4em;
+    transition: color var(--dur-fast) var(--ease-out);
+  }
+  header.hero .hero-scroll:hover { color: oklch(0.985 0.005 200); }
+
   /* Pause the drifting gradient for reduced-motion; the static gradient stays readable. */
   @media (prefers-reduced-motion: reduce) {
     header.hero { animation: none; }
@@ -486,6 +512,7 @@
   .now-card.cta-card {
     background: color-mix(in oklab, var(--primary) 5%, var(--bg));
     position: relative;
+    cursor: pointer;
   }
   .now-card.cta-card::before {
     content: ""; position: absolute; left: 0; top: 0; bottom: 0; width: 3px;
@@ -638,6 +665,16 @@
     border-color: var(--primary); color: var(--primary);
   }
 
+  /* Smooth <details> height expand — CSS interpolate-size (Chrome 129+, Firefox 131+) */
+  @supports (interpolate-size: allow-keywords) {
+    :root { interpolate-size: allow-keywords; }
+    details.venture > .scope {
+      height: 0; overflow: hidden;
+      transition: height var(--dur-med) var(--ease-out);
+    }
+    details.venture[open] > .scope { height: auto; }
+  }
+
   @media (max-width: 720px) {
     details.venture > summary {
       grid-template-columns: 2em 1fr 1.5em;
@@ -662,12 +699,18 @@
     border-radius: 5px;
     padding: var(--s-4);
     background: var(--bg);
-    transition: border-color var(--dur-fast) var(--ease-out);
+    transition: border-color var(--dur-fast) var(--ease-out),
+                transform var(--dur-fast) var(--ease-spring),
+                box-shadow var(--dur-fast) var(--ease-out);
   }
-  .receipt-card:hover { border-color: var(--faint); }
+  .receipt-card:hover {
+    border-color: var(--faint);
+    transform: translateY(-3px);
+    box-shadow: var(--shadow-hover);
+  }
   .receipt-card .r-metric {
-    font-size: var(--t-h3);
-    font-weight: 600;
+    font-size: clamp(1.8rem, 4vw, 2.4rem);
+    font-weight: 700;
     color: var(--ink);
     font-variant-numeric: tabular-nums;
     letter-spacing: -0.02em;
@@ -694,7 +737,7 @@
   /* ---------- What I've built: boxed 2-column grid ---------- */
   .built-grid {
     display: grid;
-    grid-template-columns: repeat(2, 1fr);
+    grid-template-columns: repeat(3, 1fr);
     gap: var(--s-3);
   }
   .built-card {
@@ -703,9 +746,15 @@
     border-radius: 5px;
     padding: var(--s-4);
     background: var(--bg);
-    transition: border-color var(--dur-fast) var(--ease-out);
+    transition: border-color var(--dur-fast) var(--ease-out),
+                transform var(--dur-fast) var(--ease-spring),
+                box-shadow var(--dur-fast) var(--ease-out);
   }
-  .built-card:hover { border-color: var(--faint); }
+  .built-card:hover {
+    border-color: var(--faint);
+    transform: translateY(-3px);
+    box-shadow: var(--shadow-hover);
+  }
   .built-card .b-head {
     display: flex; align-items: center; gap: 0.55em;
     margin-bottom: var(--s-2);
@@ -729,6 +778,7 @@
     font-weight: 300;
     line-height: 1.5;
   }
+  @media (max-width: 900px) { .built-grid { grid-template-columns: repeat(2, 1fr); } }
   @media (max-width: 640px) { .built-grid { grid-template-columns: 1fr; } }
 
   /* ---------- Brands inline ---------- */
@@ -909,6 +959,7 @@
   .reveal.d1 { transition-delay: 60ms; }
   .reveal.d2 { transition-delay: 120ms; }
   .reveal.d3 { transition-delay: 180ms; }
+  .reveal.d4 { transition-delay: 240ms; }
 
   /* If JS never runs, content is visible. */
   html.no-js .reveal { transform: none; opacity: 1; }
@@ -938,6 +989,26 @@
     transition: transform var(--dur-fast) var(--ease-out);
   }
   .skip-link:focus { transform: translateY(0); outline: 2px solid var(--primary); outline-offset: 2px; }
+
+  /* ---------- Dark mode ---------- */
+  @media (prefers-color-scheme: dark) {
+    :root {
+      --bg:        oklch(0.118 0.008 220);
+      --surface:   oklch(0.148 0.010 220);
+      --ink:       oklch(0.940 0.006 220);
+      --muted:     oklch(0.660 0.010 220);
+      --faint:     oklch(0.480 0.008 220);
+      --line:      oklch(0.260 0.008 220);
+      --primary:   oklch(0.540 0.120 195);
+      --primary-h: oklch(0.470 0.125 195);
+      --on-primary: oklch(0.100 0.005 220);
+      --shadow-hover: 0 6px 28px oklch(0 0 0 / 0.40);
+    }
+    .inquiry-form select {
+      background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%23999' stroke-width='1.5' stroke-linecap='round' stroke-linejoin='round'><path d='M6 9l6 6 6-6'/></svg>");
+    }
+    header.hero .hero-btn { color: oklch(0.118 0.008 220); }
+  }
 </style>
 </head>
 <body>
@@ -1011,6 +1082,14 @@
           Calibreworks: <b>Clutch.co Top 100</b> digital agencies.
           Ten ventures across five industries.
         </p>
+        <div class="hero-actions reveal d4">
+          <a class="cta hero-btn" href="#contact">
+            <svg class="ico" aria-hidden="true"><use href="#i-send"/></svg>
+            <span>Send inquiry</span>
+            <svg class="ico" aria-hidden="true"><use href="#i-arrow"/></svg>
+          </a>
+          <a class="hero-scroll" href="#now">See current work</a>
+        </div>
       </div>
     </header>
 
