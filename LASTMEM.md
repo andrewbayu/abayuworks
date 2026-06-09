@@ -120,7 +120,7 @@ This session Aditya repeatedly chose flashier/more-structured over the original 
 ### Writing / blog
 - `/blog/` listing + articles at `/blog/<slug>/`. Hand-authored, no build step, shared `blog/style.css` + `blog/nav.js`.
 - Articles live so far (6, drafts unless noted otherwise — **facts need Aditya's review**):
-  - `dental-clinic-multi-branch-growth` — Jakarta dental clinic 6→10 branches via Meta+Google ads, website funnel, Cekat.ai CS, Calibreworks CRM. 120→421 leads/month, Rp300M/month, 6-7x ROAS. Brand kept generic (source did not name).
+  - `dental-clinic-multi-branch-growth` — Jakarta dental clinic 6→10 branches via Meta+Google ads, website funnel, Cekat.ai CS, Calibreworks CRM. 120→421 leads/month, Rp300M/month, 6-7x ROAS. **NDA: keep the clinic name generic.** Period: November 2025.
   - `hypebuzz-brand-from-zero` — HypeBuzz trend-media brand built from zero (3.1M views, 5.2M reach, 670K engagement).
   - `hacktiv8-scholarship-pr-campaign` — Hacktiv8 data-science scholarship, PR + performance, 8X ROAS.
   - `bpr-triastra-rebrand` — BPR Hisobhan → BPR Triastra rebrand, #BeraniBerubah.
