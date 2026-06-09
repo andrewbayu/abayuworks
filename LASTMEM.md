@@ -4,7 +4,7 @@
 >
 > For the stable **rules and step-by-step playbooks** (how to add an article, edit the homepage, SEO/honesty checklists), see **`GUIDELINES.md`**. This file (LASTMEM) is current *state + history*; GUIDELINES is the *rulebook*.
 
-Last updated: 2026-06-09 by Claude (session AA018). Finished third-person sweep across homepage. Added inquiry reference ID (`AB123` format) to contact form. Added session ID rule to GUIDELINES §9.
+Last updated: 2026-06-09 by Claude (session CF198). Added new case study: Jakarta dental clinic multi-branch growth (6→10 branches, 120→421 leads/month, Rp300M/month, 6-7x ROAS). Brand kept generic. Draft pending Aditya's review (clinic name, date, attribution).
 
 ---
 
@@ -119,7 +119,8 @@ This session Aditya repeatedly chose flashier/more-structured over the original 
 
 ### Writing / blog
 - `/blog/` listing + articles at `/blog/<slug>/`. Hand-authored, no build step, shared `blog/style.css` + `blog/nav.js`.
-- Articles live so far (5, all written from the Projects & Campaign deck — **DRAFTS, facts need Aditya's review**):
+- Articles live so far (6, drafts unless noted otherwise — **facts need Aditya's review**):
+  - `dental-clinic-multi-branch-growth` — Jakarta dental clinic 6→10 branches via Meta+Google ads, website funnel, Cekat.ai CS, Calibreworks CRM. 120→421 leads/month, Rp300M/month, 6-7x ROAS. Brand kept generic (source did not name).
   - `hypebuzz-brand-from-zero` — HypeBuzz trend-media brand built from zero (3.1M views, 5.2M reach, 670K engagement).
   - `hacktiv8-scholarship-pr-campaign` — Hacktiv8 data-science scholarship, PR + performance, 8X ROAS.
   - `bpr-triastra-rebrand` — BPR Hisobhan → BPR Triastra rebrand, #BeraniBerubah.
@@ -176,6 +177,7 @@ WSE Rp156B / Hacktiv8 +200% / Aboitiz·KicauFest 10M+ reach + 30K+ community / H
 ## 🔖 Session log
 | ID    | Date       | Agent  | Summary |
 |-------|------------|--------|---------|
+| CF198 | 2026-06-09 | Claude | New blog post: Jakarta dental clinic 6→10 branches case study. Listed on /blog/, added to sitemap. Brand kept generic (source did not name the clinic). |
 | AA018 | 2026-06-09 | Claude | Third-person sweep (h1, meta, "How he works", ventures, contact). Inquiry ref ID `AB123` on contact form. Session ID rule added to GUIDELINES §9. |
 
 ---
