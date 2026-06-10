@@ -4,7 +4,7 @@
 >
 > For the stable **rules and step-by-step playbooks** (how to add an article, edit the homepage, SEO/honesty checklists), see **`GUIDELINES.md`**. This file (LASTMEM) is current *state + history*; GUIDELINES is the *rulebook*.
 
-Last updated: 2026-06-09 by Claude (session CT692). Visual design + UX pack: spring card-hover lift on receipt/built cards, hero CTA button, larger receipt metrics, native dark mode, built grid 3-col, smooth accordion expand (interpolate-size), cursor-pointer on CTA card, reading progress bar CSS for blog.
+Last updated: 2026-06-10 by Antigravity (session VE137). Ignore local-only skill directories in .gitignore, commit and push to main.
 
 ---
 
@@ -177,6 +177,8 @@ WSE Rp156B / Hacktiv8 +200% / Aboitiz·KicauFest 10M+ reach + 30K+ community / H
 ## 🔖 Session log
 | ID    | Date       | Agent  | Summary |
 |-------|------------|--------|---------|
+| VE137 | 2026-06-10 | Antigravity | Ignore local-only skill directories in .gitignore, commit and push to main. |
+| RK847 | 2026-06-10 | Claude | Context handoff close. No code changes. Last live commit: JW581 (hero+nav pack). |
 | JW581 | 2026-06-09 | Claude | Hero + nav improvement pack: @property spotDrift auto-spotlight, mesh gradient aurora blobs, noise texture, kinetic shimmer on h1 em, scroll-cue chevron, floating pill nav after hero, active section nav links, mobile menu rounded blur, nav scroll-shrink via pill. |
 | CT692 | 2026-06-09 | Claude | Visual design + UX pack: spring card-hover lift (receipt + built cards), hero CTA button, larger receipt metrics (clamp 1.8–2.4rem), native dark mode, built grid 3-col desktop, smooth accordion expand (interpolate-size), cursor-pointer on CTA card, reading progress bar CSS restored for blog. |
 | NH693 | 2026-06-09 | Claude | Installed ui-ux-pro-max skill (committed to repo). Ran its a11y audit. Fixes: skip-link now reveals on focus (homepage + all 7 blog pages, with `#main` targets); `--faint`-as-text (3.63:1, fails AA) swapped to `--muted` (7:1) everywhere it was used for labels/captions/footnotes/footer. Contrast rule added to GUIDELINES §1. |
