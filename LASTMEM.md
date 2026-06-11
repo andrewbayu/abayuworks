@@ -4,7 +4,7 @@
 >
 > For the stable **rules and step-by-step playbooks** (how to add an article, edit the homepage, SEO/honesty checklists), see **`GUIDELINES.md`**. This file (LASTMEM) is current *state + history*; GUIDELINES is the *rulebook*.
 
-Last updated: 2026-06-10 by Antigravity (session VE137). Ignore local-only skill directories in .gitignore, commit and push to main.
+Last updated: 2026-06-11 by Codex (session SK690). Added Growth Curve Method 2026 and Xniper HBSM blog posts locally. Both Google Docs were later opened and both articles were aligned to source: Xniper to the May 2026 product whitepaper, Growth Curve to the original Growthlab framework with a public 2026 update.
 
 ---
 
@@ -119,7 +119,9 @@ This session Aditya repeatedly chose flashier/more-structured over the original 
 
 ### Writing / blog
 - `/blog/` listing + articles at `/blog/<slug>/`. Hand-authored, no build step, shared `blog/style.css` + `blog/nav.js`.
-- Articles live so far (6, drafts unless noted otherwise — **facts need Aditya's review**):
+- Articles live so far (8, drafts unless noted otherwise — **facts need Aditya's review**):
+  - `xniper-hybrid-behavioral-synthetic-modeling` — public-safe paper-style adaptation of the Xniper Product Whitepaper v1.0 (May 2026): HBSM formula, XRE context layer, 100 digital humans, 200 Monte Carlo trials each, 20,000 data points, 9 calibrated tools, Xniper Boost, and roadmap. Sensitive implementation details omitted.
+  - `growth-curve-method-2026` — public 2026 adaptation of Aditya's original Growthlab Growth Curve Method: Content Pillar, Supporting Content, Content Route/Guideways, cadence, analytics and optimization, with source-result framing (3X traffic, 5-7X touchpoints, CPC down 60-80%, CPL down 28%).
   - `dental-clinic-multi-branch-growth` — Jakarta dental clinic 6→10 branches via Meta+Google ads, website funnel, Cekat.ai CS, Calibreworks CRM. 120→421 leads/month, Rp300M/month, 6-7x ROAS. **NDA: keep the clinic name generic.** Period: November 2025.
   - `hypebuzz-brand-from-zero` — HypeBuzz trend-media brand built from zero (3.1M views, 5.2M reach, 670K engagement).
   - `hacktiv8-scholarship-pr-campaign` — Hacktiv8 data-science scholarship, PR + performance, 8X ROAS.
@@ -177,6 +179,7 @@ WSE Rp156B / Hacktiv8 +200% / Aboitiz·KicauFest 10M+ reach + 30K+ community / H
 ## 🔖 Session log
 | ID    | Date       | Agent  | Summary |
 |-------|------------|--------|---------|
+| SK690 | 2026-06-11 | Codex | Added 2 local blog drafts. Xniper source Google Doc access was opened and article was rewritten against Product Whitepaper v1.0 as public-safe HBSM/XRE article. Growth Curve source access was also opened and article was rewritten against the original Growthlab framework with 2026 digital marketing updates. |
 | VE137 | 2026-06-10 | Antigravity | Ignore local-only skill directories in .gitignore, commit and push to main. |
 | RK847 | 2026-06-10 | Claude | Context handoff close. No code changes. Last live commit: JW581 (hero+nav pack). |
 | JW581 | 2026-06-09 | Claude | Hero + nav improvement pack: @property spotDrift auto-spotlight, mesh gradient aurora blobs, noise texture, kinetic shimmer on h1 em, scroll-cue chevron, floating pill nav after hero, active section nav links, mobile menu rounded blur, nav scroll-shrink via pill. |

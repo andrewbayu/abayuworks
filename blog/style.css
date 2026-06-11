@@ -195,7 +195,7 @@ nav.top.menu-open .nav-toggle .bars::after { transform: translateY(-5px) rotate(
 .post-item .post-link:hover .post-cta .arr { transform: translateX(2px); }
 
 /* ---------- Article ---------- */
-.article { padding: var(--s-7) 0 var(--s-8); }
+.article { padding: var(--s-7) var(--gutter) var(--s-8); }
 .article-head { max-width: var(--max-prose); margin: 0 auto var(--s-6); }
 .article-head .post-meta {
   font-size: var(--t-micro); color: var(--muted);
@@ -233,6 +233,129 @@ nav.top.menu-open .nav-toggle .bars::after { transform: translateY(-5px) rotate(
 .figure-card .l { font-size: var(--t-small); color: var(--muted); font-weight: 300; margin-top: 0.3em; }
 @media (max-width: 560px) { .figure-grid { grid-template-columns: 1fr; } }
 
+/* Framework and paper visuals */
+.method-diagram,
+.paper-hero {
+  position: relative;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: var(--s-3);
+  border: 1px solid var(--line);
+  border-radius: 5px;
+  padding: var(--s-4);
+  overflow: hidden;
+}
+.curve-line {
+  position: absolute;
+  left: var(--s-4);
+  right: var(--s-4);
+  top: 52%;
+  height: 2px;
+  background: linear-gradient(90deg, var(--line), var(--primary), var(--line));
+}
+.curve-stage,
+.paper-node,
+.stack-card,
+.model-map > div,
+.timeline > div {
+  position: relative;
+  border: 1px solid var(--line);
+  border-radius: 5px;
+  padding: var(--s-3);
+  background: color-mix(in oklab, var(--bg) 94%, var(--primary));
+}
+.curve-stage .k,
+.paper-node span,
+.stack-card span,
+.model-map span,
+.timeline span {
+  display: block;
+  font-size: var(--t-micro);
+  color: var(--muted);
+  letter-spacing: var(--ls-label);
+  text-transform: uppercase;
+  margin-bottom: 0.35rem;
+}
+.curve-stage strong,
+.paper-node strong,
+.stack-card strong,
+.model-map strong,
+.timeline strong {
+  display: block;
+  font-size: var(--t-small);
+  line-height: 1.25;
+}
+.curve-stage p,
+.paper-node p,
+.stack-card p,
+.model-map p,
+.timeline p {
+  color: var(--muted);
+  font-size: var(--t-small);
+  line-height: 1.45;
+  margin-top: var(--s-2);
+}
+.paper-node.primary {
+  border-color: color-mix(in oklab, var(--primary) 45%, var(--line));
+}
+.stack-grid,
+.model-map,
+.timeline {
+  display: grid;
+  gap: var(--s-3);
+}
+.stack-grid { grid-template-columns: repeat(2, 1fr); }
+.model-map { grid-template-columns: repeat(2, 1fr); }
+.timeline { grid-template-columns: 1fr; }
+.risk-table {
+  display: grid;
+  border: 1px solid var(--line);
+  border-radius: 5px;
+  overflow: hidden;
+}
+.risk-table > div {
+  display: grid;
+  grid-template-columns: 0.9fr 1.5fr;
+}
+.risk-table > div + div { border-top: 1px solid var(--line); }
+.risk-table span,
+.risk-table strong {
+  padding: var(--s-3);
+  font-size: var(--t-small);
+}
+.risk-table span + span,
+.risk-table strong + strong { border-left: 1px solid var(--line); }
+.risk-table strong { background: color-mix(in oklab, var(--primary) 5%, var(--bg)); }
+.formula-card {
+  border: 1px solid color-mix(in oklab, var(--primary) 35%, var(--line));
+  border-radius: 5px;
+  padding: var(--s-4);
+  background: color-mix(in oklab, var(--primary) 4%, var(--bg));
+}
+.formula-card strong {
+  display: block;
+  font-size: var(--t-h3);
+  line-height: 1.25;
+  letter-spacing: 0;
+}
+.formula-card p {
+  color: var(--muted);
+  font-size: var(--t-small);
+  margin-top: var(--s-2);
+}
+@media (max-width: 760px) {
+  .method-diagram,
+  .paper-hero,
+  .stack-grid,
+  .model-map { grid-template-columns: 1fr; }
+  .curve-line { display: none; }
+}
+@media (max-width: 560px) {
+  .risk-table > div { grid-template-columns: 1fr; }
+  .risk-table span + span,
+  .risk-table strong + strong { border-left: 0; border-top: 1px solid var(--line); }
+}
+
 .back-link { display: inline-flex; align-items: center; gap: 0.4em; font-size: var(--t-small); color: var(--muted); text-decoration: none; margin-bottom: var(--s-5); }
 .back-link:hover { color: var(--ink); }
 
@@ -259,7 +382,7 @@ footer.site .mark { display: inline-block; width: 0.55em; height: 0.55em; backgr
   .post-list { gap: var(--s-3); padding: var(--s-4) 0 var(--s-7); }
   .post-item .post-link { padding: var(--s-4); }
   .post-item h2 { font-size: 1.25rem; }
-  .article { padding: var(--s-5) 0 var(--s-7); }
+  .article { padding: var(--s-5) var(--gutter) var(--s-7); }
   .article-head { margin-bottom: var(--s-5); }
   .article-head h1 { font-size: 1.85rem; }
   .article-head .standfirst { font-size: var(--t-body); }
