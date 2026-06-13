@@ -78,7 +78,22 @@ export default function Hero() {
           {hero.lede}
         </motion.p>
 
-        <motion.div variants={fadeUp} className="mt-6 flex flex-wrap gap-2">
+        <motion.div variants={fadeUp} className="mt-8 flex flex-wrap items-center gap-3">
+          <a
+            href="#contact"
+            className="inline-flex items-center gap-2 rounded-card bg-teal px-5 py-2.5 font-medium text-bg transition-colors hover:bg-teal-bright"
+          >
+            Start a conversation <span aria-hidden>→</span>
+          </a>
+          <a
+            href="#ventures"
+            className="inline-flex items-center gap-2 rounded-card border border-line px-5 py-2.5 font-medium text-ink transition-colors hover:border-teal/50"
+          >
+            See the work
+          </a>
+        </motion.div>
+
+        <motion.div variants={fadeUp} className="mt-8 flex flex-wrap gap-2">
           {hero.domains.map((d) => (
             <span key={d} className="rounded-full border border-line px-3 py-1 text-xs font-medium text-ink/80">
               {d}
