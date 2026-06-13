@@ -1,6 +1,7 @@
 import { motion } from 'framer-motion';
 import { Link, useParams } from 'react-router-dom';
 import Seo from '../components/Seo';
+import PostCover from '../components/PostCover';
 import { Prose } from '../components/Prose';
 import { postBySlug } from '../posts';
 import { site } from '../data/site';
@@ -48,9 +49,31 @@ export default function BlogPost({ slug: slugProp }) {
       />
 
       <article className="wrap pt-20 sm:pt-24">
-        <motion.header initial="hidden" animate="show" variants={fadeUp} className="mx-auto max-w-prose">
+        <motion.div
+          initial={{ opacity: 0, y: 14 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.45 }}
+          className="mx-auto max-w-prose"
+        >
           <Link to="/blog/" className="text-sm text-muted transition-colors hover:text-ink">← Writing</Link>
-          <div className="mt-6 flex flex-wrap items-center gap-3 text-micro uppercase text-muted">
+        </motion.div>
+
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.55, delay: 0.08 }}
+          className="mx-auto mt-6 max-w-prose overflow-hidden rounded-card"
+        >
+          <PostCover kind={post.kind} category={post.category} tall />
+        </motion.div>
+
+        <motion.header
+          initial={{ opacity: 0, y: 20 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.55, delay: 0.16 }}
+          className="mx-auto mt-8 max-w-prose"
+        >
+          <div className="flex flex-wrap items-center gap-3 text-micro uppercase text-muted">
             <span>{post.kind}</span>
             <span className="text-faint">·</span>
             <span>{post.category}</span>

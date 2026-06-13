@@ -1,6 +1,7 @@
 import { motion } from 'framer-motion';
 import { Link } from 'react-router-dom';
 import Seo from '../components/Seo';
+import PostCover from '../components/PostCover';
 import { posts } from '../posts';
 import { site } from '../data/site';
 import { fadeUp, stagger, inView } from '../lib/motion';
@@ -35,27 +36,26 @@ export default function BlogIndex() {
           </motion.p>
         </motion.header>
 
-        <motion.ol variants={stagger(0.08)} {...inView} className="grid gap-5">
+        <motion.ol variants={stagger(0.08)} {...inView} className="grid gap-5 sm:grid-cols-2">
           {posts.map((p) => (
             <motion.li key={p.slug} variants={fadeUp}>
               <Link
                 to={`/blog/${p.slug}/`}
-                className="card group block p-6 hover:shadow-card sm:p-7"
+                className="card group flex h-full flex-col overflow-hidden hover:shadow-card"
               >
-                <div className="mb-3 flex flex-wrap items-center gap-3 text-micro uppercase text-muted">
-                  <span>{p.kind}</span>
-                  <span className="text-faint">·</span>
-                  <span>{p.category}</span>
-                  <span className="text-faint">·</span>
-                  <time dateTime={p.date}>{p.dateLabel}</time>
+                <PostCover kind={p.kind} category={p.category} />
+                <div className="flex flex-1 flex-col p-6">
+                  <div className="mb-3 text-micro uppercase text-muted">
+                    <time dateTime={p.date}>{p.dateLabel}</time>
+                  </div>
+                  <h2 className="font-display text-xl font-semibold leading-snug text-ink sm:text-2xl">
+                    {p.title}
+                  </h2>
+                  <p className="mt-3 flex-1 leading-relaxed text-muted text-pretty">{p.summary}</p>
+                  <span className="mt-5 inline-flex w-fit items-center gap-1.5 rounded-full border border-cream/40 px-4 py-1.5 text-sm font-medium text-cream transition-colors group-hover:bg-cream group-hover:text-bg">
+                    Read <span className="transition-transform group-hover:translate-x-0.5" aria-hidden>→</span>
+                  </span>
                 </div>
-                <h2 className="font-display text-xl font-semibold leading-snug text-ink sm:text-2xl">
-                  {p.title}
-                </h2>
-                <p className="mt-3 max-w-2xl leading-relaxed text-muted text-pretty">{p.summary}</p>
-                <span className="mt-5 inline-flex items-center gap-1.5 rounded-full border border-cream/40 px-4 py-1.5 text-sm font-medium text-cream transition-colors group-hover:bg-cream group-hover:text-bg">
-                  Learn more <span className="transition-transform group-hover:translate-x-0.5" aria-hidden>→</span>
-                </span>
               </Link>
             </motion.li>
           ))}
