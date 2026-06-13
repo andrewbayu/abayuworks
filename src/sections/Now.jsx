@@ -7,7 +7,7 @@ export default function Now() {
   return (
     <Section id="now">
       <motion.div variants={fadeUp} {...inView} className="mb-8 flex items-center gap-3 text-micro uppercase text-muted">
-        <span className="h-2 w-2 animate-pulseDot rounded-full bg-teal" />
+        <span className="h-2 w-2 animate-pulseDot rounded-full bg-cream" />
         Now · Active operating commitments
       </motion.div>
 
@@ -16,13 +16,13 @@ export default function Now() {
           <motion.article
             key={c.org}
             variants={fadeUp}
-            className={`group relative bg-surface p-6 transition-colors hover:bg-elevated ${c.cta ? 'ring-1 ring-inset ring-teal/30' : ''}`}
+            className={`group relative bg-surface p-6 transition-colors hover:bg-elevated ${c.cta ? 'ring-1 ring-inset ring-blue/50' : ''}`}
           >
-            <div className="mb-3 text-sm font-medium text-teal-bright">{c.role}</div>
+            <div className="mb-3 text-sm font-medium text-cream">{c.role}</div>
             <div className="mb-2 font-display text-lg font-semibold leading-snug">{c.org}</div>
             <p className="text-sm leading-relaxed text-muted">{c.note}</p>
             {c.cta && (
-              <a href="#contact" className="mt-4 inline-flex items-center gap-1 text-sm font-medium text-teal-bright transition-colors hover:text-teal">
+              <a href="#contact" className="mt-4 inline-flex items-center gap-1 text-sm font-medium text-cream transition-colors hover:text-cream">
                 Get in touch <span aria-hidden>→</span>
               </a>
             )}

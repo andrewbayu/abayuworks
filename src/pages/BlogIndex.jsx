@@ -53,7 +53,7 @@ export default function BlogIndex() {
                   {p.title}
                 </h2>
                 <p className="mt-3 max-w-2xl leading-relaxed text-muted text-pretty">{p.summary}</p>
-                <span className="mt-5 inline-flex items-center gap-1.5 rounded-full border border-teal/40 px-4 py-1.5 text-sm font-medium text-teal-bright transition-colors group-hover:bg-teal group-hover:text-bg">
+                <span className="mt-5 inline-flex items-center gap-1.5 rounded-full border border-cream/40 px-4 py-1.5 text-sm font-medium text-cream transition-colors group-hover:bg-cream group-hover:text-bg">
                   Learn more <span className="transition-transform group-hover:translate-x-0.5" aria-hidden>→</span>
                 </span>
               </Link>

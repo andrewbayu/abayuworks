@@ -15,7 +15,7 @@ export default function BlogPost({ slug: slugProp }) {
     return (
       <div className="wrap py-32 text-center">
         <p className="text-muted">Post not found.</p>
-        <Link to="/blog/" className="mt-4 inline-block text-teal-bright">← Writing</Link>
+        <Link to="/blog/" className="mt-4 inline-block text-cream">← Writing</Link>
       </div>
     );
   }

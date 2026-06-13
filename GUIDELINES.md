@@ -20,11 +20,14 @@ this file holds the stable *rules* and step-by-step *playbooks*.
 - **No buzzwords:** streamline, empower, supercharge, leverage (verb), unleash, transform your, seamless, world-class, enterprise-grade, next-generation, cutting-edge, game-changer, mission-critical.
 - **Receipts over rhetoric.** Only delivered/contributed outcomes (see §6 Honesty).
 
-**Visual**
-- **Font:** Inter only (300–700). Weight does the hierarchy.
-- **Color:** white surface, near-black ink, single teal accent. Use the tokens, never hardcode hex:
-  `--ink --muted --faint --line --primary --primary-h --bg`.
-- **Contrast (WCAG AA):** `--faint` is only 3.63:1 on white, so it is **decorative-only**: borders, separator dots (`·`), and icons. **Never use `--faint` for text** (labels, captions, meta rows). Use `--muted` (7.09:1) for quiet/secondary text. Body text is `--ink` (18.8:1). `--primary` on white is 7.81:1.
+**Visual** (current = React rebuild, dark brand theme — session UK224/MS500)
+- **Font:** **General Sans** only (Fontshare, 300–700), display + body. Weight does the hierarchy. (Superseded the old "Inter only" rule.)
+- **Color (brand standard, dark theme).** Tailwind tokens in `tailwind.config.js`, never hardcode hex:
+  - `bg #1A1B25` (brand navy base) · `surface #222330` · `elevated #2A2B3A` · `line rgba(255,255,255,.09)`
+  - `ink #FFFFFF` (body/headings) · `muted #B4AFA8` (secondary, 7.85:1) · `faint #6E6A64` (decorative only)
+  - `cream #FFE8D4` = the **legible accent**: highlight text, metric numbers, eyebrows, links, dots, focus rings (14.5:1).
+  - `blue #1C3D73` (brand deep blue) = **fills only**: primary CTA buttons (white text, 10.7:1) + hero gradient. It is **1.6:1 on the navy bg, so NEVER use blue for text/icons on dark** — use cream.
+- **Contrast (WCAG AA):** `faint` is decorative-only (borders, separator dots, icons); never use it for text. Secondary text = `muted`.
 - **Cards/boxes:** `border-radius: 5px`, 1px `--line` border, hover darkens border to `--faint`.
 - **Sections:** h2 + hairline divider. No tiny uppercase "eyebrow" labels above every section. No `01/02/03` numbering without a real sequence.
 - **Consistency across pages:** every page (homepage + all blog pages) uses the SAME nav: `Ventures · Receipts · Built · Writing · Contact`, with the burger menu on mobile. Blog pages link homepage sections with absolute paths (`/#receipts`).

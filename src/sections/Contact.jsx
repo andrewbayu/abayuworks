@@ -59,7 +59,7 @@ export default function Contact() {
             className="card group flex items-center justify-between p-5 hover:shadow-glow"
           >
             <span className="font-medium text-ink">{site.email}</span>
-            <span className="text-teal transition-transform group-hover:translate-x-1" aria-hidden>→</span>
+            <span className="text-cream transition-transform group-hover:translate-x-1" aria-hidden>→</span>
           </motion.a>
           {site.socials.map((s) => (
             <motion.a
@@ -79,14 +79,14 @@ export default function Contact() {
         {/* Form */}
         <motion.div variants={fadeUp} {...inView}>
           {status === 'ok' ? (
-            <div className="card border-teal/30 bg-teal/5 p-6">
-              <h3 className="font-display text-xl font-semibold text-teal-bright">Inquiry received.</h3>
+            <div className="card border-cream/30 bg-cream/5 p-6">
+              <h3 className="font-display text-xl font-semibold text-cream">Inquiry received.</h3>
               <p className="mt-2 text-muted">
                 Thanks for reaching out. Aditya replies from <strong className="text-ink">{site.email}</strong> within 48 hours.
               </p>
               {refId && (
                 <p className="mt-4 text-sm text-muted">
-                  Reference: <code className="rounded bg-teal/10 px-2 py-0.5 font-mono text-teal-bright">{refId}</code>
+                  Reference: <code className="rounded bg-cream/10 px-2 py-0.5 font-mono text-cream">{refId}</code>
                 </p>
               )}
             </div>
@@ -139,7 +139,7 @@ export default function Contact() {
               <button
                 type="submit"
                 disabled={status === 'sending'}
-                className="mt-1 inline-flex w-fit items-center gap-2 rounded-card bg-teal px-5 py-2.5 font-medium text-bg transition-colors hover:bg-teal-bright disabled:opacity-60"
+                className="mt-1 inline-flex w-fit items-center gap-2 rounded-card bg-blue px-5 py-2.5 font-medium text-white transition-colors hover:bg-blue-soft disabled:opacity-60"
               >
                 {status === 'sending' ? 'Sending…' : 'Send inquiry'}
                 <span aria-hidden>→</span>
@@ -159,13 +159,13 @@ export default function Contact() {
 }
 
 const inputCls =
-  'w-full rounded-card border border-line bg-elevated px-3.5 py-2.5 text-ink placeholder:text-faint focus:border-teal focus:outline-none focus:ring-2 focus:ring-teal/30';
+  'w-full rounded-card border border-line bg-elevated px-3.5 py-2.5 text-ink placeholder:text-faint focus:border-cream focus:outline-none focus:ring-2 focus:ring-cream/30';
 
 function Field({ label, required, children }) {
   return (
     <label className="grid gap-1.5">
       <span className="text-sm text-muted">
-        {label}{required && <span className="text-teal"> *</span>}
+        {label}{required && <span className="text-cream"> *</span>}
       </span>
       {children}
     </label>

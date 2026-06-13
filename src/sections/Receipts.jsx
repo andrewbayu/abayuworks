@@ -14,7 +14,7 @@ export default function Receipts() {
       <motion.div variants={stagger(0.06)} {...inView} className="grid gap-4 sm:grid-cols-2">
         {receipts.map((r) => (
           <motion.div key={r.src + r.value} variants={fadeUp} className="card p-6">
-            <div className="font-display text-3xl font-semibold text-teal-bright">{r.value}</div>
+            <div className="font-display text-3xl font-semibold text-cream">{r.value}</div>
             <p className="mt-2 text-sm leading-relaxed text-muted">
               <span className="font-medium text-ink">{r.src}.</span> {r.body}
             </p>

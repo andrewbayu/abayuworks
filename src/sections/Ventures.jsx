@@ -20,7 +20,7 @@ function Row({ v, open, onToggle }) {
         <span className="hidden shrink-0 rounded-full border border-line px-2.5 py-1 text-xs text-muted sm:block">
           {v.tag}
         </span>
-        <span className={`shrink-0 text-teal transition-transform duration-300 ${open ? 'rotate-90' : ''}`} aria-hidden>
+        <span className={`shrink-0 text-cream transition-transform duration-300 ${open ? 'rotate-90' : ''}`} aria-hidden>
           →
         </span>
       </button>
@@ -58,13 +58,13 @@ export default function Ventures() {
       <div className="mb-5 flex gap-2 text-xs">
         <button
           onClick={() => { setAllOpen(true); }}
-          className="rounded-card border border-line px-3 py-1.5 text-muted transition-colors hover:border-teal/40 hover:text-ink"
+          className="rounded-card border border-line px-3 py-1.5 text-muted transition-colors hover:border-cream/40 hover:text-ink"
         >
           Expand all
         </button>
         <button
           onClick={() => { setAllOpen(false); setOpenIdx(-1); }}
-          className="rounded-card border border-line px-3 py-1.5 text-muted transition-colors hover:border-teal/40 hover:text-ink"
+          className="rounded-card border border-line px-3 py-1.5 text-muted transition-colors hover:border-cream/40 hover:text-ink"
         >
           Collapse all
         </button>

@@ -4,25 +4,29 @@ export default {
   theme: {
     extend: {
       colors: {
-        // Dark premium operator palette
-        bg: '#0A0E11',          // near-black base
-        surface: '#10161A',     // card surface
-        elevated: '#161E23',    // raised surface
-        line: 'rgba(255,255,255,0.08)',
-        ink: '#EAF0F2',         // primary text (high contrast)
-        muted: '#9AA7AD',       // secondary text (~7:1 on bg)
-        faint: '#5F6E75',       // decorative only (borders/dots/icons)
-        // Teal accent scale
-        teal: {
-          DEFAULT: '#2DD4BF',
-          bright: '#5EEAD4',
-          deep: '#0D9488',
-          glow: 'rgba(45,212,191,0.35)',
+        // Brand palette — dark, recolored (Aditya's standard).
+        bg: '#1A1B25',          // brand near-black navy (base)
+        surface: '#222330',     // raised card surface
+        elevated: '#2A2B3A',    // higher surface
+        line: 'rgba(255,255,255,0.09)',
+        ink: '#FFFFFF',         // primary text
+        muted: '#B4AFA8',       // secondary text (warm gray, ~8:1 on bg)
+        faint: '#6E6A64',       // decorative only (borders/dots/icons)
+        // Cream — the legible highlight accent on dark.
+        cream: {
+          DEFAULT: '#FFE8D4',
+          soft: 'rgba(255,232,212,0.72)',
+        },
+        // Brand deep blue — CTA fills + gradient (too dark for text on navy).
+        blue: {
+          DEFAULT: '#1C3D73',
+          soft: '#2A5499',
+          bright: '#3D6BB0',
         },
       },
       fontFamily: {
-        display: ['"Space Grotesk"', 'system-ui', 'sans-serif'],
-        sans: ['Inter', 'system-ui', '-apple-system', 'sans-serif'],
+        display: ['"General Sans"', 'system-ui', 'sans-serif'],
+        sans: ['"General Sans"', 'system-ui', '-apple-system', 'sans-serif'],
       },
       fontSize: {
         micro: ['0.72rem', { lineHeight: '1.4', letterSpacing: '0.08em' }],
@@ -35,8 +39,8 @@ export default {
         card: '5px',
       },
       boxShadow: {
-        glow: '0 0 0 1px rgba(45,212,191,0.25), 0 8px 40px -8px rgba(45,212,191,0.25)',
-        card: '0 1px 0 rgba(255,255,255,0.04), 0 12px 40px -16px rgba(0,0,0,0.6)',
+        glow: '0 0 0 1px rgba(28,61,115,0.5), 0 8px 40px -8px rgba(28,61,115,0.55)',
+        card: '0 1px 0 rgba(255,255,255,0.04), 0 12px 40px -16px rgba(0,0,0,0.65)',
       },
       keyframes: {
         drift: {

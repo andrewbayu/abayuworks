@@ -29,12 +29,12 @@
   }
 
   ::selection {
-    background: rgba(45, 212, 191, 0.25);
+    background: rgba(255, 232, 212, 0.28);
     color: #fff;
   }
 
   *:focus-visible {
-    outline: 2px solid theme('colors.teal.DEFAULT');
+    outline: 2px solid theme('colors.cream.DEFAULT');
     outline-offset: 3px;
     border-radius: 2px;
   }
@@ -46,12 +46,12 @@
   }
 
   .eyebrow {
-    @apply text-micro uppercase font-medium text-teal;
+    @apply text-micro uppercase font-medium text-cream;
   }
 
   /* Skip link: off-screen until focused */
   .skip-link {
-    @apply absolute left-4 top-4 z-[100] -translate-y-[150%] rounded-card bg-teal px-3.5 py-2
+    @apply absolute left-4 top-4 z-[100] -translate-y-[150%] rounded-card bg-cream px-3.5 py-2
            text-sm font-medium text-bg no-underline transition-transform duration-200;
   }
   .skip-link:focus {
@@ -63,7 +63,7 @@
     @apply rounded-card border border-line bg-surface transition-colors duration-200;
   }
   .card:hover {
-    border-color: rgba(45, 212, 191, 0.35);
+    border-color: rgba(255, 232, 212, 0.32);
   }
 
   /* Section heading + hairline rule */

@@ -10,7 +10,7 @@ export default function Hero() {
   const glow = useTransform(
     [sx, sy],
     ([x, y]) =>
-      `radial-gradient(38rem 38rem at ${x}% ${y}%, rgba(45,212,191,0.18), transparent 60%)`
+      `radial-gradient(38rem 38rem at ${x}% ${y}%, rgba(61,107,176,0.20), transparent 60%)`
   );
 
   const onMove = (e) => {
@@ -30,7 +30,7 @@ export default function Hero() {
         className="pointer-events-none absolute inset-0 animate-drift opacity-70"
         style={{
           backgroundImage:
-            'linear-gradient(125deg, rgba(13,148,136,0.20), rgba(30,58,90,0.18) 40%, rgba(45,30,90,0.16) 70%, transparent)',
+            'linear-gradient(125deg, rgba(28,61,115,0.55), rgba(28,61,115,0.22) 42%, rgba(255,232,212,0.06) 72%, transparent)',
           backgroundSize: '220% 220%',
         }}
       />
@@ -58,10 +58,10 @@ export default function Hero() {
           {hero.title.map((line, i) => (
             <motion.span key={i} variants={fadeUp} className="block">
               {line === 'scales ventures' ? (
-                <span className="relative text-teal-bright">
+                <span className="relative text-cream">
                   {line}
                   <motion.span
-                    className="absolute -bottom-1 left-0 h-px w-full origin-left bg-gradient-to-r from-teal to-transparent"
+                    className="absolute -bottom-1 left-0 h-px w-full origin-left bg-gradient-to-r from-cream to-transparent"
                     initial={{ scaleX: 0 }}
                     animate={{ scaleX: 1 }}
                     transition={{ delay: 0.7, duration: 0.8, ease: easeOut }}
@@ -81,13 +81,13 @@ export default function Hero() {
         <motion.div variants={fadeUp} className="mt-8 flex flex-wrap items-center gap-3">
           <a
             href="#contact"
-            className="inline-flex items-center gap-2 rounded-card bg-teal px-5 py-2.5 font-medium text-bg transition-colors hover:bg-teal-bright"
+            className="inline-flex items-center gap-2 rounded-card bg-blue px-5 py-2.5 font-medium text-white transition-colors hover:bg-blue-soft"
           >
             Start a conversation <span aria-hidden>→</span>
           </a>
           <a
             href="#ventures"
-            className="inline-flex items-center gap-2 rounded-card border border-line px-5 py-2.5 font-medium text-ink transition-colors hover:border-teal/50"
+            className="inline-flex items-center gap-2 rounded-card border border-line px-5 py-2.5 font-medium text-ink transition-colors hover:border-cream/50"
           >
             See the work
           </a>
@@ -105,7 +105,7 @@ export default function Hero() {
         <motion.dl variants={fadeUp} className="mt-12 grid grid-cols-2 gap-px overflow-hidden rounded-card border border-line bg-line lg:grid-cols-4">
           {hero.stats.map((s) => (
             <div key={s.value} className="bg-surface p-5">
-              <dt className="font-display text-2xl font-semibold text-teal-bright sm:text-3xl">{s.value}</dt>
+              <dt className="font-display text-2xl font-semibold text-cream sm:text-3xl">{s.value}</dt>
               <dd className="mt-1.5 text-xs leading-snug text-muted">{s.label}</dd>
             </div>
           ))}
