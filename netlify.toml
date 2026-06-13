@@ -1,13 +1,12 @@
 # Netlify configuration for the Aditya Indra Bayu portfolio.
-# Static site, no build step.
+# Vite + React + Framer Motion, statically pre-rendered with vite-react-ssg.
 
 [build]
-  publish = "."
-  # No command — index.html is shipped as-is.
+  command = "npm run build"
+  publish = "dist"
 
-# Ignore harness / preview config that lives in .claude/
-[build.processing]
-  skip_processing = false
+[build.environment]
+  NODE_VERSION = "22"
 
 [build.processing.html]
   pretty_urls = true

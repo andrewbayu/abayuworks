@@ -21,8 +21,10 @@ Thumbs.db
 .vscode/
 .idea/
 
-# Node (in case anything ever needs it)
+# Node + Vite build
 node_modules/
+dist/
+.vite-react-ssg-temp/
 npm-debug.log
 .env
 .env.local
@@ -30,3 +32,4 @@ npm-debug.log
 # Python bytecode (e.g. from skill scripts)
 __pycache__/
 *.pyc
+legacy/
