@@ -25,15 +25,17 @@ function ProfileCard() {
           >
             AIB
           </div>
-          {/* Avatar circle */}
-          <div className="absolute left-1/2 top-10 flex -translate-x-1/2 flex-col items-center">
-            <div
-              className="flex h-24 w-24 items-center justify-center rounded-full border border-white/10"
-              style={{
-                background: 'radial-gradient(circle at 40% 35%, rgba(61,107,176,0.55), rgba(28,61,115,0.30))',
-              }}
-            >
-              <span className="font-display text-xl font-semibold tracking-tight text-white/60">AIB</span>
+          {/* Avatar */}
+          <div className="absolute left-1/2 top-9 flex -translate-x-1/2 flex-col items-center">
+            <div className="h-28 w-28 overflow-hidden rounded-full border border-white/15 shadow-card">
+              <img
+                src="/aditya-bayu.webp"
+                alt="Aditya Indra Bayu"
+                width="112"
+                height="112"
+                loading="eager"
+                className="h-full w-full object-cover"
+              />
             </div>
             <div className="mt-4 font-display text-sm font-semibold text-ink">{site.name}</div>
             <div className="mt-1 text-xs text-muted">{site.role}</div>
