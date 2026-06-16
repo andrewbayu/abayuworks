@@ -179,16 +179,9 @@ export const linkPage = {
   // Featured link buttons. Edit freely; add { label, sub, href, tag, external }.
   links: [
     {
-      label: 'Growthlab Academy',
-      sub: 'Toolkits, frameworks, and founder mentoring',
-      href: 'https://learn.growthlab.co.id',
-      tag: 'Products',
-      external: true,
-    },
-    {
       label: 'Xniper',
       sub: 'AI content generator for marketing teams',
-      href: 'https://xniperapp.vercel.app',
+      href: 'https://xniper.cloud',
       tag: 'AI tool',
       external: true,
     },
