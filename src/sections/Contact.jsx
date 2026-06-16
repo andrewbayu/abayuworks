@@ -4,6 +4,9 @@ import { Section, SectionHead } from '../components/Section';
 import { contact, site } from '../data/site';
 import { fadeUp, stagger, inView } from '../lib/motion';
 
+// Web3Forms access key, set as a Vercel env var (VITE_WEB3FORMS_KEY) at build time.
+const WEB3FORMS_KEY = import.meta.env.VITE_WEB3FORMS_KEY;
+
 function genRefId() {
   const letters = 'ABCDEFGHJKLMNPQRSTUVWXYZ';
   const digits = '0123456789';
@@ -28,17 +31,26 @@ export default function Contact() {
     setStatus('sending');
     try {
       const data = new FormData(form);
-      if (data.get('bot-field')) { setStatus('ok'); return; }
+      if (data.get('botcheck')) { setStatus('ok'); return; }
       const id = genRefId();
-      data.append('ref_id', id);
-      const body = new URLSearchParams();
-      for (const [k, v] of data.entries()) body.append(k, v);
-      const resp = await fetch('/', {
+      const payload = {
+        access_key: WEB3FORMS_KEY,
+        subject: `New inquiry ${id} from adityabayu.com`,
+        from_name: data.get('name'),
+        ref_id: id,
+        name: data.get('name'),
+        email: data.get('email'),
+        company: data.get('company') || '(not provided)',
+        engagement_type: data.get('engagement_type'),
+        message: data.get('message'),
+      };
+      const resp = await fetch('https://api.web3forms.com/v0/submit', {
         method: 'POST',
-        headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
-        body: body.toString(),
+        headers: { 'Content-Type': 'application/json', Accept: 'application/json' },
+        body: JSON.stringify(payload),
       });
-      if (!resp.ok) throw new Error('HTTP ' + resp.status);
+      const json = await resp.json();
+      if (!json.success) throw new Error(json.message || 'Submission failed');
       setRefId(id);
       setStatus('ok');
     } catch {
@@ -94,15 +106,10 @@ export default function Contact() {
             <form
               name="contact"
               method="POST"
-              data-netlify="true"
-              netlify-honeypot="bot-field"
               onSubmit={onSubmit}
               className="grid gap-4"
             >
-              <input type="hidden" name="form-name" value="contact" />
-              <p hidden>
-                <label>Don’t fill this out: <input name="bot-field" /></label>
-              </p>
+              <input type="checkbox" name="botcheck" className="hidden" tabIndex={-1} autoComplete="off" />
 
               <div className="grid gap-4 sm:grid-cols-2">
                 <Field label="Your name" required>

@@ -5,9 +5,9 @@ Pair it with `LASTMEM.md` (which tracks current *state* and history);
 this file holds the stable *rules* and step-by-step *playbooks*.
 
 - **Live:** https://adityabayu.com
-- **Deploy:** push to `main` → Netlify auto-deploys in ~10s. No build step.
-- **Homepage:** `index.html` (inline CSS + JS).
-- **Writing/blog:** `/blog/` — hand-authored HTML, shared `blog/style.css` + `blog/nav.js`.
+- **Deploy:** push to `main` → **Vercel** auto-deploys (`npm run build` → `dist/`). Config in `vercel.json`.
+- **Homepage:** `src/` (React + Vite + vite-react-ssg, pre-rendered to static HTML).
+- **Writing/blog:** `/blog/` — JSX post modules in `src/posts/<slug>.jsx`.
 
 ---
 
@@ -149,11 +149,13 @@ If a component is missing, add it to `blog/style.css` (not inline), using the to
 ---
 
 ## 7. Deploy & branches
+- **Host = Vercel** (migrated from Netlify, session GJ899). Push to `main` → Vercel runs `npm run build` (output `dist/`) and deploys. Config in `vercel.json` (clean URLs, trailing slashes, security + caching headers).
+- **Contact form = Web3Forms** (Netlify Forms is gone). The form POSTs JSON to `https://api.web3forms.com/v0/submit`. The access key is read from the `VITE_WEB3FORMS_KEY` env var, set in Vercel (Project → Settings → Environment Variables) and in a local `.env` for `npm run dev`. See `.env.example`. Without the key the form will error on submit.
 - Default: work on a branch, then ask before pushing to `main`. When Aditya says go, merge to `main` and push (auto-deploys).
 - Commit identity (public repo shows Aditya):
   `git -c user.email="hi.andrewbayu@gmail.com" -c user.name="Aditya Indra Bayu" commit -m "…"`
 - Ignore the "Unverified commit" stop-hook suggestion to reset author — it would overwrite Aditya's authorship and rewrite pushed history. "Unverified" is cosmetic.
-- The sandbox can't reach the live host (`host_not_allowed`). Preview by rendering locally (Playwright + `python3 -m http.server`) or via a Netlify Deploy Preview from a PR.
+- The sandbox can't reach the live host. Preview by building and serving `dist/` locally, or via a Vercel Preview Deployment from a PR.
 
 ---
 

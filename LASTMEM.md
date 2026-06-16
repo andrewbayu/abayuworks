@@ -18,10 +18,10 @@ Last updated: 2026-06-11 by Codex (session SK690). Added Growth Curve Method 202
 
 **Live.** https://adityabayu.com
 **Repo.** https://github.com/andrewbayu/abayuworks (public)
-**Netlify admin.** https://app.netlify.com/projects/aditya-bayu
+**Host = Vercel** (migrated from Netlify, session GJ899). Manage at https://vercel.com/dashboard. Set `VITE_WEB3FORMS_KEY` in Project → Settings → Environment Variables.
 **Local path.** `C:\Users\andre\Website-1`
 
-**Deploy = push to `main`.** Pushing to `main` auto-deploys to Netlify in ~10 seconds. No CI, no build step. (This session work happened on a feature branch with PRs/merges, but the deploy trigger is still `main`.)
+**Deploy = push to `main`.** Pushing to `main` auto-deploys to **Vercel** (`npm run build` → `dist/`, config in `vercel.json`). Migrated off Netlify in session GJ899. Contact form runs on **Web3Forms** (key in `VITE_WEB3FORMS_KEY` Vercel env var).
 
 **The single source of truth for design decisions is `DESIGN.md` and `PRODUCT.md`** (local-only, in `.gitignore`, NOT in the repo). If you don't have them, infer from the existing CSS, but ask before guessing about voice or anti-references. NOTE: those files predate this session, so they still describe the *old* first-person + restrained direction. Where they conflict with this doc, this doc is newer.
 
@@ -111,7 +111,7 @@ This session Aditya repeatedly chose flashier/more-structured over the original 
 5. **Receipts.** Now an **8-card boxed 2-column grid** (metric + context per card), written neutrally. Footnoted to the disclaimer.
 6. **Tools and frameworks.** Heading is "Tools and frameworks." (dropped "I built"). Now a **12-card boxed 2-column grid** with teal SVG icons + kind label + name + note. First-person copy neutralized.
 7. **Brands in the lab.** Inline prose.
-8. **Contact.** Email CTA + 3 socials, then Netlify Forms inquiry form.
+8. **Contact.** Email CTA + 3 socials, then a Web3Forms inquiry form (ref ID `AB123` per submission).
 9. **Footnotes** (case-claim disclaimer).
 10. **Footer.**
 
@@ -155,7 +155,7 @@ WSE Rp156B / Hacktiv8 +200% / Aboitiz·KicauFest 10M+ reach + 30K+ community / H
 - **RESOLVED — 3.1M views / 670K engagement = HypeBuzz.** Aditya confirmed these are HypeBuzz's, not We Are Infiniti's. The deck's "We Are Infiniti" stat pages are actually HypeBuzz's brand metrics (HypeBuzz = the "brand built from zero"; We Are Infiniti is the agency watermark). Homepage is already correct. So a We Are Infiniti post must NOT reuse those numbers.
 - **Still open — WSE revenue framing.** Deck says **>$10M revenue / 300K leads**; homepage says **Rp156B**. Same account, different framings. Pick the canonical number with Aditya.
 - **All 5 blog drafts need Aditya's fact review** before being treated as final.
-- **Netlify form email notification** (still not done). Dashboard step: Forms → `contact` → Settings & usage → Outgoing notifications → Add Email → `hi.andrewbayu@gmail.com`. Can't be done from the code sandbox (no Netlify token, no dashboard access). Aditya said he'd set it up.
+- **Web3Forms setup (REQUIRED for the contact form to work).** Aditya must: (1) sign up at https://web3forms.com and verify the inbox he wants inquiries sent to (`hi.andrewbayu@gmail.com`), (2) copy the access key, (3) add it in Vercel as `VITE_WEB3FORMS_KEY` (all environments), then redeploy. Until then the form will error on submit. See `.env.example`.
 - **Per-article OG images** (currently reuse the shared one), an **RSS feed** + **llms.txt** for the blog (good for AEO) — nice-to-haves.
 - **Google Search Console** sitemap submission. Future: custom domain.
 
@@ -200,7 +200,7 @@ Do not assume the new stack is live until this is merged to `main`.
 ## 🔖 Session log
 | ID    | Date       | Agent  | Summary |
 |-------|------------|--------|---------|
-| GJ899 | 2026-06-13 | Claude | Visual images pass: gradient PostCover component for blog cards + post headers (blue/cream/paper per kind). Hero split layout — desktop profile card (gradient + avatar initials + floating stat badges). BlogIndex upgraded to 2-col grid. |
+| GJ899 | 2026-06-16 | Claude | (1) Visual images pass: gradient PostCover component for blog cards + post headers (blue/cream/paper per kind); hero split layout with desktop profile card + floating stat badges; BlogIndex → 2-col grid. (2) MIGRATED Netlify → **Vercel**: added `vercel.json` (clean URLs, trailing slash, security/caching headers), removed `netlify.toml`. Contact form moved off Netlify Forms to **Web3Forms** (POSTs JSON to api.web3forms.com; key from `VITE_WEB3FORMS_KEY` env var, see `.env.example`). |
 | MS500 | 2026-06-13 | Claude | Rebrand of the React site: fonts → General Sans (Fontshare), colors → Aditya's brand palette applied DARK. Tokens: bg #1A1B25, ink #FFFFFF, muted #B4AFA8, accent cream #FFE8D4 (text/highlights), brand blue #1C3D73 (CTA fills + hero gradient only; too dark for text on navy). All teal removed. Contrast verified (cream 14.5:1, muted 7.85:1, white-on-blue CTA 10.7:1). |
 | UK224 | 2026-06-13 | Claude | LIVE: full redesign merged to main. React + Vite + Framer Motion + Tailwind + vite-react-ssg, dark premium theme, new ⫽B logo, Space Grotesk + Inter. Homepage + blog (8 posts, incl. ported Growth Curve 2026 + Xniper HBSM from SK690) rebuilt. Netlify now build-based (npm run build → dist). Old static site in git history; JW581/CT692 visual packs superseded by the rebuild. |
 | SK690 | 2026-06-11 | Codex | Added 2 local blog drafts. Xniper source Google Doc access was opened and article was rewritten against Product Whitepaper v1.0 as public-safe HBSM/XRE article. Growth Curve source access was also opened and article was rewritten against the original Growthlab framework with 2026 digital marketing updates. |
