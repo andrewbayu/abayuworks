@@ -29,10 +29,21 @@ if (existsSync(blogHtml)) {
   renameSync(blogHtml, join(blogDir, 'index.html'));
 }
 
+// 2b. Fold standalone top-level pages: dist/<name>.html -> dist/<name>/index.html
+for (const name of ['links']) {
+  const f = join(dist, `${name}.html`);
+  if (existsSync(f) && statSync(f).isFile()) {
+    const dir = join(dist, name);
+    mkdirSync(dir, { recursive: true });
+    renameSync(f, join(dir, 'index.html'));
+  }
+}
+
 // 3. Sitemap
 const urls = [
   { loc: `${SITE}/`, freq: 'monthly', pri: '1.0' },
   { loc: `${SITE}/blog/`, freq: 'weekly', pri: '0.8' },
+  { loc: `${SITE}/links/`, freq: 'monthly', pri: '0.5' },
   ...slugs.sort().map((s) => ({ loc: `${SITE}/blog/${s}/`, freq: 'monthly', pri: '0.7' })),
 ];
 const sitemap = `<?xml version="1.0" encoding="UTF-8"?>

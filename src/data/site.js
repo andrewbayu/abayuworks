@@ -170,3 +170,35 @@ export const contact = {
     { value: 'other', label: 'Something else' },
   ],
 };
+
+// Link-in-bio page (/links) — shared across social media bios.
+export const linkPage = {
+  tagline: 'Venture Builder · Fractional CMO',
+  intro:
+    'Aditya (Andrew) Indra Bayu builds and scales companies across education, maritime, agency, film, and AI. He names the brand, ships the funnel, builds the AI tools, then takes an operating seat until the venture finds revenue.',
+  // Featured link buttons. Edit freely; add { label, sub, href, tag, external }.
+  links: [
+    {
+      label: 'Growthlab Academy',
+      sub: 'Toolkits, frameworks, and founder mentoring',
+      href: 'https://learn.growthlab.co.id',
+      tag: 'Products',
+      external: true,
+    },
+    {
+      label: 'Xniper',
+      sub: 'AI content generator for marketing teams',
+      href: 'https://xniperapp.vercel.app',
+      tag: 'AI tool',
+      external: true,
+    },
+    {
+      label: 'Case studies and notes',
+      sub: 'Receipts from building ventures across industries',
+      href: '/blog/',
+      tag: 'Writing',
+      external: false,
+    },
+  ],
+  cta: { label: 'Work with Aditya', href: '/#contact' },
+};

@@ -2,6 +2,7 @@ import Layout from './components/Layout';
 import Home from './pages/Home';
 import BlogIndex from './pages/BlogIndex';
 import BlogPost from './pages/BlogPost';
+import Links from './pages/Links';
 import { postSlugs } from './posts';
 
 export const routes = [
@@ -24,4 +25,6 @@ export const routes = [
       },
     ],
   },
+  // Standalone link-in-bio page — no shared nav/footer chrome.
+  { path: '/links', element: <Links /> },
 ];
