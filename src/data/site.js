@@ -195,3 +195,53 @@ export const linkPage = {
   ],
   cta: { label: 'Work with Aditya', href: '/#contact' },
 };
+
+// Lead-magnet carousel (shown on /links). Two card types:
+//   type: 'download' -> email-gated. Set `file` to a URL when ready; until then
+//         the email is still captured (Web3Forms) and Aditya delivers manually.
+//   type: 'guide'    -> ungated link (internal blog or external). Set `href`.
+export const resources = [
+  {
+    title: 'ContentStrategist Toolkit',
+    blurb: 'Persona worksheets, strategy cards, content routes, a hook library, and AI prompts.',
+    audience: 'For founders building a content system',
+    type: 'download',
+    tag: 'Toolkit',
+    format: 'PDF',
+    file: null,
+  },
+  {
+    title: 'Level Ads Framework',
+    blurb: 'Awareness levels mapped to funnel stages and creative angles. Budget, testing, and scaling in one playbook.',
+    audience: 'For paid-ads and performance marketers',
+    type: 'download',
+    tag: 'Framework',
+    format: 'PDF',
+    file: null,
+  },
+  {
+    title: 'Ad-in-a-Box Kit',
+    blurb: 'AI-powered production kit for hooks, angles, and rapid creative variants.',
+    audience: 'For founders with no creative team yet',
+    type: 'download',
+    tag: 'Kit',
+    format: 'PDF',
+    file: null,
+  },
+  {
+    title: 'Growth Curve Method',
+    blurb: 'Pillar, supporting, and content routes. The framework that moves brands from random posting to a system.',
+    audience: 'For content-led founders',
+    type: 'guide',
+    tag: 'Guide',
+    href: '/blog/growth-curve-method-2026/',
+  },
+  {
+    title: 'Xniper HBSM Paper',
+    blurb: 'Audience simulation before campaign spend: 100 digital humans, 20,000 Monte Carlo data points.',
+    audience: 'For data-driven marketers',
+    type: 'guide',
+    tag: 'Paper',
+    href: '/blog/xniper-hybrid-behavioral-synthetic-modeling/',
+  },
+];

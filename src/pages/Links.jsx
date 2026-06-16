@@ -1,6 +1,7 @@
 import { motion } from 'framer-motion';
 import { Link } from 'react-router-dom';
 import Seo from '../components/Seo';
+import ResourceCarousel from '../components/ResourceCarousel';
 import { site, linkPage } from '../data/site';
 import { fadeUp, stagger } from '../lib/motion';
 
@@ -107,6 +108,9 @@ export default function Links() {
           >
             {linkPage.cta.label} <span aria-hidden>→</span>
           </motion.a>
+
+          {/* Lead-magnet carousel */}
+          <ResourceCarousel />
 
           {/* Link buttons */}
           <motion.nav variants={stagger(0.06)} className="mt-4 flex flex-col gap-3" aria-label="Links">
