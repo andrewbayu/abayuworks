@@ -71,6 +71,11 @@ export default async function handler(req, res) {
     return res.status(200).json({ success: true });
   } catch (err) {
     console.error('contact mail send failed:', err);
-    return res.status(502).json({ success: false, message: 'Could not send right now. Please email directly.' });
+    // TEMP DEBUG: surface the real SMTP error to diagnose. Revert after.
+    return res.status(502).json({
+      success: false,
+      message: 'Could not send right now. Please email directly.',
+      debug: { code: err?.code, command: err?.command, errno: err?.errno, message: String(err?.message || err) },
+    });
   }
 }
