@@ -17,11 +17,20 @@ export function genRefId() {
 }
 
 // POST a payload to Web3Forms. Throws on failure.
+// Sent as FormData (not JSON) on purpose: a JSON body forces a CORS preflight
+// OPTIONS request, which Web3Forms' Cloudflare bot-protection answers with a
+// challenge (non-2xx) and the browser then blocks the whole request. FormData
+// is a CORS-safelisted content type, so no preflight is sent. Do NOT add a
+// Content-Type header here — the browser must set the multipart boundary.
 export async function submitWeb3Forms(payload) {
+  const formData = new FormData();
+  formData.append('access_key', WEB3FORMS_KEY);
+  for (const [key, value] of Object.entries(payload)) {
+    formData.append(key, value ?? '');
+  }
   const resp = await fetch('https://api.web3forms.com/v0/submit', {
     method: 'POST',
-    headers: { 'Content-Type': 'application/json', Accept: 'application/json' },
-    body: JSON.stringify({ access_key: WEB3FORMS_KEY, ...payload }),
+    body: formData,
   });
   const json = await resp.json();
   if (!json.success) throw new Error(json.message || 'Submission failed');
