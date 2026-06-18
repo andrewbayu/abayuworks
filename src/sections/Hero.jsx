@@ -1,4 +1,5 @@
-import { motion, useMotionValue, useSpring, useTransform } from 'framer-motion';
+import { useEffect, useRef, useState } from 'react';
+import { motion, useMotionValue, useScroll, useSpring, useTransform } from 'framer-motion';
 import { hero, site } from '../data/site';
 import { fadeUp, stagger, easeOut } from '../lib/motion';
 
@@ -6,6 +7,11 @@ const DOT_PATTERN = {
   backgroundImage: 'radial-gradient(circle, rgba(255,255,255,0.06) 1px, transparent 1px)',
   backgroundSize: '20px 20px',
 };
+
+// Faint film grain (data-URI SVG turbulence) to break up video banding and kill
+// the flat "stock footage" look. Sits over the video at low opacity.
+const GRAIN =
+  "url(\"data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='160' height='160'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='2' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='0.5'/%3E%3C/svg%3E\")";
 
 function ProfileCard() {
   return (
@@ -66,7 +72,45 @@ function ProfileCard() {
   );
 }
 
+// Video background with scroll + mouse parallax. Mounts only on wide viewports
+// with motion allowed, so phones, reduced-motion users, and JS-off crawlers get
+// the gradient fallback underneath instead of a 3.8MB download. The element is
+// oversized (140%) so neither parallax shift nor the zoom ever reveals an edge.
+function VideoBackdrop({ scrollY, scale, mouseX, mouseY }) {
+  const [ready, setReady] = useState(false);
+
+  return (
+    <motion.div
+      aria-hidden
+      style={{ y: scrollY, scale, willChange: 'transform' }}
+      className="pointer-events-none absolute inset-0"
+    >
+      <motion.div style={{ x: mouseX, y: mouseY, willChange: 'transform' }} className="absolute inset-0">
+        <video
+          autoPlay
+          muted
+          loop
+          playsInline
+          preload="auto"
+          poster="/hero-poster.jpg"
+          onCanPlay={() => setReady(true)}
+          className={`absolute left-1/2 top-1/2 h-[140%] w-[140%] -translate-x-1/2 -translate-y-1/2 object-cover transition-opacity duration-[1400ms] ease-out ${
+            ready ? 'opacity-100' : 'opacity-0'
+          }`}
+        >
+          <source src="/hero.webm" type="video/webm" />
+          <source src="/hero.mp4" type="video/mp4" />
+        </video>
+      </motion.div>
+    </motion.div>
+  );
+}
+
 export default function Hero() {
+  const headerRef = useRef(null);
+  const [enableVideo, setEnableVideo] = useState(false);
+
+  // Mouse spotlight + mouse parallax share one source of truth.
   const mx = useMotionValue(50);
   const my = useMotionValue(35);
   const sx = useSpring(mx, { stiffness: 60, damping: 20 });
@@ -76,6 +120,20 @@ export default function Hero() {
     ([x, y]) =>
       `radial-gradient(38rem 38rem at ${x}% ${y}%, rgba(61,107,176,0.20), transparent 60%)`
   );
+  // Mouse parallax for the video: cursor 0–100% maps to a gentle ±18px / ±12px drift.
+  const videoMouseX = useTransform(sx, [0, 100], [18, -18]);
+  const videoMouseY = useTransform(sy, [0, 100], [12, -12]);
+
+  // Scroll parallax: video sinks and zooms slightly as the hero scrolls away.
+  const { scrollYProgress } = useScroll({ target: headerRef, offset: ['start start', 'end start'] });
+  const videoScrollY = useTransform(scrollYProgress, [0, 1], ['0%', '12%']);
+  const videoScale = useTransform(scrollYProgress, [0, 1], [1.06, 1.16]);
+
+  useEffect(() => {
+    const motionOk = !window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+    const wide = window.matchMedia('(min-width: 1024px)').matches;
+    setEnableVideo(motionOk && wide);
+  }, []);
 
   const onMove = (e) => {
     const r = e.currentTarget.getBoundingClientRect();
@@ -84,8 +142,8 @@ export default function Hero() {
   };
 
   return (
-    <header onMouseMove={onMove} className="relative overflow-hidden bg-grid">
-      {/* Animated gradient mesh */}
+    <header ref={headerRef} onMouseMove={onMove} className="relative overflow-hidden bg-grid">
+      {/* Animated gradient mesh — the fallback floor (shown when video is absent) */}
       <div
         aria-hidden
         className="pointer-events-none absolute inset-0 animate-drift opacity-70"
@@ -94,6 +152,38 @@ export default function Hero() {
             'linear-gradient(125deg, rgba(28,61,115,0.55), rgba(28,61,115,0.22) 42%, rgba(255,232,212,0.06) 72%, transparent)',
           backgroundSize: '220% 220%',
         }}
+      />
+
+      {/* Video backdrop (desktop + motion only), layered above the gradient floor */}
+      {enableVideo && (
+        <VideoBackdrop
+          scrollY={videoScrollY}
+          scale={videoScale}
+          mouseX={videoMouseX}
+          mouseY={videoMouseY}
+        />
+      )}
+
+      {/* Legibility scrim: navy, weighted toward the left where the copy sits */}
+      <div
+        aria-hidden
+        className="pointer-events-none absolute inset-0"
+        style={{
+          background:
+            'linear-gradient(102deg, rgba(26,27,37,0.94) 0%, rgba(26,27,37,0.82) 34%, rgba(26,27,37,0.5) 62%, rgba(26,27,37,0.66) 100%)',
+        }}
+      />
+      {/* Bottom fade into the page so the stat strip + section seam stay clean */}
+      <div
+        aria-hidden
+        className="pointer-events-none absolute inset-x-0 bottom-0 h-40"
+        style={{ background: 'linear-gradient(to bottom, transparent, #1A1B25)' }}
+      />
+      {/* Film grain over the video to break banding */}
+      <div
+        aria-hidden
+        className="pointer-events-none absolute inset-0 opacity-[0.05] mix-blend-overlay"
+        style={{ backgroundImage: GRAIN }}
       />
       {/* Cursor spotlight */}
       <motion.div aria-hidden className="pointer-events-none absolute inset-0" style={{ background: glow }} />
