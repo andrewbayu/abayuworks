@@ -1,5 +1,8 @@
-// Shared contact/lead-capture helpers. Web3Forms key comes from the Vercel env var.
-export const WEB3FORMS_KEY = import.meta.env.VITE_WEB3FORMS_KEY;
+// Shared contact/lead-capture helpers. Submissions go to our own same-origin
+// serverless function (/api/contact), which sends the email over SMTP. Because
+// the request is same-origin there is no CORS preflight and no third-party
+// bot-challenge in the browser path (the reason the old Web3Forms browser API
+// kept returning 403 via its Cloudflare protection).
 
 // 5-char reference id: 2 letters + 3 digits (e.g. AB123). crypto-backed.
 export function genRefId() {
@@ -16,23 +19,14 @@ export function genRefId() {
   );
 }
 
-// POST a payload to Web3Forms. Throws on failure.
-// Sent as FormData (not JSON) on purpose: a JSON body forces a CORS preflight
-// OPTIONS request, which Web3Forms' Cloudflare bot-protection answers with a
-// challenge (non-2xx) and the browser then blocks the whole request. FormData
-// is a CORS-safelisted content type, so no preflight is sent. Do NOT add a
-// Content-Type header here — the browser must set the multipart boundary.
-export async function submitWeb3Forms(payload) {
-  const formData = new FormData();
-  formData.append('access_key', WEB3FORMS_KEY);
-  for (const [key, value] of Object.entries(payload)) {
-    formData.append(key, value ?? '');
-  }
-  const resp = await fetch('https://api.web3forms.com/v0/submit', {
+// POST a payload to our /api/contact serverless function. Throws on failure.
+export async function submitContact(payload) {
+  const resp = await fetch('/api/contact', {
     method: 'POST',
-    body: formData,
+    headers: { 'Content-Type': 'application/json' },
+    body: JSON.stringify(payload),
   });
-  const json = await resp.json();
-  if (!json.success) throw new Error(json.message || 'Submission failed');
+  const json = await resp.json().catch(() => ({}));
+  if (!resp.ok || !json.success) throw new Error(json.message || 'Submission failed');
   return json;
 }

@@ -3,7 +3,7 @@ import { motion } from 'framer-motion';
 import { Section, SectionHead } from '../components/Section';
 import { contact, site } from '../data/site';
 import { fadeUp, stagger, inView } from '../lib/motion';
-import { genRefId, submitWeb3Forms } from '../lib/forms';
+import { genRefId, submitContact } from '../lib/forms';
 
 export default function Contact() {
   const [status, setStatus] = useState('idle'); // idle | sending | ok | error
@@ -17,7 +17,7 @@ export default function Contact() {
       const data = new FormData(form);
       if (data.get('botcheck')) { setStatus('ok'); return; }
       const id = genRefId();
-      await submitWeb3Forms({
+      await submitContact({
         subject: `New inquiry ${id} from adityabayu.com`,
         from_name: data.get('name'),
         ref_id: id,

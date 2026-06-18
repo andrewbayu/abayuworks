@@ -2,7 +2,7 @@ import { useState } from 'react';
 import { AnimatePresence, motion } from 'framer-motion';
 import { Link } from 'react-router-dom';
 import { resources } from '../data/site';
-import { genRefId, submitWeb3Forms } from '../lib/forms';
+import { genRefId, submitContact } from '../lib/forms';
 import { fadeUp } from '../lib/motion';
 
 const cardCls = 'card flex h-full w-64 shrink-0 snap-start flex-col p-5';
@@ -49,7 +49,7 @@ function DownloadCard({ r }) {
     setState('sending');
     try {
       const id = genRefId();
-      await submitWeb3Forms({
+      await submitContact({
         subject: `Lead magnet request: ${r.title} (${id})`,
         from_name: email,
         email,
