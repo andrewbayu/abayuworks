@@ -21,7 +21,10 @@ export function genRefId() {
 
 // POST a payload to our /api/contact serverless function. Throws on failure.
 export async function submitContact(payload) {
-  const resp = await fetch('/api/contact', {
+  // Trailing slash on purpose: vercel.json has trailingSlash:true, so /api/contact
+  // 308-redirects to /api/contact/. Posting straight to the slashed path avoids
+  // the redirect round-trip entirely.
+  const resp = await fetch('/api/contact/', {
     method: 'POST',
     headers: { 'Content-Type': 'application/json' },
     body: JSON.stringify(payload),
