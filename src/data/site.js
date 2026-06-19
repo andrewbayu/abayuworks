@@ -185,21 +185,44 @@ export const linkPage = {
       tag: 'AI tool',
       external: true,
     },
-    {
-      label: 'Case studies and notes',
-      sub: 'Receipts from building ventures across industries',
-      href: '/blog/',
-      tag: 'Writing',
-      external: false,
-    },
   ],
   cta: { label: 'Work with Aditya', href: '/#contact' },
 };
+
+// Featured case studies for the /links carousel. Top picks, edit freely.
+// `image` is the featured image (also reused as the post cover when set). Leave
+// null to show the branded gradient placeholder until a real image is provided.
+export const featuredCaseStudies = [
+  {
+    slug: 'wall-street-english-turnaround',
+    title: 'Rebuilding strategy at Wall Street English Indonesia',
+    category: 'Education',
+    kind: 'Case study',
+    image: null,
+  },
+  {
+    slug: 'dental-clinic-multi-branch-growth',
+    title: 'Scaling a Jakarta dental clinic from 6 to 10 branches',
+    category: 'Healthcare',
+    kind: 'Case study',
+    image: null,
+  },
+  {
+    slug: 'hypebuzz-brand-from-zero',
+    title: 'HypeBuzz: building a trend-media brand from zero',
+    category: 'Media',
+    kind: 'Case study',
+    image: null,
+  },
+];
 
 // Lead-magnet carousel (shown on /links). Two card types:
 //   type: 'download' -> email-gated. Set `file` to a URL when ready; until then
 //         the email is still captured (Web3Forms) and Aditya delivers manually.
 //   type: 'guide'    -> ungated link (internal blog or external). Set `href`.
+// `image` is the featured image shown on each card (also intended as the
+// resource's featured/OG image). Leave null to show the branded gradient
+// placeholder until a real image is provided.
 export const resources = [
   {
     title: 'ContentStrategist Toolkit',
@@ -208,6 +231,7 @@ export const resources = [
     type: 'download',
     tag: 'Toolkit',
     format: 'PDF',
+    image: null,
     file: null,
   },
   {
@@ -217,6 +241,7 @@ export const resources = [
     type: 'download',
     tag: 'Framework',
     format: 'PDF',
+    image: null,
     file: null,
   },
   {
@@ -226,6 +251,7 @@ export const resources = [
     type: 'download',
     tag: 'Kit',
     format: 'PDF',
+    image: null,
     file: null,
   },
   {
@@ -234,6 +260,7 @@ export const resources = [
     audience: 'For content-led founders',
     type: 'guide',
     tag: 'Guide',
+    image: null,
     href: '/blog/growth-curve-method-2026/',
   },
   {
@@ -242,6 +269,7 @@ export const resources = [
     audience: 'For data-driven marketers',
     type: 'guide',
     tag: 'Paper',
+    image: null,
     href: '/blog/xniper-hybrid-behavioral-synthetic-modeling/',
   },
 ];

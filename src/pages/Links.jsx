@@ -2,6 +2,8 @@ import { motion } from 'framer-motion';
 import { Link } from 'react-router-dom';
 import Seo from '../components/Seo';
 import ResourceCarousel from '../components/ResourceCarousel';
+import CaseStudyCarousel from '../components/CaseStudyCarousel';
+import VideoBg from '../components/VideoBg';
 import { site, linkPage } from '../data/site';
 import { fadeUp, stagger } from '../lib/motion';
 
@@ -66,22 +68,15 @@ export default function Links() {
         jsonLd={jsonLd}
       />
 
-      <main className="relative min-h-screen overflow-hidden bg-bg">
-        {/* Top brand glow */}
-        <div
-          aria-hidden
-          className="pointer-events-none absolute inset-x-0 top-0 h-80"
-          style={{
-            background:
-              'radial-gradient(60rem 30rem at 50% -8%, rgba(28,61,115,0.55), transparent 70%)',
-          }}
-        />
+      <main className="relative min-h-screen overflow-hidden">
+        {/* Animated video backdrop (same clip as the homepage hero) */}
+        <VideoBg />
 
         <motion.div
           variants={stagger(0.07)}
           initial="hidden"
           animate="show"
-          className="relative mx-auto flex min-h-screen w-full max-w-md flex-col px-5 pb-12 pt-16 sm:pt-20"
+          className="relative z-10 mx-auto flex min-h-screen w-full max-w-md flex-col px-5 pb-12 pt-16 sm:pt-20"
         >
           {/* Identity */}
           <motion.div variants={fadeUp} className="flex flex-col items-center text-center">
@@ -111,6 +106,9 @@ export default function Links() {
 
           {/* Lead-magnet carousel */}
           <ResourceCarousel />
+
+          {/* Case studies carousel */}
+          <CaseStudyCarousel />
 
           {/* Link buttons */}
           <motion.nav variants={stagger(0.06)} className="mt-4 flex flex-col gap-3" aria-label="Links">
