@@ -6,9 +6,10 @@ import { genRefId, submitContact } from '../lib/forms';
 import { fadeUp } from '../lib/motion';
 import CardImage from './CardImage';
 
-// h-full + the row's default align-items:stretch make every card match the
-// tallest one; mt-auto on the action pins CTAs to a shared baseline.
-const cardCls = 'card group flex h-full w-64 shrink-0 snap-start flex-col overflow-hidden';
+// No explicit height: the row's align-items:stretch makes every card match the
+// tallest one (an explicit h-full would override stretch and collapse to content
+// height). The inner flex-1 fills the card; mt-auto pins CTAs to a shared baseline.
+const cardCls = 'card group flex w-64 shrink-0 snap-start flex-col overflow-hidden';
 const inputCls =
   'w-full rounded-card border border-line bg-elevated px-3 py-2 text-sm text-ink placeholder:text-faint focus:border-cream focus:outline-none focus:ring-2 focus:ring-cream/30';
 

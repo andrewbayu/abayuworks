@@ -6,7 +6,7 @@ import CardImage from './CardImage';
 
 // Featured-image + title cards linking to the full case studies. Content is kept
 // in site.js (not imported from posts/) so the /links bundle stays lean.
-const cardCls = 'card group flex h-full w-64 shrink-0 snap-start flex-col overflow-hidden transition-colors';
+const cardCls = 'card group flex w-64 shrink-0 snap-start flex-col overflow-hidden transition-colors';
 
 export default function CaseStudyCarousel() {
   if (!featuredCaseStudies.length) return null;

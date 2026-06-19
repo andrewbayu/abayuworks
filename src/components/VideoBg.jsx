@@ -1,10 +1,11 @@
 import { useEffect, useState } from 'react';
 import { motion, useMotionValue, useSpring, useTransform } from 'framer-motion';
 
-// Fixed full-viewport animated backdrop for the /links page. Content scrolls
-// over it. The same cinematic clip as the homepage hero. Loads on any viewport
-// when motion is allowed (this page is mostly viewed on phones, and the clip is
-// ~1MB); falls back to the drifting gradient under prefers-reduced-motion and
+// Fixed animated backdrop for the /links page. Content scrolls over it, using
+// the same cinematic clip as the homepage hero. The clip is landscape, so it
+// only suits wide/desktop viewports; on mobile and tablet (where /links is
+// mostly opened) the full-page video is skipped and the drifting gradient shows
+// instead. Also falls back to the gradient under prefers-reduced-motion and
 // before hydration, so there's never a blank or broken background.
 
 const GRAIN =
@@ -22,15 +23,22 @@ export default function VideoBg() {
   const y = useTransform(sy, [0, 100], [12, -12]);
 
   useEffect(() => {
-    const motionOk = !window.matchMedia('(prefers-reduced-motion: reduce)').matches;
-    setEnable(motionOk);
-    if (!motionOk) return undefined;
+    const reduceMq = window.matchMedia('(prefers-reduced-motion: reduce)');
+    const wideMq = window.matchMedia('(min-width: 1024px)'); // desktop/landscape only
+    const update = () => setEnable(!reduceMq.matches && wideMq.matches);
+    update();
+    reduceMq.addEventListener('change', update);
+    wideMq.addEventListener('change', update);
     const onMove = (e) => {
       mx.set((e.clientX / window.innerWidth) * 100);
       my.set((e.clientY / window.innerHeight) * 100);
     };
     window.addEventListener('pointermove', onMove);
-    return () => window.removeEventListener('pointermove', onMove);
+    return () => {
+      reduceMq.removeEventListener('change', update);
+      wideMq.removeEventListener('change', update);
+      window.removeEventListener('pointermove', onMove);
+    };
   }, [mx, my]);
 
   return (
