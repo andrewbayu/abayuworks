@@ -98,7 +98,6 @@ function VideoBackdrop({ scrollY, scale, mouseX, mouseY }) {
             ready ? 'opacity-100' : 'opacity-0'
           }`}
         >
-          <source src="/hero.webm" type="video/webm" />
           <source src="/hero.mp4" type="video/mp4" />
         </video>
       </motion.div>
