@@ -64,7 +64,7 @@ function ProfileCard() {
           <span className="text-muted">ventures</span>
         </div>
         <div className="card absolute -right-5 top-10 flex items-center gap-2 px-3 py-2 text-xs shadow-card">
-          <span className="font-display font-semibold text-cream">Rp156B</span>
+          <span className="font-display font-semibold text-cream">$12M</span>
           <span className="text-muted">milestone</span>
         </div>
       </div>

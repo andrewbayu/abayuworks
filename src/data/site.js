@@ -28,7 +28,7 @@ export const hero = {
     'Aditya (Andrew) Indra Bayu builds companies. He names the brand, ships the site and funnel, builds the AI tools they run on, then takes an operating seat until the venture finds revenue.',
   domains: ['Education', 'Maritime', 'Agency', 'Film', 'AI products'],
   stats: [
-    { value: 'Rp156B', label: 'Revenue milestone, Wall Street English Indonesia' },
+    { value: '$12M', label: 'Accumulated revenue across all clients handled' },
     { value: '+200%', label: 'Registration growth, Hacktiv8' },
     { value: 'Top 100', label: 'Calibreworks, Clutch.co digital agencies' },
     { value: '10 / 5', label: 'Ventures across five industries' },
