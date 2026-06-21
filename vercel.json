@@ -5,23 +5,6 @@
   "framework": null,
   "cleanUrls": true,
   "trailingSlash": true,
-  "rewrites": [
-    {
-      "source": "/api/:path*",
-      "destination": "/api/:path*",
-      "has": [{ "type": "host", "value": "learn.adityabayu.com" }]
-    },
-    {
-      "source": "/",
-      "destination": "/learn",
-      "has": [{ "type": "host", "value": "learn.adityabayu.com" }]
-    },
-    {
-      "source": "/:path*",
-      "destination": "/learn/:path*",
-      "has": [{ "type": "host", "value": "learn.adityabayu.com" }]
-    }
-  ],
   "headers": [
     {
       "source": "/(.*)",
