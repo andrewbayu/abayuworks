@@ -90,7 +90,7 @@ export default function Lesson({ slug: slugProp }) {
         <LearnNav />
         <div className="wrap py-32 text-center">
           <p className="text-muted">Lesson not found.</p>
-          <Link to="/learn/" className="mt-4 inline-block text-cream">← Course home</Link>
+          <Link to="/" className="mt-4 inline-block text-cream">← Course home</Link>
         </div>
       </>
     );
@@ -105,14 +105,14 @@ export default function Lesson({ slug: slugProp }) {
       <Seo
         title={`${meta.title} · ${site.name}`}
         description={meta.summary}
-        path={`/learn/${slug}/`}
+        path={`/${slug}/`}
         origin={LEARN_ORIGIN}
         type="article"
       />
       <LearnNav />
 
       <article className="mx-auto w-full max-w-prose px-5 pb-24 pt-16 sm:pt-20">
-        <Link to="/learn/" className="text-sm text-muted transition-colors hover:text-ink">
+        <Link to="/" className="text-sm text-muted transition-colors hover:text-ink">
           ← {meta.moduleTitle}
         </Link>
 
@@ -148,12 +148,12 @@ export default function Lesson({ slug: slugProp }) {
         {state === 'ready' && (
           <nav className="mt-16 flex items-center justify-between gap-4 border-t border-line pt-6 text-sm">
             {prev ? (
-              <Link to={`/learn/${prev.slug}/`} className="text-muted transition-colors hover:text-ink">
+              <Link to={`/${prev.slug}/`} className="text-muted transition-colors hover:text-ink">
                 ← {prev.title}
               </Link>
             ) : <span />}
             {next ? (
-              <Link to={`/learn/${next.slug}/`} className="text-right text-cream transition-colors hover:text-ink">
+              <Link to={`/${next.slug}/`} className="text-right text-cream transition-colors hover:text-ink">
                 {next.title} →
               </Link>
             ) : <span />}

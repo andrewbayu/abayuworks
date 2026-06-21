@@ -8,7 +8,16 @@ import Lesson from './pages/Lesson';
 import { postSlugs } from './posts';
 import { lessonSlugs } from './course/curriculum';
 
-export const routes = [
+// Two build targets from ONE repo:
+//   - Default (apex, adityabayu.com): the marketing site + blog + links.
+//   - Course build (learn.adityabayu.com): the course AT THE ROOT, so the
+//     client router matches "/" -> LearnHome with no rewrite/host hacks.
+// The course Vercel project sets VITE_COURSE_BUILD=1; the apex project leaves it
+// unset. The flag is read at build time and inlined into the bundle.
+const COURSE_BUILD =
+  import.meta.env.VITE_COURSE_BUILD === '1' || import.meta.env.VITE_COURSE_BUILD === 'true';
+
+const siteRoutes = [
   {
     path: '/',
     element: <Layout />,
@@ -30,17 +39,17 @@ export const routes = [
   },
   // Standalone link-in-bio page — no shared nav/footer chrome.
   { path: '/links', element: <Links /> },
-  // Paid course (learn.adityabayu.com -> /learn via Vercel host-rewrite).
-  // Standalone chrome (LearnNav), outside the marketing-site Layout.
+];
+
+// Course lives at the root of the learn.* deployment. Clean URLs throughout:
+// /  -> landing, /<slug>/ -> lesson.
+const courseRoutes = [
+  { path: '/', element: <LearnHome /> },
   {
-    path: '/learn',
-    children: [
-      { index: true, element: <LearnHome /> },
-      {
-        path: ':slug',
-        element: <Lesson />,
-        getStaticPaths: () => lessonSlugs.map((s) => `/learn/${s}`),
-      },
-    ],
+    path: '/:slug',
+    element: <Lesson />,
+    getStaticPaths: () => lessonSlugs.map((s) => `/${s}`),
   },
 ];
+
+export const routes = COURSE_BUILD ? courseRoutes : siteRoutes;
