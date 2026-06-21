@@ -10,6 +10,10 @@
 PRODUCT.md
 DESIGN.md
 
+# Paid course content — MUST stay out of the public repo (lives in Supabase).
+# Drafts + generated seed SQL are local-only.
+course-content/
+
 # Deploy helpers — local-only
 .deploy.py
 .deploy.zip

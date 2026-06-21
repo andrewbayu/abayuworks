@@ -10,10 +10,13 @@ export default function Seo({
   image = '/og-image.png',
   jsonLd,
   published,
+  // Override the canonical/OG host (e.g. the learn.* subdomain). Defaults to the
+  // apex site.url so existing pages are unaffected.
+  origin = site.url,
 }) {
-  const url = site.url + path;
+  const url = origin + path;
   const fullTitle = title;
-  const img = image.startsWith('http') ? image : site.url + image;
+  const img = image.startsWith('http') ? image : origin + image;
 
   return (
     <Head>

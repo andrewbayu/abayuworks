@@ -179,6 +179,13 @@ export const linkPage = {
   // Featured link buttons. Edit freely; add { label, sub, href, tag, external }.
   links: [
     {
+      label: 'The Operator Playbook',
+      sub: 'Paid self-paced course — how Aditya builds & scales ventures',
+      href: 'https://learn.adityabayu.com/',
+      tag: 'Course',
+      external: true,
+    },
+    {
       label: 'Xniper',
       sub: 'AI content generator for marketing teams',
       href: 'https://xniper.cloud',

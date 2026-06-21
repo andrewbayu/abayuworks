@@ -3,7 +3,10 @@ import Home from './pages/Home';
 import BlogIndex from './pages/BlogIndex';
 import BlogPost from './pages/BlogPost';
 import Links from './pages/Links';
+import LearnHome from './pages/LearnHome';
+import Lesson from './pages/Lesson';
 import { postSlugs } from './posts';
+import { lessonSlugs } from './course/curriculum';
 
 export const routes = [
   {
@@ -27,4 +30,17 @@ export const routes = [
   },
   // Standalone link-in-bio page — no shared nav/footer chrome.
   { path: '/links', element: <Links /> },
+  // Paid course (learn.adityabayu.com -> /learn via Vercel host-rewrite).
+  // Standalone chrome (LearnNav), outside the marketing-site Layout.
+  {
+    path: '/learn',
+    children: [
+      { index: true, element: <LearnHome /> },
+      {
+        path: ':slug',
+        element: <Lesson />,
+        getStaticPaths: () => lessonSlugs.map((s) => `/learn/${s}`),
+      },
+    ],
+  },
 ];
