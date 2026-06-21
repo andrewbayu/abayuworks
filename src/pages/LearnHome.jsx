@@ -28,7 +28,7 @@ export default function LearnHome() {
       <Seo
         title={`${course.title} · ${site.name}`}
         description={course.promise}
-        path="/"
+        path="/learn/"
         origin={LEARN_ORIGIN}
         type="website"
         jsonLd={jsonLd}
@@ -62,7 +62,7 @@ export default function LearnHome() {
           <motion.div variants={fadeUp} className="mt-8">
             {entitled ? (
               <Link
-                to={`/${modules[0].lessons[0].slug}/`}
+                to={`/learn/${modules[0].lessons[0].slug}/`}
                 className="inline-flex items-center justify-center gap-2 rounded-card bg-blue px-6 py-3.5 font-medium text-white transition-colors hover:bg-blue-soft"
               >
                 Continue the course <span aria-hidden>→</span>
@@ -127,7 +127,7 @@ export default function LearnHome() {
                     );
                     return (
                       <li key={l.slug}>
-                        {open ? <Link to={`/${l.slug}/`}>{inner}</Link> : inner}
+                        {open ? <Link to={`/learn/${l.slug}/`}>{inner}</Link> : inner}
                       </li>
                     );
                   })}

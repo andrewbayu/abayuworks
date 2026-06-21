@@ -9,7 +9,7 @@ export default function LearnNav() {
   return (
     <header className="sticky top-0 z-30 border-b border-line/60 bg-bg/80 backdrop-blur">
       <div className="mx-auto flex max-w-5xl items-center justify-between px-5 py-3.5">
-        <Link to="/" className="font-display text-sm font-semibold tracking-tight text-ink">
+        <Link to="/learn/" className="font-display text-sm font-semibold tracking-tight text-ink">
           {course.title}
         </Link>
         <div className="flex items-center gap-4">
