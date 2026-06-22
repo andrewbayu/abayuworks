@@ -22,7 +22,6 @@
       ]
     },
     {
-      "comment": "learn.* root is rewritten by middleware to /learn/; force revalidation so the apex homepage is never served stale from a shared CDN cache entry.",
       "source": "/",
       "has": [{ "type": "host", "value": "learn.adityabayu.com" }],
       "headers": [
