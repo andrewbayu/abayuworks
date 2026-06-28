@@ -232,6 +232,16 @@ export const featuredCaseStudies = [
 // placeholder until a real image is provided.
 export const resources = [
   {
+    title: 'Meta Ads Pre-Flight Checklist',
+    blurb: 'Meta picks the audience from your creative now. The 5-point pre-flight that catches the money lost before launch.',
+    audience: 'For marketers and business owners running Meta ads',
+    type: 'download',
+    tag: 'Checklist',
+    format: 'PDF',
+    image: null,
+    file: '/meta-ads-preflight-checklist.pdf',
+  },
+  {
     title: 'ContentStrategist Toolkit',
     blurb: 'Persona worksheets, strategy cards, content routes, a hook library, and AI prompts.',
     audience: 'For founders building a content system',

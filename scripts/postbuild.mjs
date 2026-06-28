@@ -42,7 +42,7 @@ if (existsSync(blogHtml)) {
 }
 
 // 2b. Fold standalone top-level pages: dist/<name>.html -> dist/<name>/index.html
-for (const name of ['links', 'learn']) {
+for (const name of ['links', 'preflight-checklist', 'learn']) {
   const f = join(dist, `${name}.html`);
   if (existsSync(f) && statSync(f).isFile()) {
     const dir = join(dist, name);
@@ -60,6 +60,7 @@ const urls = [
   { loc: `${SITE}/`, freq: 'monthly', pri: '1.0' },
   { loc: `${SITE}/blog/`, freq: 'weekly', pri: '0.8' },
   { loc: `${SITE}/links/`, freq: 'monthly', pri: '0.5' },
+  { loc: `${SITE}/preflight-checklist/`, freq: 'monthly', pri: '0.6' },
   ...slugs.sort().map((s) => ({ loc: `${SITE}/blog/${s}/`, freq: 'monthly', pri: '0.7' })),
   { loc: `${LEARN_SITE}/`, freq: 'monthly', pri: '0.7' },
   ...publicLearnLessons.sort().map((s) => ({ loc: `${LEARN_SITE}/${s}/`, freq: 'monthly', pri: '0.6' })),
