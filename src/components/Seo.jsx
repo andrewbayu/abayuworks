@@ -10,6 +10,7 @@ export default function Seo({
   image = '/og-image.png',
   jsonLd,
   published,
+  noindex = false,
   // Override the canonical/OG host (e.g. the learn.* subdomain). Defaults to the
   // apex site.url so existing pages are unaffected.
   origin = site.url,
@@ -23,6 +24,7 @@ export default function Seo({
       <html lang="en" />
       <title>{fullTitle}</title>
       <meta name="description" content={description} />
+      {noindex && <meta name="robots" content="noindex, nofollow" />}
       <link rel="canonical" href={url} />
 
       <meta property="og:type" content={type} />

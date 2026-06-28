@@ -46,6 +46,30 @@ function GuideCard({ r }) {
   );
 }
 
+// A resource whose CTA routes to a dedicated landing page (its own opt-in funnel)
+// instead of capturing the email inline.
+function LinkCard({ r }) {
+  return (
+    <div className={cardCls}>
+      <CardImage src={r.image} alt={r.title} kind={r.tag} />
+      <div className="flex flex-1 flex-col p-5">
+        <CardHead r={r} />
+        <h3 className="mt-3 font-display text-base font-semibold leading-snug text-ink">{r.title}</h3>
+        <p className="mt-1.5 text-sm leading-snug text-muted">{r.blurb}</p>
+        <p className="mt-2 text-xs text-faint">{r.audience}</p>
+        <div className="mt-auto pt-4">
+          <Link
+            to={r.href}
+            className="inline-flex w-full items-center justify-center gap-2 rounded-card bg-blue px-4 py-2.5 text-sm font-medium text-white transition-colors hover:bg-blue-soft"
+          >
+            {r.cta || 'Get it free'} →
+          </Link>
+        </div>
+      </div>
+    </div>
+  );
+}
+
 function DownloadCard({ r }) {
   const [state, setState] = useState('idle'); // idle | open | sending | done | error
   const [email, setEmail] = useState('');
@@ -155,7 +179,13 @@ export default function ResourceCarousel() {
       </div>
       <div className="no-scrollbar -mx-5 flex snap-x snap-mandatory items-stretch gap-3 overflow-x-auto px-5 pb-1">
         {resources.map((r) =>
-          r.type === 'download' ? <DownloadCard key={r.title} r={r} /> : <GuideCard key={r.title} r={r} />
+          r.type === 'download' ? (
+            <DownloadCard key={r.title} r={r} />
+          ) : r.type === 'link' ? (
+            <LinkCard key={r.title} r={r} />
+          ) : (
+            <GuideCard key={r.title} r={r} />
+          )
         )}
       </div>
     </motion.section>

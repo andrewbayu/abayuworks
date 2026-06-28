@@ -4,6 +4,7 @@ import BlogIndex from './pages/BlogIndex';
 import BlogPost from './pages/BlogPost';
 import Links from './pages/Links';
 import PreflightChecklist from './pages/PreflightChecklist';
+import PreflightThankYou from './pages/PreflightThankYou';
 import LearnHome from './pages/LearnHome';
 import Lesson from './pages/Lesson';
 import { postSlugs } from './posts';
@@ -33,8 +34,10 @@ const siteRoutes = [
   },
   // Standalone link-in-bio page — no shared nav/footer chrome.
   { path: '/links', element: <Links /> },
-  // Standalone lead-magnet landing page (Meta Ads pre-flight checklist).
+  // Standalone lead-magnet landing page (Meta Ads pre-flight checklist) +
+  // post-opt-in thank-you page where the download link lives.
   { path: '/preflight-checklist', element: <PreflightChecklist /> },
+  { path: '/preflight-checklist/thank-you', element: <PreflightThankYou /> },
   // Paid course. On adityabayu.com it lives at /learn/*; the learn.* subdomain
   // serves the same prerendered HTML via the Vercel Edge Middleware rewrite.
   {

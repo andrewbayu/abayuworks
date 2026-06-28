@@ -34,6 +34,11 @@ slugs.push(...foldSection(blogDir));
 // 1b. Same for the course: dist/learn/<slug>.html -> dist/learn/<slug>/index.html
 learnSlugs.push(...foldSection(join(dist, 'learn')));
 
+// 1c. Fold nested standalone subpages, e.g. /preflight-checklist/thank-you.html
+// -> /preflight-checklist/thank-you/index.html (the landing page's own index is
+// foldered by the standalone-pages step below).
+foldSection(join(dist, 'preflight-checklist'));
+
 // 2. Move dist/blog.html -> dist/blog/index.html
 const blogHtml = join(dist, 'blog.html');
 if (existsSync(blogHtml)) {

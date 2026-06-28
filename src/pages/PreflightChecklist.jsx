@@ -1,13 +1,13 @@
 import { useState } from 'react';
-import { AnimatePresence, motion } from 'framer-motion';
-import { Link } from 'react-router-dom';
+import { motion } from 'framer-motion';
+import { Link, useNavigate } from 'react-router-dom';
 import Seo from '../components/Seo';
 import { site } from '../data/site';
 import { genRefId, submitContact } from '../lib/forms';
 import { fadeUp, stagger, inView } from '../lib/motion';
 
 const RESOURCE = 'Meta Ads Pre-Flight Checklist (Vol. 01)';
-const FILE = '/meta-ads-preflight-checklist.pdf';
+const THANK_YOU = '/preflight-checklist/thank-you';
 
 const jsonLd = {
   '@context': 'https://schema.org',
@@ -63,9 +63,9 @@ const inputCls =
   'w-full rounded-card border border-line bg-elevated px-4 py-3 text-base text-ink placeholder:text-faint focus:border-cream focus:outline-none focus:ring-2 focus:ring-cream/30';
 
 function OptInForm({ id, cta = 'Send me the checklist' }) {
-  const [state, setState] = useState('idle'); // idle | sending | done | error
+  const navigate = useNavigate();
+  const [state, setState] = useState('idle'); // idle | sending | error
   const [email, setEmail] = useState('');
-  const [refId, setRefId] = useState('');
 
   const onSubmit = async (e) => {
     e.preventDefault();
@@ -79,8 +79,8 @@ function OptInForm({ id, cta = 'Send me the checklist' }) {
         resource: RESOURCE,
         ref_id: ref,
       });
-      setRefId(ref);
-      setState('done');
+      // Lead captured — hand off to the thank-you page where the download lives.
+      navigate(THANK_YOU);
     } catch {
       setState('error');
     }
@@ -88,70 +88,38 @@ function OptInForm({ id, cta = 'Send me the checklist' }) {
 
   return (
     <div className="w-full">
-      <AnimatePresence mode="wait" initial={false}>
-        {state === 'done' ? (
-          <motion.div
-            key="done"
-            initial={{ opacity: 0, y: 8 }}
-            animate={{ opacity: 1, y: 0 }}
-            exit={{ opacity: 0 }}
-            className="rounded-card border border-cream/30 bg-surface p-5 text-center"
-          >
-            <p className="font-display text-lg font-semibold text-ink">It’s ready.</p>
-            <p className="mt-1 text-sm text-muted">
-              The checklist is also on its way to your inbox. Open it now:
-            </p>
-            <a
-              href={FILE}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="mt-4 inline-flex w-full items-center justify-center gap-2 rounded-card bg-blue px-5 py-3.5 font-medium text-white transition-colors hover:bg-blue-soft"
-            >
-              Download the checklist (PDF) ↓
-            </a>
-            {refId && <p className="mt-3 text-xs text-muted">Ref {refId}</p>}
-          </motion.div>
-        ) : (
-          <motion.form
-            key="form"
-            onSubmit={onSubmit}
-            initial={{ opacity: 0 }}
-            animate={{ opacity: 1 }}
-            exit={{ opacity: 0 }}
-            className="flex flex-col gap-2.5 sm:flex-row"
-            aria-label="Get the checklist"
-          >
-            <label htmlFor={id} className="sr-only">
-              Email address
-            </label>
-            <input
-              id={id}
-              type="email"
-              required
-              autoComplete="email"
-              value={email}
-              onChange={(e) => setEmail(e.target.value)}
-              placeholder="you@email.com"
-              className={inputCls}
-            />
-            <button
-              type="submit"
-              disabled={state === 'sending'}
-              className="inline-flex shrink-0 items-center justify-center gap-2 rounded-card bg-blue px-5 py-3 font-medium text-white transition-colors hover:bg-blue-soft disabled:opacity-60 sm:px-6"
-            >
-              {state === 'sending' ? 'Sending…' : `${cta} →`}
-            </button>
-          </motion.form>
-        )}
-      </AnimatePresence>
+      <form
+        onSubmit={onSubmit}
+        className="flex flex-col gap-2.5 sm:flex-row"
+        aria-label="Get the checklist"
+      >
+        <label htmlFor={id} className="sr-only">
+          Email address
+        </label>
+        <input
+          id={id}
+          type="email"
+          required
+          autoComplete="email"
+          value={email}
+          onChange={(e) => setEmail(e.target.value)}
+          placeholder="you@email.com"
+          className={inputCls}
+        />
+        <button
+          type="submit"
+          disabled={state === 'sending'}
+          className="inline-flex shrink-0 items-center justify-center gap-2 rounded-card bg-blue px-5 py-3 font-medium text-white transition-colors hover:bg-blue-soft disabled:opacity-60 sm:px-6"
+        >
+          {state === 'sending' ? 'Sending…' : `${cta} →`}
+        </button>
+      </form>
       {state === 'error' && (
         <p className="mt-2 text-sm text-red-400">Couldn’t send just now — try again in a moment.</p>
       )}
-      {state !== 'done' && (
-        <p className="mt-2.5 text-xs text-faint">
-          Free. No spam. The PDF unlocks the second you submit.
-        </p>
-      )}
+      <p className="mt-2.5 text-xs text-faint">
+        Free. No spam. You get the download link on the next page.
+      </p>
     </div>
   );
 }
