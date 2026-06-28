@@ -10,7 +10,7 @@ Last updated: 2026-06-22 by Claude (session QF208). Built the paid course "The O
 
 ## ⚡ 60-second briefing
 
-**Owner.** Aditya (Andrew) Indra Bayu. Venture Builder & Fractional CMO. South Tangerang, Indonesia. Email: `hi.andrewbayu@gmail.com` (work). Personal: `andrew.bayu23@gmail.com` (legacy, don't use on the site).
+**Owner.** Aditya (Andrew) Indra Bayu. Venture Builder & Fractional CMO. South Tangerang, Indonesia. Public/site email: `hi@adityabayu.com` (custom domain — sends via Resend, receives via ImprovMX → `hi.andrewbayu@gmail.com`). Underlying inbox: `hi.andrewbayu@gmail.com`. Personal: `andrew.bayu23@gmail.com` (legacy, don't use on the site).
 
 **What this is.** An operator portfolio. Homepage is `index.html` (single page). There is now also a **Writing/blog section** at `/blog/` (case studies). Static HTML, no build step. Goal: inbound for **operator-seat engagements** (Fractional CMO, co-build, agency work) from CEO/founder-level peers.
 

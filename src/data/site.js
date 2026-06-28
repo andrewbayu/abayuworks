@@ -5,7 +5,7 @@ export const site = {
   shortName: 'Aditya Bayu',
   role: 'Venture Builder · Fractional CMO',
   location: 'South Tangerang, Indonesia',
-  email: 'hi.andrewbayu@gmail.com',
+  email: 'hi@adityabayu.com',
   url: 'https://adityabayu.com',
   nav: [
     { label: 'Ventures', href: '/#ventures' },
