@@ -9,6 +9,39 @@
 //   SMTP_HOST, SMTP_PORT, SMTP_USER, SMTP_PASS, CONTACT_TO
 import nodemailer from 'nodemailer';
 
+// Add a lead to the Resend Audience (marketing/newsletter list). Best-effort:
+// any failure is logged and swallowed so it never breaks the contact form.
+// Reuses the Resend API key already configured for SMTP (SMTP_PASS) unless a
+// dedicated RESEND_API_KEY is set. The new single-audience Contacts API needs
+// no audience id. Skips unless the key is a Resend key (re_*), so a legacy
+// Gmail app-password setup never hits Resend.
+async function addToResendAudience({ email, name }) {
+  const apiKey = process.env.RESEND_API_KEY || process.env.SMTP_PASS;
+  if (!apiKey || !apiKey.startsWith('re_') || !email) return;
+
+  // Split a real name into first/last; skip if it's just the email address.
+  let first_name = '';
+  let last_name = '';
+  if (name && name !== email && !name.includes('@')) {
+    const parts = name.trim().split(/\s+/);
+    first_name = parts.shift() || '';
+    last_name = parts.join(' ');
+  }
+
+  try {
+    const resp = await fetch('https://api.resend.com/contacts', {
+      method: 'POST',
+      headers: { Authorization: `Bearer ${apiKey}`, 'Content-Type': 'application/json' },
+      body: JSON.stringify({ email, first_name, last_name, unsubscribed: false }),
+    });
+    if (!resp.ok) {
+      console.warn('resend contact add non-ok:', resp.status, await resp.text().catch(() => ''));
+    }
+  } catch (err) {
+    console.warn('resend contact add failed:', err);
+  }
+}
+
 export default async function handler(req, res) {
   if (req.method !== 'POST') {
     res.setHeader('Allow', 'POST');
@@ -71,6 +104,9 @@ export default async function handler(req, res) {
       subject: subject || `New inquiry from ${name || email}`,
       text: lines.join('\n'),
     });
+    // Best-effort: capture the lead into the Resend Audience for marketing.
+    // Never blocks or fails the submission if it errors.
+    await addToResendAudience({ email, name: name || from_name });
     return res.status(200).json({ success: true });
   } catch (err) {
     console.error('contact mail send failed:', err);
