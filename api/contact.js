@@ -36,7 +36,7 @@ export default async function handler(req, res) {
     return res.status(400).json({ success: false, message: 'Please fill in the required fields.' });
   }
 
-  const { SMTP_HOST, SMTP_PORT, SMTP_USER, SMTP_PASS, CONTACT_TO } = process.env;
+  const { SMTP_HOST, SMTP_PORT, SMTP_USER, SMTP_PASS, CONTACT_TO, MAIL_FROM } = process.env;
   if (!SMTP_HOST || !SMTP_USER || !SMTP_PASS) {
     return res.status(500).json({ success: false, message: 'Mail server is not configured.' });
   }
@@ -62,7 +62,10 @@ export default async function handler(req, res) {
 
   try {
     await transporter.sendMail({
-      from: `"adityabayu.com" <${SMTP_USER}>`,
+      // With Resend SMTP, SMTP_USER is the literal "resend", so the From must be a
+      // verified-domain address set via MAIL_FROM (e.g. "Aditya Bayu <hi@adityabayu.com>").
+      // Falls back to the SMTP user for the legacy Gmail setup.
+      from: MAIL_FROM || `"adityabayu.com" <${SMTP_USER}>`,
       to: CONTACT_TO || SMTP_USER,
       replyTo: email || undefined,
       subject: subject || `New inquiry from ${name || email}`,
