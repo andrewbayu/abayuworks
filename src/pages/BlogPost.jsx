@@ -25,16 +25,30 @@ export default function BlogPost({ slug: slugProp }) {
   const path = `/blog/${post.slug}/`;
   const jsonLd = {
     '@context': 'https://schema.org',
-    '@type': 'BlogPosting',
-    headline: post.title,
-    description: post.description,
-    image: site.url + '/og-image.png',
-    datePublished: post.date,
-    dateModified: post.date,
-    url: site.url + path,
-    mainEntityOfPage: { '@type': 'WebPage', '@id': site.url + path },
-    author: { '@type': 'Person', name: site.name, url: site.url + '/' },
-    publisher: { '@type': 'Person', name: site.name, url: site.url + '/' },
+    '@graph': [
+      {
+        '@type': 'BlogPosting',
+        headline: post.title,
+        description: post.description,
+        image: site.url + '/og-image.png',
+        datePublished: post.date,
+        dateModified: post.date,
+        url: site.url + path,
+        mainEntityOfPage: { '@type': 'WebPage', '@id': site.url + path },
+        // Link author/publisher to the homepage Person entity so every case study
+        // reinforces the same Aditya entity (E-E-A-T + LLM citation).
+        author: { '@id': site.url + '/#aditya' },
+        publisher: { '@id': site.url + '/#aditya' },
+      },
+      {
+        '@type': 'BreadcrumbList',
+        itemListElement: [
+          { '@type': 'ListItem', position: 1, name: 'Home', item: site.url + '/' },
+          { '@type': 'ListItem', position: 2, name: 'Writing', item: site.url + '/blog/' },
+          { '@type': 'ListItem', position: 3, name: post.title, item: site.url + path },
+        ],
+      },
+    ],
   };
 
   return (
