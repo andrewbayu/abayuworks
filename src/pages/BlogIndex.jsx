@@ -8,11 +8,22 @@ import { fadeUp, stagger, inView } from '../lib/motion';
 
 const collectionJsonLd = {
   '@context': 'https://schema.org',
-  '@type': 'CollectionPage',
-  name: 'Writing · ' + site.name,
-  url: site.url + '/blog/',
-  description: 'Case studies and operator notes on building and scaling ventures across industries.',
-  author: { '@type': 'Person', name: site.name, url: site.url + '/' },
+  '@graph': [
+    {
+      '@type': 'CollectionPage',
+      name: 'Writing · ' + site.name,
+      url: site.url + '/blog/',
+      description: 'Case studies and operator notes on building and scaling ventures across industries.',
+      author: { '@id': site.url + '/#aditya' },
+    },
+    {
+      '@type': 'BreadcrumbList',
+      itemListElement: [
+        { '@type': 'ListItem', position: 1, name: 'Home', item: site.url + '/' },
+        { '@type': 'ListItem', position: 2, name: 'Writing', item: site.url + '/blog/' },
+      ],
+    },
+  ],
 };
 
 export default function BlogIndex() {

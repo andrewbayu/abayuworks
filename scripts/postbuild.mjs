@@ -4,7 +4,7 @@ import { join } from 'node:path';
 
 const dist = 'dist';
 const blogDir = join(dist, 'blog');
-const SITE = 'https://adityabayu.com';
+const SITE = 'https://www.adityabayu.com';
 const LEARN_SITE = 'https://learn.adityabayu.com';
 
 const slugs = [];
@@ -47,7 +47,7 @@ if (existsSync(blogHtml)) {
 }
 
 // 2b. Fold standalone top-level pages: dist/<name>.html -> dist/<name>/index.html
-for (const name of ['links', 'preflight-checklist', 'learn']) {
+for (const name of ['links', 'fractional-cmo', 'preflight-checklist', 'learn']) {
   const f = join(dist, `${name}.html`);
   if (existsSync(f) && statSync(f).isFile()) {
     const dir = join(dist, name);
@@ -63,6 +63,7 @@ const FREE_LESSON_SLUGS = ['operators-first-30-days'];
 const publicLearnLessons = learnSlugs.filter((s) => FREE_LESSON_SLUGS.includes(s));
 const urls = [
   { loc: `${SITE}/`, freq: 'monthly', pri: '1.0' },
+  { loc: `${SITE}/fractional-cmo/`, freq: 'monthly', pri: '0.9' },
   { loc: `${SITE}/blog/`, freq: 'weekly', pri: '0.8' },
   { loc: `${SITE}/links/`, freq: 'monthly', pri: '0.5' },
   { loc: `${SITE}/preflight-checklist/`, freq: 'monthly', pri: '0.6' },

@@ -3,6 +3,7 @@ import Home from './pages/Home';
 import BlogIndex from './pages/BlogIndex';
 import BlogPost from './pages/BlogPost';
 import Links from './pages/Links';
+import FractionalCmo from './pages/FractionalCmo';
 import PreflightChecklist from './pages/PreflightChecklist';
 import PreflightThankYou from './pages/PreflightThankYou';
 import LearnHome from './pages/LearnHome';
@@ -18,6 +19,8 @@ const siteRoutes = [
     element: <Layout />,
     children: [
       { index: true, element: <Home /> },
+      // Fractional CMO pillar page — the money page for hire-intent search.
+      { path: 'fractional-cmo', element: <FractionalCmo /> },
       {
         path: 'blog',
         children: [

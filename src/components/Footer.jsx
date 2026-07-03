@@ -1,3 +1,4 @@
+import { Link } from 'react-router-dom';
 import Logo from './Logo';
 import { site } from '../data/site';
 
@@ -9,6 +10,7 @@ export default function Footer() {
           <Logo />
         </div>
         <div className="flex flex-wrap items-center gap-x-5 gap-y-2 text-sm text-muted">
+          <Link to="/fractional-cmo/" className="transition-colors hover:text-ink">Fractional CMO</Link>
           {site.socials.map((s) => (
             <a key={s.label} href={s.href} target="_blank" rel="noopener noreferrer" className="transition-colors hover:text-ink">
               {s.label}
