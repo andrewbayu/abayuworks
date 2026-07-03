@@ -4,7 +4,7 @@ import { join } from 'node:path';
 
 const dist = 'dist';
 const blogDir = join(dist, 'blog');
-const SITE = 'https://adityabayu.com';
+const SITE = 'https://www.adityabayu.com';
 const LEARN_SITE = 'https://learn.adityabayu.com';
 
 const slugs = [];

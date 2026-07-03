@@ -5,4 +5,4 @@ Disallow: /PRODUCT.md
 Disallow: /DESIGN.md
 Disallow: /.deploy.py
 
-Sitemap: https://adityabayu.com/sitemap.xml
+Sitemap: https://www.adityabayu.com/sitemap.xml

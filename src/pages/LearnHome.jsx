@@ -145,7 +145,7 @@ export default function LearnHome() {
         )}
 
         <footer className="mt-20 text-center text-sm text-faint">
-          <a href="https://adityabayu.com" className="transition-colors hover:text-cream">
+          <a href="https://www.adityabayu.com" className="transition-colors hover:text-cream">
             A course by {site.name} · adityabayu.com
           </a>
         </footer>

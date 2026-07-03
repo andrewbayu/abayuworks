@@ -14,7 +14,7 @@ export default function LearnNav() {
         </Link>
         <div className="flex items-center gap-4">
           <a
-            href="https://adityabayu.com"
+            href="https://www.adityabayu.com"
             className="hidden text-xs text-faint transition-colors hover:text-cream sm:inline"
           >
             ← adityabayu.com

@@ -6,7 +6,9 @@ export const site = {
   role: 'Venture Builder · Fractional CMO',
   location: 'South Tangerang, Indonesia',
   email: 'hi@adityabayu.com',
-  url: 'https://adityabayu.com',
+  // Canonical host is www — the apex 308-redirects to www, so all canonical/OG
+  // and JSON-LD URLs must resolve directly (no redirect) for clean SEO signals.
+  url: 'https://www.adityabayu.com',
   nav: [
     { label: 'Ventures', href: '/#ventures' },
     { label: 'Receipts', href: '/#receipts' },
