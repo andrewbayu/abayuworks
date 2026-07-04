@@ -5,6 +5,8 @@ import BlogPost from './pages/BlogPost';
 import Links from './pages/Links';
 import PreflightChecklist from './pages/PreflightChecklist';
 import PreflightThankYou from './pages/PreflightThankYou';
+import PlaybookFnb from './pages/PlaybookFnb';
+import PlaybookFnbThankYou from './pages/PlaybookFnbThankYou';
 import LearnHome from './pages/LearnHome';
 import Lesson from './pages/Lesson';
 import { postSlugs } from './posts';
@@ -38,6 +40,9 @@ const siteRoutes = [
   // post-opt-in thank-you page where the download link lives.
   { path: '/preflight-checklist', element: <PreflightChecklist /> },
   { path: '/preflight-checklist/thank-you', element: <PreflightThankYou /> },
+  // Lead-magnet funnel: Playbook Marketing F&B 2026 landing + thank-you.
+  { path: '/playbook-fnb', element: <PlaybookFnb /> },
+  { path: '/playbook-fnb/thank-you', element: <PlaybookFnbThankYou /> },
   // Paid course. On adityabayu.com it lives at /learn/*; the learn.* subdomain
   // serves the same prerendered HTML via the Vercel Edge Middleware rewrite.
   {

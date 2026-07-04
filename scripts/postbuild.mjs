@@ -38,6 +38,7 @@ learnSlugs.push(...foldSection(join(dist, 'learn')));
 // -> /preflight-checklist/thank-you/index.html (the landing page's own index is
 // foldered by the standalone-pages step below).
 foldSection(join(dist, 'preflight-checklist'));
+foldSection(join(dist, 'playbook-fnb'));
 
 // 2. Move dist/blog.html -> dist/blog/index.html
 const blogHtml = join(dist, 'blog.html');
@@ -47,7 +48,7 @@ if (existsSync(blogHtml)) {
 }
 
 // 2b. Fold standalone top-level pages: dist/<name>.html -> dist/<name>/index.html
-for (const name of ['links', 'preflight-checklist', 'learn']) {
+for (const name of ['links', 'preflight-checklist', 'playbook-fnb', 'learn']) {
   const f = join(dist, `${name}.html`);
   if (existsSync(f) && statSync(f).isFile()) {
     const dir = join(dist, name);
@@ -66,6 +67,7 @@ const urls = [
   { loc: `${SITE}/blog/`, freq: 'weekly', pri: '0.8' },
   { loc: `${SITE}/links/`, freq: 'monthly', pri: '0.5' },
   { loc: `${SITE}/preflight-checklist/`, freq: 'monthly', pri: '0.6' },
+  { loc: `${SITE}/playbook-fnb/`, freq: 'monthly', pri: '0.6' },
   ...slugs.sort().map((s) => ({ loc: `${SITE}/blog/${s}/`, freq: 'monthly', pri: '0.7' })),
   { loc: `${LEARN_SITE}/`, freq: 'monthly', pri: '0.7' },
   ...publicLearnLessons.sort().map((s) => ({ loc: `${LEARN_SITE}/${s}/`, freq: 'monthly', pri: '0.6' })),

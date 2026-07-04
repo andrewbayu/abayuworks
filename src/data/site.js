@@ -232,6 +232,17 @@ export const featuredCaseStudies = [
 // placeholder until a real image is provided.
 export const resources = [
   {
+    title: 'Playbook Marketing F&B 2026',
+    blurb: 'Yang viral tutup. Yang diingat jadi unicorn. Sistem pemasaran F&B yang membangun pelanggan yang kembali — audit 60 detik + rencana 7 hari.',
+    audience: 'Untuk pemilik kafe & restoran di Indonesia',
+    type: 'link',
+    tag: 'Playbook',
+    format: 'PDF',
+    image: null,
+    href: '/playbook-fnb/',
+    cta: 'Ambil playbook',
+  },
+  {
     title: 'Meta Ads Pre-Flight Checklist',
     blurb: 'Meta picks the audience from your creative now. The 5-point pre-flight that catches the money lost before launch.',
     audience: 'For marketers and business owners running Meta ads',
