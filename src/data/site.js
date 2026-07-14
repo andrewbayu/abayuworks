@@ -175,9 +175,37 @@ export const contact = {
 
 // Link-in-bio page (/links) — shared across social media bios.
 export const linkPage = {
+  // Legacy /links fields
   tagline: 'Venture Builder · Fractional CMO',
   intro:
     'Aditya (Andrew) Indra Bayu builds and scales companies across education, maritime, agency, film, and AI. He names the brand, ships the funnel, builds the AI tools, then takes an operating seat until the venture finds revenue.',
+  cta: { label: 'Work with Aditya', href: '/#contact' },
+
+  // New /links2 (revamp review) fields
+  tagline2: 'Fractional CMO & AI Builder',
+  hook: {
+    headline: 'Scale your marketing output. Not your headcount.',
+    subheadline: 'Menggabungkan performance-ads framework dengan custom AI workflows untuk pangkas operational cost dan tekan CAC Anda.',
+  },
+  story: 'Sebagai founder, Anda tidak butuh lagi agency yang cuma kirim report impression bulanan atau konsultan yang modal slide deck. Anda butuh sistem akuisisi customer yang profitable dan operations yang ramping.\n\nAditya menggabungkan performance ads (Meta/Google), high-converting funnels, dan custom AI tools untuk menekan CAC dan meningkatkan net margin Anda. Here is the exact setup he uses to generate $12M+ for his clients.',
+  offerTitle: 'Claim the Systems & Frameworks Behind $12M+ Revenue',
+  services: [
+    {
+      id: 'cmo',
+      title: 'Fractional CMO (CMO Seat)',
+      copy: 'Bawa senior growth leadership ke dalam tim Anda secara part-time. Aditya mengelola marketing strategy, funnel building, dan performance ads untuk memastikan budget iklan kembali jadi profit—tanpa overhead full-time CMO.',
+    },
+    {
+      id: 'retainer',
+      title: 'Growth Retainer (Agency Team)',
+      copy: 'Full-execution support dari Clutch Top 100 digital agency (We Are Infiniti / Calibreworks). Tim kami handle all production: ad creatives, copywriting, technical web/funnel dev, dan daily campaign management.',
+    },
+    {
+      id: 'advisory',
+      title: 'Strategic Advisory (Session/Training)',
+      copy: 'Sesi 1-on-1 strategis atau workshop untuk audit funnel, troubleshoot setup ads, dan merancang custom AI workflow langsung untuk tim internal Anda agar output naik tanpa tambah tim.',
+    },
+  ],
   // Featured link buttons. Edit freely; add { label, sub, href, tag, external }.
   links: [
     {
@@ -195,7 +223,6 @@ export const linkPage = {
       external: true,
     },
   ],
-  cta: { label: 'Work with Aditya', href: '/#contact' },
 };
 
 // Featured case studies for the /links carousel. Top picks, edit freely.

@@ -48,7 +48,7 @@ if (existsSync(blogHtml)) {
 }
 
 // 2b. Fold standalone top-level pages: dist/<name>.html -> dist/<name>/index.html
-for (const name of ['links', 'fractional-cmo', 'preflight-checklist', 'playbook-fnb', 'learn']) {
+for (const name of ['links', 'links2', 'fractional-cmo', 'preflight-checklist', 'playbook-fnb', 'learn']) {
   const f = join(dist, `${name}.html`);
   if (existsSync(f) && statSync(f).isFile()) {
     const dir = join(dist, name);

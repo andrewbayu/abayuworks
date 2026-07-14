@@ -3,6 +3,7 @@ import Home from './pages/Home';
 import BlogIndex from './pages/BlogIndex';
 import BlogPost from './pages/BlogPost';
 import Links from './pages/Links';
+import Links2 from './pages/Links2';
 import FractionalCmo from './pages/FractionalCmo';
 import PreflightChecklist from './pages/PreflightChecklist';
 import PreflightThankYou from './pages/PreflightThankYou';
@@ -39,6 +40,7 @@ const siteRoutes = [
   },
   // Standalone link-in-bio page — no shared nav/footer chrome.
   { path: '/links', element: <Links /> },
+  { path: '/links2', element: <Links2 /> },
   // Standalone lead-magnet landing page (Meta Ads pre-flight checklist) +
   // post-opt-in thank-you page where the download link lives.
   { path: '/preflight-checklist', element: <PreflightChecklist /> },
