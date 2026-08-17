@@ -1,10 +1,7 @@
 import { motion } from 'framer-motion';
 import { Link } from 'react-router-dom';
 import Seo from '../components/Seo';
-import ResourceCarousel from '../components/ResourceCarousel';
-import CaseStudyCarousel from '../components/CaseStudyCarousel';
-import VideoBg from '../components/VideoBg';
-import { site, linkPage } from '../data/site';
+import { site, linkPage, resources } from '../data/site';
 import { fadeUp, stagger } from '../lib/motion';
 
 const jsonLd = {
@@ -20,12 +17,12 @@ const jsonLd = {
   },
 };
 
-function LinkButton({ label, sub, href, tag, external }) {
+function LinkRow({ label, sub, href, tag, external }) {
   const inner = (
     <>
-      <div className="min-w-0">
+      <div className="min-w-0 flex-1">
         <div className="flex items-center gap-2">
-          <span className="truncate font-display text-base font-semibold text-ink">{label}</span>
+          <span className="font-display text-base font-semibold text-ink">{label}</span>
           {tag && (
             <span className="shrink-0 rounded-full border border-line px-2 py-0.5 text-[0.65rem] uppercase tracking-wide text-cream">
               {tag}
@@ -57,6 +54,51 @@ function LinkButton({ label, sub, href, tag, external }) {
   );
 }
 
+function ResourceRow({ title, blurb, tag, format, href, type, audience }) {
+  const cls =
+    'card group flex items-center justify-between gap-3 p-4 transition-all hover:-translate-y-0.5 hover:shadow-card';
+
+  const inner = (
+    <>
+      <div className="min-w-0 flex-1">
+        <div className="flex items-center gap-2">
+          <span className="font-display text-sm font-semibold text-ink">{title}</span>
+          <span className="shrink-0 rounded-full border border-line px-2 py-0.5 text-[0.6rem] uppercase tracking-wide text-cream">
+            {tag}
+          </span>
+        </div>
+        {blurb && <p className="mt-0.5 text-sm leading-snug text-muted line-clamp-2">{blurb}</p>}
+        {audience && <p className="mt-1 text-xs text-faint">{audience}</p>}
+      </div>
+      <span className="shrink-0 text-cream/60 text-sm" aria-hidden>
+        {type === 'link' && href ? '→' : '📄'}
+      </span>
+    </>
+  );
+
+  if (type === 'link' && href) {
+    const isExternal = href.startsWith('http');
+    if (isExternal) {
+      return (
+        <motion.a variants={fadeUp} href={href} target="_blank" rel="noopener noreferrer" className={cls}>
+          {inner}
+        </motion.a>
+      );
+    }
+    return (
+      <motion.div variants={fadeUp}>
+        <Link to={href} className={cls}>{inner}</Link>
+      </motion.div>
+    );
+  }
+
+  return (
+    <motion.div variants={fadeUp} className={cls}>
+      {inner}
+    </motion.div>
+  );
+}
+
 export default function Links() {
   return (
     <>
@@ -69,8 +111,10 @@ export default function Links() {
       />
 
       <main className="relative min-h-screen overflow-hidden">
-        {/* Animated video backdrop (same clip as the homepage hero) */}
-        <VideoBg />
+        {/* Simplified background — clean dark gradient, no noise or video */}
+        <div aria-hidden className="pointer-events-none fixed inset-0 z-0">
+          <div className="absolute inset-0" style={{ background: 'radial-gradient(120% 75% at 50% 0%, rgba(26,27,37,0.82), rgba(26,27,37,0.94) 68%, #1A1B25 100%)' }} />
+        </div>
 
         <motion.div
           variants={stagger(0.07)}
@@ -80,42 +124,50 @@ export default function Links() {
         >
           {/* Identity */}
           <motion.div variants={fadeUp} className="flex flex-col items-center text-center">
-            <div className="h-28 w-28 overflow-hidden rounded-full border border-white/15 shadow-card">
+            <div className="h-24 w-24 overflow-hidden rounded-full border border-white/15 shadow-card">
               <img
                 src="/aditya-bayu.webp"
                 alt={site.name}
-                width="112"
-                height="112"
+                width="96"
+                height="96"
                 loading="eager"
                 className="h-full w-full object-cover"
               />
             </div>
-            <h1 className="mt-5 font-display text-2xl font-semibold tracking-tight text-ink">{site.name}</h1>
-            <p className="mt-1.5 text-micro uppercase tracking-wide text-cream">{linkPage.tagline}</p>
-            <p className="mt-4 text-sm leading-relaxed text-muted text-pretty">{linkPage.intro}</p>
+            <h1 className="mt-4 font-display text-2xl font-semibold tracking-tight text-ink">{site.name}</h1>
+            <p className="mt-1 text-micro uppercase tracking-wide text-cream">{linkPage.tagline}</p>
+            <p className="mt-3 text-sm leading-relaxed text-muted text-pretty max-w-sm">{linkPage.intro}</p>
           </motion.div>
 
           {/* Primary CTA */}
           <motion.a
             variants={fadeUp}
             href={linkPage.cta.href}
-            className="mt-8 inline-flex items-center justify-center gap-2 rounded-card bg-blue px-5 py-3.5 font-medium text-white transition-colors hover:bg-blue-soft"
+            className="mt-6 inline-flex items-center justify-center gap-2 rounded-card bg-blue px-5 py-3.5 font-medium text-white transition-colors hover:bg-blue-soft"
           >
             {linkPage.cta.label} <span aria-hidden>→</span>
           </motion.a>
 
-          {/* Lead-magnet carousel */}
-          <ResourceCarousel />
-
-          {/* Case studies carousel */}
-          <CaseStudyCarousel />
-
-          {/* Link buttons */}
-          <motion.nav variants={stagger(0.06)} className="mt-4 flex flex-col gap-3" aria-label="Links">
+          {/* Featured links */}
+          <motion.nav variants={stagger(0.06)} className="mt-8 flex flex-col gap-2.5" aria-label="Featured links">
             {linkPage.links.map((l) => (
-              <LinkButton key={l.label} {...l} />
+              <LinkRow key={l.label} {...l} />
             ))}
           </motion.nav>
+
+          {/* Resources — compact list */}
+          {resources.length > 0 && (
+            <motion.section variants={stagger(0.06)} className="mt-8" aria-labelledby="resources-heading">
+              <h2 id="resources-heading" className="mb-3 text-micro uppercase tracking-wide text-muted">
+                Free resources
+              </h2>
+              <div className="flex flex-col gap-2.5">
+                {resources.map((r) => (
+                  <ResourceRow key={r.title} {...r} />
+                ))}
+              </div>
+            </motion.section>
+          )}
 
           {/* Socials */}
           <motion.div variants={fadeUp} className="mt-6 flex items-center justify-center gap-2">
