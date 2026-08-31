@@ -50,7 +50,7 @@ export default function BlogPost({ slug: slugProp }) {
             />
 
       <div className="blog-light">
-            <article className="wrap pt-20 sm:pt-24">
+            <article className="wrap pb-[50px] pt-20 sm:pt-24">
               <motion.div
                 initial={{ opacity: 0, y: 14 }}
                 animate={{ opacity: 1, y: 0 }}
