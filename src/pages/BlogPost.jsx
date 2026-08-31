@@ -28,7 +28,7 @@ export default function BlogPost({ slug: slugProp }) {
     '@type': 'BlogPosting',
     headline: post.title,
     description: post.description,
-    image: site.url + '/og-image.png',
+    image: post.img || site.url + '/og-image.png',
     datePublished: post.date,
     dateModified: post.date,
     url: site.url + path,
@@ -40,13 +40,14 @@ export default function BlogPost({ slug: slugProp }) {
   return (
     <>
       <Seo
-        title={`${post.title} · ${site.name}`}
-        description={post.description}
-        path={path}
-        type="article"
-        published={post.date}
-        jsonLd={jsonLd}
-      />
+              title={`${post.title} · ${site.name}`}
+              description={post.description}
+              path={path}
+              type="article"
+              image={post.img || '/og-image.png'}
+              published={post.date}
+              jsonLd={jsonLd}
+            />
 
       <div className="blog-light">
             <article className="wrap pt-20 sm:pt-24">
@@ -65,7 +66,7 @@ export default function BlogPost({ slug: slugProp }) {
           transition={{ duration: 0.55, delay: 0.08 }}
           className="mx-auto mt-6 max-w-prose overflow-hidden rounded-card"
         >
-          <PostCover kind={post.kind} category={post.category} tall />
+          <PostCover kind={post.kind} category={post.category} img={post.img} tall />
         </motion.div>
 
         <motion.header

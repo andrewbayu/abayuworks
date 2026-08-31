@@ -18,8 +18,23 @@ const DOT_PATTERN = {
   backgroundSize: '22px 22px',
 };
 
-export default function PostCover({ kind, category, tall = false }) {
+export default function PostCover({ kind, category, tall = false, img }) {
   const s = KIND_STYLES[kind] || KIND_STYLES['Case study'];
+  if (img) {
+    return (
+      <div
+        className={`relative overflow-hidden ${tall ? 'h-52 sm:h-64' : 'h-36'}`}
+        style={{ background: s.gradient }}
+      >
+        <img
+          src={img}
+          alt={category}
+          loading="lazy"
+          className="absolute inset-0 h-full w-full object-cover"
+        />
+      </div>
+    );
+  }
   return (
     <div
       className={`relative overflow-hidden ${tall ? 'h-52 sm:h-64' : 'h-36'}`}

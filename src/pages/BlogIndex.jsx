@@ -44,7 +44,7 @@ export default function BlogIndex() {
                   to={`/blog/${p.slug}/`}
                   className="card group flex h-full flex-col overflow-hidden hover:shadow-card"
                 >
-                  <PostCover kind={p.kind} category={p.category} />
+                  <PostCover kind={p.kind} category={p.category} img={p.img} />
                   <div className="flex flex-1 flex-col p-6">
                     <div className="mb-3 text-micro uppercase text-muted">
                       <time dateTime={p.date}>{p.dateLabel}</time>

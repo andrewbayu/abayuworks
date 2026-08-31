@@ -14,6 +14,7 @@ export const meta = {
     "Aditya Indra Bayu's 2026 research mapping Southeast Asian social behaviour: trust over polish, creator-led storytelling, and the shift to closed-loop social commerce with Indonesia as the centre of gravity.",
   standfirst:
     "Social in Southeast Asia is no longer a media channel. It is now the search bar, the shopping mall, and the trust layer of commerce. This paper maps what matters to SEA consumers, what content actually converts, which storytelling is effective, and how buying decisions changed through 2026.",
+  img: 'https://storage.googleapis.com/bluestark_explorer/infinitiworks/Konteks-Equal.jpg',
   tags: ['Southeast Asia', 'Social Commerce', 'Creator Economy', 'Marketing 2026', 'Indonesia', 'Consumer Behaviour'],
 };
 
