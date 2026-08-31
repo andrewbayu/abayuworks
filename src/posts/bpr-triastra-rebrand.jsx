@@ -14,6 +14,7 @@ export const meta = {
     'A legacy rural bank reborn for digital growth: a full rebrand from BPR Hisobhan to BPR Triastra, a launch campaign, a lead-gen funnel for Millennial and Gen-Z business owners, and team enablement.',
   standfirst:
     'BPR Hisobhan was a legacy rural bank with a new generation of management and bigger ambitions. The work was a full rebrand into BPR Triastra, a launch campaign, a lead-gen funnel aimed at younger business owners, and the internal enablement to make the change stick.',
+  img: 'https://storage.googleapis.com/bluestark_explorer/rebrandinghisobhan.jpg',
   tags: ['Finance', 'Rebrand', 'Digital transformation', 'Lead generation'],
 };
 

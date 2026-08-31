@@ -14,6 +14,7 @@ export const meta = {
     "A public paper-style adaptation of Xniper's 2026 whitepaper: HBSM, XRE, 100 digital humans, 20,000 Monte Carlo data points, and audience simulation before campaign spend.",
   standfirst:
     'Xniper is an AI-powered audience simulation platform for marketers, brand managers, and growth operators in Indonesia and Southeast Asia. Its core question is direct: will this audience actually resonate with this content before the campaign budget is spent?',
+  img: 'https://storage.googleapis.com/bluestark_explorer/xniperhbsm.jpg',
   tags: ['Xniper', 'HBSM', 'Audience Simulation', 'Digital Humans', 'Monte Carlo', 'XRE'],
 };
 

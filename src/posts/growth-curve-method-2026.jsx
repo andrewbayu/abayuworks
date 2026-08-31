@@ -14,6 +14,7 @@ export const meta = {
     "A 2026 public adaptation of Aditya's Growth Curve Method: content pillars, supporting content, route systems, cadence, and optimization for 360 digital marketing.",
   standfirst:
     "The Growth Curve Method is Aditya's content marketing framework for building authority, engagement, visibility, and conversion through connected content. The 2026 version keeps the original logic: pillar content, supporting content, guideways, cadence, and optimization. It adds AI-assisted production, first-party signal loops, and revenue-quality measurement.",
+  img: 'https://storage.googleapis.com/bluestark_explorer/growthcurvemethod.jpg',
   tags: ['Growth Curve Method', 'Content Pillar', 'Content Route', 'Digital Marketing 360', 'AEO', '2026'],
 };
 

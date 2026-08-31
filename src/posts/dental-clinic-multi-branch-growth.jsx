@@ -14,6 +14,7 @@ export const meta = {
     'A 360 growth system for a multi-branch Jakarta dental group: performance ads, a website funnel, AI-assisted WhatsApp CS, and a custom CRM. Leads grew from 120 to 421 per month at 6 to 7x ROAS.',
   standfirst:
     'A multi-branch Jakarta dental group had strong offline credibility, but the digital system was leaking opportunities. The work was not "more ads." It was a connected acquisition engine: performance media, a website rebuilt as a funnel, AI-assisted WhatsApp CS, and a custom CRM. In three months, monthly leads went from 120 to 421, digital-influenced revenue reached Rp300 million per month, and ROAS held at 6 to 7x while the brand expanded from 6 to 10 branches.',
+  img: 'https://storage.googleapis.com/bluestark_explorer/scalingdentalclinic.jpg',
   tags: ['Healthcare', 'Multi-branch', 'Performance', 'CRM', 'AI CS', 'Funnel'],
 };
 

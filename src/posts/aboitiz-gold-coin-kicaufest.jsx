@@ -14,6 +14,7 @@ export const meta = {
     'How a bird-feed brand under Aboitiz grew into a community-led campaign: a viral hero video, a flagship event, and an engaged songbird community across Indonesia.',
   standfirst:
     'Gold Coin sells bird feed. Bird feed is a commodity. The work was to make it a brand people gather around. The answer was a community: a viral hero video, a flagship event, and content the songbird hobbyist actually wants.',
+  img: 'https://storage.googleapis.com/bluestark_explorer/kicaufest.jpg',
   tags: ['Consumer', 'Community', 'Content', 'Events', 'Brand'],
 };
 

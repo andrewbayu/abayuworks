@@ -14,6 +14,7 @@ export const meta = {
     'How a metrics rebuild and a sharper strategy framework helped Wall Street English Indonesia return to profit and reach an all-time-high revenue mark within 1.5 years.',
   standfirst:
     'Brought in as a strategic partner, the work was a rebuild: company metrics first, then the strategy framework on top. The business returned to profit and reached an all-time-high revenue mark within roughly 1.5 years.',
+  img: 'https://storage.googleapis.com/bluestark_explorer/wallstreetenglish.jpg',
   tags: ['Education', 'Strategy', 'Turnaround', 'Metrics'],
 };
 
