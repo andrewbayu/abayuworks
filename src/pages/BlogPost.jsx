@@ -48,15 +48,16 @@ export default function BlogPost({ slug: slugProp }) {
         jsonLd={jsonLd}
       />
 
-      <article className="wrap pt-20 sm:pt-24">
-        <motion.div
-          initial={{ opacity: 0, y: 14 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.45 }}
-          className="mx-auto max-w-prose"
-        >
-          <Link to="/blog/" className="text-sm text-muted transition-colors hover:text-ink">← Writing</Link>
-        </motion.div>
+      <div className="blog-light">
+            <article className="wrap pt-20 sm:pt-24">
+              <motion.div
+                initial={{ opacity: 0, y: 14 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.45 }}
+                className="mx-auto max-w-prose"
+              >
+                <Link to="/blog/" className="text-sm text-muted transition-colors hover:text-ink">← Writing</Link>
+              </motion.div>
 
         <motion.div
           initial={{ opacity: 0, y: 20 }}
@@ -87,11 +88,12 @@ export default function BlogPost({ slug: slugProp }) {
         </motion.header>
 
         <div className="mt-10">
-          <Prose>
-            <Body />
-          </Prose>
-        </div>
-      </article>
-    </>
-  );
-}
+                  <Prose>
+                    <Body />
+                  </Prose>
+                </div>
+                </article>
+              </div>
+            </>
+          );
+        }

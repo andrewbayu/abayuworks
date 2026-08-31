@@ -84,3 +84,26 @@
     background-size: 56px 56px;
   }
 }
+
+/* ── Blog theme: white bg + black text (index + article pages only) ───── */
+/* Scoped by wrapper .blog-light so the rest of the site stays dark. Remaps
+   the dark tokens (bg/ink/surface/muted/cream) to light equivalents. */
+.blog-light { background:#fff; color:#111; min-height:60vh; color-scheme:light; }
+.blog-light ::selection { background:rgba(28,61,115,.18); color:#111; }
+.blog-light h1,.blog-light h2,.blog-light h3,
+.blog-light .text-ink, .blog-light .text-ink\/85 { color:#111; }
+.blog-light .text-muted { color:#44474f; }
+.blog-light a, .blog-light a:hover { color:#1C3D73; }
+.blog-light .eyebrow { color:#1C3D73; }
+.blog-light .card,
+.blog-light .bg-surface { background:#fff; border-color:#e6e8ec; }
+.blog-light .card:hover { border-color:rgba(28,61,115,.45); }
+.blog-light .bg-line, .blog-light .border-line, .blog-light hr { border-color:#e6e8ec; }
+/* pull-quote + tags still legible, accent becomes brand blue on white */
+.blog-light .border-cream { border-color:#1C3D73; }
+.blog-light .text-cream { color:#1C3D73; }
+.blog-light .rounded-full[class*="border-line"] { border-color:#e6e8ec; }
+/* Read pill + card CTA hover: blue fill, white text */
+.blog-light .border-cream\/40 { border-color:rgba(28,61,115,.45); }
+.blog-light .group-hover\:bg-cream { background-color:#1C3D73; }
+.blog-light .group-hover\:text-bg { color:#fff; }
