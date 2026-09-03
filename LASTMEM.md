@@ -270,6 +270,13 @@ node -e "const sharp=require('sharp');const fs=require('fs');sharp(Buffer.from(f
 - Added `digital-advantage-lab` to the contact engagement options so consultation leads can identify the offer.
 - Verified `git diff --check` and `npm.cmd run build`; SSG rendered `dist/dal.html` successfully.
 
+## Session DAL271 · 2026-09-03
+
+- Reworked `/dal/` into a white direct-response landing page with a subtle grid.
+- Rewrote the offer around a clear bottleneck diagnosis, 60-minute session, concrete outcomes, four deliverables, 90-day priority, and repeated application CTAs.
+- Replaced the previous dark scorecard-first anatomy with a funnel sequence: problem, promise, mechanism, deliverables, outcome, application.
+- Verified `git diff --check` and `npm.cmd run build`; SSG rendered `dist/dal.html` successfully.
+
 ---
 
 End of LASTMEM. Update this file when you ship anything material. It's committed to the public repo by design, so no secrets.

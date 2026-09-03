@@ -107,3 +107,17 @@
 .blog-light .border-cream\/40 { border-color:rgba(28,61,115,.45); }
 .blog-light .group-hover\:bg-cream { background-color:#1C3D73; }
 .blog-light .group-hover\:text-bg { color:#fff; }
+
+/* Scoped light treatment for the Digital Advantage Lab funnel. */
+.dal-light { color-scheme: light; }
+.dal-light .bg-grid {
+  background-image:
+    linear-gradient(rgba(17,17,17,0.028) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(17,17,17,0.028) 1px, transparent 1px);
+}
+.dal-light .text-ink { color:#111; }
+.dal-light .text-muted { color:#4b5563; }
+.dal-light .text-faint { color:#718096; }
+.dal-light .text-cream { color:#1C3D73; }
+.dal-light .border-line { border-color:#dfe4eb; }
+.dal-light .bg-surface, .dal-light .bg-elevated { background:#fff; }

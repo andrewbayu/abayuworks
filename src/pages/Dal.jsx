@@ -3,46 +3,28 @@ import Seo from '../components/Seo';
 import { site } from '../data/site';
 import { fadeUp, inView, stagger } from '../lib/motion';
 
-const scorecard = [
-  ['01', 'Foundation', 'Can the right customer find, understand, and trust you?'],
-  ['02', 'Demand', 'Can you consistently attract qualified attention?'],
-  ['03', 'Conversion', 'Can you turn interest into revenue?'],
-  ['04', 'Connected Experience', 'Do marketing, sales, and follow-up work together?'],
-  ['05', 'Intelligence', 'Are you using insight and data to improve growth decisions?'],
+const outcomes = [
+  'The bottleneck costing the business growth right now',
+  'The customer journey, from first touch to paid customer',
+  'The one priority worth fixing before spending more money',
 ];
 
 const deliverables = [
-  {
-    no: '01',
-    title: 'Digital Advantage Scorecard',
-    body: 'A clear assessment of your business across Foundation, Demand, Conversion, Connected Experience, and Intelligence.',
-  },
-  {
-    no: '02',
-    title: 'The Discovery Journey',
-    body: 'A visual map of how strangers should discover, evaluate, trust, and choose your business, including the friction points where prospects drop off.',
-  },
-  {
-    no: '03',
-    title: 'The Acquisition Framework',
-    body: 'A practical blueprint of funnel stages, touchpoints, lead temperature, conversion timing, team ownership, channels, and performance variables.',
-  },
-  {
-    no: '04',
-    title: 'Your Priority Growth Move',
-    body: 'One clear priority, supported by a practical 90-day plan. No generic ideas and no bloated strategy deck.',
-  },
+  ['01', 'Find the leak', 'A 5-part scorecard covering Foundation, Demand, Conversion, Connected Experience, and Intelligence.'],
+  ['02', 'See the journey', 'A visual map of how prospects discover, evaluate, trust, and choose the business, including where they drop off.'],
+  ['03', 'Build the fix', 'An acquisition blueprint showing funnel stages, channels, follow-up, ownership, and conversion timing.'],
+  ['04', 'Know the next move', 'One priority growth move and a practical 90-day plan. No bloated strategy deck.'],
 ];
 
 const ctaClass =
-  'inline-flex items-center justify-center gap-3 rounded-card bg-blue px-5 py-3.5 font-medium text-white transition-colors hover:bg-blue-soft focus:outline-none focus:ring-2 focus:ring-cream/60 focus:ring-offset-2 focus:ring-offset-bg';
+  'inline-flex items-center justify-center gap-3 rounded-card bg-blue px-6 py-3.5 font-medium text-white shadow-[0_12px_28px_-14px_rgba(28,61,115,0.8)] transition-transform hover:-translate-y-0.5 hover:bg-blue-soft focus:outline-none focus:ring-2 focus:ring-blue-soft/60 focus:ring-offset-2 focus:ring-offset-white';
 
 const jsonLd = {
   '@context': 'https://schema.org',
   '@type': 'Service',
   name: 'Digital Advantage Lab',
   description:
-    'A private diagnostic session for founders and decision-makers who want to identify the bottleneck holding back acquisition, conversion, and growth.',
+    'A private 60-minute diagnostic for founders and decision-makers who want to find the growth bottleneck before spending more on marketing.',
   provider: { '@type': 'Person', name: site.name, jobTitle: site.role },
   url: `${site.url}/dal/`,
 };
@@ -51,137 +33,138 @@ export default function Dal() {
   return (
     <>
       <Seo
-        title="DAL: Digital Advantage Lab · Aditya Bayu"
-        description="Find the growth leak before you spend more on marketing. A private diagnostic session for founders and decision-makers."
+        title="Digital Advantage Lab · Find the growth bottleneck"
+        description="A private 60-minute diagnostic for founders and decision-makers who want to find the growth bottleneck before spending more on marketing."
         path="/dal/"
         jsonLd={jsonLd}
       />
 
-      <div className="relative overflow-hidden bg-bg">
-        <div aria-hidden className="pointer-events-none absolute inset-0 bg-grid opacity-50" />
-        <div
-          aria-hidden
-          className="pointer-events-none absolute -top-48 right-[-12rem] h-[34rem] w-[34rem] rounded-full blur-3xl"
-          style={{ background: 'radial-gradient(circle, rgba(28,61,115,0.42), transparent 68%)' }}
-        />
+      <div className="dal-light relative overflow-hidden bg-white">
+        <div aria-hidden className="pointer-events-none absolute inset-0 bg-grid opacity-60" />
 
         <motion.div
           variants={stagger(0.08)}
           initial="hidden"
           animate="show"
-          className="relative z-10 mx-auto max-w-6xl px-5 pb-20 pt-14 sm:px-8 sm:pb-28 sm:pt-24"
+          className="relative z-10 mx-auto max-w-6xl px-5 pb-20 pt-12 sm:px-8 sm:pb-28 sm:pt-20"
         >
-          <div className="grid items-center gap-12 lg:grid-cols-[1.05fr_0.95fr] lg:gap-20">
-            <div>
-              <motion.p variants={fadeUp} className="eyebrow">
-                DAL · Digital Advantage Lab
-              </motion.p>
-              <motion.h1
-                variants={fadeUp}
-                className="mt-5 max-w-3xl text-balance font-display text-4xl font-semibold leading-[1.04] tracking-tight text-ink sm:text-6xl"
-              >
-                Find the growth leak before you spend more on marketing.
-              </motion.h1>
-              <motion.p variants={fadeUp} className="mt-6 max-w-2xl text-pretty text-lg leading-relaxed text-muted">
-                More ads, more content, a new website, or a bigger sales team will only work when they solve the right problem.
-              </motion.p>
-              <motion.p variants={fadeUp} className="mt-4 max-w-2xl text-pretty leading-relaxed text-muted">
-                Digital Advantage Lab is a private diagnostic session for founders and decision-makers who want to identify what is holding back acquisition, conversion, and growth before investing more budget in the wrong place.
-              </motion.p>
-              <motion.div variants={fadeUp} className="mt-8 flex flex-wrap items-center gap-4">
-                <a href="/#contact" className={ctaClass}>
-                  Apply for a Private Diagnostic <span aria-hidden>→</span>
-                </a>
-                <span className="text-sm text-faint">Limited to 4 businesses per week.</span>
-              </motion.div>
+          <motion.div variants={fadeUp} className="mx-auto max-w-3xl text-center">
+            <p className="eyebrow">Private diagnostic · Limited to 4 businesses per week</p>
+            <h1 className="mt-5 text-balance font-display text-4xl font-semibold leading-[1.04] tracking-tight text-ink sm:text-6xl">
+              Your business may not have a lead problem.
+              <span className="block text-blue">It may have a bottleneck problem.</span>
+            </h1>
+            <p className="mx-auto mt-6 max-w-2xl text-pretty text-lg leading-relaxed text-muted sm:text-xl">
+              Before you buy more ads, publish more content, rebuild your website, or hire more salespeople, find out what is actually stopping attention from becoming revenue.
+            </p>
+            <div className="mt-8 flex flex-col items-center gap-3 sm:flex-row sm:justify-center">
+              <a href="/#contact" className={ctaClass}>
+                Apply for your 60-minute diagnostic <span aria-hidden>→</span>
+              </a>
+              <span className="text-sm text-faint">For founders and decision-makers.</span>
             </div>
+          </motion.div>
 
-            <motion.div variants={fadeUp} className="card relative overflow-hidden p-5 sm:p-7">
-              <div className="flex items-start justify-between border-b border-line pb-5">
-                <div>
-                  <p className="eyebrow">Diagnostic instrument</p>
-                  <p className="mt-2 font-display text-xl font-semibold text-ink">Digital Advantage Scorecard</p>
-                </div>
-                <span className="font-mono text-xs text-faint">DAL / 01</span>
+          <motion.div variants={fadeUp} className="mx-auto mt-14 max-w-4xl rounded-card border border-blue/20 bg-[#f7f9fc] p-5 shadow-[0_20px_60px_-40px_rgba(28,61,115,0.55)] sm:mt-20 sm:p-8">
+            <div className="grid gap-8 md:grid-cols-[0.9fr_1.1fr] md:items-center">
+              <div>
+                <p className="eyebrow">The Digital Advantage Lab</p>
+                <h2 className="mt-3 font-display text-2xl font-semibold leading-tight text-ink sm:text-3xl">
+                  One focused session. One clear priority.
+                </h2>
+                <p className="mt-4 leading-relaxed text-muted">
+                  A private working session for businesses that are getting activity but not enough predictable growth.
+                </p>
               </div>
-              <div className="mt-5 space-y-4">
-                {scorecard.map(([no, label, question], index) => (
-                  <div key={label} className="grid grid-cols-[2rem_1fr_auto] items-start gap-3">
-                    <span className="font-mono text-xs text-blue-soft">{no}</span>
-                    <div>
-                      <p className="text-sm font-medium text-ink">{label}</p>
-                      <p className="mt-1 text-xs leading-relaxed text-faint">{question}</p>
-                    </div>
-                    <span className="mt-1 h-2 w-2 rounded-full bg-cream/70" aria-hidden />
-                    {index < scorecard.length - 1 && <span className="col-start-1 row-start-1 ml-[0.35rem] mt-5 h-8 w-px bg-line" aria-hidden />}
+              <div className="grid gap-3 sm:grid-cols-3 md:grid-cols-1">
+                {outcomes.map((outcome, index) => (
+                  <div key={outcome} className="flex gap-3 border-t border-blue/15 pt-3 first:border-t-0 first:pt-0 md:first:border-t md:first:pt-3">
+                    <span className="font-mono text-xs text-blue-soft">0{index + 1}</span>
+                    <p className="text-sm font-medium leading-relaxed text-ink">{outcome}</p>
                   </div>
                 ))}
               </div>
-              <div className="mt-6 border-t border-line pt-5 text-xs uppercase tracking-[0.16em] text-faint">
-                Attention <span className="mx-2 text-blue-soft">→</span> Revenue
-              </div>
-            </motion.div>
-          </div>
+            </div>
+          </motion.div>
 
-          <motion.section {...inView} variants={stagger(0.08)} className="mt-24 max-w-3xl sm:mt-32">
-            <motion.p variants={fadeUp} className="eyebrow">The actual problem</motion.p>
-            <motion.h2 variants={fadeUp} className="mt-4 text-balance font-display text-3xl font-semibold tracking-tight text-ink sm:text-5xl">
-              You may not need more leads. You may need a better system.
-            </motion.h2>
-            <motion.p variants={fadeUp} className="mt-5 leading-relaxed text-muted">
-              Your business may already be generating activity, but growth remains unpredictable because there is a disconnect between attention and revenue.
-            </motion.p>
-            <motion.div variants={fadeUp} className="mt-6 grid gap-3 text-lg text-ink sm:grid-cols-3">
-              <p className="border-l border-blue-soft pl-4">Maybe traffic does not convert.</p>
-              <p className="border-l border-blue-soft pl-4">Maybe leads are not followed up properly.</p>
-              <p className="border-l border-blue-soft pl-4">Maybe marketing and sales are not working as one system.</p>
+          <motion.section {...inView} variants={stagger(0.07)} className="mx-auto mt-24 max-w-5xl sm:mt-32">
+            <motion.div variants={fadeUp} className="max-w-2xl">
+              <p className="eyebrow">Why this exists</p>
+              <h2 className="mt-4 text-balance font-display text-3xl font-semibold tracking-tight text-ink sm:text-5xl">
+                More marketing cannot rescue a broken path to purchase.
+              </h2>
+              <p className="mt-5 leading-relaxed text-muted">
+                Traffic can be healthy while conversion is weak. Leads can be plentiful while follow-up is slow. Sales can be talented while marketing attracts the wrong people. The Lab finds the constraint that connects those symptoms.
+              </p>
             </motion.div>
-            <motion.p variants={fadeUp} className="mt-6 leading-relaxed text-muted">
-              In a focused 60-minute session, the bottleneck that matters most and the next move worth making are identified.
-            </motion.p>
+            <motion.div variants={fadeUp} className="mt-10 grid gap-4 sm:grid-cols-3">
+              {[
+                ['Attention', 'Can the right people find and understand the offer?'],
+                ['Trust', 'Do prospects get enough proof and clarity to move?'],
+                ['Revenue', 'Does the team have a repeatable path to close?'],
+              ].map(([title, body]) => (
+                <div key={title} className="border-t-2 border-blue pt-4">
+                  <h3 className="font-display text-xl font-semibold text-ink">{title}</h3>
+                  <p className="mt-2 text-sm leading-relaxed text-muted">{body}</p>
+                </div>
+              ))}
+            </motion.div>
           </motion.section>
 
-          <motion.section {...inView} variants={stagger(0.08)} className="mt-24 sm:mt-32">
-            <motion.p variants={fadeUp} className="eyebrow">What you receive</motion.p>
-            <motion.h2 variants={fadeUp} className="mt-4 font-display text-3xl font-semibold tracking-tight text-ink sm:text-5xl">
-              Clarity on what to fix first.
-            </motion.h2>
-            <div className="mt-8 grid gap-4 md:grid-cols-2">
-              {deliverables.map((item) => (
-                <motion.article key={item.no} variants={fadeUp} className="card p-6 sm:p-7">
-                  <div className="flex items-start justify-between gap-4">
-                    <span className="font-mono text-xs text-blue-soft">{item.no}</span>
-                    <span className="text-cream" aria-hidden>↗</span>
+          <motion.section {...inView} variants={stagger(0.07)} className="mx-auto mt-24 max-w-5xl sm:mt-32">
+            <motion.div variants={fadeUp} className="flex flex-col justify-between gap-4 border-b border-line pb-6 sm:flex-row sm:items-end">
+              <div>
+                <p className="eyebrow">What happens inside the Lab</p>
+                <h2 className="mt-4 font-display text-3xl font-semibold tracking-tight text-ink sm:text-5xl">You leave knowing what to do next.</h2>
+              </div>
+              <p className="max-w-xs text-sm leading-relaxed text-muted">Not a generic audit. Not a motivational call. A commercial diagnosis.</p>
+            </motion.div>
+            <div className="mt-6 grid gap-x-10 gap-y-8 md:grid-cols-2">
+              {deliverables.map(([no, title, body]) => (
+                <motion.article key={no} variants={fadeUp} className="grid grid-cols-[2.5rem_1fr] gap-4 border-b border-line pb-7">
+                  <span className="font-mono text-xs text-blue-soft">{no}</span>
+                  <div>
+                    <h3 className="font-display text-xl font-semibold text-ink">{title}</h3>
+                    <p className="mt-2 leading-relaxed text-muted">{body}</p>
                   </div>
-                  <h3 className="mt-8 font-display text-xl font-semibold text-ink">{item.title}</h3>
-                  <p className="mt-3 leading-relaxed text-muted">{item.body}</p>
                 </motion.article>
               ))}
             </div>
           </motion.section>
 
-          <motion.section {...inView} variants={stagger(0.08)} className="mt-24 grid gap-8 border-t border-line pt-8 sm:mt-32 sm:grid-cols-[0.7fr_1.3fr] sm:gap-16 sm:pt-12">
-            <motion.p variants={fadeUp} className="eyebrow">Why spots are limited</motion.p>
-            <div>
-              <motion.p variants={fadeUp} className="text-xl leading-relaxed text-ink sm:text-2xl">
-                Every Lab begins with a rapid pre-audit of your business, so the session can be commercially useful from the first minute.
-              </motion.p>
-              <motion.blockquote variants={fadeUp} className="mt-8 border-l-2 border-cream pl-5 text-lg italic leading-relaxed text-muted">
-                You will not leave with more marketing noise. You will leave with a clearer path from attention to revenue.
-              </motion.blockquote>
+          <motion.section {...inView} variants={stagger(0.07)} className="mx-auto mt-24 max-w-5xl sm:mt-32">
+            <div className="grid overflow-hidden rounded-card border border-line bg-[#10264a] text-white md:grid-cols-[1.1fr_0.9fr]">
+              <motion.div variants={fadeUp} className="p-7 sm:p-10">
+                <p className="text-xs font-medium uppercase tracking-[0.16em] text-blue-200">The outcome</p>
+                <h2 className="mt-4 max-w-xl font-display text-3xl font-semibold leading-tight sm:text-4xl">
+                  Stop guessing which lever to pull.
+                </h2>
+                <p className="mt-4 max-w-xl leading-relaxed text-blue-100/80">
+                  The goal is not to leave with more ideas. The goal is to leave with a sharper diagnosis, a better order of operations, and a 90-day move the business can actually execute.
+                </p>
+              </motion.div>
+              <motion.div variants={fadeUp} className="flex items-end border-t border-white/15 p-7 md:border-l md:border-t-0 sm:p-10">
+                <blockquote className="border-l-2 border-[#ffe8d4] pl-5 text-lg italic leading-relaxed text-white">
+                  “The right next move becomes obvious when the real constraint is visible.”
+                </blockquote>
+              </motion.div>
             </div>
           </motion.section>
 
-          <motion.section {...inView} variants={stagger(0.08)} className="mt-24 rounded-card border border-line bg-elevated p-7 sm:mt-32 sm:p-12" id="apply">
-            <motion.p variants={fadeUp} className="eyebrow">Apply for your Digital Advantage Lab</motion.p>
-            <motion.h2 variants={fadeUp} className="mt-4 max-w-2xl text-balance font-display text-3xl font-semibold tracking-tight text-ink sm:text-5xl">
-              Make the next growth decision with a clearer diagnosis.
+          <motion.section {...inView} variants={stagger(0.07)} className="mx-auto mt-24 max-w-3xl text-center sm:mt-32" id="apply">
+            <motion.p variants={fadeUp} className="eyebrow">Apply for Digital Advantage Lab</motion.p>
+            <motion.h2 variants={fadeUp} className="mt-4 text-balance font-display text-3xl font-semibold tracking-tight text-ink sm:text-5xl">
+              Find the leak before you fund the fix.
             </motion.h2>
-            <motion.div variants={fadeUp} className="mt-7">
+            <motion.p variants={fadeUp} className="mx-auto mt-5 max-w-2xl leading-relaxed text-muted">
+              Apply for a private 60-minute diagnostic. Every session starts with a rapid pre-audit, so the conversation begins with the business, not a sales script.
+            </motion.p>
+            <motion.div variants={fadeUp} className="mt-8">
               <a href="/#contact" className={ctaClass}>
                 Apply for a Private Diagnostic <span aria-hidden>→</span>
               </a>
             </motion.div>
+            <motion.p variants={fadeUp} className="mt-4 text-sm text-faint">Limited to 4 businesses per week.</motion.p>
           </motion.section>
         </motion.div>
       </div>
