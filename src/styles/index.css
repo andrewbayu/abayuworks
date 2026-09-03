@@ -127,6 +127,18 @@
 .dal-light .eyebrow, .dal-light .dal-utility,
 .dal-light a { font-family:'General Sans', system-ui, sans-serif; }
 .dal-marquee { animation: dal-marquee 48s linear infinite; }
+.dal-client-marquee,
+.dal-client-separator {
+  color:#4b5563;
+  font-family:'General Sans', system-ui, sans-serif;
+  font-size:0.82rem;
+  font-weight:700;
+  letter-spacing:-0.1em;
+  line-height:1;
+  text-transform:uppercase;
+}
+.dal-client-marquee { padding-left:1rem; }
+.dal-client-separator { padding:0 1rem; }
 @keyframes dal-marquee {
   from { transform: translateX(-50%); }
   to { transform: translateX(0); }

@@ -90,13 +90,14 @@ export default function Dal() {
             </div>
           </motion.div>
 
-          <motion.section variants={fadeUp} className="mx-[calc(50%-50vw)] mt-16 overflow-hidden border-y border-[#dfe4eb] bg-[#10264a] py-5 text-white sm:mt-20">
-            <p className="text-center text-xs font-medium uppercase tracking-[0.16em] text-blue-100/70">Businesses that have taken the Digital Advantage Lab</p>
+          <motion.section variants={fadeUp} className="mx-[calc(50%-50vw)] mt-16 overflow-hidden border-y border-[#dfe4eb] bg-white py-6 text-[#4b5563] sm:mt-20">
+            <p className="dal-utility text-center text-xs font-medium uppercase tracking-[0.16em] text-[#718096]">Businesses that have taken the Digital Advantage Lab</p>
             <div className="mt-4 overflow-hidden" aria-label="Digital Advantage Lab clients">
-              <div className="dal-marquee flex w-max items-center gap-3 whitespace-nowrap">
+              <div className="dal-marquee flex w-max items-center whitespace-nowrap">
                 {[...dalClients, ...dalClients].map((client, index) => (
-                  <span key={`${client}-${index}`} className="rounded-full border border-white/20 px-4 py-2 text-sm text-white/90">
-                    {client}
+                  <span key={`${client}-${index}`} className="flex items-center">
+                    <span className="dal-client-marquee">{client}</span>
+                    <span className="dal-client-separator" aria-hidden>/</span>
                   </span>
                 ))}
               </div>

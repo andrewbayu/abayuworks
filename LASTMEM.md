@@ -320,6 +320,10 @@ node -e "const sharp=require('sharp');const fs=require('fs');sharp(Buffer.from(f
 - Added a post-hero client strip with a seamless left-to-right running text marquee for the provided DAL client list.
 - Added reduced-motion handling so the marquee stops when requested by the visitor’s device settings.
 
+## Session DAL281 · 2026-09-04
+
+- Restyled the client marquee as plain uppercase bold General Sans text in dark gray, with negative tracking and slash separators instead of pills and a colored background.
+
 ---
 
 End of LASTMEM. Update this file when you ship anything material. It's committed to the public repo by design, so no secrets.
