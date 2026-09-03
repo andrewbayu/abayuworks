@@ -78,7 +78,7 @@ export default function Dal() {
           className="relative z-10 mx-auto max-w-6xl px-5 pb-20 pt-12 sm:px-8 sm:pb-28 sm:pt-20"
         >
           <motion.div variants={fadeUp} className="mx-auto max-w-3xl text-center">
-            <p className="eyebrow">Private diagnostic · Limited to 4 businesses per week</p>
+            <p className="eyebrow">Private diagnostic · Limited to 5 businesses per month</p>
             <img
               src="https://storage.googleapis.com/bluestark_explorer/infinitiworks/digital-advantage-lab-logo.png"
               alt="Digital Advantage Lab"
@@ -95,7 +95,7 @@ export default function Dal() {
               Digital Advantage Lab is a two-session business diagnostic that shows you what level your business is at, what is holding it back, and which three actions will create the clearest path forward.
             </p>
             <div className="mt-8 flex flex-col items-center gap-3 sm:flex-row sm:justify-center">
-              <a href="/#contact" className={ctaClass}>
+              <a href="/dal-apply/" className={ctaClass}>
                 Apply for your 60-minute diagnostic <span aria-hidden>→</span>
               </a>
               <span className="text-sm text-faint">For founders and decision-makers.</span>
@@ -278,12 +278,6 @@ export default function Dal() {
                 <p className="mt-2 font-display text-5xl font-semibold text-blue">USD 199</p>
                 <p className="mt-3 text-sm text-muted">Promotional rate for the complete Digital Advantage Lab.</p>
               </div>
-              <div className="card p-7 sm:p-8">
-                <p className="eyebrow">Indonesia</p>
-                <p className="mt-5 font-display text-4xl font-semibold text-faint line-through">Rp6jt</p>
-                <p className="mt-2 font-display text-5xl font-semibold text-blue">Rp3jt</p>
-                <p className="mt-3 text-sm text-muted">Harga promo untuk seluruh rangkaian Digital Advantage Lab.</p>
-              </div>
             </motion.div>
           </motion.section>
 
@@ -296,11 +290,11 @@ export default function Dal() {
               Apply for the complete Digital Advantage Lab. Start with the brief, complete the two sessions, and leave with your current level, your three key actionables, and a strategic PDF report.
             </motion.p>
             <motion.div variants={fadeUp} className="mt-8">
-              <a href="/#contact" className={ctaClass}>
+              <a href="/dal-apply/" className={ctaClass}>
                 Apply for a Private Diagnostic <span aria-hidden>→</span>
               </a>
             </motion.div>
-            <motion.p variants={fadeUp} className="mt-4 text-sm text-faint">Limited to 4 businesses per week.</motion.p>
+            <motion.p variants={fadeUp} className="mt-4 text-sm text-faint">Limited to 5 businesses per month.</motion.p>
           </motion.section>
         </motion.div>
       </div>

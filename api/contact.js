@@ -15,7 +15,7 @@ import nodemailer from 'nodemailer';
 // dedicated RESEND_API_KEY is set. The new single-audience Contacts API needs
 // no audience id. Skips unless the key is a Resend key (re_*), so a legacy
 // Gmail app-password setup never hits Resend.
-async function addToResendAudience({ email, name }) {
+async function addToResendAudience({ email, name, properties = {}, segmentId = '' }) {
   const apiKey = process.env.RESEND_API_KEY || process.env.SMTP_PASS;
   if (!apiKey || !apiKey.startsWith('re_') || !email) return;
 
@@ -29,10 +29,14 @@ async function addToResendAudience({ email, name }) {
   }
 
   try {
+    const contact = { email, first_name, last_name, unsubscribed: false };
+    if (Object.keys(properties).length) contact.properties = properties;
+    if (segmentId) contact.segments = [{ id: segmentId }];
+
     const resp = await fetch('https://api.resend.com/contacts', {
       method: 'POST',
       headers: { Authorization: `Bearer ${apiKey}`, 'Content-Type': 'application/json' },
-      body: JSON.stringify({ email, first_name, last_name, unsubscribed: false }),
+      body: JSON.stringify(contact),
     });
     if (!resp.ok) {
       console.warn('resend contact add non-ok:', resp.status, await resp.text().catch(() => ''));
@@ -44,7 +48,7 @@ async function addToResendAudience({ email, name }) {
 
 // Trigger the configured Resend Automation for lead-magnet opt-ins.
 // Resend handles the delays and email sequence after this event is accepted.
-async function triggerResendAutomation({ email, resource, ref_id }) {
+async function triggerResendAutomation({ email, resource, ref_id, payload = {}, eventName = '' }) {
   const apiKey = process.env.RESEND_API_KEY || process.env.SMTP_PASS;
   if (!apiKey || !apiKey.startsWith('re_') || !email || !resource) return;
 
@@ -57,9 +61,9 @@ async function triggerResendAutomation({ email, resource, ref_id }) {
         'User-Agent': 'abayuworks-lead-magnet/1.0',
       },
       body: JSON.stringify({
-        event: process.env.RESEND_AUTOMATION_EVENT || 'lead_magnet.subscribed',
+        event: eventName || process.env.RESEND_AUTOMATION_EVENT || 'lead_magnet.subscribed',
         email,
-        payload: { resource, ref_id },
+        payload: { resource, ref_id, ...payload },
       }),
     });
     if (!resp.ok) {
@@ -86,6 +90,11 @@ export default async function handler(req, res) {
     subject = '',
     ref_id = '',
     resource = '',
+    dal_website = '',
+    dal_offer = '',
+    dal_challenge = '',
+    dal_tried = '',
+    dal_goal = '',
     from_name = '',
     consent = false,
     botcheck = '',
@@ -123,6 +132,11 @@ export default async function handler(req, res) {
     company && `Company / role: ${company}`,
     engagement_type && `Engagement type: ${engagement_type}`,
     resource && `Resource requested: ${resource}`,
+    dal_website && `Website / social: ${dal_website}`,
+    dal_offer && `Offer: ${dal_offer}`,
+    dal_challenge && `Primary challenge: ${dal_challenge}`,
+    dal_tried && `What has been tried: ${dal_tried}`,
+    dal_goal && `90-day goal: ${dal_goal}`,
     message && `\nMessage:\n${message}`,
   ].filter(Boolean);
 
@@ -139,8 +153,25 @@ export default async function handler(req, res) {
     });
     // Best-effort: capture the lead into the Resend Audience for marketing.
     // Never blocks or fails the submission if it errors.
-    await addToResendAudience({ email, name: name || from_name });
-    await triggerResendAutomation({ email, resource, ref_id });
+    const isDalApplication = resource === 'Digital Advantage Lab application';
+    const dalPayload = isDalApplication
+      ? { company, website: dal_website, offer: dal_offer, challenge: dal_challenge, tried: dal_tried, goal: dal_goal }
+      : {};
+    await addToResendAudience({
+      email,
+      name: name || from_name,
+      properties: isDalApplication
+        ? { lead_source: 'digital_advantage_lab', company, website: dal_website, challenge: dal_challenge, goal: dal_goal }
+        : {},
+      segmentId: isDalApplication ? process.env.RESEND_DAL_SEGMENT_ID : '',
+    });
+    await triggerResendAutomation({
+      email,
+      resource,
+      ref_id,
+      payload: dalPayload,
+      eventName: isDalApplication ? process.env.RESEND_DAL_AUTOMATION_EVENT : '',
+    });
     return res.status(200).json({ success: true });
   } catch (err) {
     console.error('contact mail send failed:', err);

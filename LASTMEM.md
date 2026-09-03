@@ -350,6 +350,13 @@ node -e "const sharp=require('sharp');const fs=require('fs');sharp(Buffer.from(f
 - Added the USD 499 promotional USD 199 and Indonesia Rp6jt promotional Rp3jt offer cards.
 - Aligned the page promise around current scorecard level, bottleneck, three actionables, and the final PDF deliverable.
 
+## Session DAL287 · 2026-09-04
+
+- Added `/dal-apply/` as a three-stage application form with persistent answers across stages and a completion state.
+- Connected DAL submissions to the existing SMTP contact endpoint with a dedicated resource, event payload, contact properties, and optional Resend segment.
+- Updated DAL CTAs to route to the application form and added USD 499 crossed out → USD 199 pricing with 5 monthly places.
+- Added `RESEND_DAL_SEGMENT_ID` and `RESEND_DAL_AUTOMATION_EVENT` configuration notes.
+
 ---
 
 End of LASTMEM. Update this file when you ship anything material. It's committed to the public repo by design, so no secrets.

@@ -10,6 +10,7 @@ import PlaybookFnbThankYou from './pages/PlaybookFnbThankYou';
 import LearnHome from './pages/LearnHome';
 import Lesson from './pages/Lesson';
 import Dal from './pages/Dal';
+import DalApply from './pages/DalApply';
 import { postSlugs } from './posts';
 import { lessonSlugs } from './course/curriculum';
 
@@ -45,6 +46,7 @@ const siteRoutes = [
   // Lead-magnet funnel: Playbook Marketing F&B 2026 landing + thank-you.
   { path: '/playbook-fnb', element: <PlaybookFnb /> },
   { path: '/playbook-fnb/thank-you', element: <PlaybookFnbThankYou /> },
+  { path: '/dal-apply', element: <DalApply /> },
   // Paid course. On adityabayu.com it lives at /learn/*; the learn.* subdomain
   // serves the same prerendered HTML via the Vercel Edge Middleware rewrite.
   {
