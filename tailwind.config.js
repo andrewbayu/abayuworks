@@ -25,9 +25,10 @@ export default {
         },
       },
       fontFamily: {
-        display: ['"General Sans"', 'system-ui', 'sans-serif'],
-        sans: ['"General Sans"', 'system-ui', '-apple-system', 'sans-serif'],
-      },
+              display: ['"General Sans"', 'system-ui', 'sans-serif'],
+              sans: ['"General Sans"', 'system-ui', '-apple-system', 'sans-serif'],
+              serif: ['"Libre Baskerville"', 'Georgia', 'serif'],
+            },
       fontSize: {
         micro: ['0.72rem', { lineHeight: '1.4', letterSpacing: '0.08em' }],
       },

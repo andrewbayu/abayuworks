@@ -18,7 +18,7 @@ export function H3({ children }) {
   return <h3 className="mt-8 font-display text-lg font-semibold">{children}</h3>;
 }
 export function P({ children, muted }) {
-  return <p className={`mt-4 leading-relaxed text-pretty ${muted ? 'text-muted' : 'text-ink/85'}`}>{children}</p>;
+  return <p className={`mt-4 font-serif leading-relaxed text-pretty ${muted ? 'text-muted' : 'text-ink/85'}`}>{children}</p>;
 }
 export function UL({ children }) {
   return <ul className="mt-4 grid gap-2.5 pl-1">{children}</ul>;
