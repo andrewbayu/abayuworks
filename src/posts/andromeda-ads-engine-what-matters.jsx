@@ -30,7 +30,7 @@ export const meta = {
     'A practical guide to Meta Andromeda: retrieval, creative diversity, signal quality, campaign structure, and measurement that operators can use now.',
   standfirst:
     'Andromeda does not make strategy irrelevant. It changes where strategy has to live. The strongest advantage now comes from better business inputs, more meaningfully different creative, cleaner conversion signals, and enough room for Meta to learn.',
-  img: FIGURES.pipeline,
+  img: 'https://storage.googleapis.com/bluestark_explorer/andromeda-what-matters.jpg',
   tags: ['Andromeda', 'Meta Ads', 'Creative Strategy', 'Advantage+', 'Measurement'],
 };
 
