@@ -8,8 +8,9 @@ import * as hacktiv8 from './hacktiv8-scholarship-pr-campaign.jsx';
 import * as growthCurve from './growth-curve-method-2026.jsx';
 import * as xniper from './xniper-hybrid-behavioral-synthetic-modeling.jsx';
 import * as seaSocial from './sea-social-behaviour-2026.jsx';
+import * as andromeda from './andromeda-ads-engine-what-matters.jsx';
 
-const modules = [seaSocial, dental, kicaufest, wse, bpr, hypebuzz, hacktiv8, growthCurve, xniper];
+const modules = [andromeda, seaSocial, dental, kicaufest, wse, bpr, hypebuzz, hacktiv8, growthCurve, xniper];
 
 // Newest first.
 export const posts = modules
