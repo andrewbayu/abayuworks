@@ -324,6 +324,10 @@ node -e "const sharp=require('sharp');const fs=require('fs');sharp(Buffer.from(f
 
 - Restyled the client marquee as plain uppercase bold General Sans text in dark gray, with negative tracking and slash separators instead of pills and a colored background.
 
+## Session DAL282 · 2026-09-04
+
+- Increased the DAL client marquee font size by 50%, from `0.82rem` to `1.23rem`.
+
 ---
 
 End of LASTMEM. Update this file when you ship anything material. It's committed to the public repo by design, so no secrets.
