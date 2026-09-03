@@ -200,6 +200,7 @@ Do not assume the new stack is live until this is merged to `main`.
 ---
 
 ## 🔖 Session log
+| QE149 | 2026-09-03 | Codex | **Lead-magnet email automation setup.** Opt-in forms now require consent, submit to `/api/contact/`, redirect to existing thank-you pages, and trigger the `lead_magnet.subscribed` Resend Automation event. Fixed the undefined `from_name` path in the mail handler, documented the four-email sequence in `docs/resend-lead-magnet-sequence.md`, and verified the build. Commit `0ab67f8` pushed to `main`. |
 | EC186 | 2026-09-03 | Codex | **New blog post: "What really matters in the era of the Andromeda Ads Engine"**. Researched Meta's Andromeda retrieval system, sequence learning, creative diversification, and current ads updates. Added a comprehensive operator guide with four generated 4:3 editorial diagrams under `public/images/blog/andromeda/`, registered `src/posts/andromeda-ads-engine-what-matters.jsx`, and verified the production build. |
 | JL023 | 2026-08-31 | Hermes | **New blog post: "How Southeast Asia actually buys in 2026"** (research paper, SEA social behaviour). Added `src/posts/sea-social-behaviour-2026.jsx`, registered in `src/posts/index.js` (newest first). Covers trust hierarchy, micro vs mega creators, converting formats, creator-led storytelling, closed-loop social commerce, Indonesia deep-dive. Grounded in 2026 sources. Build verified, auto-listed on /blog/ + sitemap (postbuild auto-generates).
 | ID    | Date       | Agent  | Summary |
