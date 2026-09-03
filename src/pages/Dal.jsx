@@ -61,7 +61,6 @@ export default function Dal() {
             />
             <h1 className="mt-2 text-balance font-display text-4xl font-semibold leading-[1.04] tracking-tight text-ink sm:text-6xl">
               Not your typical bullshit consultation session.
-              <span className="block text-blue">A 10-page diagnosis of what is holding your business back.</span>
             </h1>
             <p className="mx-auto mt-6 max-w-2xl text-pretty text-lg leading-relaxed text-muted sm:text-xl">
               Digital Advantage Lab is a private 60-minute diagnostic that turns a messy growth problem into a clear diagnosis, a 10-page actionable report, and the priority move to make next.

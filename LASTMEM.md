@@ -301,6 +301,10 @@ node -e "const sharp=require('sharp');const fs=require('fs');sharp(Buffer.from(f
 
 - Replaced the generic hero subheadline with a single-minded proposition that defines DAL as a private 60-minute diagnostic producing a clear diagnosis, 10-page actionable report, and priority next move.
 
+## Session DAL277 · 2026-09-03
+
+- Removed the repeated “10-page diagnosis” line from the hero headline so the hook stays single-minded and the report detail remains in the offer section below.
+
 ---
 
 End of LASTMEM. Update this file when you ship anything material. It's committed to the public repo by design, so no secrets.
