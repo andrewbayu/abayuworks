@@ -277,6 +277,12 @@ node -e "const sharp=require('sharp');const fs=require('fs');sharp(Buffer.from(f
 - Replaced the previous dark scorecard-first anatomy with a funnel sequence: problem, promise, mechanism, deliverables, outcome, application.
 - Verified `git diff --check` and `npm.cmd run build`; SSG rendered `dist/dal.html` successfully.
 
+## Session DAL272 · 2026-09-03
+
+- Sharpened DAL hero and offer copy around the concrete deliverable: a 10-page audit and actionable growth report.
+- Made the report contents explicit: Digital Advantage Scorecard, The Discovery Journey, The Acquisition Framework, and Your Priority Growth Move.
+- Verified `git diff --check` and `npm.cmd run build`; SSG rendered `dist/dal.html` successfully.
+
 ---
 
 End of LASTMEM. Update this file when you ship anything material. It's committed to the public repo by design, so no secrets.
