@@ -16,6 +16,15 @@ const deliverables = [
   ['04', 'Your Priority Growth Move', 'One clear priority and an actionable 90-day plan. No generic ideas and no bloated strategy deck.'],
 ];
 
+const reportSamples = [
+  ['Insight & Findings', '/images/dal/insight-findings.png', 'Turn scattered observations into decision-ready findings.'],
+  ['The Discovery Journey', '/images/dal/discovery-journey.png', 'Map intent from discovery content to consultation.'],
+  ['The Acquisition Framework', '/images/dal/acquisition-framework.png', 'Connect stages, touchpoints, ownership, and conversion timing.'],
+  ['Recommended Channels', '/images/dal/recommended-channels.png', 'Prioritize the channels that fit the business and its audience.'],
+  ['Actionable Priorities', '/images/dal/actionables.png', 'Translate the diagnosis into a short list of actions.'],
+  ['Sample Findings Page', '/images/dal/sample-findings.png', 'A representative example of the report’s findings format.'],
+];
+
 const ctaClass =
   'inline-flex items-center justify-center gap-3 rounded-card bg-blue px-6 py-3.5 font-medium text-white shadow-[0_12px_28px_-14px_rgba(28,61,115,0.8)] transition-transform hover:-translate-y-0.5 hover:bg-blue-soft focus:outline-none focus:ring-2 focus:ring-blue-soft/60 focus:ring-offset-2 focus:ring-offset-white';
 
@@ -117,6 +126,44 @@ export default function Dal() {
                 </div>
               ))}
             </motion.div>
+          </motion.section>
+
+          <motion.section {...inView} variants={stagger(0.07)} className="mx-auto mt-24 max-w-5xl sm:mt-32">
+            <motion.div variants={fadeUp} className="max-w-2xl">
+              <p className="eyebrow">See the work product</p>
+              <h2 className="mt-4 text-balance font-display text-3xl font-semibold tracking-tight text-ink sm:text-5xl">
+                This is what the 10-page report looks like.
+              </h2>
+              <p className="mt-5 leading-relaxed text-muted">
+                The report turns the conversation into something the founder and team can use after the session: clear findings, visual frameworks, and actions in the right order.
+              </p>
+            </motion.div>
+            <motion.figure variants={fadeUp} className="mt-10 overflow-hidden rounded-card border border-line bg-[#f7f9fc] p-3 shadow-[0_20px_60px_-40px_rgba(28,61,115,0.55)] sm:p-5">
+              <img
+                src="/images/dal/report-mockup.png"
+                alt="Digital Advantage Lab report shown on a laptop"
+                width="942"
+                height="492"
+                loading="lazy"
+                decoding="async"
+                className="h-auto w-full"
+              />
+              <figcaption className="px-2 pt-3 text-xs text-faint">Representative report mockup. Actual recommendations are based on the business being diagnosed.</figcaption>
+            </motion.figure>
+            <div className="mt-5 grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
+              {reportSamples.map(([title, src, body]) => (
+                <motion.figure key={src} variants={fadeUp} className="overflow-hidden rounded-card border border-line bg-white">
+                  <a href={src} target="_blank" rel="noreferrer" aria-label={`Open ${title} sample`}>
+                    <img src={src} alt={title} width="1920" height="1080" loading="lazy" decoding="async" className="aspect-video w-full object-cover object-top transition-transform duration-300 hover:scale-[1.02]" />
+                  </a>
+                  <figcaption className="p-4">
+                    <p className="font-display text-base font-semibold text-ink">{title}</p>
+                    <p className="mt-1 text-sm leading-relaxed text-muted">{body}</p>
+                  </figcaption>
+                </motion.figure>
+              ))}
+            </div>
+            <motion.p variants={fadeUp} className="mt-4 text-xs text-faint">Visual examples show the report format and framework types. The content is tailored to each business.</motion.p>
           </motion.section>
 
           <motion.section {...inView} variants={stagger(0.07)} className="mx-auto mt-24 max-w-5xl sm:mt-32">

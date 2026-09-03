@@ -305,6 +305,12 @@ node -e "const sharp=require('sharp');const fs=require('fs');sharp(Buffer.from(f
 
 - Removed the repeated “10-page diagnosis” line from the hero headline so the hook stays single-minded and the report detail remains in the offer section below.
 
+## Session DAL278 · 2026-09-04
+
+- Added the provided DAL sample PNGs to `public/images/dal/` and placed them in a report-preview section on `/dal/`.
+- Used the laptop mockup as the lead visual and the six report pages as labeled, full-size-openable examples for findings, discovery journey, acquisition framework, channels, actionables, and sample findings.
+- Verified `git diff --check` and `npm.cmd run build`; SSG rendered `dist/dal.html` successfully.
+
 ---
 
 End of LASTMEM. Update this file when you ship anything material. It's committed to the public repo by design, so no secrets.
