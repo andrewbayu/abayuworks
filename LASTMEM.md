@@ -263,4 +263,13 @@ node -e "const sharp=require('sharp');const fs=require('fs');sharp(Buffer.from(f
 
 ---
 
+## Session DAL270 · 2026-09-03
+
+- Added the shared-nav `/dal/` landing page for Digital Advantage Lab.
+- Built the page around a diagnostic scorecard, discovery/system framing, four concrete deliverables, limited-capacity rationale, and two CTAs into `/#contact`.
+- Added `digital-advantage-lab` to the contact engagement options so consultation leads can identify the offer.
+- Verified `git diff --check` and `npm.cmd run build`; SSG rendered `dist/dal.html` successfully.
+
+---
+
 End of LASTMEM. Update this file when you ship anything material. It's committed to the public repo by design, so no secrets.

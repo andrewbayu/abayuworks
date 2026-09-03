@@ -9,6 +9,7 @@ import PlaybookFnb from './pages/PlaybookFnb';
 import PlaybookFnbThankYou from './pages/PlaybookFnbThankYou';
 import LearnHome from './pages/LearnHome';
 import Lesson from './pages/Lesson';
+import Dal from './pages/Dal';
 import { postSlugs } from './posts';
 import { lessonSlugs } from './course/curriculum';
 
@@ -20,6 +21,7 @@ const siteRoutes = [
     element: <Layout />,
     children: [
       { index: true, element: <Home /> },
+      { path: 'dal', element: <Dal /> },
       {
         path: 'blog',
         children: [

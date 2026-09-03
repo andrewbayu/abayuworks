@@ -12,6 +12,7 @@ export const site = {
     { label: 'Receipts', href: '/#receipts' },
     { label: 'Built', href: '/#built' },
     { label: 'Writing', href: '/blog/' },
+    { label: 'DAL', href: '/dal/' },
     { label: 'Contact', href: '/#contact' },
   ],
   socials: [
@@ -166,6 +167,7 @@ export const contact = {
     { value: 'co-build-venture', label: 'Co-build a venture' },
     { value: 'ai-stack-license', label: 'Plug your AI stack into our brand' },
     { value: 'agency-services', label: 'Calibreworks / We Are Infiniti agency services' },
+    { value: 'digital-advantage-lab', label: 'Digital Advantage Lab diagnostic' },
     { value: 'speaking-mentoring', label: 'Speaking / mentoring' },
     { value: 'other', label: 'Something else' },
   ],
