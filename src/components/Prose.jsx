@@ -25,7 +25,7 @@ export function UL({ children }) {
 }
 export function LI({ children }) {
   return (
-    <li className="relative pl-5 leading-relaxed text-ink/85">
+    <li className="relative pl-5 font-serif leading-relaxed text-ink/85">
       <span className="absolute left-0 top-2.5 h-1.5 w-1.5 rounded-full bg-cream" aria-hidden />
       {children}
     </li>
@@ -38,7 +38,7 @@ export function FigureGrid({ items }) {
       {items.map((f) => (
         <div key={f.l} className="bg-surface p-5">
           <div className="font-display text-2xl font-semibold text-cream">{f.n}</div>
-          <div className="mt-1 text-xs leading-snug text-muted">{f.l}</div>
+                    <div className="mt-1 font-serif text-xs leading-snug text-muted">{f.l}</div>
         </div>
       ))}
     </div>
@@ -47,7 +47,7 @@ export function FigureGrid({ items }) {
 
 export function Pull({ children }) {
   return (
-    <blockquote className="mt-8 border-l-2 border-cream pl-5 font-display text-xl leading-snug text-ink">
+    <blockquote className="mt-8 border-l-2 border-cream pl-5 font-serif text-xl leading-snug text-ink">
       {children}
     </blockquote>
   );
@@ -69,7 +69,7 @@ export function Disclaimer({ children }) {
   return (
     <>
       <hr className="mt-12 border-line" />
-      <p className="mt-5 text-sm leading-relaxed text-muted">{children}</p>
+      <p className="mt-5 font-serif text-sm leading-relaxed text-muted">{children}</p>
     </>
   );
 }

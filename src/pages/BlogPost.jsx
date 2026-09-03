@@ -85,7 +85,7 @@ export default function BlogPost({ slug: slugProp }) {
           <h1 className="mt-4 font-display text-3xl font-semibold leading-tight tracking-tight text-balance sm:text-4xl">
             {post.title}
           </h1>
-          <p className="mt-5 text-lg leading-relaxed text-muted text-pretty">{post.standfirst}</p>
+          <p className="mt-5 font-serif text-lg leading-relaxed text-muted text-pretty">{post.standfirst}</p>
         </motion.header>
 
         <div className="mt-10">
