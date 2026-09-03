@@ -64,7 +64,7 @@ export default function Dal() {
               <span className="block text-blue">A 10-page diagnosis of what is holding your business back.</span>
             </h1>
             <p className="mx-auto mt-6 max-w-2xl text-pretty text-lg leading-relaxed text-muted sm:text-xl">
-              Get a clear picture of where your business and brand stand, what is stopping you from scaling, and exactly what to do next.
+              Digital Advantage Lab is a private 60-minute diagnostic that turns a messy growth problem into a clear diagnosis, a 10-page actionable report, and the priority move to make next.
             </p>
             <div className="mt-8 flex flex-col items-center gap-3 sm:flex-row sm:justify-center">
               <a href="/#contact" className={ctaClass}>

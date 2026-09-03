@@ -297,6 +297,10 @@ node -e "const sharp=require('sharp');const fs=require('fs');sharp(Buffer.from(f
 - Scoped DAL typography so Libre Baskerville is used for subheadline and body content, while General Sans remains on headlines, eyebrows, utility labels, and CTAs.
 - Verified `git diff --check` and `npm.cmd run build`; SSG rendered `dist/dal.html` successfully.
 
+## Session DAL276 · 2026-09-03
+
+- Replaced the generic hero subheadline with a single-minded proposition that defines DAL as a private 60-minute diagnostic producing a clear diagnosis, 10-page actionable report, and priority next move.
+
 ---
 
 End of LASTMEM. Update this file when you ship anything material. It's committed to the public repo by design, so no secrets.
