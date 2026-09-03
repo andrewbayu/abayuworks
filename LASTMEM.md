@@ -283,6 +283,11 @@ node -e "const sharp=require('sharp');const fs=require('fs');sharp(Buffer.from(f
 - Made the report contents explicit: Digital Advantage Scorecard, The Discovery Journey, The Acquisition Framework, and Your Priority Growth Move.
 - Verified `git diff --check` and `npm.cmd run build`; SSG rendered `dist/dal.html` successfully.
 
+## Session DAL273 · 2026-09-03
+
+- Embedded the Digital Advantage Lab logo directly from the provided Google Cloud Storage URL above the hero headline.
+- Did not download or add the image to the repository.
+
 ---
 
 End of LASTMEM. Update this file when you ship anything material. It's committed to the public repo by design, so no secrets.

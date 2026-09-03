@@ -50,6 +50,15 @@ export default function Dal() {
         >
           <motion.div variants={fadeUp} className="mx-auto max-w-3xl text-center">
             <p className="eyebrow">Private diagnostic · Limited to 4 businesses per week</p>
+            <img
+              src="https://storage.googleapis.com/bluestark_explorer/infinitiworks/digital-advantage-lab-logo.png"
+              alt="Digital Advantage Lab"
+              width="240"
+              height="96"
+              loading="eager"
+              decoding="async"
+              className="mx-auto mt-7 h-auto w-48 object-contain sm:w-60"
+            />
             <h1 className="mt-5 text-balance font-display text-4xl font-semibold leading-[1.04] tracking-tight text-ink sm:text-6xl">
               Not your typical bullshit consultation session.
               <span className="block text-blue">A 10-page diagnosis of what is holding your business back.</span>
