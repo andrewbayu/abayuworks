@@ -328,6 +328,21 @@ node -e "const sharp=require('sharp');const fs=require('fs');sharp(Buffer.from(f
 
 - Increased the DAL client marquee font size by 50%, from `0.82rem` to `1.23rem`.
 
+## Session DAL283 · 2026-09-04
+
+- Proof-read the complete DAL funnel and tightened copy around the core offer, client proof, report preview, and actionable 90-day outcome.
+
+## Session DAL284 · 2026-09-04
+
+- Reframed the DAL funnel around the actual outcome: visitors learn their current level across five scorecard levels and receive actionable next steps.
+- Added an explicit post-diagnosis service path to InfinitiLabs for building the system and Fractional CMO for operating it.
+- Replaced the generic “Why this exists” copy with level-based diagnosis language and aligned the report/CTA copy to the new promise.
+
+## Session DAL285 · 2026-09-04
+
+- Removed the public InfinitiLabs/Fractional CMO service-path section from DAL.
+- Kept the page focused on the diagnostic promise: current level, growth bottleneck, report, and actionable next move; service positioning remains an internal post-diagnosis presentation step.
+
 ---
 
 End of LASTMEM. Update this file when you ship anything material. It's committed to the public repo by design, so no secrets.

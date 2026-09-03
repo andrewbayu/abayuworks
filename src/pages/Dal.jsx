@@ -4,9 +4,17 @@ import { site } from '../data/site';
 import { fadeUp, inView, stagger } from '../lib/motion';
 
 const outcomes = [
-  'A clear diagnosis of the bottleneck costing the business growth right now',
-  'A practical map of the customer journey, from first touch to paid customer',
+  'Your current level across the Digital Advantage Scorecard',
+  'The bottleneck holding back growth right now',
   'A prioritized 90-day action plan, including what not to spend money on yet',
+];
+
+const scorecardLevels = [
+  ['01', 'Foundation', 'Can the right customer find, understand, and trust the offer?'],
+  ['02', 'Demand', 'Can the business consistently attract qualified attention?'],
+  ['03', 'Conversion', 'Can interest move predictably into revenue?'],
+  ['04', 'Connected Experience', 'Do marketing, sales, and follow-up work as one system?'],
+  ['05', 'Intelligence', 'Does the business learn from data and improve its decisions?'],
 ];
 
 const deliverables = [
@@ -80,7 +88,7 @@ export default function Dal() {
               Not your typical bullshit consultation session.
             </h1>
             <p className="mx-auto mt-6 max-w-2xl text-pretty text-lg leading-relaxed text-muted sm:text-xl">
-              Digital Advantage Lab is a private 60-minute diagnostic that turns a messy growth problem into a clear diagnosis, a 10-page actionable report, and the priority move to make next.
+              Digital Advantage Lab is a private 60-minute diagnostic that turns a messy growth problem into a diagnosis, a 10-page actionable report, and the priority move to make next.
             </p>
             <div className="mt-8 flex flex-col items-center gap-3 sm:flex-row sm:justify-center">
               <a href="/#contact" className={ctaClass}>
@@ -91,7 +99,7 @@ export default function Dal() {
           </motion.div>
 
           <motion.section variants={fadeUp} className="mx-[calc(50%-50vw)] mt-16 overflow-hidden border-y border-[#dfe4eb] bg-white py-6 text-[#4b5563] sm:mt-20">
-            <p className="dal-utility text-center text-xs font-medium uppercase tracking-[0.16em] text-[#718096]">Businesses that have taken the Digital Advantage Lab</p>
+            <p className="dal-utility text-center text-xs font-medium uppercase tracking-[0.16em] text-[#718096]">Selected businesses diagnosed through the Digital Advantage Lab</p>
             <div className="mt-4 overflow-hidden" aria-label="Digital Advantage Lab clients">
               <div className="dal-marquee flex w-max items-center whitespace-nowrap">
                 {[...dalClients, ...dalClients].map((client, index) => (
@@ -107,12 +115,12 @@ export default function Dal() {
           <motion.div variants={fadeUp} className="mx-auto mt-14 max-w-4xl rounded-card border border-blue/20 bg-[#f7f9fc] p-5 shadow-[0_20px_60px_-40px_rgba(28,61,115,0.55)] sm:mt-20 sm:p-8">
             <div className="grid gap-8 md:grid-cols-[0.9fr_1.1fr] md:items-center">
               <div>
-                <p className="eyebrow">The deliverable</p>
+                <p className="eyebrow">What you walk away with</p>
                 <h2 className="mt-3 font-display text-2xl font-semibold leading-tight text-ink sm:text-3xl">
-                  A 10-page audit and actionable growth report.
+                  Your current level, your biggest leak, and the next move.
                 </h2>
                 <p className="mt-4 leading-relaxed text-muted">
-                  The session is where the diagnosis happens. The report is what you keep, use, and execute after the call.
+                  The session is where the diagnosis happens. The 10-page report is what you keep, use, and execute after the call.
                 </p>
               </div>
               <div className="grid gap-3 sm:grid-cols-3 md:grid-cols-1">
@@ -128,22 +136,19 @@ export default function Dal() {
 
           <motion.section {...inView} variants={stagger(0.07)} className="mx-auto mt-24 max-w-5xl sm:mt-32">
             <motion.div variants={fadeUp} className="max-w-2xl">
-              <p className="eyebrow">Why this exists</p>
+              <p className="eyebrow">Know your level</p>
               <h2 className="mt-4 text-balance font-display text-3xl font-semibold tracking-tight text-ink sm:text-5xl">
-                More marketing cannot rescue a broken path to purchase.
+                Find out where your business is before trying to scale it.
               </h2>
               <p className="mt-5 leading-relaxed text-muted">
-                Traffic can be healthy while conversion is weak. Leads can be plentiful while follow-up is slow. Sales can be talented while marketing attracts the wrong people. The Lab finds the constraint that connects those symptoms.
+                DAL places the business across five levels of digital advantage. You will see what is working, where the system is leaking, what level the business is operating at today, and what needs to be true before moving to the next one.
               </p>
             </motion.div>
-            <motion.div variants={fadeUp} className="mt-10 grid gap-4 sm:grid-cols-3">
-              {[
-                ['Attention', 'Can the right people find and understand the offer?'],
-                ['Trust', 'Do prospects get enough proof and clarity to move?'],
-                ['Revenue', 'Does the team have a repeatable path to close?'],
-              ].map(([title, body]) => (
-                <div key={title} className="border-t-2 border-blue pt-4">
-                  <h3 className="font-display text-xl font-semibold text-ink">{title}</h3>
+            <motion.div variants={fadeUp} className="mt-10 grid gap-4 md:grid-cols-2 lg:grid-cols-5">
+              {scorecardLevels.map(([no, title, body]) => (
+                <div key={no} className="border-t-2 border-blue pt-4">
+                  <span className="font-mono text-xs text-blue-soft">{no}</span>
+                  <h3 className="mt-4 font-display text-xl font-semibold text-ink">{title}</h3>
                   <p className="mt-2 text-sm leading-relaxed text-muted">{body}</p>
                 </div>
               ))}
@@ -152,12 +157,12 @@ export default function Dal() {
 
           <motion.section {...inView} variants={stagger(0.07)} className="mx-auto mt-24 max-w-5xl sm:mt-32">
             <motion.div variants={fadeUp} className="max-w-2xl">
-              <p className="eyebrow">See the work product</p>
-              <h2 className="mt-4 text-balance font-display text-3xl font-semibold tracking-tight text-ink sm:text-5xl">
-                This is what the 10-page report looks like.
+                <p className="eyebrow">See the work product</p>
+                <h2 className="mt-4 text-balance font-display text-3xl font-semibold tracking-tight text-ink sm:text-5xl">
+                This is what your 10-page report looks like.
               </h2>
               <p className="mt-5 leading-relaxed text-muted">
-                The report turns the conversation into something the founder and team can use after the session: clear findings, visual frameworks, and actions in the right order.
+                The report turns the session into an operating document: your scorecard position, clear findings, visual frameworks, and actions in the right order.
               </p>
             </motion.div>
             <motion.figure variants={fadeUp} className="mt-10 overflow-hidden rounded-card border border-line bg-[#f7f9fc] p-3 shadow-[0_20px_60px_-40px_rgba(28,61,115,0.55)] sm:p-5">
@@ -214,8 +219,8 @@ export default function Dal() {
                 <h2 className="mt-4 max-w-xl font-display text-3xl font-semibold leading-tight sm:text-4xl">
                   Stop guessing which lever to pull.
                 </h2>
-                <p className="mt-4 max-w-xl leading-relaxed text-blue-100/80">
-                  The goal is not to leave with more ideas. The goal is to leave with a 10-page report, a sharper diagnosis, a better order of operations, and a 90-day move the business can actually execute.
+              <p className="mt-4 max-w-xl leading-relaxed text-blue-100/80">
+                  The goal is not to leave with more ideas. The goal is to leave knowing your current level, holding a 10-page report, and having a 90-day priority the business can actually execute.
                 </p>
               </motion.div>
               <motion.div variants={fadeUp} className="flex items-end border-t border-white/15 p-7 md:border-l md:border-t-0 sm:p-10">
