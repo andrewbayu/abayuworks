@@ -42,6 +42,34 @@ async function addToResendAudience({ email, name }) {
   }
 }
 
+// Trigger the configured Resend Automation for lead-magnet opt-ins.
+// Resend handles the delays and email sequence after this event is accepted.
+async function triggerResendAutomation({ email, resource, ref_id }) {
+  const apiKey = process.env.RESEND_API_KEY || process.env.SMTP_PASS;
+  if (!apiKey || !apiKey.startsWith('re_') || !email || !resource) return;
+
+  try {
+    const resp = await fetch('https://api.resend.com/events', {
+      method: 'POST',
+      headers: {
+        Authorization: `Bearer ${apiKey}`,
+        'Content-Type': 'application/json',
+        'User-Agent': 'abayuworks-lead-magnet/1.0',
+      },
+      body: JSON.stringify({
+        event: process.env.RESEND_AUTOMATION_EVENT || 'lead_magnet.subscribed',
+        email,
+        payload: { resource, ref_id },
+      }),
+    });
+    if (!resp.ok) {
+      console.warn('resend automation trigger non-ok:', resp.status, await resp.text().catch(() => ''));
+    }
+  } catch (err) {
+    console.warn('resend automation trigger failed:', err);
+  }
+}
+
 export default async function handler(req, res) {
   if (req.method !== 'POST') {
     res.setHeader('Allow', 'POST');
@@ -58,6 +86,8 @@ export default async function handler(req, res) {
     subject = '',
     ref_id = '',
     resource = '',
+    from_name = '',
+    consent = false,
     botcheck = '',
   } = body;
 
@@ -67,6 +97,9 @@ export default async function handler(req, res) {
   // A contact inquiry has a message; a lead-magnet request has a resource.
   if (!email || (!message && !resource)) {
     return res.status(400).json({ success: false, message: 'Please fill in the required fields.' });
+  }
+  if (resource && consent !== true) {
+    return res.status(400).json({ success: false, message: 'Please confirm email follow-ups.' });
   }
 
   const { SMTP_HOST, SMTP_PORT, SMTP_USER, SMTP_PASS, CONTACT_TO, MAIL_FROM } = process.env;
@@ -107,6 +140,7 @@ export default async function handler(req, res) {
     // Best-effort: capture the lead into the Resend Audience for marketing.
     // Never blocks or fails the submission if it errors.
     await addToResendAudience({ email, name: name || from_name });
+    await triggerResendAutomation({ email, resource, ref_id });
     return res.status(200).json({ success: true });
   } catch (err) {
     console.error('contact mail send failed:', err);

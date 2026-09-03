@@ -66,6 +66,7 @@ function OptInForm({ id, cta = 'Send me the checklist' }) {
   const navigate = useNavigate();
   const [state, setState] = useState('idle'); // idle | sending | error
   const [email, setEmail] = useState('');
+  const [consent, setConsent] = useState(false);
 
   const onSubmit = async (e) => {
     e.preventDefault();
@@ -78,6 +79,7 @@ function OptInForm({ id, cta = 'Send me the checklist' }) {
         email,
         resource: RESOURCE,
         ref_id: ref,
+        consent: true,
       });
       // Lead captured — hand off to the thank-you page where the download lives.
       navigate(THANK_YOU);
@@ -114,6 +116,10 @@ function OptInForm({ id, cta = 'Send me the checklist' }) {
           {state === 'sending' ? 'Sending…' : `${cta} →`}
         </button>
       </form>
+      <label className="mt-2 flex items-start gap-2 text-xs leading-relaxed text-faint">
+        <input type="checkbox" required checked={consent} onChange={(e) => setConsent(e.target.checked)} className="mt-0.5 accent-cream" />
+        <span>Send the checklist and a few practical follow-up emails. Unsubscribe anytime.</span>
+      </label>
       {state === 'error' && (
         <p className="mt-2 text-sm text-red-400">Couldn’t send just now — try again in a moment.</p>
       )}

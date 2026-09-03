@@ -74,6 +74,7 @@ function DownloadCard({ r }) {
   const [state, setState] = useState('idle'); // idle | open | sending | done | error
   const [email, setEmail] = useState('');
   const [refId, setRefId] = useState('');
+  const [consent, setConsent] = useState(false);
 
   const onSubmit = async (e) => {
     e.preventDefault();
@@ -86,6 +87,7 @@ function DownloadCard({ r }) {
         email,
         resource: r.title,
         ref_id: id,
+        consent: true,
       });
       setRefId(id);
       setState('done');
@@ -146,6 +148,10 @@ function DownloadCard({ r }) {
                 >
                   {state === 'sending' ? 'Sending…' : 'Send it to me →'}
                 </button>
+                <label className="flex items-start gap-2 text-[0.65rem] leading-relaxed text-faint">
+                  <input type="checkbox" required checked={consent} onChange={(e) => setConsent(e.target.checked)} className="mt-0.5 accent-cream" />
+                  <span>Send the guide and practical follow-ups. Unsubscribe anytime.</span>
+                </label>
                 {state === 'error' && <p className="text-xs text-red-400">Could not send. Try again in a moment.</p>}
               </motion.form>
             ) : (
