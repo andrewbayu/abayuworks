@@ -25,6 +25,14 @@ const reportSamples = [
   ['Sample Findings Page', '/images/dal/sample-findings.png', 'A representative example of the report’s findings format.'],
 ];
 
+const dalClients = [
+  'BPR Hisobhan', 'Bank Jakarta', 'CIMB Niaga', 'Watermaxx',
+  'Goldcoin Aboitiz Group', 'Finvolv', 'Uncle Paul', 'Dibao Indonesia',
+  'IMOU', 'Digdaya Group', 'Thermomix Indonesia', 'Panangian School of Property',
+  'Top Coach Indonesia', 'Ashiaaap Food', 'Victorindo Group', 'OrienTraco',
+  'Roda Bangun Mandiri', 'Rucika',
+];
+
 const ctaClass =
   'inline-flex items-center justify-center gap-3 rounded-card bg-blue px-6 py-3.5 font-medium text-white shadow-[0_12px_28px_-14px_rgba(28,61,115,0.8)] transition-transform hover:-translate-y-0.5 hover:bg-blue-soft focus:outline-none focus:ring-2 focus:ring-blue-soft/60 focus:ring-offset-2 focus:ring-offset-white';
 
@@ -81,6 +89,19 @@ export default function Dal() {
               <span className="text-sm text-faint">For founders and decision-makers.</span>
             </div>
           </motion.div>
+
+          <motion.section variants={fadeUp} className="mx-[calc(50%-50vw)] mt-16 overflow-hidden border-y border-[#dfe4eb] bg-[#10264a] py-5 text-white sm:mt-20">
+            <p className="text-center text-xs font-medium uppercase tracking-[0.16em] text-blue-100/70">Businesses that have taken the Digital Advantage Lab</p>
+            <div className="mt-4 overflow-hidden" aria-label="Digital Advantage Lab clients">
+              <div className="dal-marquee flex w-max items-center gap-3 whitespace-nowrap">
+                {[...dalClients, ...dalClients].map((client, index) => (
+                  <span key={`${client}-${index}`} className="rounded-full border border-white/20 px-4 py-2 text-sm text-white/90">
+                    {client}
+                  </span>
+                ))}
+              </div>
+            </div>
+          </motion.section>
 
           <motion.div variants={fadeUp} className="mx-auto mt-14 max-w-4xl rounded-card border border-blue/20 bg-[#f7f9fc] p-5 shadow-[0_20px_60px_-40px_rgba(28,61,115,0.55)] sm:mt-20 sm:p-8">
             <div className="grid gap-8 md:grid-cols-[0.9fr_1.1fr] md:items-center">
@@ -153,9 +174,7 @@ export default function Dal() {
             <div className="mt-5 grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
               {reportSamples.map(([title, src, body]) => (
                 <motion.figure key={src} variants={fadeUp} className="overflow-hidden rounded-card border border-line bg-white">
-                  <a href={src} target="_blank" rel="noreferrer" aria-label={`Open ${title} sample`}>
-                    <img src={src} alt={title} width="1920" height="1080" loading="lazy" decoding="async" className="aspect-video w-full object-cover object-top transition-transform duration-300 hover:scale-[1.02]" />
-                  </a>
+                  <img src={src} alt={title} width="1920" height="1080" loading="lazy" decoding="async" className="aspect-video w-full object-cover object-top" />
                   <figcaption className="p-4">
                     <p className="font-display text-base font-semibold text-ink">{title}</p>
                     <p className="mt-1 text-sm leading-relaxed text-muted">{body}</p>

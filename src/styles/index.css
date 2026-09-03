@@ -126,3 +126,11 @@
 .dal-light h1, .dal-light h2, .dal-light h3,
 .dal-light .eyebrow, .dal-light .dal-utility,
 .dal-light a { font-family:'General Sans', system-ui, sans-serif; }
+.dal-marquee { animation: dal-marquee 48s linear infinite; }
+@keyframes dal-marquee {
+  from { transform: translateX(-50%); }
+  to { transform: translateX(0); }
+}
+@media (prefers-reduced-motion: reduce) {
+  .dal-marquee { animation: none; }
+}

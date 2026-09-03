@@ -311,6 +311,15 @@ node -e "const sharp=require('sharp');const fs=require('fs');sharp(Buffer.from(f
 - Used the laptop mockup as the lead visual and the six report pages as labeled, full-size-openable examples for findings, discovery journey, acquisition framework, channels, actionables, and sample findings.
 - Verified `git diff --check` and `npm.cmd run build`; SSG rendered `dist/dal.html` successfully.
 
+## Session DAL279 · 2026-09-04
+
+- Made report preview images static: removed the new-tab click behavior and hover zoom effect.
+
+## Session DAL280 · 2026-09-04
+
+- Added a post-hero client strip with a seamless left-to-right running text marquee for the provided DAL client list.
+- Added reduced-motion handling so the marquee stops when requested by the visitor’s device settings.
+
 ---
 
 End of LASTMEM. Update this file when you ship anything material. It's committed to the public repo by design, so no secrets.
