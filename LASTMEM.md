@@ -343,6 +343,13 @@ node -e "const sharp=require('sharp');const fs=require('fs');sharp(Buffer.from(f
 - Removed the public InfinitiLabs/Fractional CMO service-path section from DAL.
 - Kept the page focused on the diagnostic promise: current level, growth bottleneck, report, and actionable next move; service positioning remains an internal post-diagnosis presentation step.
 
+## Session DAL286 · 2026-09-04
+
+- Reframed DAL as a two-session product: up to 90-minute Discovery Call, five days of working time, and up to 90-minute Clarity Session presenting the report.
+- Replaced the generic report structure with the requested PDF table of contents: Manifesto, Insight & Findings, The Core Strategy, Knowing Your Market, Digital Advantage Scorecard, The Discovery Journey, The Acquisition Framework, and 3 Key Actionables.
+- Added the USD 499 promotional USD 199 and Indonesia Rp6jt promotional Rp3jt offer cards.
+- Aligned the page promise around current scorecard level, bottleneck, three actionables, and the final PDF deliverable.
+
 ---
 
 End of LASTMEM. Update this file when you ship anything material. It's committed to the public repo by design, so no secrets.

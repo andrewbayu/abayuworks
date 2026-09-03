@@ -17,11 +17,15 @@ const scorecardLevels = [
   ['05', 'Intelligence', 'Does the business learn from data and improve its decisions?'],
 ];
 
-const deliverables = [
-  ['01', 'Digital Advantage Scorecard', 'A 5-part assessment of Foundation, Demand, Conversion, Connected Experience, and Intelligence.'],
-  ['02', 'The Discovery Journey', 'A visual map of how prospects discover, evaluate, trust, and choose the business, including where they drop off.'],
-  ['03', 'The Acquisition Framework', 'A practical blueprint showing funnel stages, channels, lead temperature, follow-up, ownership, and conversion timing.'],
-  ['04', 'Your Priority Growth Move', 'One clear priority and an actionable 90-day plan. No generic ideas and no bloated strategy deck.'],
+const reportContents = [
+  ['01', 'Manifesto', 'The business goal, built from the client brief and current condition.'],
+  ['02', 'Insight & Findings', 'What the research, audit, and discovery process reveal.'],
+  ['03', 'The Core Strategy', 'The central strategic direction that connects the findings to growth.'],
+  ['04', 'Knowing Your Market', 'Buyer persona profile, market segments, competitors, and the space to win.'],
+  ['05', 'Your Digital Advantage Scorecard', 'Your current level across Foundation, Demand, Conversion, Connected Experience, and Intelligence.'],
+  ['06', 'The Discovery Journey', 'How prospects should discover, evaluate, trust, and choose the business.'],
+  ['07', 'The Acquisition Framework', 'Stages, touchpoints, lead temperature, ownership, channels, timing, and performance variables.'],
+  ['08', '3 Key Actionables', 'The three highest-leverage moves based on what the diagnosis found.'],
 ];
 
 const reportSamples = [
@@ -49,7 +53,7 @@ const jsonLd = {
   '@type': 'Service',
   name: 'Digital Advantage Lab',
   description:
-    'A private 60-minute diagnostic for founders and decision-makers who want to find the growth bottleneck before spending more on marketing.',
+    'A two-session business diagnostic with a five-day working period and a practical PDF report showing your current level, growth bottleneck, and next actionables.',
   provider: { '@type': 'Person', name: site.name, jobTitle: site.role },
   url: `${site.url}/dal/`,
 };
@@ -59,7 +63,7 @@ export default function Dal() {
     <>
       <Seo
         title="Digital Advantage Lab · Find the growth bottleneck"
-        description="A private 60-minute diagnostic for founders and decision-makers who want to find the growth bottleneck before spending more on marketing."
+        description="A two-session business diagnostic with a five-day working period and a practical PDF report showing your current level, growth bottleneck, and next actionables."
         path="/dal/"
         jsonLd={jsonLd}
       />
@@ -88,7 +92,7 @@ export default function Dal() {
               Not your typical bullshit consultation session.
             </h1>
             <p className="mx-auto mt-6 max-w-2xl text-pretty text-lg leading-relaxed text-muted sm:text-xl">
-              Digital Advantage Lab is a private 60-minute diagnostic that turns a messy growth problem into a diagnosis, a 10-page actionable report, and the priority move to make next.
+              Digital Advantage Lab is a two-session business diagnostic that shows you what level your business is at, what is holding it back, and which three actions will create the clearest path forward.
             </p>
             <div className="mt-8 flex flex-col items-center gap-3 sm:flex-row sm:justify-center">
               <a href="/#contact" className={ctaClass}>
@@ -120,7 +124,7 @@ export default function Dal() {
                   Your current level, your biggest leak, and the next move.
                 </h2>
                 <p className="mt-4 leading-relaxed text-muted">
-                  The session is where the diagnosis happens. The 10-page report is what you keep, use, and execute after the call.
+                  Two focused sessions, five days of working time, and a report that turns the diagnosis into a clear plan.
                 </p>
               </div>
               <div className="grid gap-3 sm:grid-cols-3 md:grid-cols-1">
@@ -133,6 +137,32 @@ export default function Dal() {
               </div>
             </div>
           </motion.div>
+
+          <motion.section {...inView} variants={stagger(0.07)} className="mx-auto mt-24 max-w-5xl sm:mt-32">
+            <motion.div variants={fadeUp} className="max-w-2xl">
+              <p className="eyebrow">How DAL works</p>
+              <h2 className="mt-4 text-balance font-display text-3xl font-semibold tracking-tight text-ink sm:text-5xl">
+                Two sessions. Five days of focused work. One clear diagnosis.
+              </h2>
+              <p className="mt-5 leading-relaxed text-muted">
+                The work starts with your brief and digital footprint, then gets tested in conversation before the findings are turned into a practical PDF report.
+              </p>
+            </motion.div>
+            <div className="mt-10 grid gap-4 md:grid-cols-3">
+              {[
+                ['01', 'Discovery Call', 'Up to 90 minutes', 'Align on the business goal, current condition, audience, offer, growth challenge, and the questions the audit needs to answer.'],
+                ['02', 'Five days working', 'Research + report build', 'Review the digital footprint, market, competitors, content, ads, customer journey, and internal brief. Then build the diagnosis and action plan.'],
+                ['03', 'Clarity Session', 'Up to 90 minutes', 'Present the report, show the current scorecard level, explain the bottleneck, and walk through the three key actionables.'],
+              ].map(([no, title, kicker, body]) => (
+                <motion.article key={no} variants={fadeUp} className="card p-6 sm:p-7">
+                  <span className="font-mono text-xs text-blue-soft">{no}</span>
+                  <h3 className="mt-6 font-display text-xl font-semibold text-ink">{title}</h3>
+                  <p className="mt-2 text-sm font-medium text-blue">{kicker}</p>
+                  <p className="mt-3 leading-relaxed text-muted">{body}</p>
+                </motion.article>
+              ))}
+            </div>
+          </motion.section>
 
           <motion.section {...inView} variants={stagger(0.07)} className="mx-auto mt-24 max-w-5xl sm:mt-32">
             <motion.div variants={fadeUp} className="max-w-2xl">
@@ -159,10 +189,10 @@ export default function Dal() {
             <motion.div variants={fadeUp} className="max-w-2xl">
                 <p className="eyebrow">See the work product</p>
                 <h2 className="mt-4 text-balance font-display text-3xl font-semibold tracking-tight text-ink sm:text-5xl">
-                This is what your 10-page report looks like.
+                This is what your strategic PDF report looks like.
               </h2>
               <p className="mt-5 leading-relaxed text-muted">
-                The report turns the session into an operating document: your scorecard position, clear findings, visual frameworks, and actions in the right order.
+                The report turns the session into an operating document: your scorecard position, clear findings, visual frameworks, and three priority actions in the right order.
               </p>
             </motion.div>
             <motion.figure variants={fadeUp} className="mt-10 overflow-hidden rounded-card border border-line bg-[#f7f9fc] p-3 shadow-[0_20px_60px_-40px_rgba(28,61,115,0.55)] sm:p-5">
@@ -194,13 +224,13 @@ export default function Dal() {
           <motion.section {...inView} variants={stagger(0.07)} className="mx-auto mt-24 max-w-5xl sm:mt-32">
             <motion.div variants={fadeUp} className="flex flex-col justify-between gap-4 border-b border-line pb-6 sm:flex-row sm:items-end">
               <div>
-                <p className="eyebrow">What is inside the report</p>
+                <p className="eyebrow">Report table of contents</p>
                 <h2 className="mt-4 font-display text-3xl font-semibold tracking-tight text-ink sm:text-5xl">A method, not a pile of opinions.</h2>
               </div>
-              <p className="max-w-xs text-sm leading-relaxed text-muted">Four practical sections that show the current position, the growth leak, and the next move.</p>
+              <p className="max-w-xs text-sm leading-relaxed text-muted">Eight sections that move from business context to diagnosis, then from diagnosis to action.</p>
             </motion.div>
             <div className="mt-6 grid gap-x-10 gap-y-8 md:grid-cols-2">
-              {deliverables.map(([no, title, body]) => (
+              {reportContents.map(([no, title, body]) => (
                 <motion.article key={no} variants={fadeUp} className="grid grid-cols-[2.5rem_1fr] gap-4 border-b border-line pb-7">
                   <span className="font-mono text-xs text-blue-soft">{no}</span>
                   <div>
@@ -220,7 +250,7 @@ export default function Dal() {
                   Stop guessing which lever to pull.
                 </h2>
               <p className="mt-4 max-w-xl leading-relaxed text-blue-100/80">
-                  The goal is not to leave with more ideas. The goal is to leave knowing your current level, holding a 10-page report, and having a 90-day priority the business can actually execute.
+                  The goal is not to leave with more ideas. The goal is to leave knowing your current level, holding a practical PDF, and having three actionables the business can actually execute.
                 </p>
               </motion.div>
               <motion.div variants={fadeUp} className="flex items-end border-t border-white/15 p-7 md:border-l md:border-t-0 sm:p-10">
@@ -231,13 +261,39 @@ export default function Dal() {
             </div>
           </motion.section>
 
+          <motion.section {...inView} variants={stagger(0.07)} className="mx-auto mt-24 max-w-5xl sm:mt-32">
+            <motion.div variants={fadeUp} className="max-w-2xl">
+              <p className="eyebrow">The investment</p>
+              <h2 className="mt-4 text-balance font-display text-3xl font-semibold tracking-tight text-ink sm:text-5xl">
+                Clarity costs less than scaling the wrong problem.
+              </h2>
+              <p className="mt-5 leading-relaxed text-muted">
+                DAL includes both sessions, the five-day working period, research, and the final strategic PDF report.
+              </p>
+            </motion.div>
+            <motion.div variants={fadeUp} className="mt-8 grid gap-4 md:grid-cols-2">
+              <div className="card p-7 sm:p-8">
+                <p className="eyebrow">International</p>
+                <p className="mt-5 font-display text-4xl font-semibold text-faint line-through">USD 499</p>
+                <p className="mt-2 font-display text-5xl font-semibold text-blue">USD 199</p>
+                <p className="mt-3 text-sm text-muted">Promotional rate for the complete Digital Advantage Lab.</p>
+              </div>
+              <div className="card p-7 sm:p-8">
+                <p className="eyebrow">Indonesia</p>
+                <p className="mt-5 font-display text-4xl font-semibold text-faint line-through">Rp6jt</p>
+                <p className="mt-2 font-display text-5xl font-semibold text-blue">Rp3jt</p>
+                <p className="mt-3 text-sm text-muted">Harga promo untuk seluruh rangkaian Digital Advantage Lab.</p>
+              </div>
+            </motion.div>
+          </motion.section>
+
           <motion.section {...inView} variants={stagger(0.07)} className="mx-auto mt-24 max-w-3xl text-center sm:mt-32" id="apply">
             <motion.p variants={fadeUp} className="eyebrow">Apply for Digital Advantage Lab</motion.p>
             <motion.h2 variants={fadeUp} className="mt-4 text-balance font-display text-3xl font-semibold tracking-tight text-ink sm:text-5xl">
               Find the leak before you fund the fix.
             </motion.h2>
             <motion.p variants={fadeUp} className="mx-auto mt-5 max-w-2xl leading-relaxed text-muted">
-              Apply for a private 60-minute diagnostic. Every session starts with a rapid pre-audit, so the conversation begins with the business, not a sales script.
+              Apply for the complete Digital Advantage Lab. Start with the brief, complete the two sessions, and leave with your current level, your three key actionables, and a strategic PDF report.
             </motion.p>
             <motion.div variants={fadeUp} className="mt-8">
               <a href="/#contact" className={ctaClass}>
