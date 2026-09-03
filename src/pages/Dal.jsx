@@ -144,7 +144,7 @@ export default function Dal() {
           <motion.section {...inView} variants={stagger(0.07)} className="mx-auto mt-24 max-w-5xl sm:mt-32">
             <div className="grid overflow-hidden rounded-card border border-line bg-[#10264a] text-white md:grid-cols-[1.1fr_0.9fr]">
               <motion.div variants={fadeUp} className="p-7 sm:p-10">
-                <p className="text-xs font-medium uppercase tracking-[0.16em] text-blue-200">The outcome</p>
+                <p className="dal-utility text-xs font-medium uppercase tracking-[0.16em] text-blue-200">The outcome</p>
                 <h2 className="mt-4 max-w-xl font-display text-3xl font-semibold leading-tight sm:text-4xl">
                   Stop guessing which lever to pull.
                 </h2>

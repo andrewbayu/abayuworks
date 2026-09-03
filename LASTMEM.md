@@ -292,6 +292,11 @@ node -e "const sharp=require('sharp');const fs=require('fs');sharp(Buffer.from(f
 
 - Increased the embedded DAL hero logo size and reduced the gap before the headline to improve composition and visual balance.
 
+## Session DAL275 · 2026-09-03
+
+- Scoped DAL typography so Libre Baskerville is used for subheadline and body content, while General Sans remains on headlines, eyebrows, utility labels, and CTAs.
+- Verified `git diff --check` and `npm.cmd run build`; SSG rendered `dist/dal.html` successfully.
+
 ---
 
 End of LASTMEM. Update this file when you ship anything material. It's committed to the public repo by design, so no secrets.

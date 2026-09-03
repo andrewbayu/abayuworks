@@ -121,3 +121,8 @@
 .dal-light .text-cream { color:#1C3D73; }
 .dal-light .border-line { border-color:#dfe4eb; }
 .dal-light .bg-surface, .dal-light .bg-elevated { background:#fff; }
+.dal-light p:not(.eyebrow):not(.dal-utility),
+.dal-light blockquote { font-family:'Libre Baskerville', Georgia, serif; }
+.dal-light h1, .dal-light h2, .dal-light h3,
+.dal-light .eyebrow, .dal-light .dal-utility,
+.dal-light a { font-family:'General Sans', system-ui, sans-serif; }
