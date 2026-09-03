@@ -57,9 +57,9 @@ export default function Dal() {
               height="96"
               loading="eager"
               decoding="async"
-              className="mx-auto mt-7 h-auto w-48 object-contain sm:w-60"
+              className="mx-auto mt-6 h-auto w-72 object-contain sm:w-[26rem]"
             />
-            <h1 className="mt-5 text-balance font-display text-4xl font-semibold leading-[1.04] tracking-tight text-ink sm:text-6xl">
+            <h1 className="mt-2 text-balance font-display text-4xl font-semibold leading-[1.04] tracking-tight text-ink sm:text-6xl">
               Not your typical bullshit consultation session.
               <span className="block text-blue">A 10-page diagnosis of what is holding your business back.</span>
             </h1>

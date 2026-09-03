@@ -288,6 +288,10 @@ node -e "const sharp=require('sharp');const fs=require('fs');sharp(Buffer.from(f
 - Embedded the Digital Advantage Lab logo directly from the provided Google Cloud Storage URL above the hero headline.
 - Did not download or add the image to the repository.
 
+## Session DAL274 · 2026-09-03
+
+- Increased the embedded DAL hero logo size and reduced the gap before the headline to improve composition and visual balance.
+
 ---
 
 End of LASTMEM. Update this file when you ship anything material. It's committed to the public repo by design, so no secrets.
