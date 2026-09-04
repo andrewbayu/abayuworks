@@ -113,6 +113,35 @@ export default function Home() {
         </div>
       </section>
 
+      {/* DIAGNOSTIC METHOD — make the mechanism visible */}
+      <section className="wrap grid gap-10 py-16 sm:py-24 lg:grid-cols-[1.05fr_.95fr] lg:items-center">
+        <figure className="home-visual order-2 overflow-hidden border border-[#dfe4eb] bg-[#fffdf8] p-2 lg:order-1">
+          <img src="/images/home/constraint-audit-doodle.png" alt="Doodle diagram showing evidence becoming a named constraint, priority, and next move" className="w-full" loading="lazy" />
+          <figcaption>Evidence → constraint → priority → next move.</figcaption>
+        </figure>
+        <div className="order-1 lg:order-2">
+          <p className="eyebrow mb-4">The method</p>
+          <h2 className="font-display text-4xl font-semibold leading-tight tracking-tight sm:text-5xl">No opinions dressed up as strategy.</h2>
+          <p className="mt-5 font-serif text-lg leading-8 text-muted">We start with what the business is already telling us: the offer, market, funnel, sales conversations, creative, data, and customer experience. Then we reduce the noise to one constraint the team can act on.</p>
+          <p className="mt-5 font-serif leading-7 text-muted">That is what makes the next move useful. It is not a list of everything that could be improved. It is the thing that should be fixed first.</p>
+        </div>
+      </section>
+
+      {/* OPERATING SYSTEM — advisory credibility without a dense process diagram */}
+      <section className="home-band">
+        <div className="wrap grid gap-10 py-16 sm:py-24 lg:grid-cols-[.8fr_1.2fr] lg:items-center">
+          <div>
+            <p className="eyebrow mb-4">How the work compounds</p>
+            <h2 className="font-display text-4xl font-semibold leading-tight tracking-tight sm:text-5xl">Strategy only matters when the system can run it.</h2>
+            <p className="mt-5 max-w-xl font-serif text-lg leading-8 text-muted">The work connects the four things most teams keep in separate rooms: the offer, demand, sales, and data. The output is a better decision loop—not another strategy document waiting for a champion.</p>
+          </div>
+          <figure className="home-visual overflow-hidden border border-[#dfe4eb] bg-[#fffdf8] p-2">
+            <img src="/images/home/operating-system-doodle.png" alt="Doodle diagram showing strategy flowing into a system and commercial outcomes, supported by offer, demand, sales, and data" className="w-full" loading="lazy" />
+            <figcaption>Strategy becomes an operating system when offer, demand, sales, and data share one loop.</figcaption>
+          </figure>
+        </div>
+      </section>
+
       {/* PROOF DEEP — receipts with meaning */}
       <section className="wrap py-16 sm:py-24">
         <div className="flex flex-wrap items-end justify-between gap-5 border-b border-[#dfe4eb] pb-6">
@@ -130,6 +159,20 @@ export default function Home() {
               <p className="mt-2 text-sm leading-5 text-muted">{r.src}</p>
             </div>
           ))}
+        </div>
+      </section>
+
+      {/* ENGAGEMENT PATH — clarify what happens after interest */}
+      <section className="wrap grid gap-10 py-16 sm:py-24 lg:grid-cols-[1.1fr_.9fr] lg:items-center">
+        <figure className="home-visual overflow-hidden border border-[#dfe4eb] bg-[#fffdf8] p-2">
+          <img src="/images/home/engagement-map-doodle.png" alt="Doodle decision map branching from diagnose to clarity session, growth sprint, or Fractional CMO" className="w-full" loading="lazy" />
+          <figcaption>Start with clarity. Continue only when the next level is clear.</figcaption>
+        </figure>
+        <div>
+          <p className="eyebrow mb-4">Choose the right depth</p>
+          <h2 className="font-display text-4xl font-semibold leading-tight tracking-tight sm:text-5xl">You do not have to buy the biggest engagement to get the right answer.</h2>
+          <p className="mt-5 font-serif text-lg leading-8 text-muted">Start with the diagnostic. If the answer is clarity, stop there. If the answer is execution, build the fix in a sprint. If the business needs senior ownership, I step in as your Fractional CMO.</p>
+          <Link to="/dal/" className="mt-8 inline-flex home-button">Start with the diagnostic <span aria-hidden>→</span></Link>
         </div>
       </section>
 

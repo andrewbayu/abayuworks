@@ -176,6 +176,7 @@
 .home-light .home-band { background:#f7f8fa; border-block:1px solid #e6e8ec; }
 .home-light .home-resource-band { background:#f7f8fa; border-block:1px solid #e6e8ec; }
 .home-light .home-optin { border:1px solid #dfe4eb; background:#fff; padding:1.5rem; }
+.home-light .home-visual figcaption { padding:.75rem .5rem .4rem; color:#718096; font-family:'Libre Baskerville',Georgia,serif; font-size:.78rem; line-height:1.55; }
 .home-light .home-dark-section { background:#171923; color:#fff; }
 .home-light .home-dark-section .text-muted { color:rgba(255,255,255,.68); }
 .home-light .home-dark-section .eyebrow { color:#ffe8d4; }
