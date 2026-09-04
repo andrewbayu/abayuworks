@@ -1,7 +1,7 @@
 import { useState } from 'react';
 import { motion } from 'framer-motion';
 import { Section, SectionHead } from '../components/Section';
-import { site } from '../data/site';
+import { contact, site } from '../data/site';
 import { fadeUp, stagger, inView } from '../lib/motion';
 import { genRefId, submitContact } from '../lib/forms';
 
