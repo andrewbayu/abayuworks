@@ -44,7 +44,7 @@ export default function Home() {
             <h1 className="mx-auto max-w-5xl text-balance font-display text-4xl font-semibold leading-[1] tracking-[-.04em] sm:text-5xl lg:text-[4.2rem]">
               More marketing won&rsquo;t fix a broken growth system. Find the bottleneck first.
             </h1>
-            <div className="relative mx-auto mt-10 w-full max-w-5xl">
+            <div className="relative mx-auto mt-10 w-full max-w-5xl lg:w-3/4">
               <div className="overflow-hidden rounded-xl border border-[#dfe4eb] bg-white p-3 shadow-sm">
               <img src="/images/home/constraint-diagnosis-doodle.png" alt="Editorial doodle showing a messy growth system being diagnosed into a clear constraint, priority, and next move" className="w-full rounded-lg" />
               </div>
