@@ -11,6 +11,7 @@ import LearnHome from './pages/LearnHome';
 import Lesson from './pages/Lesson';
 import Dal from './pages/Dal';
 import DalApply from './pages/DalApply';
+import SectionPage from './pages/SectionPage';
 import { postSlugs } from './posts';
 import { lessonSlugs } from './course/curriculum';
 
@@ -22,6 +23,9 @@ const siteRoutes = [
     element: <Layout />,
     children: [
       { index: true, element: <Home /> },
+      { path: 'ventures', element: <SectionPage kind="ventures" /> },
+      { path: 'receipts', element: <SectionPage kind="receipts" /> },
+      { path: 'built', element: <SectionPage kind="built" /> },
       { path: 'dal', element: <Dal /> },
       {
         path: 'blog',

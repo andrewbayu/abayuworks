@@ -8,9 +8,9 @@ export const site = {
   email: 'hi@adityabayu.com',
   url: 'https://adityabayu.com',
   nav: [
-    { label: 'Ventures', href: '/#ventures' },
-    { label: 'Receipts', href: '/#receipts' },
-    { label: 'Built', href: '/#built' },
+    { label: 'Ventures', href: '/ventures/' },
+    { label: 'Receipts', href: '/receipts/' },
+    { label: 'Built', href: '/built/' },
     { label: 'Writing', href: '/blog/' },
     { label: 'DAL', href: '/dal/' },
     { label: 'Contact', href: '/#contact' },
