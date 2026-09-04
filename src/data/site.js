@@ -132,10 +132,12 @@ export const ventures = [
 ];
 
 export const receipts = [
-  { value: 'Rp156B', src: 'Wall Street English Indonesia', body: 'Revenue all-time high. Strategy and metrics rebuilt back to profit within 1.5 years.', note: true },
+  { value: '$12M', src: 'Across client portfolio', body: 'Accumulated revenue across all clients handled. Wall Street English Indonesia was one major contributor.', note: true },
   { value: '+200%', src: 'Hacktiv8', body: 'Course-registration growth.', note: true },
   { value: '10M+', src: 'Aboitiz / KicauFest', body: 'Reach across three seasons of community campaigns, growing the community by 30K+.', note: true },
   { value: '3.1M', src: 'HypeBuzz', body: 'TikTok views from viral content campaigns, with 670K engagement.', note: true },
+  { value: '532K+', src: 'Angke Restaurant', body: 'Accounts reached in a 1–9 April 2026 Meta Ads snapshot, with 145 WhatsApp conversations.', note: true },
+  { value: '5,622', src: 'Akasia 365mc', body: 'Messaging conversations in Q2 2026, from the local performance report.', note: true },
   { value: 'Top 100', src: 'Calibreworks', body: "Placed in Clutch.co's Top 100 digital agencies." },
   { value: '300+', src: 'We Are Infiniti', body: 'Business owners and brands supported.' },
   { value: '50+', src: 'Growthlab Academy', body: 'Young entrepreneurs mentored.' },
