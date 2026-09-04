@@ -19,13 +19,9 @@ const personJsonLd = {
   sameAs: site.socials.map((s) => s.href),
 };
 
-// Single front door: book the 90-minute Constraint Audit straight on WhatsApp.
-const WA_NUMBER = '6285212924950';
-const WA_TEXT = encodeURIComponent(
-  "Hi Aditya, I'd like to book the 90-Minute Constraint Audit. Here's one line about my business: "
-);
-const WA_HREF = `https://wa.me/${WA_NUMBER}?text=${WA_TEXT}`;
-const AUDIT_CTA = 'Book my 90-Minute Constraint Audit — it\u2019s free';
+// Single front door: the growth diagnostic. Direct interested visitors to the
+// DAL explainer page first, where they can apply from inside that flow.
+const DIAG_CTA = 'Apply for a growth diagnostic';
 
 export default function Home() {
   const latest = posts.slice(0, 3);
@@ -51,14 +47,7 @@ export default function Home() {
               You don&rsquo;t need more traffic, a prettier brand, or another agency saying &ldquo;trust us.&rdquo; You need one person to name the single thing slowing you down — and prove it before you spend another rupiah.
             </p>
             <div className="mt-9 flex flex-wrap items-center gap-3">
-              <a
-                href={WA_HREF}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="home-button"
-              >
-                {AUDIT_CTA} <span aria-hidden>→</span>
-              </a>
+              <Link to="/dal/" className="home-button">{DIAG_CTA} <span aria-hidden>→</span></Link>
               <a href="#fractional-cmo" className="home-button-secondary">See how it works</a>
             </div>
             <p className="mt-5 text-sm text-muted">
@@ -120,7 +109,7 @@ export default function Home() {
             ].map(([title, body]) => <article key={title} className="home-card"><h3>{title}</h3><p>{body}</p></article>)}
           </div>
           <p className="mt-10 max-w-2xl font-serif text-lg leading-8 text-muted">Engagements line up behind the same gate: start with the audit, escalate to a sprint or a seat. LaunchBox AI and LeadGen Kit are the studio&rsquo;s ready-made sprints for AI-driven launches and lead capture.</p>
-          <a href={WA_HREF} target="_blank" rel="noopener noreferrer" className="mt-8 inline-flex home-button">{AUDIT_CTA} <span aria-hidden>→</span></a>
+          <Link to="/dal/" className="mt-8 inline-flex home-button">{DIAG_CTA} <span aria-hidden>→</span></Link>
         </div>
       </section>
 
@@ -165,7 +154,7 @@ export default function Home() {
             <p className="eyebrow mb-4">The offer</p>
             <h2 className="font-display text-4xl font-semibold leading-tight tracking-tight sm:text-5xl">90 minutes. Free. No pitch, no walk-aways.</h2>
             <p className="mt-5 max-w-2xl font-serif text-lg leading-8 text-white/70">If you&rsquo;re a fit and we don&rsquo;t find a leak worth acting on, that&rsquo;s on us — and you keep the audit. Book it now and find out exactly what&rsquo;s costing you.</p>
-            <a href={WA_HREF} target="_blank" rel="noopener noreferrer" className="home-button mt-8">{AUDIT_CTA} <span aria-hidden>→</span></a>
+            <Link to="/dal/" className="home-button mt-8">{DIAG_CTA} <span aria-hidden>→</span></Link>
           </div>
           <div className="border border-white/15 p-6">
             <p className="font-display text-sm font-bold uppercase tracking-[.12em] text-white/60">What you leave with</p>
@@ -177,14 +166,12 @@ export default function Home() {
       <Contact />
 
       {/* STICKY CTA — always one action available */}
-      <a
-        href={WA_HREF}
-        target="_blank"
-        rel="noopener noreferrer"
+      <Link
+        to="/dal/"
         className="fixed bottom-5 right-5 z-50 inline-flex items-center gap-2 rounded-full bg-[#1c3d73] px-5 py-3 font-display font-bold text-white shadow-2xl transition-colors hover:bg-[#2a5499]"
       >
-        Book the free audit <span aria-hidden>→</span>
-      </a>
+        {DIAG_CTA} <span aria-hidden>→</span>
+      </Link>
     </div>
   );
 }
