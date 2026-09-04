@@ -1,5 +1,21 @@
 import { H2, H3, P, UL, LI, FigureGrid, Pull, Tags, Disclaimer } from '../components/Prose';
 
+const FIGURES = {
+  trust: '/images/blog/sea-social-behaviour-2026/trust-hierarchy-doodle.png',
+  content: '/images/blog/sea-social-behaviour-2026/content-that-converts-doodle.png',
+  commerce: '/images/blog/sea-social-behaviour-2026/closed-loop-commerce-doodle.png',
+  local: '/images/blog/sea-social-behaviour-2026/indonesia-local-fit-doodle.png',
+};
+
+function Figure({ src, alt, caption }) {
+  return (
+    <figure className="mt-8 overflow-hidden rounded-card border border-line bg-surface">
+      <img src={src} alt={alt} loading="lazy" className="w-full" />
+      <figcaption className="px-4 py-3 font-serif text-sm leading-relaxed text-muted">{caption}</figcaption>
+    </figure>
+  );
+}
+
 export const meta = {
   slug: 'sea-social-behaviour-2026',
   title: 'How Southeast Asia actually buys in 2026',
@@ -43,6 +59,11 @@ export function Body() {
           { n: '1-2%', l: 'Typical traditional e-commerce conversion' },
         ]}
       />
+      <Figure
+        src={FIGURES.trust}
+        alt="Hand-drawn trust hierarchy showing family and friends, online reviews, creators, brands, and AI assistants"
+        caption="In Southeast Asia, trust is social before it is institutional: people move through relationships, reviews, creators, brands, and machines."
+      />
 
       <H2>Micro beats mega</H2>
       <P>Micro-influencers with 2,000 to 10,000 followers generate roughly four times the engagement of million-follower accounts, and the pattern repeats across every major SEA market. Their communities feel like friends, not audiences. Product recommendations carry social credibility instead of tasting like advertising.</P>
@@ -59,6 +80,11 @@ export function Body() {
         <LI><strong>Chat commerce.</strong> Around 40% of Thai and 36% of Vietnamese shoppers buy through messaging apps. It is mainstream, not niche.</LI>
       </UL>
       <P>None of these reward polish. The biggest media waste in 2026 is still commissioning expensive, on-brand-sounding studio ads that the audience did not ask for.</P>
+      <Figure
+        src={FIGURES.content}
+        alt="Hand-drawn map of content formats that convert, from short video and live commerce to UGC, education, and long-form reviews"
+        caption="The practical content stack moves from attention and participation to education and considered proof. Different formats, same job: help people decide and act."
+      />
 
       <H2>The storytelling that works</H2>
       <P>Storytelling is confirmed as the strongest narrative form in the region. Around 79% of SEA social users engage more with creator content that feels like a story rather than an ad, and creator-led campaigns deliver roughly 3.5 times the engagement of traditional paid media (WARC Influencer Marketing Benchmark 2025).</P>
@@ -75,6 +101,11 @@ export function Body() {
       <P>The funnel is not dead, but the journey changed permanently. Over 60% of product discovery now happens on TikTok, Instagram, and YouTube. One in three consumers starts product searches on a social platform instead of Google. Yet around 88% of purchases finish inside the marketplace they already trust.</P>
       <P>Discovery and purchase have split. People use AI to decide faster (86% of Gen Z in Vietnam, Indonesia, the Philippines, and Thailand say AI search reduces decision fatigue), but they leave the assistant to buy from a human where it feels safe. The winning platform removes the gap entirely.</P>
       <P>Around 85% of consumers switch apps during a fragmented journey. TikTok Shop compresses discovery, information, reviews, checkout, and payment into one screen with no context switching, no competitor price comparison, and no abandonment. By early 2026, that single-stream conversion path became the expected standard.</P>
+      <Figure
+        src={FIGURES.commerce}
+        alt="Hand-drawn closed-loop commerce journey from discover to trust, prove, and purchase"
+        caption="The shortest path is not simply more reach; it is fewer context switches between discovery, proof, and purchase."
+      />
       <H3>The market scale</H3>
       <P>SEA e-commerce is roughly $219 billion in 2026 and projected to near $410 billion by 2031. Indonesia and Thailand account for about 58% of regional sales. Influencer and affiliate marketing link to an estimated 32% of SEA e-commerce, equivalent to around $70 billion in 2026. The number of TikTok creators generating over $1 million in annual GMV tripled in a single year.</P>
 
@@ -88,6 +119,11 @@ export function Body() {
           { n: '38h26m', l: 'Average monthly TikTok time per user' },
           { n: '82%', l: 'Research products on social platforms' },
         ]}
+      />
+      <Figure
+        src={FIGURES.local}
+        alt="Hand-drawn map showing different cultural, platform, and price contexts across Jakarta, Surabaya, and smaller Indonesian cities"
+        caption="Indonesia is a centre of gravity, but a national audience still contains different cultural, platform, and price contexts. Localize culture, not just language."
       />
 
       <H2>What this means for brands</H2>
