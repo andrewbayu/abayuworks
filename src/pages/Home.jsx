@@ -41,10 +41,10 @@ export default function Home() {
         <div className="wrap grid gap-14 py-20 sm:py-28 lg:grid-cols-[1.1fr_.9fr] lg:items-center lg:py-32">
           <div>
             <p className="eyebrow mb-5">InfinitiLabs · The 90-Minute Constraint Audit</p>
-            <h1 className="max-w-3xl font-display text-4xl font-semibold leading-[1] tracking-[-.04em] sm:text-5xl lg:text-[4.4rem]">
-              <span className="block">Your marketing isn&rsquo;t broken.</span>
-              <span className="block">Find the bottleneck</span>
-              <span className="block">before you spend more.</span>
+            <h1 className="max-w-4xl font-display text-4xl font-semibold leading-[1] tracking-[-.04em] sm:text-5xl lg:text-[3.7rem] xl:text-[4.2rem]">
+              <span className="block">More marketing won&rsquo;t fix</span>
+              <span className="block">a broken growth system.</span>
+              <span className="block">Find the bottleneck first.</span>
             </h1>
             <p className="mt-7 max-w-2xl font-serif text-lg leading-8 text-muted sm:text-xl">
               You don&rsquo;t need more traffic, a prettier brand, or another agency saying &ldquo;trust us.&rdquo; You need one person to name the single thing slowing you down — and prove it before you spend another rupiah.
