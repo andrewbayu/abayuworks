@@ -24,8 +24,8 @@ export default function Home() {
   return (
     <div className="home-light">
       <Seo
-        title="Aditya Indra Bayu · Fractional CMO for ambitious companies"
-        description="Aditya Indra Bayu is a Fractional CMO who helps ambitious companies turn positioning, demand, and conversion into a growth system that can scale."
+        title="Aditya Indra Bayu · Fractional CMO · InfinitiLabs Growth Studio"
+        description="Aditya Indra Bayu is a Fractional CMO and venture builder who leads InfinitiLabs, a boutique growth studio that works backward from your commercial constraint to turn attention into revenue."
         path="/"
         type="profile"
         jsonLd={personJsonLd}
@@ -33,12 +33,12 @@ export default function Home() {
       <section className="home-hero bg-grid">
         <div className="wrap grid gap-14 py-20 sm:py-28 lg:grid-cols-[1.1fr_.9fr] lg:items-center lg:py-32">
           <div>
-            <p className="eyebrow mb-5">Fractional CMO · Venture Builder</p>
+            <p className="eyebrow mb-5">Principal-led growth studio · Indonesia &amp; SEA</p>
             <h1 className="max-w-4xl font-display text-5xl font-semibold leading-[.98] tracking-[-.055em] sm:text-7xl lg:text-[5.8rem]">
-              Your company does not need more marketing. It needs a growth system.
+              Fractional CMO. InfinitiLabs behind it. One operator accountable.
             </h1>
             <p className="mt-7 max-w-2xl font-serif text-lg leading-8 text-muted sm:text-xl">
-              I step into the business as a Fractional CMO to clarify the market, sharpen the offer, connect marketing to sales, and build the operating rhythm that turns attention into revenue.
+              Aditya Indra Bayu leads InfinitiLabs, a boutique growth studio that works backward from your commercial constraint. You get the thinking of a full team, delivered by a single accountable operator at its center.
             </p>
             <div className="mt-9 flex flex-wrap items-center gap-3">
               <Link to="/dal-apply/" className="home-button">Apply for a growth diagnostic <span aria-hidden>→</span></Link>
@@ -61,23 +61,40 @@ export default function Home() {
       <section className="wrap py-16 sm:py-20">
         <div className="grid gap-10 border-y border-[#dfe4eb] py-10 sm:grid-cols-3 sm:gap-8">
           <div><strong className="home-stat">10+</strong><p>ventures operated across multiple industries</p></div>
-          <div><strong className="home-stat">300+</strong><p>brands supported through the agency layer</p></div>
-          <div><strong className="home-stat">One seat</strong><p>between strategy, marketing, sales, and execution</p></div>
+          <div><strong className="home-stat">300+</strong><p>businesses served through the InfinitiLabs studio</p></div>
+          <div><strong className="home-stat">One seat</strong><p>no handoffs across strategy, marketing, sales, and execution</p></div>
         </div>
       </section>
 
       <section id="fractional-cmo" className="wrap scroll-mt-24 py-10 sm:py-16">
         <div className="max-w-3xl">
-          <p className="eyebrow mb-4">The Fractional CMO role</p>
+          <p className="eyebrow mb-4">The Fractional CMO role, studio-delivered</p>
           <h2 className="font-display text-4xl font-semibold leading-tight tracking-tight sm:text-5xl">A senior growth operator, without the full-time overhead.</h2>
-          <p className="mt-5 font-serif text-lg leading-8 text-muted">You get the thinking of a CMO and the bias toward shipping of an operator. We work from the commercial constraint backwards: what must be true for the business to acquire, convert, and retain better customers?</p>
+          <p className="mt-5 font-serif text-lg leading-8 text-muted">You get the thinking of a CMO, the bias toward shipping of an operator, and the InfinitiLabs studio behind both. We work from the commercial constraint backwards: what must be true for the business to acquire, convert, and retain better customers?</p>
         </div>
         <div className="mt-10 grid gap-4 md:grid-cols-3">
           {[
-            ['Find the constraint', 'Positioning, offer, channel, funnel, follow-up, or measurement—the bottleneck gets named before tactics get approved.'],
+            ['The Constraint Method', 'Positioning, offer, channel, funnel, follow-up, or measurement—the bottleneck gets named before tactics get approved. It is how every engagement starts.'],
             ['Build the system', 'The strategy becomes an operating model your team can understand, execute, and improve.'],
             ['Stay close to outcomes', 'Marketing is connected to qualified pipeline, sales reality, margin, and the decisions that compound.'],
           ].map(([title, body]) => <article key={title} className="home-card"><h3>{title}</h3><p>{body}</p></article>)}
+        </div>
+      </section>
+
+      <section id="engagements" className="home-band scroll-mt-24">
+        <div className="wrap py-16 sm:py-20">
+          <p className="eyebrow mb-4">The engagement ladder</p>
+          <h2 className="max-w-3xl font-display text-4xl font-semibold leading-tight tracking-tight sm:text-5xl">Start with a diagnostic. Scale to a seat.</h2>
+          <p className="mt-5 max-w-2xl font-serif text-lg leading-8 text-muted">Three ways in, same method, matched to how much of the problem you want solved. LaunchBox AI and LeadGen Kit are the studio's ready-made sprints for AI-driven launches and lead capture.</p>
+          <div className="mt-10 grid gap-4 md:grid-cols-3">
+            {[
+              ['Growth Diagnostic', '1–1.5 hrs · Free', 'A structured session that names the constraint holding growth back—the gate into every engagement.'],
+              ['Growth Sprint', '3–6 weeks · Project', 'One constraint, attacked end to end. LaunchBox AI and LeadGen Kit ship here as fixed-scope studio sprints.'],
+              ['Fractional CMO retainer', '3–6 months · One seat', 'A senior operator embedded in the business, reporting on the decisions that compound. The full studio in support.'],
+            ].map(([title, tag, body]) => (
+              <article key={title} className="home-card"><p className="font-display text-xs font-bold uppercase tracking-[.12em] text-[#1c3d73]">{tag}</p><h3>{title}</h3><p>{body}</p></article>
+            ))}
+          </div>
         </div>
       </section>
 
@@ -90,7 +107,7 @@ export default function Home() {
 
       <section className="home-band">
         <div className="wrap grid gap-10 py-16 sm:py-20 lg:grid-cols-[.8fr_1.2fr] lg:items-center">
-          <div><p className="eyebrow mb-4">Receipts</p><h2 className="font-display text-4xl font-semibold leading-tight tracking-tight sm:text-5xl">Built inside the machine.</h2><p className="mt-5 max-w-lg font-serif leading-7 text-muted">The perspective comes from operating across agency, education, maritime, film, and AI—not advising from a distance.</p><Link to="/receipts/" className="mt-6 inline-flex font-display font-bold text-[#1c3d73]">See the receipts →</Link></div>
+          <div><p className="eyebrow mb-4">Receipts</p><h2 className="font-display text-4xl font-semibold leading-tight tracking-tight sm:text-5xl">Built inside the machine.</h2><p className="mt-5 max-w-lg font-serif leading-7 text-muted">The perspective comes from running InfinitiLabs and operating across agency, education, maritime, film, and AI—not from advising at a distance.</p><Link to="/receipts/" className="mt-6 inline-flex font-display font-bold text-[#1c3d73]">See the receipts →</Link></div>
           <div className="grid grid-cols-2 gap-px overflow-hidden border border-[#dfe4eb] bg-[#dfe4eb] sm:grid-cols-4">{receipts.slice(0, 4).map((r) => <div key={r.src} className="bg-white p-5"><strong className="font-display text-2xl font-semibold text-[#1c3d73]">{r.value}</strong><p className="mt-2 text-sm leading-5 text-muted">{r.src}</p></div>)}</div>
         </div>
       </section>
