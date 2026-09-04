@@ -42,7 +42,9 @@ export default function Home() {
           <div>
             <p className="eyebrow mb-5">InfinitiLabs · The 90-Minute Constraint Audit</p>
             <h1 className="max-w-3xl font-display text-4xl font-semibold leading-[1] tracking-[-.04em] sm:text-5xl lg:text-[4.4rem]">
-              Your marketing isn&rsquo;t the problem. The bottleneck you haven&rsquo;t found yet is.
+              <span className="block">Your marketing isn&rsquo;t broken.</span>
+              <span className="block">Find the bottleneck</span>
+              <span className="block">before you spend more.</span>
             </h1>
             <p className="mt-7 max-w-2xl font-serif text-lg leading-8 text-muted sm:text-xl">
               You don&rsquo;t need more traffic, a prettier brand, or another agency saying &ldquo;trust us.&rdquo; You need one person to name the single thing slowing you down — and prove it before you spend another rupiah.
@@ -57,7 +59,7 @@ export default function Home() {
           </div>
           <div className="relative mx-auto w-full max-w-lg lg:justify-self-end">
             <div className="overflow-hidden rounded-xl border border-[#dfe4eb] bg-white p-3 shadow-sm">
-              <img src="/images/dal/report-mockup.png" alt="The Discovery Journey — InfinitiLabs growth framework" className="w-full rounded-lg" />
+              <img src="/images/home/constraint-diagnosis-doodle.png" alt="Editorial doodle showing a messy growth system being diagnosed into a clear constraint, priority, and next move" className="w-full rounded-lg" />
             </div>
             <div className="home-note absolute -bottom-6 -left-5 max-w-[16rem] bg-[#1c3d73] p-5 text-white shadow-xl sm:-left-10">
               <p className="font-serif text-sm leading-6">One operator, one name on the result. Not a team shuffled between accounts.</p>
