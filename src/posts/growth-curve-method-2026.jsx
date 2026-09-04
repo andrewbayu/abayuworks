@@ -1,5 +1,21 @@
 import { H2, H3, P, UL, LI, FigureGrid, Pull, Tags, Disclaimer } from '../components/Prose';
 
+const FIGURES = {
+  overview: '/images/blog/growth-curve-method-2026/growth-curve-overview-doodle.png',
+  pillar: '/images/blog/growth-curve-method-2026/content-pillar-doodle.png',
+  gameplay: '/images/blog/growth-curve-method-2026/360-gameplay-doodle.png',
+  map: '/images/blog/growth-curve-method-2026/30-day-map-doodle.png',
+};
+
+function Figure({ src, alt, caption }) {
+  return (
+    <figure className="mt-8 overflow-hidden rounded-card border border-line bg-surface">
+      <img src={src} alt={alt} loading="lazy" className="w-full" />
+      <figcaption className="px-4 py-3 font-serif text-sm leading-relaxed text-muted">{caption}</figcaption>
+    </figure>
+  );
+}
+
 export const meta = {
   slug: 'growth-curve-method-2026',
   title: 'Growth Curve Method: content routes for 360 marketing in 2026',
@@ -49,6 +65,11 @@ export function Body() {
       <P>The method is called a curve because growth is gradual. Authority does not spike overnight. It compounds when the audience keeps finding clear, useful, connected content from the same brand.</P>
 
       <P><strong>Operator rule:</strong> the point is not to post more. The point is to make every post point somewhere useful inside the brand's content ecosystem.</P>
+      <Figure
+        src={FIGURES.overview}
+        alt="Hand-drawn Growth Curve Method flow from pillar to supporting content, routes, and action"
+        caption="The method turns content into a connected route: one strong pillar feeds useful supporting pieces, visible guideways, and a clear next action."
+      />
 
       <H2>Step 1: define the Content Pillar</H2>
       <P>The Content Pillar is the foundation. In the Growth Curve Method, a pillar is not just a category. It is a core topic with a customer-journey objective.</P>
@@ -64,6 +85,11 @@ export function Body() {
       <P>Supporting Content takes the main pillar and breaks it into sharper, smaller pieces. It can answer one question, solve one objection, explain one feature, show one proof point, or demonstrate one use case.</P>
       <P>If the pillar is "Ultimate Beginner's Guide to Home Workout," the supporting pieces could be bodyweight exercises, post-workout smoothie recipes, motivation tips, injury prevention, beginner schedules, and equipment guides.</P>
       <P>Each piece should guide the audience back to the pillar. The caption, CTA, link, highlight, playlist, or internal reference should make the next step obvious.</P>
+      <Figure
+        src={FIGURES.pillar}
+        alt="Hand-drawn content pillar with questions, objections, proof, and use cases feeding back to the source"
+        caption="A pillar becomes more useful when it gives the audience multiple entry points—questions, objections, proof, and use cases—while staying the source of truth."
+      />
 
       <H2>Step 3: create Content Routes and Guideways</H2>
       <P>This is the part most brands skip. They publish useful content, but the audience gets lost after one post.</P>
@@ -95,6 +121,11 @@ export function Body() {
         <LI><strong>Convert · Landing and CRM.</strong> Landing pages, WhatsApp, forms, booking paths, lead scoring, and sales follow-up.</LI>
         <LI><strong>Learn · AI and analytics.</strong> Topic clustering, objection mining, creative variants, cohort quality, and revenue feedback.</LI>
       </UL>
+      <Figure
+        src={FIGURES.gameplay}
+        alt="Hand-drawn 360 marketing loop connecting signal, amplify, convert, and learn"
+        caption="The 360 system closes the loop: content creates the signal, paid and creators amplify it, CRM captures conversion, and revenue feedback improves the next idea."
+      />
 
       <H2>A 30-day application map</H2>
       <UL>
@@ -104,6 +135,11 @@ export function Body() {
         <LI><strong>Week 4 · Measure and update.</strong> Review saves, shares, route clicks, lead quality, CPL, and conversion signals.</LI>
         <LI><strong>Month 2+ · Compound the curve.</strong> Refresh the pillar, expand clusters, promote winners, and build deeper conversion assets.</LI>
       </UL>
+      <Figure
+        src={FIGURES.map}
+        alt="Hand-drawn 30-day Growth Curve Method staircase from publishing the pillar to measuring and updating"
+        caption="The first month is a sequence, not a content dump: publish the pillar, build support, create routes, then measure and update."
+      />
 
       <H2>Research notes</H2>
       <P>The 2026 update is informed by the current shift toward AI-assisted marketing workflows, privacy-first data use, creator and video spend, and measurement beyond last-click attribution. Useful references include IAB's 2026 State of Data report, IAB's 2026 Video Ad Spend report, Think with Google, and McKinsey's growth, marketing, and sales research.</P>
