@@ -36,7 +36,7 @@ export default function Home() {
       />
 
       {/* HERO — the problem, not the title */}
-      <section className="home-hero bg-grid">
+      <section className="home-hero home-hero-navy">
         <div className="wrap grid gap-14 py-20 sm:py-28 lg:grid-cols-[1.1fr_.9fr] lg:items-center lg:py-32">
           <div>
             <p className="eyebrow mb-5">InfinitiLabs · The 90-Minute Constraint Audit</p>

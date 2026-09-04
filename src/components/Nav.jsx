@@ -28,13 +28,15 @@ export default function Nav() {
     <header
       className={`sticky top-0 z-50 border-b transition-colors duration-300 ${
         light
-          ? scrolled ? 'border-[#e6e8ec] bg-white/90 backdrop-blur-md' : 'border-transparent bg-white/80'
+          ? scrolled
+            ? 'border-white/10 bg-[#0d1a33]/95 backdrop-blur-xl'
+            : 'border-transparent bg-gradient-to-r from-[#0b1526]/75 via-[#12264a]/65 to-[#1c3d73]/55 backdrop-blur-xl'
           : scrolled ? 'border-line bg-bg/80 backdrop-blur-md' : 'border-transparent bg-transparent'
       }`}
     >
       <nav className="wrap flex items-center justify-between py-3.5" aria-label="Primary">
         <a href="/" className="shrink-0" aria-label="Home">
-          <Logo className={light ? 'home-logo-light' : ''} />
+          <Logo className={light ? 'home-logo-nav-navy' : ''} />
         </a>
 
         {/* Desktop links */}
@@ -43,7 +45,9 @@ export default function Nav() {
             <li key={item.label}>
               <a
                 href={item.href}
-                className={`text-sm transition-colors ${light ? 'text-[#4b5563] hover:text-[#111]' : 'text-muted hover:text-ink'}`}
+                className={`text-sm transition-colors ${
+                  light ? 'text-white/80 hover:text-white' : 'text-muted hover:text-ink'
+                }`}
               >
                 {item.label}
               </a>
@@ -57,7 +61,9 @@ export default function Nav() {
           aria-label={open ? 'Close menu' : 'Open menu'}
           aria-expanded={open}
           onClick={() => setOpen((v) => !v)}
-          className={`relative grid h-10 w-10 place-items-center rounded-card md:hidden ${light ? 'text-[#111]' : 'text-ink'}`}
+          className={`relative grid h-10 w-10 place-items-center rounded-card md:hidden ${
+            light ? 'text-white' : 'text-ink'
+          }`}
         >
           <span className="relative block h-4 w-5">
             <span
@@ -87,7 +93,9 @@ export default function Nav() {
             animate={{ opacity: 1, height: 'auto' }}
             exit={{ opacity: 0, height: 0 }}
             transition={{ duration: 0.3, ease: easeOut }}
-            className={`overflow-hidden border-t backdrop-blur-md md:hidden ${light ? 'border-[#e6e8ec] bg-white/95' : 'border-line bg-bg/95'}`}
+            className={`overflow-hidden border-t backdrop-blur-xl md:hidden ${
+              light ? 'border-white/10 bg-[#0d1a33]/95' : 'border-line bg-bg/95'
+            }`}
           >
             <ul className="wrap flex flex-col py-2">
               {site.nav.map((item) => (
@@ -95,7 +103,9 @@ export default function Nav() {
                   <a
                     href={item.href}
                     onClick={() => setOpen(false)}
-                    className={`block py-3 text-base transition-colors ${light ? 'text-[#4b5563] hover:text-[#111]' : 'text-muted hover:text-ink'}`}
+                    className={`block py-3 text-base transition-colors ${
+                      light ? 'text-white/85 hover:text-white' : 'text-muted hover:text-ink'
+                    }`}
                   >
                     {item.label}
                   </a>

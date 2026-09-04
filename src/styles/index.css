@@ -158,6 +158,20 @@
 .home-light p:not(.eyebrow), .home-light li { font-family:'Libre Baskerville',Georgia,serif; }
 .home-light h1,.home-light h2,.home-light h3,.home-light a,.home-light strong,.home-light .home-button,.home-light .home-button-secondary { font-family:'General Sans',system-ui,sans-serif; }
 .home-light .home-hero { border-bottom:1px solid #e6e8ec; }
+/* Navy glass hero + header variant (homepage only) */
+.home-light .home-hero-navy {
+  background: linear-gradient(165deg, #0b1526 0%, #12264a 45%, #1c3d73 100%);
+  border-bottom:1px solid rgba(255,255,255,.12);
+}
+.home-light .home-hero-navy h1 { color:#fff; }
+.home-light .home-hero-navy .eyebrow { color:#cddcff; }
+.home-light .home-hero-navy p:not(.eyebrow), .home-light .home-hero-navy .text-muted { color:rgba(255,255,255,.8); }
+.home-light .home-hero-navy .home-button { background:#fff; color:#1c3d73; }
+.home-light .home-hero-navy .home-button:hover { background:#e8edf6; }
+.home-light .home-hero-navy .home-button-secondary { border-color:rgba(255,255,255,.75); color:#fff; }
+.home-light .home-hero-navy .home-button-secondary:hover { background:rgba(255,255,255,.12); color:#fff; }
+.home-logo-nav-navy { margin:0; }
+.home-logo-nav-navy img { filter:none; }
 .home-logo-light img { filter:invert(1); }
 .home-light .home-portrait { aspect-ratio:4/5; }
 .home-light .home-note p,.home-light .home-stat,.home-light .home-card h3 { font-family:'General Sans',system-ui,sans-serif; }
