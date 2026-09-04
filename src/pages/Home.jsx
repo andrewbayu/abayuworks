@@ -36,11 +36,11 @@ export default function Home() {
       />
 
       {/* HERO — the problem, not the title */}
-      <section className="home-hero home-hero-navy">
+      <section className="home-hero bg-grid">
         <div className="wrap grid gap-14 py-20 sm:py-28 lg:grid-cols-[1.1fr_.9fr] lg:items-center lg:py-32">
           <div>
             <p className="eyebrow mb-5">InfinitiLabs · The 90-Minute Constraint Audit</p>
-            <h1 className="max-w-4xl font-display text-5xl font-semibold leading-[.98] tracking-[-.055em] sm:text-7xl lg:text-[5.8rem]">
+            <h1 className="max-w-3xl font-display text-4xl font-semibold leading-[1] tracking-[-.04em] sm:text-5xl lg:text-[4.4rem]">
               Your marketing isn&rsquo;t the problem. The bottleneck you haven&rsquo;t found yet is.
             </h1>
             <p className="mt-7 max-w-2xl font-serif text-lg leading-8 text-muted sm:text-xl">
@@ -54,9 +54,9 @@ export default function Home() {
               Leave with one insight worth 50&times; the session — or don&rsquo;t come back. That&rsquo;s the deal.
             </p>
           </div>
-          <div className="relative mx-auto w-full max-w-md lg:justify-self-end">
-            <div className="home-portrait overflow-hidden border border-[#dfe4eb] bg-[#f5f6f8]">
-              <img src="/aditya-bayu.webp" alt="Aditya Indra Bayu, Fractional CMO" className="h-full w-full object-cover" />
+          <div className="relative mx-auto w-full max-w-lg lg:justify-self-end">
+            <div className="overflow-hidden rounded-xl border border-[#dfe4eb] bg-white p-3 shadow-sm">
+              <img src="/images/dal/report-mockup.png" alt="The Discovery Journey — InfinitiLabs growth framework" className="w-full rounded-lg" />
             </div>
             <div className="home-note absolute -bottom-6 -left-5 max-w-[16rem] bg-[#1c3d73] p-5 text-white shadow-xl sm:-left-10">
               <p className="font-serif text-sm leading-6">One operator, one name on the result. Not a team shuffled between accounts.</p>

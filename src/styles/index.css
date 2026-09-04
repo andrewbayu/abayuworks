@@ -158,18 +158,7 @@
 .home-light p:not(.eyebrow), .home-light li { font-family:'Libre Baskerville',Georgia,serif; }
 .home-light h1,.home-light h2,.home-light h3,.home-light a,.home-light strong,.home-light .home-button,.home-light .home-button-secondary { font-family:'General Sans',system-ui,sans-serif; }
 .home-light .home-hero { border-bottom:1px solid #e6e8ec; }
-/* Navy glass hero + header variant (homepage only) */
-.home-light .home-hero-navy {
-  background: linear-gradient(165deg, #0b1526 0%, #12264a 45%, #1c3d73 100%);
-  border-bottom:1px solid rgba(255,255,255,.12);
-}
-.home-light .home-hero-navy h1 { color:#fff; }
-.home-light .home-hero-navy .eyebrow { color:#cddcff; }
-.home-light .home-hero-navy p:not(.eyebrow), .home-light .home-hero-navy .text-muted { color:rgba(255,255,255,.8); }
-.home-light .home-hero-navy .home-button { background:#fff; color:#1c3d73; }
-.home-light .home-hero-navy .home-button:hover { background:#e8edf6; }
-.home-light .home-hero-navy .home-button-secondary { border-color:rgba(255,255,255,.75); color:#fff; }
-.home-light .home-hero-navy .home-button-secondary:hover { background:rgba(255,255,255,.12); color:#fff; }
+/* Navy glass treatment applies to the NAV BAR only; hero stays light. */
 .home-logo-nav-navy { margin:0; }
 .home-logo-nav-navy img { filter:none; }
 .home-logo-light img { filter:invert(1); }
