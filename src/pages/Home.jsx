@@ -38,33 +38,31 @@ export default function Home() {
 
       {/* HERO — the problem, not the title */}
       <section className="home-hero bg-grid">
-        <div className="wrap grid gap-14 py-20 sm:py-28 lg:grid-cols-[1.1fr_.9fr] lg:items-center lg:py-32">
-          <div>
+        <div className="wrap py-20 sm:py-28 lg:py-32">
+          <div className="mx-auto max-w-5xl text-center">
             <p className="eyebrow mb-5">InfinitiLabs · The 90-Minute Constraint Audit</p>
-            <h1 className="max-w-4xl font-display text-4xl font-semibold leading-[1] tracking-[-.04em] sm:text-5xl lg:text-[3.7rem] xl:text-[4.2rem]">
-              <span className="block">More marketing won&rsquo;t fix</span>
-              <span className="block">a broken growth system.</span>
-              <span className="block">Find the bottleneck first.</span>
+            <h1 className="mx-auto max-w-5xl text-balance font-display text-4xl font-semibold leading-[1] tracking-[-.04em] sm:text-5xl lg:text-[4.2rem]">
+              More marketing won&rsquo;t fix a broken growth system. Find the bottleneck first.
             </h1>
-            <p className="mt-7 max-w-2xl font-serif text-lg leading-8 text-muted sm:text-xl">
+            <div className="relative mx-auto mt-10 w-full max-w-5xl">
+              <div className="overflow-hidden rounded-xl border border-[#dfe4eb] bg-white p-3 shadow-sm">
+              <img src="/images/home/constraint-diagnosis-doodle.png" alt="Editorial doodle showing a messy growth system being diagnosed into a clear constraint, priority, and next move" className="w-full rounded-lg" />
+              </div>
+              <div className="home-note absolute -bottom-8 left-4 max-w-[16rem] bg-[#1c3d73] p-5 text-left text-white shadow-xl sm:left-10">
+                <p className="font-serif text-sm leading-6">One operator, one name on the result. Not a team shuffled between accounts.</p>
+                <p className="mt-3 font-display text-xs font-bold uppercase tracking-[.12em] text-[#cddcff]">Aditya Bayu · InfinitiLabs</p>
+              </div>
+            </div>
+            <p className="mx-auto mt-16 max-w-3xl font-serif text-lg leading-8 text-muted sm:text-xl">
               You don&rsquo;t need more traffic, a prettier brand, or another agency saying &ldquo;trust us.&rdquo; You need one person to name the single thing slowing you down — and prove it before you spend another rupiah.
             </p>
-            <div className="mt-9 flex flex-wrap items-center gap-3">
+            <div className="mt-9 flex justify-center gap-3">
               <Link to="/dal/" className="home-button">{DIAG_CTA} <span aria-hidden>→</span></Link>
               <a href="#fractional-cmo" className="home-button-secondary">See how it works</a>
             </div>
             <p className="mt-5 text-sm text-muted">
               Leave with one insight worth 50&times; the session — or don&rsquo;t come back. That&rsquo;s the deal.
             </p>
-          </div>
-          <div className="relative mx-auto w-full max-w-lg lg:justify-self-end">
-            <div className="overflow-hidden rounded-xl border border-[#dfe4eb] bg-white p-3 shadow-sm">
-              <img src="/images/home/constraint-diagnosis-doodle.png" alt="Editorial doodle showing a messy growth system being diagnosed into a clear constraint, priority, and next move" className="w-full rounded-lg" />
-            </div>
-            <div className="home-note absolute -bottom-6 -left-5 max-w-[16rem] bg-[#1c3d73] p-5 text-white shadow-xl sm:-left-10">
-              <p className="font-serif text-sm leading-6">One operator, one name on the result. Not a team shuffled between accounts.</p>
-              <p className="mt-3 font-display text-xs font-bold uppercase tracking-[.12em] text-[#cddcff]">Aditya Bayu · InfinitiLabs</p>
-            </div>
           </div>
         </div>
       </section>
