@@ -1,6 +1,7 @@
 import { motion } from 'framer-motion';
 import Seo from '../components/Seo';
 import { site } from '../data/site';
+import DalClientMarquee from '../components/DalClientMarquee';
 import { fadeUp, inView, stagger } from '../lib/motion';
 
 const outcomes = [
@@ -35,14 +36,6 @@ const reportSamples = [
   ['Recommended Channels', '/images/dal/recommended-channels.png', 'Prioritize the channels that fit the business and its audience.'],
   ['Actionable Priorities', '/images/dal/actionables.png', 'Translate the diagnosis into a short list of actions.'],
   ['Sample Findings Page', '/images/dal/sample-findings.png', 'A representative example of the report’s findings format.'],
-];
-
-const dalClients = [
-  'BPR Hisobhan', 'Bank Jakarta', 'CIMB Niaga', 'Watermaxx',
-  'Goldcoin Aboitiz Group', 'Finvolv', 'Uncle Paul', 'Dibao Indonesia',
-  'IMOU', 'Digdaya Group', 'Thermomix Indonesia', 'Panangian School of Property',
-  'Top Coach Indonesia', 'Ashiaaap Food', 'Victorindo Group', 'OrienTraco',
-  'Roda Bangun Mandiri', 'Rucika',
 ];
 
 const ctaClass =
@@ -102,19 +95,7 @@ export default function Dal() {
             </div>
           </motion.div>
 
-          <motion.section variants={fadeUp} className="mx-[calc(50%-50vw)] mt-16 overflow-hidden border-y border-[#dfe4eb] bg-white py-6 text-[#4b5563] sm:mt-20">
-            <p className="dal-utility text-center text-xs font-medium uppercase tracking-[0.16em] text-[#718096]">Selected businesses diagnosed through the Digital Advantage Lab</p>
-            <div className="mt-4 overflow-hidden" aria-label="Digital Advantage Lab clients">
-              <div className="dal-marquee flex w-max items-center whitespace-nowrap">
-                {[...dalClients, ...dalClients].map((client, index) => (
-                  <span key={`${client}-${index}`} className="flex items-center">
-                    <span className="dal-client-marquee">{client}</span>
-                    <span className="dal-client-separator" aria-hidden>/</span>
-                  </span>
-                ))}
-              </div>
-            </div>
-          </motion.section>
+          <motion.div variants={fadeUp} className="mt-16 sm:mt-20"><DalClientMarquee /></motion.div>
 
           <motion.div variants={fadeUp} className="mx-auto mt-14 max-w-4xl rounded-card border border-blue/20 bg-[#f7f9fc] p-5 shadow-[0_20px_60px_-40px_rgba(28,61,115,0.55)] sm:mt-20 sm:p-8">
             <div className="grid gap-8 md:grid-cols-[0.9fr_1.1fr] md:items-center">

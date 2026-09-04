@@ -5,6 +5,7 @@ import PostCover from '../components/PostCover';
 import { OptInForm } from './PreflightChecklist';
 import { posts } from '../posts';
 import { site, receipts } from '../data/site';
+import DalClientMarquee from '../components/DalClientMarquee';
 
 const personJsonLd = {
   '@context': 'https://schema.org',
@@ -67,14 +68,7 @@ export default function Home() {
       </section>
 
       {/* PROOF — early, and given meaning */}
-      <section className="wrap py-10 sm:py-14">
-        <div className="grid gap-6 border-y border-[#dfe4eb] py-8 sm:grid-cols-2 lg:grid-cols-4 lg:gap-8">
-          <div><strong className="home-stat">Rp156B</strong><p>all-time revenue high at Wall Street English Indonesia</p></div>
-          <div><strong className="home-stat">+200%</strong><p>registration growth at Hacktiv8</p></div>
-          <div><strong className="home-stat">300+</strong><p>businesses scaled through the InfinitiLabs studio</p></div>
-          <div><strong className="home-stat">One seat</strong><p>no handoffs across strategy, sales, and execution</p></div>
-        </div>
-      </section>
+      <DalClientMarquee />
 
       {/* AGITATION — make the leak feel expensive */}
       <section className="wrap py-10 sm:py-16">
