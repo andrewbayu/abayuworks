@@ -1,7 +1,7 @@
 import { useState } from 'react';
 import { motion } from 'framer-motion';
 import { Section, SectionHead } from '../components/Section';
-import { contact, site } from '../data/site';
+import { site } from '../data/site';
 import { fadeUp, stagger, inView } from '../lib/motion';
 import { genRefId, submitContact } from '../lib/forms';
 
@@ -18,14 +18,14 @@ export default function Contact() {
       if (data.get('botcheck')) { setStatus('ok'); return; }
       const id = genRefId();
       await submitContact({
-        subject: `New inquiry ${id} from adityabayu.com`,
+        subject: `New The CMO Notes subscriber ${id} from adityabayu.com`,
         from_name: data.get('name'),
         ref_id: id,
         name: data.get('name'),
         email: data.get('email'),
-        company: data.get('company') || '(not provided)',
-        engagement_type: data.get('engagement_type'),
-        message: data.get('message'),
+        resource: 'The CMO Notes newsletter',
+        consent: data.get('consent') === 'on',
+        message: 'Subscribed to The CMO Notes newsletter.',
       });
       setRefId(id);
       setStatus('ok');
@@ -68,9 +68,9 @@ export default function Contact() {
         <motion.div variants={fadeUp} {...inView}>
           {status === 'ok' ? (
             <div className="card border-cream/30 bg-cream/5 p-6">
-              <h3 className="font-display text-xl font-semibold text-cream">Inquiry received.</h3>
+              <h3 className="font-display text-xl font-semibold text-cream">You’re on the list.</h3>
               <p className="mt-2 text-muted">
-                Thanks for reaching out. Aditya replies from <strong className="text-ink">{site.email}</strong> within 48 hours.
+                The latest issue of <strong className="text-ink">The CMO Notes</strong> will land in your inbox soon.
               </p>
               {refId && (
                 <p className="mt-4 text-sm text-muted">
@@ -80,7 +80,7 @@ export default function Contact() {
             </div>
           ) : (
             <form
-              name="contact"
+              name="newsletter"
               method="POST"
               onSubmit={onSubmit}
               className="grid gap-4"
@@ -96,35 +96,21 @@ export default function Contact() {
                 </Field>
               </div>
 
-              <Field label="Company / role (optional)">
-                <input name="company" autoComplete="organization" placeholder="e.g. Head of Marketing at Acme" className={inputCls} />
-              </Field>
+              <p className="max-w-xl text-sm leading-6 text-muted">
+                The CMO Notes is Aditya’s practical field note on growth, marketing systems, positioning, and the decisions that compound.
+              </p>
 
-              <Field label="Engagement type" required>
-                <select name="engagement_type" required defaultValue="" className={inputCls}>
-                  <option value="" disabled>What are you looking for?</option>
-                  {contact.engagementTypes.map((o) => (
-                    <option key={o.value} value={o.value}>{o.label}</option>
-                  ))}
-                </select>
-              </Field>
-
-              <Field label="What you’d like to discuss" required>
-                <textarea
-                  name="message"
-                  rows={5}
-                  required
-                  placeholder="A few sentences about the brand, the stage, and what you're trying to unblock."
-                  className={`${inputCls} resize-y`}
-                />
-              </Field>
+              <label className="flex items-start gap-3 text-sm leading-6 text-muted">
+                <input type="checkbox" name="consent" required className="mt-1 accent-blue" />
+                <span>Yes, send me The CMO Notes and occasional updates. I can unsubscribe anytime.</span>
+              </label>
 
               <button
                 type="submit"
                 disabled={status === 'sending'}
                 className="mt-1 inline-flex w-fit items-center gap-2 rounded-card bg-blue px-5 py-2.5 font-medium text-white transition-colors hover:bg-blue-soft disabled:opacity-60"
               >
-                {status === 'sending' ? 'Sending…' : 'Send inquiry'}
+                {status === 'sending' ? 'Joining…' : 'Get The CMO Notes'}
                 <span aria-hidden>→</span>
               </button>
 

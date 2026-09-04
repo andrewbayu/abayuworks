@@ -357,6 +357,12 @@ node -e "const sharp=require('sharp');const fs=require('fs');sharp(Buffer.from(f
 - Updated DAL CTAs to route to the application form and added USD 499 crossed out → USD 199 pricing with 5 monthly places.
 - Added `RESEND_DAL_SEGMENT_ID` and `RESEND_DAL_AUTOMATION_EVENT` configuration notes.
 
+## Session DAL288 · 2026-09-04
+
+- Updated the Resend custom-event endpoint to the current `/events/send` path so DAL Automation triggers are delivered using the documented API route.
+
 ---
 
 End of LASTMEM. Update this file when you ship anything material. It's committed to the public repo by design, so no secrets.
+## Session CMO289 · 2026-09-04
+- Reworked the homepage contact section into a consent-based `The CMO Notes` newsletter signup. Consented lead magnets and DAL applications now also join the optional universal newsletter segment and trigger `newsletter.subscribed`, while their campaign-specific sequences remain separate.

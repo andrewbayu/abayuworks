@@ -159,9 +159,9 @@ export const tools = [
 ];
 
 export const contact = {
-  title: 'Have a venture to build?',
+  title: 'The CMO Notes, in your inbox.',
   lede:
-    'Hire Aditya as a fractional CMO. Co-build a new company. Take an operator seat. Plug the AI stack into an existing brand. If it is a venture worth building, he wants to hear about it.',
+    'Practical notes on growth, marketing systems, positioning, and the decisions that compound. Get the latest issue of The CMO Notes.',
   engagementTypes: [
     { value: 'fractional-cmo', label: 'Fractional CMO' },
     { value: 'co-build-venture', label: 'Co-build a venture' },

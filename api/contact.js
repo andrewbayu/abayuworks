@@ -15,7 +15,7 @@ import nodemailer from 'nodemailer';
 // dedicated RESEND_API_KEY is set. The new single-audience Contacts API needs
 // no audience id. Skips unless the key is a Resend key (re_*), so a legacy
 // Gmail app-password setup never hits Resend.
-async function addToResendAudience({ email, name, properties = {}, segmentId = '' }) {
+async function addToResendAudience({ email, name, properties = {}, segmentIds = [] }) {
   const apiKey = process.env.RESEND_API_KEY || process.env.SMTP_PASS;
   if (!apiKey || !apiKey.startsWith('re_') || !email) return;
 
@@ -31,7 +31,8 @@ async function addToResendAudience({ email, name, properties = {}, segmentId = '
   try {
     const contact = { email, first_name, last_name, unsubscribed: false };
     if (Object.keys(properties).length) contact.properties = properties;
-    if (segmentId) contact.segments = [{ id: segmentId }];
+    const validSegmentIds = segmentIds.filter(Boolean);
+    if (validSegmentIds.length) contact.segments = validSegmentIds.map((id) => ({ id }));
 
     const resp = await fetch('https://api.resend.com/contacts', {
       method: 'POST',
@@ -53,7 +54,7 @@ async function triggerResendAutomation({ email, resource, ref_id, payload = {}, 
   if (!apiKey || !apiKey.startsWith('re_') || !email || !resource) return;
 
   try {
-    const resp = await fetch('https://api.resend.com/events', {
+    const resp = await fetch('https://api.resend.com/events/send', {
       method: 'POST',
       headers: {
         Authorization: `Bearer ${apiKey}`,
@@ -154,6 +155,7 @@ export default async function handler(req, res) {
     // Best-effort: capture the lead into the Resend Audience for marketing.
     // Never blocks or fails the submission if it errors.
     const isDalApplication = resource === 'Digital Advantage Lab application';
+    const isNewsletterSignup = resource === 'The CMO Notes newsletter';
     const dalPayload = isDalApplication
       ? { company, website: dal_website, offer: dal_offer, challenge: dal_challenge, tried: dal_tried, goal: dal_goal }
       : {};
@@ -163,15 +165,29 @@ export default async function handler(req, res) {
       properties: isDalApplication
         ? { lead_source: 'digital_advantage_lab', company, website: dal_website, challenge: dal_challenge, goal: dal_goal }
         : {},
-      segmentId: isDalApplication ? process.env.RESEND_DAL_SEGMENT_ID : '',
+      segmentIds: [
+        isDalApplication ? process.env.RESEND_DAL_SEGMENT_ID : '',
+        resource && consent === true ? process.env.RESEND_NEWSLETTER_SEGMENT_ID : '',
+      ],
     });
-    await triggerResendAutomation({
-      email,
-      resource,
-      ref_id,
-      payload: dalPayload,
-      eventName: isDalApplication ? process.env.RESEND_DAL_AUTOMATION_EVENT : '',
-    });
+    if (!isNewsletterSignup) {
+      await triggerResendAutomation({
+        email,
+        resource,
+        ref_id,
+        payload: dalPayload,
+        eventName: isDalApplication ? process.env.RESEND_DAL_AUTOMATION_EVENT : '',
+      });
+    }
+    if (resource && consent === true) {
+      await triggerResendAutomation({
+        email,
+        resource: 'The CMO Notes newsletter',
+        ref_id,
+        payload: { source: resource },
+        eventName: process.env.RESEND_NEWSLETTER_AUTOMATION_EVENT || 'newsletter.subscribed',
+      });
+    }
     return res.status(200).json({ success: true });
   } catch (err) {
     console.error('contact mail send failed:', err);
