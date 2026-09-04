@@ -1,10 +1,10 @@
 import { H2, H3, P, UL, LI, FigureGrid, Pull, Tags, Disclaimer } from '../components/Prose';
 
 const FIGURES = {
-  pipeline: '/images/blog/andromeda/pipeline.png',
-  portfolio: '/images/blog/andromeda/creative-portfolio.png',
-  loop: '/images/blog/andromeda/measurement-loop.png',
-  model: '/images/blog/andromeda/operating-model.png',
+  pipeline: '/images/blog/andromeda/pipeline-doodle.png',
+  portfolio: '/images/blog/andromeda/creative-portfolio-doodle.png',
+  loop: '/images/blog/andromeda/measurement-loop-doodle.png',
+  model: '/images/blog/andromeda/operating-model-doodle.png',
 };
 
 function Figure({ src, alt, caption }) {
