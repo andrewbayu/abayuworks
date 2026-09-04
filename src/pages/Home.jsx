@@ -2,6 +2,7 @@ import Contact from '../sections/Contact';
 import { Link } from 'react-router-dom';
 import Seo from '../components/Seo';
 import PostCover from '../components/PostCover';
+import { OptInForm } from './PreflightChecklist';
 import { posts } from '../posts';
 import { site, receipts } from '../data/site';
 
@@ -40,8 +41,8 @@ export default function Home() {
               I step into the business as a Fractional CMO to clarify the market, sharpen the offer, connect marketing to sales, and build the operating rhythm that turns attention into revenue.
             </p>
             <div className="mt-9 flex flex-wrap items-center gap-3">
-              <a href="#contact" className="home-button">Talk about your growth problem <span aria-hidden>→</span></a>
-              <Link to="/dal/" className="home-button-secondary">Start with a diagnostic</Link>
+              <Link to="/dal-apply/" className="home-button">Apply for a growth diagnostic <span aria-hidden>→</span></Link>
+              <a href="#fractional-cmo" className="home-button-secondary">See how I work</a>
             </div>
             <p className="mt-5 text-sm text-muted">For founders and leadership teams who need clarity before more spend.</p>
           </div>
@@ -65,7 +66,7 @@ export default function Home() {
         </div>
       </section>
 
-      <section className="wrap py-10 sm:py-16">
+      <section id="fractional-cmo" className="wrap scroll-mt-24 py-10 sm:py-16">
         <div className="max-w-3xl">
           <p className="eyebrow mb-4">The Fractional CMO role</p>
           <h2 className="font-display text-4xl font-semibold leading-tight tracking-tight sm:text-5xl">A senior growth operator, without the full-time overhead.</h2>
@@ -77,6 +78,13 @@ export default function Home() {
             ['Build the system', 'The strategy becomes an operating model your team can understand, execute, and improve.'],
             ['Stay close to outcomes', 'Marketing is connected to qualified pipeline, sales reality, margin, and the decisions that compound.'],
           ].map(([title, body]) => <article key={title} className="home-card"><h3>{title}</h3><p>{body}</p></article>)}
+        </div>
+      </section>
+
+      <section className="home-resource-band">
+        <div className="wrap grid gap-8 py-16 sm:py-20 lg:grid-cols-[.9fr_1.1fr] lg:items-center">
+          <div><p className="eyebrow mb-4">Free field guide</p><h2 className="font-display text-4xl font-semibold leading-tight tracking-tight sm:text-5xl">Before you spend on Meta ads, check the system.</h2><p className="mt-5 max-w-xl font-serif leading-7 text-muted">Get the 5-point Meta Ads Pre-Flight Checklist—the same gate used to catch wasted budget before launch.</p></div>
+          <div className="home-optin"><OptInForm id="homepage-preflight" cta="Send me the checklist" /></div>
         </div>
       </section>
 

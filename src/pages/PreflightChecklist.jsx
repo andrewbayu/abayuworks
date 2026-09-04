@@ -62,7 +62,7 @@ const forWho = [
 const inputCls =
   'w-full rounded-card border border-line bg-elevated px-4 py-3 text-base text-ink placeholder:text-faint focus:border-cream focus:outline-none focus:ring-2 focus:ring-cream/30';
 
-function OptInForm({ id, cta = 'Send me the checklist' }) {
+export function OptInForm({ id, cta = 'Send me the checklist' }) {
   const navigate = useNavigate();
   const [state, setState] = useState('idle'); // idle | sending | error
   const [email, setEmail] = useState('');

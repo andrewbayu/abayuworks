@@ -171,6 +171,8 @@
 .home-light .home-button-secondary { display:inline-flex; align-items:center; border:1px solid #1c3d73; color:#1c3d73; padding:.85rem 1.15rem; font-weight:700; }
 .home-light .home-button-secondary:hover { background:#f2f5fa; }
 .home-light .home-band { background:#f7f8fa; border-block:1px solid #e6e8ec; }
+.home-light .home-resource-band { background:#f7f8fa; border-block:1px solid #e6e8ec; }
+.home-light .home-optin { border:1px solid #dfe4eb; background:#fff; padding:1.5rem; }
 .home-light .home-dark-section { background:#171923; color:#fff; }
 .home-light .home-dark-section .text-muted { color:rgba(255,255,255,.68); }
 .home-light .home-dark-section .eyebrow { color:#ffe8d4; }
