@@ -82,7 +82,8 @@ export default function OperatorBridge() {
           <div className="mt-6 pt-4 border-t border-[#f1f5f9]">
             <Link
               to="/dal/"
-              className="inline-flex w-full items-center justify-center gap-2 rounded-card bg-[#1C3D73] px-4 py-3 font-display text-sm font-medium text-white shadow-sm transition-all hover:bg-[#2A5499] hover:-translate-y-0.5"
+              style={{ color: '#ffffff' }}
+              className="!text-white inline-flex w-full items-center justify-center gap-2 rounded-card bg-[#1C3D73] px-4 py-3 font-display text-sm font-medium shadow-sm transition-all hover:bg-[#2A5499] hover:-translate-y-0.5"
             >
               Apply for a growth diagnostic <span aria-hidden="true">→</span>
             </Link>

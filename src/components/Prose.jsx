@@ -6,7 +6,7 @@ import { fadeUp, inView } from '../lib/motion';
 
 export function Prose({ children }) {
   return (
-    <div className="prose-body mx-auto max-w-prose">
+    <div className="prose-body w-full">
       {children}
     </div>
   );
@@ -97,7 +97,8 @@ export function ConstraintCallout({
       <div className="mt-5">
         <Link
           to={ctaLink}
-          className="inline-flex items-center gap-2 rounded-card bg-[#1C3D73] px-5 py-2.5 font-display text-xs font-semibold uppercase tracking-wider text-white shadow-sm transition-transform hover:-translate-y-0.5 hover:bg-[#2A5499]"
+          style={{ color: '#ffffff' }}
+          className="!text-white inline-flex items-center gap-2 rounded-card bg-[#1C3D73] px-5 py-2.5 font-display text-xs font-semibold uppercase tracking-wider shadow-sm transition-transform hover:-translate-y-0.5 hover:bg-[#2A5499]"
         >
           {ctaText} <span aria-hidden="true">→</span>
         </Link>

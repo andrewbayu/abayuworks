@@ -390,7 +390,21 @@ End of LASTMEM. Update this file when you ship anything material. It's committed
 
 ## Session AB292 · 2026-09-06
 - Added dual-visibility consulting acquisition UX:
-  1. Created `DesktopStickyRail` in `src/components/BlogSidebar.jsx`: fixed sticky side-rail on desktop (`xl:block`) with author photo, Fractional CMO role, 90-Min Diagnostic pitch, and direct audit apply CTA.
-  2. Created `MobileBookmarkDrawer` in `src/components/BlogSidebar.jsx`: an elegant floating bookmark ribbon button on mobile/tablet (`xl:hidden`) sticking to the right edge with a ribbon icon and vertical text ("GROWTH AUDIT"). Tapping opens a smooth, backdrop-blurred slide-up sheet/drawer with full 90-Minute Constraint Audit offer and Pre-Flight Checklist link.
+  1. Created `DesktopStickyRail` in `src/components/BlogSidebar.jsx`: fixed sticky side-rail on desktop with author photo, Fractional CMO role, and offer cards.
+  2. Created `MobileBookmarkDrawer` in `src/components/BlogSidebar.jsx`: an elegant floating bookmark ribbon button on mobile/tablet sticking to the right edge with a ribbon icon and vertical text ("GROWTH TOOLS"). Tapping opens a smooth, backdrop-blurred slide-up sheet/drawer with full offer cards.
   3. Integrated both into `src/pages/BlogPost.jsx` reading layout.
 - Verified build and SSG prerender across all 11 blog articles. Zero errors.
+
+## Session AB293 · 2026-09-06
+- Refactored blog post layout to a true 70/30 two-column grid starting from the very top of the article in `src/pages/BlogPost.jsx`:
+  1. Moved post cover image, article header metadata (tags, date, H1 title, standfirst), body prose, and `<OperatorBridge />` into the 70% left reading column (`lg:col-span-8`).
+  2. Kept the 30% right column (`lg:col-span-4`) dedicated to `<DesktopStickyRail />` from the top, providing balanced hierarchy on desktop viewports.
+  3. Updated `<Prose>` container in `src/components/Prose.jsx` to `w-full` so it fills the 70% column without redundant auto-margins.
+- Reordered sticky sidebar & mobile drawer offers in `src/components/BlogSidebar.jsx`:
+  1. Top offer: Free Field Guide (*Meta Ads Pre-Flight Checklist*) to capture top-of-funnel readers.
+  2. Bottom offer: Direct Consultation (*The 90-Minute Constraint Audit*) for high-intent visitors.
+- Fixed button text contrast across `.blog-light`:
+  1. Added CSS rules in `src/styles/index.css` overriding `.blog-light a` blue styling for filled buttons (`.btn-blue`, `a[class*="bg-[#1C3D73]"]`, `button[class*="bg-[#1C3D73]"]`).
+  2. Added inline `style={{ color: '#ffffff' }}` and `!text-white` to all CTA buttons in `BlogSidebar.jsx`, `OperatorBridge.jsx`, and `Prose.jsx` (`<ConstraintCallout>`).
+- Verified static site generation with 31 HTML pages built successfully.
+

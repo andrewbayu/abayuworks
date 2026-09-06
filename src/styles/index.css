@@ -108,6 +108,22 @@
 .blog-light .group-hover\:bg-cream { background-color:#1C3D73; }
 .blog-light .group-hover\:text-bg { color:#fff; }
 
+/* Filled button text readability inside .blog-light */
+.blog-light a.btn-blue,
+.blog-light a.bg-blue,
+.blog-light a[class*="bg-[#1C3D73]"],
+.blog-light a[class*="bg-blue"],
+.blog-light button[class*="bg-[#1C3D73]"],
+.blog-light button[class*="bg-blue"],
+.blog-light .btn-primary {
+  color: #ffffff !important;
+}
+.blog-light a[class*="bg-[#1C3D73]"]:hover,
+.blog-light a[class*="bg-blue"]:hover,
+.blog-light .btn-primary:hover {
+  color: #ffffff !important;
+}
+
 /* Scoped light treatment for the Digital Advantage Lab funnel. */
 .dal-light { color-scheme: light; }
 .dal-light .bg-grid {

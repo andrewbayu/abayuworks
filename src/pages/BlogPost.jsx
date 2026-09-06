@@ -52,58 +52,67 @@ export default function BlogPost({ slug: slugProp }) {
             />
 
       <div className="blog-light">
-            <article className="wrap pb-[50px] pt-20 sm:pt-24">
+        <article className="wrap pb-[50px] pt-20 sm:pt-24">
+          {/* Top Back Nav */}
+          <motion.div
+            initial={{ opacity: 0, y: 14 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.45 }}
+            className="mb-6"
+          >
+            <Link to="/blog/" className="text-sm text-muted transition-colors hover:text-ink">← Writing</Link>
+          </motion.div>
+
+          {/* 70/30 Grid Layout starting from the top */}
+          <div className="lg:grid lg:grid-cols-12 lg:gap-10 xl:gap-14 lg:items-start">
+            {/* Left Column (70% reading content: Cover, Header, Body, Bridge) */}
+            <div className="lg:col-span-8 min-w-0">
               <motion.div
-                initial={{ opacity: 0, y: 14 }}
+                initial={{ opacity: 0, y: 20 }}
                 animate={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.45 }}
-                className="mx-auto max-w-prose"
+                transition={{ duration: 0.55, delay: 0.08 }}
+                className="overflow-hidden rounded-card"
               >
-                <Link to="/blog/" className="text-sm text-muted transition-colors hover:text-ink">← Writing</Link>
+                <PostCover kind={post.kind} category={post.category} img={post.img} tall />
               </motion.div>
 
-        <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.55, delay: 0.08 }}
-          className="mx-auto mt-6 max-w-prose overflow-hidden rounded-card"
-        >
-          <PostCover kind={post.kind} category={post.category} img={post.img} tall />
-        </motion.div>
+              <motion.header
+                initial={{ opacity: 0, y: 20 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.55, delay: 0.16 }}
+                className="mt-8"
+              >
+                <div className="flex flex-wrap items-center gap-3 text-micro uppercase text-muted">
+                  <span>{post.kind}</span>
+                  <span className="text-faint">·</span>
+                  <span>{post.category}</span>
+                  <span className="text-faint">·</span>
+                  <time dateTime={post.date}>{post.dateLabel}</time>
+                </div>
+                <h1 className="mt-4 font-display text-3xl font-semibold leading-tight tracking-tight text-balance sm:text-4xl lg:text-[2.5rem]">
+                  {post.title}
+                </h1>
+                <p className="mt-5 font-serif text-lg leading-relaxed text-muted text-pretty">{post.standfirst}</p>
+              </motion.header>
 
-        <motion.header
-          initial={{ opacity: 0, y: 20 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.55, delay: 0.16 }}
-          className="mx-auto mt-8 max-w-prose"
-        >
-          <div className="flex flex-wrap items-center gap-3 text-micro uppercase text-muted">
-            <span>{post.kind}</span>
-            <span className="text-faint">·</span>
-            <span>{post.category}</span>
-            <span className="text-faint">·</span>
-            <time dateTime={post.date}>{post.dateLabel}</time>
-          </div>
-          <h1 className="mt-4 font-display text-3xl font-semibold leading-tight tracking-tight text-balance sm:text-4xl">
-            {post.title}
-          </h1>
-          <p className="mt-5 font-serif text-lg leading-relaxed text-muted text-pretty">{post.standfirst}</p>
-        </motion.header>
+              <div className="mt-10">
+                <Prose>
+                  <Body />
+                </Prose>
+                <OperatorBridge />
+              </div>
+            </div>
 
-        <div className="mt-10 xl:flex xl:items-start xl:justify-center xl:gap-10">
-          <div className="w-full max-w-prose">
-            <Prose>
-              <Body />
-            </Prose>
-            <OperatorBridge />
+            {/* Right Column (30% sticky rail on desktop) */}
+            <aside className="hidden lg:col-span-4 lg:block" aria-label="Author & Operating Tools">
+              <DesktopStickyRail />
+            </aside>
           </div>
 
-          <DesktopStickyRail />
-        </div>
-
-        <MobileBookmarkDrawer />
-      </article>
-    </div>
+          {/* Floating Bookmark Drawer on mobile (< lg) */}
+          <MobileBookmarkDrawer />
+        </article>
+      </div>
     </>
   );
 }
