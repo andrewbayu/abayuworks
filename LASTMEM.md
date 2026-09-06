@@ -447,3 +447,13 @@ End of LASTMEM. Update this file when you ship anything material. It's committed
      - `/blog/sea-social-behaviour-2026/` ("Dinamika Perilaku Media Sosial Asia Tenggara 2026: Algoritma, Kurasi AI, & Komunitas").
      - `/blog/dental-clinic-multi-branch-growth/` ("Studi Kasus Pertumbuhan Multi-Cabang Klinik Gigi: 6 Menjadi 10 Cabang Tanpa Mengorbankan Margin").
 - Verified `npm run build` with all 31 SSG prerendered pages passing cleanly.
+
+## Session AB299 · 2026-09-06
+- Tightened and trimmed article standfirsts (subheadline/intro paragraphs) by ~40% to eliminate bulky paragraph blocks:
+  1. `/blog/google-messy-middle-funnel-checkpoints/`:
+     - English: Trimmed from 74 words to 44 words (40.5% reduction) by removing conversational filler and highlighting the core deterministic state machine thesis.
+     - Indonesian: Trimmed from 84 words to 44 words (47% reduction).
+  2. `/blog/dental-clinic-multi-branch-growth/`:
+     - Trimmed both English and Indonesian standfirsts by ~35% for consistent reading density.
+- Verified build and SSG prerender across all 31 routes. Zero errors.
+

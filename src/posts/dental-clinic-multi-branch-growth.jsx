@@ -14,9 +14,9 @@ export const meta = {
   description:
     'A 360 growth system for a multi-branch Jakarta dental group: performance ads, a website funnel, AI-assisted WhatsApp CS, and a custom CRM. Leads grew from 120 to 421 per month at 6 to 7x ROAS.',
   standfirst:
-    'A multi-branch Jakarta dental group had strong offline credibility, but the digital system was leaking opportunities. The work was not "more ads." It was a connected acquisition engine: performance media, a website rebuilt as a funnel, AI-assisted WhatsApp CS, and a custom CRM. In three months, monthly leads went from 120 to 421, digital-influenced revenue reached Rp300 million per month, and ROAS held at 6 to 7x while the brand expanded from 6 to 10 branches.',
+    'A Jakarta dental group had strong offline credibility, but leaked digital opportunities. Rebuilding their acquisition engine—performance media, a website funnel, AI WhatsApp CS, and custom CRM—tripled monthly leads from 120 to 421 and drove Rp300M/month at 6–7x ROAS as they scaled from 6 to 10 branches.',
   standfirstId:
-    'Sebuah grup klinik gigi multi-cabang di Jakarta memiliki reputasi offline yang solid, namun sistem digitalnya mengalami banyak kebocoran peluang. Solusinya bukan sekadar "tambah budget iklan." Kuncinya adalah menyatukan mesin akuisisi terpadu: performance ads, website yang dirombak menjadi funnel, CS WhatsApp bertenaga AI, dan CRM kustom. Dalam 3 bulan, leads bulanan melonjak dari 120 menjadi 421, revenue terpengaruh digital mencapai Rp300 juta/bulan, dan ROAS terjaga stabil di 6–7x sembari klinik berekspansi dari 6 menjadi 10 cabang.',
+    'Klinik gigi di Jakarta ini memiliki reputasi offline solid, tetapi sistem digitalnya bocor. Membangun mesin akuisisi terpadu—iklan performa, website funnel, CS WhatsApp AI, dan CRM kustom—melonjakkan leads dari 120 ke 421/bulan dan menghasilkan Rp300 juta/bulan pada 6–7x ROAS seiring ekspansi dari 6 ke 10 cabang.',
   img: 'https://storage.googleapis.com/bluestark_explorer/scalingdentalclinic.jpg',
   tags: ['Healthcare', 'Multi-branch', 'Performance', 'CRM', 'AI CS', 'Funnel'],
 };

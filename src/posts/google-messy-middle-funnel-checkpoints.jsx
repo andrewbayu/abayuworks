@@ -31,9 +31,9 @@ export const meta = {
   description:
     'Why Google’s Messy Middle does not mean funnels are dead. Aditya explains why customer psychology wanders while business processes remain linear checkpoints, and how feeding clean signals scales ad engines sustainably.',
   standfirst:
-    'Customer journeys wander. Business processes cannot. In my operating work, I constantly see marketers cite Google’s Messy Middle to justify abandoning structured funnels for viral hooks and top-of-funnel noise. My principle is the opposite: while customer psychology loops between exploration and evaluation, the commercial funnel is a deterministic state machine. In the AI era, disciplined funnel checkpoints are what provide the clean telemetry required to scale ad engines sustainably.',
+    "Customer journeys wander. Business processes cannot. While buyer psychology loops between exploration and evaluation in Google's Messy Middle, the commercial funnel remains a deterministic state machine: disciplined checkpoints that provide clean telemetry for AI ad engines to scale sustainably.",
   standfirstId:
-    'Customer journey memang berantakan dan berputar-putar. Namun proses bisnis tidak boleh ikut berantakan. Di lapangan, saya sering sekali melihat marketer salah kaprah mengutip riset Messy Middle dari Google untuk membenarkan kebiasaan membuang funnel dan hanya mengandalkan konten viral/hook tinggi. Prinsip saya justru sebaliknya: psikologi audiens boleh saja berputar antara eksplorasi dan evaluasi, tetapi funnel bisnis adalah sebuah mesin deterministic state machine. Di era kecerdasan buatan (AI) saat ini, checkpoint funnel yang disiplin justru merupakan syarat mutlak untuk memberi makan telemetri sinyal yang rapi ke mesin iklan agar bisnis bisa scaling secara berkelanjutan.',
+    'Customer journey boleh berputar, tetapi proses bisnis tidak boleh. Ketika psikologi audiens berulang antara eksplorasi dan evaluasi di Messy Middle Google, funnel komersial tetaplah state machine deterministik: checkpoint disiplin yang memasok telemetri sinyal bersih agar mesin iklan AI bisa scaling berkelanjutan.',
   img: 'https://storage.googleapis.com/bluestark_explorer/infinitiworks/funnelgooglemessymiddle.png',
   tags: ['Messy Middle', 'Funnel Architecture', 'AI Telemetry', 'Meta Andromeda', 'Performance Marketing', 'Growth Systems'],
 };
