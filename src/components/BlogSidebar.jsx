@@ -26,11 +26,21 @@ export function DesktopStickyRail() {
       </div>
 
       {/* 2. Top Offer: Free Field Guide (Meta Ads Pre-Flight Checklist) */}
-      <div className="rounded-card border border-[#dfe4eb] bg-[#f8fafc] p-4 shadow-sm">
+      <div className="overflow-hidden rounded-card border border-[#dfe4eb] bg-[#f8fafc] p-4 shadow-sm">
         <div className="inline-flex items-center gap-1.5 rounded-full bg-[#e2e8f0] px-2 py-0.5 text-[10px] font-bold uppercase tracking-wider text-[#4a5568]">
           Free Field Guide
         </div>
-        <h4 className="mt-2 font-display text-sm font-semibold leading-snug text-ink">
+        <div className="mt-2.5 overflow-hidden rounded-md border border-[#e2e8f0] bg-white">
+          <img
+            src="https://storage.googleapis.com/bluestark_explorer/infinitiworks/Preflight-checklist-mockup.png"
+            alt="Meta Ads Pre-Flight Checklist Mockup"
+            width="600"
+            height="340"
+            loading="lazy"
+            className="w-full h-auto object-cover transition-transform duration-300 hover:scale-[1.02]"
+          />
+        </div>
+        <h4 className="mt-2.5 font-display text-sm font-semibold leading-snug text-ink">
           Before you spend on ads, audit the system.
         </h4>
         <p className="mt-1 font-serif text-xs leading-relaxed text-[#44474f]">
@@ -169,11 +179,21 @@ export function MobileBookmarkDrawer() {
               </div>
 
               {/* 1. Free Field Guide (First) */}
-              <div className="mt-5 rounded-xl border border-[#dfe4eb] bg-[#f8fafc] p-4">
+              <div className="mt-5 overflow-hidden rounded-xl border border-[#dfe4eb] bg-[#f8fafc] p-4">
                 <div className="inline-flex items-center gap-1.5 rounded-full bg-[#e2e8f0] px-2 py-0.5 text-[10px] font-bold uppercase tracking-wider text-[#4a5568]">
                   Free Field Guide
                 </div>
-                <h3 className="mt-1.5 font-display text-sm font-semibold leading-snug text-ink">
+                <div className="mt-2.5 overflow-hidden rounded-lg border border-[#e2e8f0] bg-white">
+                  <img
+                    src="https://storage.googleapis.com/bluestark_explorer/infinitiworks/Preflight-checklist-mockup.png"
+                    alt="Meta Ads Pre-Flight Checklist Mockup"
+                    width="600"
+                    height="340"
+                    loading="lazy"
+                    className="w-full h-auto object-cover"
+                  />
+                </div>
+                <h3 className="mt-2 font-display text-sm font-semibold leading-snug text-ink">
                   Meta Ads Pre-Flight Checklist
                 </h3>
                 <p className="mt-1 font-serif text-xs leading-relaxed text-[#44474f]">

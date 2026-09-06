@@ -408,3 +408,12 @@ End of LASTMEM. Update this file when you ship anything material. It's committed
   2. Added inline `style={{ color: '#ffffff' }}` and `!text-white` to all CTA buttons in `BlogSidebar.jsx`, `OperatorBridge.jsx`, and `Prose.jsx` (`<ConstraintCallout>`).
 - Verified static site generation with 31 HTML pages built successfully.
 
+## Session AB294 · 2026-09-06
+- Embedded the official product mockup image (`https://storage.googleapis.com/bluestark_explorer/infinitiworks/Preflight-checklist-mockup.png`) directly without downloading across all touchpoints:
+  1. `DesktopStickyRail` in `src/components/BlogSidebar.jsx`: Added mockup preview to the Free Field Guide card.
+  2. `MobileBookmarkDrawer` in `src/components/BlogSidebar.jsx`: Added mockup preview inside the mobile drawer.
+  3. `OperatorBridge` in `src/components/OperatorBridge.jsx`: Added mockup preview to the Tier 2 self-service card.
+  4. `PreflightChecklist` landing page (`src/pages/PreflightChecklist.jsx`): Embedded high-res visual mockup above the fold right before the opt-in form.
+- Verified build and SSG prerender across all 31 routes. Zero errors.
+
+

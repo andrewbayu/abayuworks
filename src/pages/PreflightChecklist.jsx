@@ -175,6 +175,21 @@ export default function PreflightChecklist() {
             the exact pre-flight that catches them.
           </motion.p>
 
+          {/* Product Visual Mockup */}
+          <motion.div
+            variants={fadeUp}
+            className="mt-8 overflow-hidden rounded-card border border-line bg-surface/50 p-2 sm:p-3 shadow-card"
+          >
+            <img
+              src="https://storage.googleapis.com/bluestark_explorer/infinitiworks/Preflight-checklist-mockup.png"
+              alt="The Meta Ads Pre-Flight Checklist Mockup"
+              width="900"
+              height="510"
+              loading="eager"
+              className="w-full h-auto rounded-md object-cover shadow-sm"
+            />
+          </motion.div>
+
           {/* Above-the-fold opt-in */}
           <motion.div variants={fadeUp} className="mt-8">
             <OptInForm id="optin-top" />

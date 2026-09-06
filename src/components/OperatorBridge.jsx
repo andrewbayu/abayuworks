@@ -96,6 +96,16 @@ export default function OperatorBridge() {
             <div className="inline-flex items-center gap-1.5 rounded-full bg-[#e2e8f0] px-2.5 py-1 text-micro font-semibold uppercase tracking-wider text-[#4a5568]">
               Free Field Guide
             </div>
+            <div className="mt-3 overflow-hidden rounded-md border border-[#dfe4eb] bg-white">
+              <img
+                src="https://storage.googleapis.com/bluestark_explorer/infinitiworks/Preflight-checklist-mockup.png"
+                alt="Meta Ads Pre-Flight Checklist Mockup"
+                width="600"
+                height="340"
+                loading="lazy"
+                className="w-full h-auto object-cover transition-transform duration-300 hover:scale-[1.02]"
+              />
+            </div>
             <h4 className="mt-3 font-display text-lg font-semibold leading-snug text-ink">
               Meta Ads Pre-Flight Checklist
             </h4>
