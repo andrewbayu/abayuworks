@@ -366,3 +366,10 @@ node -e "const sharp=require('sharp');const fs=require('fs');sharp(Buffer.from(f
 End of LASTMEM. Update this file when you ship anything material. It's committed to the public repo by design, so no secrets.
 ## Session CMO289 · 2026-09-04
 - Reworked the homepage contact section into a consent-based `The CMO Notes` newsletter signup. Consented lead magnets and DAL applications now also join the optional universal newsletter segment and trigger `newsletter.subscribed`, while their campaign-specific sequences remain separate.
+
+## Session AB290 · 2026-09-06
+- Added editorial article `Why the Funnel is More Linear Than Ever in the Era of the Messy Middle` (`/blog/google-messy-middle-funnel-checkpoints/`).
+- Deconstructed the common misunderstanding of Google's 2020 Messy Middle study (the competitor subsidy trap of relying solely on viral hooks).
+- Clarified the distinction between consumer psychological wandering (non-linear loop) and commercial state machine physics (`ViewContent` -> `AddToCart` -> `Lead/Checkout` -> `Purchase`), AIDA as a copywriting framework vs Funnel as a telemetry architecture, and why clean sequential signals are required to sustainably feed modern AI ad engines (Meta Andromeda / Smart Bidding).
+- Created and linked accompanying hand-drawn editorial doodle diagram in `public/images/blog/google-messy-middle-funnel-checkpoints/funnel-telemetry-doodle.jpg` following `adityabayu-com-visual-editorial` guidelines.
+- Verified build and static site generation with 11 blog posts and updated sitemap.

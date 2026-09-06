@@ -9,8 +9,9 @@ import * as growthCurve from './growth-curve-method-2026.jsx';
 import * as xniper from './xniper-hybrid-behavioral-synthetic-modeling.jsx';
 import * as seaSocial from './sea-social-behaviour-2026.jsx';
 import * as andromeda from './andromeda-ads-engine-what-matters.jsx';
+import * as messyMiddle from './google-messy-middle-funnel-checkpoints.jsx';
 
-const modules = [andromeda, seaSocial, dental, kicaufest, wse, bpr, hypebuzz, hacktiv8, growthCurve, xniper];
+const modules = [messyMiddle, andromeda, seaSocial, dental, kicaufest, wse, bpr, hypebuzz, hacktiv8, growthCurve, xniper];
 
 // Newest first.
 export const posts = modules
