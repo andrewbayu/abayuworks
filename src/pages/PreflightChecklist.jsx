@@ -140,28 +140,7 @@ const phases = [
   },
 ];
 
-const visualFrameworks = [
-  {
-    title: 'The Andromeda Retrieval Pipeline',
-    desc: 'Memahami bagaimana AI Meta memfilter puluhan juta iklan menjadi beberapa kandidat terpilih sebelum masuk ranking dan auction.',
-    img: '/images/blog/andromeda/pipeline-doodle.png',
-  },
-  {
-    title: 'The 3-Layer Operating Architecture',
-    desc: 'Menghubungkan Business Constraints (margin & kapasitas), Creative Portfolio, dan Signal Quality menjadi satu siklus utuh.',
-    img: '/images/blog/andromeda/operating-model-doodle.png',
-  },
-  {
-    title: 'The 6-Angle Creative Portfolio Matrix',
-    desc: 'Panduan visual 6 pintu masuk psikologis berbeda agar iklan Anda tidak saling kanibal di lelang internal Meta.',
-    img: '/images/blog/andromeda/creative-portfolio-doodle.png',
-  },
-  {
-    title: 'The Closed-Loop Measurement Engine',
-    desc: 'Menghubungkan sinyal creative, platform delivery, hingga qualified revenue di CRM tanpa terjebak ilusi dashboard ROAS.',
-    img: '/images/blog/andromeda/measurement-loop-doodle.png',
-  },
-];
+
 
 const fixes = [
   {
@@ -454,40 +433,6 @@ export default function PreflightChecklist() {
             </div>
           </motion.section>
 
-          {/* Visual Frameworks Section */}
-          <motion.section {...inView} variants={stagger(0.07)} className="mt-16">
-            <motion.p variants={fadeUp} className="eyebrow">
-              EDITORIAL SKETCHNOTES
-            </motion.p>
-            <motion.h2
-              variants={fadeUp}
-              className="mt-2 font-display text-2xl font-bold tracking-tight text-ink sm:text-3xl"
-            >
-              4 Framework Visual Andal Siap Pakai
-            </motion.h2>
-            <motion.p variants={fadeUp} className="mt-2 text-muted">
-              Bukan teori abstrak. Dilengkapi diagram hand-drawn sketchnote untuk menyatukan pemahaman tim Anda:
-            </motion.p>
-
-            <div className="mt-6 grid grid-cols-1 gap-4 sm:grid-cols-2">
-              {visualFrameworks.map((vf, idx) => (
-                <motion.div key={idx} variants={fadeUp} className="card overflow-hidden p-4">
-                  <img
-                    src={vf.img}
-                    alt={vf.title}
-                    loading="lazy"
-                    className="w-full rounded-card border border-line bg-surface object-cover transition-transform duration-300 hover:scale-[1.02]"
-                  />
-                  <h3 className="mt-3 font-display text-sm font-bold text-ink">
-                    {vf.title}
-                  </h3>
-                  <p className="mt-1 text-xs text-muted leading-relaxed">
-                    {vf.desc}
-                  </p>
-                </motion.div>
-              ))}
-            </div>
-          </motion.section>
 
           {/* What This Fixes Immediately */}
           <motion.section {...inView} variants={stagger(0.07)} className="mt-16 border-t border-line pt-12">

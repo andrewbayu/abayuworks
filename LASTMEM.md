@@ -427,6 +427,12 @@ End of LASTMEM. Update this file when you ship anything material. It's committed
   6. Updated `PreflightChecklist.jsx` with corrected `LYNK_CHECKOUT_URL` (`https://lynk.id/growthlab/k3ryx868xg2r`).
 - Verified build and SSG prerender across all 31 routes. Zero errors.
 
+## Session AB297 · 2026-09-06
+- Removed the "EDITORIAL SKETCHNOTES / 4 Framework Visual Andal Siap Pakai" section from `PreflightChecklist.jsx` to prevent spoiling internal ebook material on the sales landing page.
+- Cleaned up unused `visualFrameworks` data constant.
+- Verified build and SSG prerender across all 31 routes. Zero errors.
+
+
 
 
 
