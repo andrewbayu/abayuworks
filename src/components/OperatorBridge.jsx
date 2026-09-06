@@ -93,46 +93,50 @@ export default function OperatorBridge() {
         {/* Tier 2: Mid-Intent Self-Service (The Free Operating Tool) */}
         <div className="flex flex-col justify-between rounded-card border border-[#dfe4eb] bg-[#f8fafc] p-6">
           <div>
-            <div className="inline-flex items-center gap-1.5 rounded-full bg-[#e2e8f0] px-2.5 py-1 text-micro font-semibold uppercase tracking-wider text-[#4a5568]">
-              Free Field Guide
+            <div className="inline-flex items-center gap-1.5 rounded-full bg-[#FFE8D4] px-2.5 py-0.5 text-micro font-bold uppercase tracking-wider text-[#1C3D73] border border-[#1C3D73]/15">
+              <span className="h-1.5 w-1.5 rounded-full bg-[#1C3D73] animate-pulse" />
+              FREE DOWNLOAD
             </div>
-            <div className="mt-3 overflow-hidden rounded-md border border-[#dfe4eb] bg-white">
+            
+            <div className="mt-3 text-center">
               <img
                 src="https://storage.googleapis.com/bluestark_explorer/infinitiworks/Preflight-checklist-mockup.png"
                 alt="Meta Ads Pre-Flight Checklist Mockup"
                 width="600"
                 height="340"
                 loading="lazy"
-                className="w-full h-auto object-cover transition-transform duration-300 hover:scale-[1.02]"
+                className="mx-auto w-full max-w-[220px] h-auto object-contain drop-shadow-md transition-transform duration-300 hover:scale-105"
               />
             </div>
-            <h4 className="mt-3 font-display text-lg font-semibold leading-snug text-ink">
-              Meta Ads Pre-Flight Checklist
+
+            <h4 className="mt-4 font-display text-lg font-bold leading-snug text-ink">
+              Stop Bleeding Ad Spend on Broken Signals.
             </h4>
             <p className="mt-2 font-serif text-sm leading-relaxed text-[#44474f]">
-              Before you launch paid campaigns, audit the system. Get the same 5-point gate we use at InfinitiLabs to catch wasted ad spend, offer flaws, and faulty telemetry.
+              Before you launch paid campaigns, audit the system. Get the exact 5-point gate we use at InfinitiLabs to catch wasted budget, faulty telemetry, and broken offer hooks.
             </p>
             <ul className="mt-4 space-y-2 text-xs font-serif text-[#44474f]">
               <li className="flex items-start gap-2">
-                <span className="mt-1 h-1 w-1 rounded-full bg-[#718096] flex-shrink-0" />
-                <span>Offer, proof, and capacity verification gate.</span>
+                <span className="mt-1 h-1 w-1 rounded-full bg-[#1C3D73] flex-shrink-0" />
+                <span>Offer, proof, and commercial capacity verification gate.</span>
               </li>
               <li className="flex items-start gap-2">
-                <span className="mt-1 h-1 w-1 rounded-full bg-[#718096] flex-shrink-0" />
-                <span>Event deduplication and signal quality audit.</span>
+                <span className="mt-1 h-1 w-1 rounded-full bg-[#1C3D73] flex-shrink-0" />
+                <span>CAPI event deduplication & match quality audit.</span>
               </li>
               <li className="flex items-start gap-2">
-                <span className="mt-1 h-1 w-1 rounded-full bg-[#718096] flex-shrink-0" />
-                <span>Instant PDF download. No spam.</span>
+                <span className="mt-1 h-1 w-1 rounded-full bg-[#1C3D73] flex-shrink-0" />
+                <span>Instant PDF download. 100% free, no spam.</span>
               </li>
             </ul>
           </div>
           <div className="mt-6 pt-4 border-t border-[#e2e8f0]">
             <Link
               to="/preflight-checklist/"
-              className="inline-flex w-full items-center justify-center gap-2 rounded-card border border-[#1C3D73] bg-white px-4 py-3 font-display text-sm font-medium text-[#1C3D73] transition-all hover:bg-[#f1f5f9]"
+              style={{ color: '#ffffff' }}
+              className="btn-gradient-glow inline-flex w-full items-center justify-center gap-2 rounded-card px-4 py-3 font-display text-sm font-bold uppercase tracking-wider transition-all hover:-translate-y-0.5"
             >
-              Get the free checklist <span aria-hidden="true">→</span>
+              Download Free Checklist <span aria-hidden="true">→</span>
             </Link>
           </div>
         </div>

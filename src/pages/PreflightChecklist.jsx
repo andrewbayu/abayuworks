@@ -111,7 +111,7 @@ export function OptInForm({ id, cta = 'Send me the checklist' }) {
         <button
           type="submit"
           disabled={state === 'sending'}
-          className="inline-flex shrink-0 items-center justify-center gap-2 rounded-card bg-blue px-5 py-3 font-medium text-white transition-colors hover:bg-blue-soft disabled:opacity-60 sm:px-6"
+          className="btn-gradient-glow inline-flex shrink-0 items-center justify-center gap-2 rounded-card px-5 py-3 font-medium text-white transition-all disabled:opacity-60 sm:px-6"
         >
           {state === 'sending' ? 'Sending…' : `${cta} →`}
         </button>
@@ -175,10 +175,10 @@ export default function PreflightChecklist() {
             the exact pre-flight that catches them.
           </motion.p>
 
-          {/* Product Visual Mockup */}
+          {/* Product Visual Mockup - raw image without container/frame */}
           <motion.div
             variants={fadeUp}
-            className="mt-8 overflow-hidden rounded-card border border-line bg-surface/50 p-2 sm:p-3 shadow-card"
+            className="mt-8 text-center"
           >
             <img
               src="https://storage.googleapis.com/bluestark_explorer/infinitiworks/Preflight-checklist-mockup.png"
@@ -186,7 +186,7 @@ export default function PreflightChecklist() {
               width="900"
               height="510"
               loading="eager"
-              className="w-full h-auto rounded-md object-cover shadow-sm"
+              className="mx-auto w-full max-w-[340px] sm:max-w-[400px] h-auto object-contain drop-shadow-2xl"
             />
           </motion.div>
 

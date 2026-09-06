@@ -409,11 +409,16 @@ End of LASTMEM. Update this file when you ship anything material. It's committed
 - Verified static site generation with 31 HTML pages built successfully.
 
 ## Session AB294 · 2026-09-06
-- Embedded the official product mockup image (`https://storage.googleapis.com/bluestark_explorer/infinitiworks/Preflight-checklist-mockup.png`) directly without downloading across all touchpoints:
-  1. `DesktopStickyRail` in `src/components/BlogSidebar.jsx`: Added mockup preview to the Free Field Guide card.
-  2. `MobileBookmarkDrawer` in `src/components/BlogSidebar.jsx`: Added mockup preview inside the mobile drawer.
-  3. `OperatorBridge` in `src/components/OperatorBridge.jsx`: Added mockup preview to the Tier 2 self-service card.
-  4. `PreflightChecklist` landing page (`src/pages/PreflightChecklist.jsx`): Embedded high-res visual mockup above the fold right before the opt-in form.
+- Embedded the official product mockup image (`https://storage.googleapis.com/bluestark_explorer/infinitiworks/Preflight-checklist-mockup.png`) directly without downloading across all touchpoints.
 - Verified build and SSG prerender across all 31 routes. Zero errors.
+
+## Session AB295 · 2026-09-06
+- Visual & Copywriting enhancements for Meta Ads Pre-Flight Checklist acquisition:
+  1. Removed container background (`bg-white`) and border frames around the mockup image across `DesktopStickyRail`, `MobileBookmarkDrawer`, `OperatorBridge`, and `PreflightChecklist` landing page. Mockup now floats cleanly with drop-shadow.
+  2. Changed ambiguous `FREE FIELD GUIDE` badge to high-clarity, high-urgency `FREE DOWNLOAD` badge with active pulse indicator (`bg-[#FFE8D4] text-[#1C3D73] animate-pulse`).
+  3. Replaced generic copy with high-urgency hook: *"Stop Bleeding Ad Spend on Broken Signals. Meta's AI decides who sees your ads. Don't let it guess with your budget. Grab the battle-tested 5-point gate to catch costly tracking leaks and offer flaws before you spend another rupiah."*
+  4. Added attention-grabbing animated gradient glow button (`.btn-gradient-glow` in `src/styles/index.css`) with smooth shifting gradient between deep navy, vibrant blue, and electric fiery red (`#D9381E`) + hover acceleration.
+- Verified build and SSG prerender across all 31 routes. Zero errors.
+
 
 

@@ -25,34 +25,38 @@ export function DesktopStickyRail() {
         </div>
       </div>
 
-      {/* 2. Top Offer: Free Field Guide (Meta Ads Pre-Flight Checklist) */}
+      {/* 2. Top Offer: Free Download (Meta Ads Pre-Flight Checklist) */}
       <div className="overflow-hidden rounded-card border border-[#dfe4eb] bg-[#f8fafc] p-4 shadow-sm">
-        <div className="inline-flex items-center gap-1.5 rounded-full bg-[#e2e8f0] px-2 py-0.5 text-[10px] font-bold uppercase tracking-wider text-[#4a5568]">
-          Free Field Guide
+        <div className="inline-flex items-center gap-1.5 rounded-full bg-[#FFE8D4] px-2.5 py-0.5 text-[10px] font-bold uppercase tracking-wider text-[#1C3D73] border border-[#1C3D73]/15">
+          <span className="h-1.5 w-1.5 rounded-full bg-[#1C3D73] animate-pulse" />
+          FREE DOWNLOAD
         </div>
-        <div className="mt-2.5 overflow-hidden rounded-md border border-[#e2e8f0] bg-white">
+        
+        {/* Direct raw mockup image - no background, no border container */}
+        <div className="mt-2 text-center">
           <img
             src="https://storage.googleapis.com/bluestark_explorer/infinitiworks/Preflight-checklist-mockup.png"
             alt="Meta Ads Pre-Flight Checklist Mockup"
             width="600"
             height="340"
             loading="lazy"
-            className="w-full h-auto object-cover transition-transform duration-300 hover:scale-[1.02]"
+            className="mx-auto w-full max-w-[210px] h-auto object-contain drop-shadow-md transition-transform duration-300 hover:scale-105"
           />
         </div>
-        <h4 className="mt-2.5 font-display text-sm font-semibold leading-snug text-ink">
-          Before you spend on ads, audit the system.
+
+        <h4 className="mt-2.5 font-display text-[15px] font-bold leading-snug text-ink">
+          Stop Bleeding Ad Spend on Broken Signals.
         </h4>
         <p className="mt-1 font-serif text-xs leading-relaxed text-[#44474f]">
-          Get the 5-point checklist we use at InfinitiLabs to catch wasted ad spend and faulty telemetry before launch.
+          Meta's AI decides who sees your ads. Don't let it guess with your budget. Grab the battle-tested 5-point gate to catch costly tracking leaks and offer flaws before you spend another rupiah.
         </p>
         <div className="mt-3.5">
           <Link
             to="/preflight-checklist/"
             style={{ color: '#ffffff' }}
-            className="!text-white inline-flex w-full items-center justify-center gap-1.5 rounded-card bg-[#1C3D73] px-3 py-2.5 font-display text-xs font-semibold shadow-sm transition-all hover:bg-[#2A5499] hover:-translate-y-0.5"
+            className="btn-gradient-glow inline-flex w-full items-center justify-center gap-2 rounded-card px-3.5 py-2.5 font-display text-xs font-bold uppercase tracking-wider transition-all hover:-translate-y-0.5"
           >
-            Get Free Checklist <span aria-hidden="true">→</span>
+            Download Free Checklist <span aria-hidden="true">→</span>
           </Link>
         </div>
       </div>
@@ -178,35 +182,36 @@ export function MobileBookmarkDrawer() {
                 </div>
               </div>
 
-              {/* 1. Free Field Guide (First) */}
+              {/* 1. Free Download (First) */}
               <div className="mt-5 overflow-hidden rounded-xl border border-[#dfe4eb] bg-[#f8fafc] p-4">
-                <div className="inline-flex items-center gap-1.5 rounded-full bg-[#e2e8f0] px-2 py-0.5 text-[10px] font-bold uppercase tracking-wider text-[#4a5568]">
-                  Free Field Guide
+                <div className="inline-flex items-center gap-1.5 rounded-full bg-[#FFE8D4] px-2.5 py-0.5 text-[10px] font-bold uppercase tracking-wider text-[#1C3D73] border border-[#1C3D73]/15">
+                  <span className="h-1.5 w-1.5 rounded-full bg-[#1C3D73] animate-pulse" />
+                  FREE DOWNLOAD
                 </div>
-                <div className="mt-2.5 overflow-hidden rounded-lg border border-[#e2e8f0] bg-white">
+                <div className="mt-2 text-center">
                   <img
                     src="https://storage.googleapis.com/bluestark_explorer/infinitiworks/Preflight-checklist-mockup.png"
                     alt="Meta Ads Pre-Flight Checklist Mockup"
                     width="600"
                     height="340"
                     loading="lazy"
-                    className="w-full h-auto object-cover"
+                    className="mx-auto w-full max-w-[190px] h-auto object-contain drop-shadow-md"
                   />
                 </div>
-                <h3 className="mt-2 font-display text-sm font-semibold leading-snug text-ink">
-                  Meta Ads Pre-Flight Checklist
+                <h3 className="mt-2 font-display text-[15px] font-bold leading-snug text-ink">
+                  Stop Bleeding Ad Spend on Broken Signals.
                 </h3>
                 <p className="mt-1 font-serif text-xs leading-relaxed text-[#44474f]">
-                  Before launching paid ads, audit your offer, tracking, and telemetry with our 5-point gate.
+                  Audit tracking, creative hooks, and telemetry before launch with our 5-point field gate.
                 </p>
-                <div className="mt-3">
+                <div className="mt-3.5">
                   <Link
                     to="/preflight-checklist/"
                     onClick={() => setOpen(false)}
                     style={{ color: '#ffffff' }}
-                    className="!text-white inline-flex w-full items-center justify-center gap-2 rounded-card bg-[#1C3D73] px-3.5 py-2.5 font-display text-xs font-semibold shadow-sm transition-all hover:bg-[#2A5499]"
+                    className="btn-gradient-glow inline-flex w-full items-center justify-center gap-2 rounded-card px-3.5 py-2.5 font-display text-xs font-bold uppercase tracking-wider transition-all"
                   >
-                    Get Free Checklist <span aria-hidden="true">→</span>
+                    Download Free Checklist <span aria-hidden="true">→</span>
                   </Link>
                 </div>
               </div>

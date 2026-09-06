@@ -113,6 +113,7 @@
 .blog-light a.bg-blue,
 .blog-light a[class*="bg-[#1C3D73]"],
 .blog-light a[class*="bg-blue"],
+.blog-light a.btn-gradient-glow,
 .blog-light button[class*="bg-[#1C3D73]"],
 .blog-light button[class*="bg-blue"],
 .blog-light .btn-primary {
@@ -120,8 +121,29 @@
 }
 .blog-light a[class*="bg-[#1C3D73]"]:hover,
 .blog-light a[class*="bg-blue"]:hover,
+.blog-light a.btn-gradient-glow:hover,
 .blog-light .btn-primary:hover {
   color: #ffffff !important;
+}
+
+/* Attention-grabbing animated gradient button */
+@keyframes gradient-shimmer {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
+
+.btn-gradient-glow {
+  background: linear-gradient(135deg, #1C3D73 0%, #2A5499 28%, #D9381E 52%, #2A5499 76%, #1C3D73 100%) !important;
+  background-size: 250% 250% !important;
+  animation: gradient-shimmer 4s ease infinite;
+  box-shadow: 0 4px 15px -2px rgba(28, 61, 115, 0.45), 0 2px 6px rgba(217, 56, 30, 0.25);
+  color: #ffffff !important;
+}
+
+.btn-gradient-glow:hover {
+  animation-duration: 2s;
+  box-shadow: 0 6px 20px -2px rgba(28, 61, 115, 0.6), 0 4px 12px rgba(217, 56, 30, 0.4);
 }
 
 /* Scoped light treatment for the Digital Advantage Lab funnel. */
