@@ -368,8 +368,14 @@ End of LASTMEM. Update this file when you ship anything material. It's committed
 - Reworked the homepage contact section into a consent-based `The CMO Notes` newsletter signup. Consented lead magnets and DAL applications now also join the optional universal newsletter segment and trigger `newsletter.subscribed`, while their campaign-specific sequences remain separate.
 
 ## Session AB290 · 2026-09-06
-- Added editorial article `Why the Funnel is More Linear Than Ever in the Era of the Messy Middle` (`/blog/google-messy-middle-funnel-checkpoints/`).
+- Added editorial article `Why the Funnel is More Linear Than Ever in the Era of the Messy Middle` (`/blog/google-messy-middle-funnel-checkpoints/`) written from Aditya's first-person operator perspective.
+- Set featured cover image to `https://storage.googleapis.com/bluestark_explorer/infinitiworks/funnelgooglemessymiddle.png`.
 - Deconstructed the common misunderstanding of Google's 2020 Messy Middle study (the competitor subsidy trap of relying solely on viral hooks).
 - Clarified the distinction between consumer psychological wandering (non-linear loop) and commercial state machine physics (`ViewContent` -> `AddToCart` -> `Lead/Checkout` -> `Purchase`), AIDA as a copywriting framework vs Funnel as a telemetry architecture, and why clean sequential signals are required to sustainably feed modern AI ad engines (Meta Andromeda / Smart Bidding).
-- Created and linked accompanying hand-drawn editorial doodle diagram in `public/images/blog/google-messy-middle-funnel-checkpoints/funnel-telemetry-doodle.jpg` following `adityabayu-com-visual-editorial` guidelines.
+- Created and embedded 5 hand-drawn editorial doodle diagrams in `public/images/blog/google-messy-middle-funnel-checkpoints/` following `adityabayu-com-visual-editorial`:
+  1. `funnel-telemetry-doodle.jpg` (Overview: consumer wandering loop vs linear telemetry state machine).
+  2. `competitor-subsidy-trap-doodle.jpg` (The competitor subsidy trap).
+  3. `aida-vs-funnel-doodle.jpg` (AIDA 45s message script vs Funnel operational state machine).
+  4. `ai-telemetry-doodle.jpg` (AI advertising telemetry: shallow hook signals vs disciplined checkpoints).
+  5. `four-gravity-checkpoints-doodle.jpg` (The 4 gravity checkpoints blueprint).
 - Verified build and static site generation with 11 blog posts and updated sitemap.
