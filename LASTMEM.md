@@ -387,3 +387,10 @@ End of LASTMEM. Update this file when you ship anything material. It's committed
   3. Wired `<OperatorBridge />` into `src/pages/BlogPost.jsx` so every present and future article automatically converts readers into consulting clients.
   4. Inserted `<ConstraintCallout />` into `/blog/google-messy-middle-funnel-checkpoints/` after the Competitor Subsidy Trap section.
 - Verified SSG prerender across all 11 articles. All pages built with zero errors.
+
+## Session AB292 · 2026-09-06
+- Added dual-visibility consulting acquisition UX:
+  1. Created `DesktopStickyRail` in `src/components/BlogSidebar.jsx`: fixed sticky side-rail on desktop (`xl:block`) with author photo, Fractional CMO role, 90-Min Diagnostic pitch, and direct audit apply CTA.
+  2. Created `MobileBookmarkDrawer` in `src/components/BlogSidebar.jsx`: an elegant floating bookmark ribbon button on mobile/tablet (`xl:hidden`) sticking to the right edge with a ribbon icon and vertical text ("GROWTH AUDIT"). Tapping opens a smooth, backdrop-blurred slide-up sheet/drawer with full 90-Minute Constraint Audit offer and Pre-Flight Checklist link.
+  3. Integrated both into `src/pages/BlogPost.jsx` reading layout.
+- Verified build and SSG prerender across all 11 blog articles. Zero errors.

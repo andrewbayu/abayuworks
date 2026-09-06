@@ -4,6 +4,7 @@ import Seo from '../components/Seo';
 import PostCover from '../components/PostCover';
 import { Prose } from '../components/Prose';
 import OperatorBridge from '../components/OperatorBridge';
+import { DesktopStickyRail, MobileBookmarkDrawer } from '../components/BlogSidebar';
 import { postBySlug } from '../posts';
 import { site } from '../data/site';
 import { fadeUp } from '../lib/motion';
@@ -89,13 +90,18 @@ export default function BlogPost({ slug: slugProp }) {
           <p className="mt-5 font-serif text-lg leading-relaxed text-muted text-pretty">{post.standfirst}</p>
         </motion.header>
 
-        <div className="mt-10">
-          <Prose>
-            <Body />
-          </Prose>
+        <div className="mt-10 xl:flex xl:items-start xl:justify-center xl:gap-10">
+          <div className="w-full max-w-prose">
+            <Prose>
+              <Body />
+            </Prose>
+            <OperatorBridge />
+          </div>
+
+          <DesktopStickyRail />
         </div>
 
-        <OperatorBridge />
+        <MobileBookmarkDrawer />
       </article>
     </div>
     </>
