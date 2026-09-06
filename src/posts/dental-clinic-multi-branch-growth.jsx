@@ -16,7 +16,7 @@ export const meta = {
   standfirst:
     'A Jakarta dental group had strong offline credibility, but leaked digital opportunities. Rebuilding their acquisition engine—performance media, a website funnel, AI WhatsApp CS, and custom CRM—tripled monthly leads from 120 to 421 and drove Rp300M/month at 6–7x ROAS as they scaled from 6 to 10 branches.',
   standfirstId:
-    'Klinik gigi di Jakarta ini memiliki reputasi offline solid, tetapi sistem digitalnya bocor. Membangun mesin akuisisi terpadu—iklan performa, website funnel, CS WhatsApp AI, dan CRM kustom—melonjakkan leads dari 120 ke 421/bulan dan menghasilkan Rp300 juta/bulan pada 6–7x ROAS seiring ekspansi dari 6 ke 10 cabang.',
+    'Sebuah grup klinik gigi ternama di Jakarta memiliki reputasi offline kuat, tetapi kehilangan banyak potensi di kanal digital. Pembangunan sistem akuisisi terpadu—paid media, website funnel, CS WhatsApp AI, dan CRM kustom—melipatgandakan leads dari 120 menjadi 421/bulan serta membukukan revenue digital Rp300 juta/bulan di ROAS 6–7x saat berekspansi dari 6 ke 10 cabang.',
   img: 'https://storage.googleapis.com/bluestark_explorer/scalingdentalclinic.jpg',
   tags: ['Healthcare', 'Multi-branch', 'Performance', 'CRM', 'AI CS', 'Funnel'],
 };
@@ -106,7 +106,7 @@ export function BodyId() {
   return (
     <>
       <H2>Konteks Bisnis</H2>
-      <P>Klinik ini adalah grup klinik gigi terpercaya di Jakarta dengan 6 cabang dan reputasi offline yang solid. Namun, pertumbuhan pasien terhambat di lapisan digital. Hanya sekitar 120 leads yang masuk per bulan, mayoritas dari iklan Meta mendasar dan pesan organik sporadis. Websitenya berfungsi kaku layaknya brosur cetak, penanganan CS WhatsApp masih manual dan tidak seragam antar cabang, serta atribusi data terpecah-pecah—sehingga manajemen tidak bisa membedakan campaign mana yang menghasilkan pasien riil versus iklan yang hanya buang-buang klik.</P>
+      <P>Klinik ini merupakan grup dental terpercaya di Jakarta dengan 6 cabang dan reputasi offline yang mapan. Namun, pertumbuhan pasien tertahan di lapisan digital. Hanya sekitar 120 leads masuk per bulan, sebagian besar dari iklan Meta standar dan pesan organik sporadis. Websitenya pasif layaknya brosur cetak, respon CS WhatsApp masih manual dan belum terstandarisasi antar cabang, serta atribusi data terfragmentasi—manajemen kesulitan mengidentifikasi kampanye mana yang benar-benar menghasilkan pasien datang vs sekadar mendatangkan klik.</P>
 
       <H2>Akar Masalah</H2>
       <UL>
@@ -127,7 +127,7 @@ export function BodyId() {
       </UL>
 
       <H2>Pendekatan Eksekusi: 4 Mesin Pertumbuhan</H2>
-      <P>Diagnosa ditegakkan terlebih dahulu: masalahnya bukan kurang traffic, melainkan ekosistem konversinya yang belum siap. Kami merekonstruksi sistem akuisisi di atas 4 mesin utama:</P>
+      <P>Diagnosa awal menunjukkan akar masalah sebenarnya bukan pada volume traffic, melainkan ekosistem konversi yang belum siap. Sistem akuisisi direkonstruksi di atas 4 pilar utama:</P>
 
       <H3>1. Performance Marketing di Meta dan Google Search</H3>
       <P>Budget media dimulai dari Rp15 juta/bulan dan di-scale secara terukur seiring pembuktian profitabilitas funnel. Meta fokus memicu demand dan retargeting, sementara Google Search menangkap audiens dengan niat beli tinggi (high-intent).</P>
@@ -138,7 +138,7 @@ export function BodyId() {
       <P>Setiap landing page dibekali conversion stack yang seragam: tombol sticky WhatsApp, pemilih cabang terdekat, jadwal dokter, formulir promo terbatas, FAQ, edukasi before-after, dan trust signals (jumlah cabang, tim dokter spesialis, ulasan Google Maps). Pengunjung dingin diedukasi, pengunjung hangat diarahkan ke WhatsApp, dan pengunjung berniat tinggi bisa langsung booking jadwal.</P>
 
       <H3>3. CS WhatsApp Berbasis AI via Cekat.ai</H3>
-      <P>Terobosan terbesar pada kecepatan respon dan standarisasi layanan. Kami melatih <Src>Cekat.ai</Src> menggunakan ratusan percakapan riil: rincian estimasi biaya, lokasi cabang, jadwal dokter, detail promo, durasi tindakan, pertanyaan rasa sakit/keamanan, perbandingan behel vs aligner, hingga prosedur booking.</P>
+      <P>Terobosan terbesar ada pada kecepatan respon dan standarisasi layanan. <Src>Cekat.ai</Src> dikonfigurasi dan dilatih menggunakan ratusan riwayat percakapan riil: rincian estimasi biaya, lokasi cabang, jadwal dokter, detail promo, durasi tindakan, pertanyaan seputar rasa sakit/keamanan, perbandingan behel vs aligner, hingga alur reservasi.</P>
       <P>Model AI ini di-tuning mingguan berdasarkan data chat aktual: penanganan keberatan yang lebih natural dalam Bahasa Indonesia, routing otomatis ke cabang terdekat, pemulihan chat yang terabaikan, serta eskalasi cerdas ke staf manusia saat pasien siap melakukan pembayaran/tindakan medis. Kecepatan respon pertama (speed-to-lead) melesat drastis dan klinik mampu menampung lonjakan chat tanpa perlu menambah headcount CS seketika.</P>
 
       <H3>4. CRM Kustom oleh Calibreworks</H3>
@@ -173,7 +173,7 @@ export function BodyId() {
       <Pull>Klinik tidak bisa scaling hanya dengan menambah iklan. Klinik tumbuh karena sistem terpadu: traffic, funnel, respon AI, pelacakan CRM, dan eksekusi layanan di cabang.</Pull>
 
       <H2>Prinsip Operasional Lanjutan</H2>
-      <P>Inilah blueprint sistemik yang terus saya terapkan pada bisnis jasa multi-cabang. Akuisisi hanyalah satu dari empat roda penggerak: Konversi, Kualifikasi, Atribusi, dan Routing. Setiap bagian harus dikelola secara operasional, jika tidak, budget iklan Anda hanya menyubsidi kebocoran sistem di bagian hilir yang tidak terlihat.</P>
+      <P>Inilah blueprint sistemik untuk bisnis jasa multi-cabang. Akuisisi hanyalah satu dari empat pilar penopang: Konversi, Kualifikasi, Atribusi, dan Routing. Semuanya harus dikelola secara operasional—jika tidak, budget iklan Anda hanya menyubsidi kebocoran sistem di bagian hilir yang luput dari pantauan.</P>
 
       <Tags items={meta.tags} />
       <Disclaimer>

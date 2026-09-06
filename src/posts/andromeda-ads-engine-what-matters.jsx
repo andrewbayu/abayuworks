@@ -19,7 +19,7 @@ function Figure({ src, alt, caption }) {
 export const meta = {
   slug: 'andromeda-ads-engine-what-matters',
   title: 'What really matters in the era of the Andromeda Ads Engine',
-  titleId: 'Hal yang Benar-Benar Penting di Era Algoritma Iklan Meta Andromeda',
+  titleId: 'Membedah Meta Andromeda: Apa yang Benar-Benar Berdampak bagi Pengiklan',
   shortTitle: 'What matters in the Andromeda era',
   category: 'Meta Ads · AI Systems',
   kind: 'Framework',
@@ -32,7 +32,7 @@ export const meta = {
   standfirst:
     'Andromeda does not make strategy irrelevant. It changes where strategy has to live. The strongest advantage now comes from better business inputs, more meaningfully different creative, cleaner conversion signals, and enough room for Meta to learn.',
   standfirstId:
-    'Kehadiran Andromeda tidak lantas membuat strategi periklanan menjadi usang. Andromeda hanya menggeser di mana strategi tersebut seharusnya bekerja. Keunggulan paling kuat saat ini bukan lagi trik utak-atik dashboard, melainkan input bisnis yang matang, portofolio creative yang bervariasi nyata, kualitas sinyal data konversi yang bersih, serta ruang likuiditas yang cukup agar AI Meta bisa belajar optimal.',
+    'Andromeda tidak membuat strategi iklan usang, melainkan menggeser fokusnya. Keunggulan terbesar saat ini bukan lagi utak-atik dashboard, melainkan input bisnis yang matang, variasi sudut pandang kreatif, sinyal konversi yang bersih, dan struktur akun yang memberi ruang bagi AI Meta untuk belajar.',
   img: 'https://storage.googleapis.com/bluestark_explorer/andromeda-what-matters.jpg',
   tags: ['Andromeda', 'Meta Ads', 'Creative Strategy', 'Advantage+', 'Measurement'],
 };
@@ -183,37 +183,37 @@ export function Body() {
 export function BodyId() {
   return (
     <>
-      <P>Setiap beberapa tahun sekali, industri paid media selalu memunculkan istilah baru untuk kecemasan lama yang sama. Sebuah platform mengubah sistem delivery iklannya. Para pengiklan panik. Struktur campaign dibongkar total dalam semalam. Lalu, bermunculan orang yang menjual checklist solusi instan.</P>
-      <P>Andromeda layak dibaca dengan kacamata operasional yang jauh lebih tenang dan jernih.</P>
-      <P>Meta mendeskripsikan Andromeda sebagai <em>personalized ads retrieval engine</em>. Retrieval adalah fase paling awal dari sebuah sistem rekomendasi. Fungsinya menyaring puluhan juta kandidat iklan potensial menjadi beberapa ribu kandidat relevan sebelum model ranking berikutnya memutuskan iklan mana yang akhirnya tayang di layar pengguna. Pembedaan ini sangat krusial: Andromeda bukanlah skor rahasia kualitas materi iklan, dan bukan pula keseluruhan dari proses auction (lelang).</P>
+      <P>Setiap beberapa tahun sekali, industri paid media selalu memunculkan istilah baru untuk kecemasan lama yang sama. Begitu platform mengubah sistem delivery iklannya, pengiklan panik, struktur kampanye dibongkar dalam semalam, dan bermunculan orang yang menjual checklist solusi instan.</P>
+      <P>Andromeda layak dilihat dengan kacamata operasional yang jauh lebih jernih.</P>
+      <P>Meta mendefinisikan Andromeda sebagai <em>personalized ads retrieval engine</em>. Retrieval adalah tahap paling awal dari sistem rekomendasi, bertugas menyaring puluhan juta kandidat iklan menjadi beberapa ribu opsi relevan sebelum model ranking berikutnya memutuskan iklan mana yang tayang ke layar pengguna. Distingsi ini penting: Andromeda bukanlah skor rahasia kualitas materi iklan, dan bukan pula keseluruhan dari proses lelang (auction).</P>
 
-      <Figure src={FIGURES.pipeline} alt="Diagram kandidat iklan bergerak melewati retrieval Andromeda, ranking, audiens, dan sinyal konversi" caption="Andromeda bekerja di dalam sistem rekomendasi yang lebih luas. Tugasnya adalah mengambil kandidat iklan yang relevan (retrieval). Penilaian ranking, dinamika lelang, pengalaman audiens, dan hasil bisnis riillah yang menutup loop konversi." />
+      <Figure src={FIGURES.pipeline} alt="Diagram kandidat iklan bergerak melewati retrieval Andromeda, ranking, audiens, dan sinyal konversi" caption="Andromeda bekerja di dalam ekosistem rekomendasi yang lebih luas. Tugasnya menyaring kandidat iklan yang relevan (retrieval). Penilaian ranking, dinamika lelang, pengalaman audiens, dan hasil bisnis nyatalah yang menutup loop konversi." />
 
       <H2>Ringkasan Eksekutif</H2>
       <FigureGrid
         items={[
           { n: '01', l: 'Berikan penawaran yang jelas dan sinyal konversi yang nyata ke sistem.' },
-          { n: '02', l: 'Bangun portofolio ide kreatif yang berbeda nyata, bukan sekadar ganti warna tombol.' },
-          { n: '03', l: 'Konsolidasikan data akun agar AI punya cukup volume untuk belajar.' },
-          { n: '04', l: 'Ukur kesuksesan dari hasil bisnis terkualifikasi, bukan metrik vanity dashboard.' },
+          { n: '02', l: 'Bangun portofolio ide kreatif yang bervariasi nyata, bukan sekadar ganti warna tombol.' },
+          { n: '03', l: 'Konsolidasikan struktur akun agar AI punya cukup data untuk belajar.' },
+          { n: '04', l: 'Ukur kesuksesan dari laba dan transaksi nyata, bukan metrik semu dashboard.' },
         ]}
       />
-      <P>Itulah perspektif operator. Mungkin terdengar kurang bombastis dibanding slogan "algoritma sekarang mengatur segalanya," tetapi inilah yang terbukti menghasilkan profit nyata.</P>
+      <P>Itulah perspektif operator. Terdengar kurang sensasional dibanding slogan "algoritma mengatur segalanya," tetapi inilah yang terbukti menghasilkan profit berkelanjutan.</P>
 
       <H2>Apa yang Sebenarnya Diubah oleh Andromeda</H2>
-      <P>Tim engineering Meta memaparkan bahwa Andromeda dibangun untuk menangani volume materi kreatif yang jauh lebih masif dengan pengambilan kandidat iklan yang jauh lebih terpersonalisasi. Sistemnya menggunakan pengindeksan hierarkis, custom neural network, dan model elastisitas untuk mengalokasikan kapasitas komputasi ke titik-titik yang menghasilkan dampak nilai terbesar.</P>
-      <P>Meta mencatat peningkatan retrieval recall sebesar 6% dan peningkatan kualitas iklan sebesar 8% pada segmen uji coba setelah Andromeda diimplementasikan. Mereka juga melaporkan peningkatan queries per second (QPS) hingga 3x lipat serta kenaikan kapasitas model hingga 10.000x lipat. Ini adalah metrik performa di level infrastruktur Meta, bukan jaminan otomatis bahwa setiap pengiklan akan langsung mengalami lonjakan omset.</P>
-      <P>Implikasi praktisnya sangat jelas: platform sekarang memiliki kapasitas komputasi untuk mencocokkan jutaan kemungkinan relasi antara persona pengguna, sudut pesan, format video, dan momentum audiens. Akun iklan yang sempit dengan materi iklan monoton memberi sistem hipotesis yang sangat sedikit. Sebaliknya, portofolio kreatif yang kaya perspektif memberi AI Meta berbagai pintu masuk untuk menemukan pembeli yang tepat.</P>
+      <P>Tim engineering Meta menjelaskan bahwa Andromeda dirancang untuk menangani volume materi kreatif yang jauh lebih masif dengan pencocokan iklan yang lebih terpersonalisasi. Sistem ini menggunakan pengindeksan hierarkis, custom neural network, dan alokasi daya komputasi dinamis ke titik-titik dengan dampak nilai tertinggi.</P>
+      <P>Meta mencatat peningkatan retrieval recall sebesar 6% dan kualitas iklan sebesar 8% pada segmen uji coba awal. Mereka juga melaporkan peningkatan queries per second (QPS) hingga 3x lipat serta kenaikan kapasitas model hingga 10.000x lipat. Ini adalah metrik infrastruktur internal Meta, bukan jaminan instan bahwa omset setiap pengiklan otomatis melonjak.</P>
+      <P>Implikasi praktisnya jelas: Meta kini memiliki kapasitas komputasi untuk mencocokkan jutaan kemungkinan relasi antara persona pengguna, sudut pesan, format video, dan momentum audiens. Akun iklan dengan materi yang monoton membuat sistem kekurangan bahan uji. Sebaliknya, portofolio kreatif yang kaya sudut pandang memberi AI Meta banyak pintu masuk untuk menemukan pembeli yang tepat.</P>
 
       <Figure src={FIGURES.model} alt="Diagram arsitektur tiga lapis: batasan bisnis, portofolio kreatif, dan kualitas sinyal" caption="Arsitektur operasional 3-layer: batasan komersial bisnis (margin & kapasitas), portofolio kreatif yang bervariasi, dan kualitas telemetri sinyal yang bersih." />
 
       <H2>Portofolio Kreatif: Mengapa 10 Edit Kosmetik Tidak Berguna</H2>
-      <P>Banyak tim media buyer mengira mereka sudah melakukan "creative testing" hanya karena mengunggah 10 video yang isinya sama persis, hanya beda warna hook atau beda lagu latar. Di mata sistem neural network modern Meta, kesepuluh iklan tersebut dibaca sebagai kandidat identik. Akibatnya, iklan-iklan itu saling kanibal di lelang internal akun Anda sendiri.</P>
+      <P>Banyak tim media buyer mengira mereka sudah melakukan creative testing hanya karena mengunggah 10 video yang isinya sama persis—hanya beda warna hook atau lagu latar. Di mata sistem neural network Meta, kesepuluh iklan tersebut dibaca sebagai materi identik, sehingga justru saling kanibal di lelang internal akun Anda sendiri.</P>
       <P>Strategi creative di era Andromeda menuntut <strong>Diversifikasi Konseptual</strong>. Anda perlu menguji sudut pandang psikologis yang berbeda:</P>
       <UL>
         <LI><strong>Problem-Focused:</strong> Membedah frustrasi spesifik yang dialami target pasar.</LI>
         <LI><strong>Outcome / Transformation:</strong> Menunjukkan kondisi ideal setelah solusi Anda digunakan.</LI>
-        <LI><strong>Proof & Case Study:</strong> Memaparkan data angka, receipts, dan studi kasus riil.</LI>
+        <LI><strong>Proof & Case Study:</strong> Memaparkan data angka, bukti nyata, dan studi kasus riil.</LI>
         <LI><strong>Demo & Breakdown:</strong> Memperlihatkan cara kerja produk secara transparan.</LI>
         <LI><strong>Objection Handling:</strong> Menjawab keraguan terbesar (harga, durasi, komparasi).</LI>
         <LI><strong>Identity / Cultural Trigger:</strong> Mengaitkan solusi dengan status atau nilai komunitas audiens.</LI>
@@ -222,34 +222,34 @@ export function BodyId() {
       <Figure src={FIGURES.portfolio} alt="Matriks portofolio kreatif 6 sudut pandang psikologis" caption="Matriks 6 sudut pandang kreatif: memberikan berbagai hipotesis berbeda kepada mesin retrieval Andromeda tanpa menimbulkan kanibalisasi lelang." />
 
       <H2>Kualitas Sinyal & Telemetri: Memberi Makan AI dengan Data yang Benar</H2>
-      <P>Otomatisasi tidak bisa bekerja maksimal jika diberi makan data sampah. Jika Anda hanya memasang Pixel standar tanpa Conversions API (CAPI), Meta kehilangan sebagian besar visibilitas akibat ad-blocker dan proteksi privasi browser. Event Match Quality (EMQ) yang rendah membuat algoritma salah membaca siapa pembeli Anda sebenarnya.</P>
+      <P>Otomatisasi tidak akan optimal jika diberi makan data sampah. Tanpa Conversions API (CAPI) yang terpasang baik, Meta kehilangan sebagian besar visibilitas akibat ad-blocker dan proteksi privasi browser. Event Match Quality (EMQ) yang rendah membuat algoritma salah mengidentifikasi profil pembeli Anda sebenarnya.</P>
       <P>Pastikan hal-hal berikut beres sebelum budget dinaikkan:</P>
       <UL>
-        <LI>Pemasangan CAPI server-side dengan deduplikasi event yang sempurna.</LI>
+        <LI>Pemasangan CAPI server-side dengan deduplikasi event yang rapi.</LI>
         <LI>Skor EMQ minimal di atas 8.0 pada event purchase atau lead.</LI>
-        <LI>Kirimkan parameter nilai transaksi bersih (value optimization), bukan hanya hitungan frekuensi klik.</LI>
+        <LI>Kirimkan parameter nilai transaksi bersih (value optimization), bukan hanya hitungan klik.</LI>
       </UL>
 
       <Figure src={FIGURES.loop} alt="Diagram alur pengukuran closed-loop dari sinyal kreatif ke platform delivery hingga qualified revenue" caption="Pengukuran closed-loop: menghubungkan sinyal kreatif dan platform delivery langsung ke database CRM bisnis Anda." />
 
       <H2>Mitos yang Perlu Ditinggalkan</H2>
       <UL>
-        <LI><strong>“Targeting manual sudah mati total.”</strong> Salah. Pengaturan audience interest memang berkurang perannya di kampanye otomatis, tetapi batasan geografi, batasan penawaran, customer list exclusions, dan regulasi bisnis tetap mutlak dikontrol manusia.</LI>
-        <LI><strong>“Cukup punya 1 ad pemenang.”</strong> Salah. Satu iklan pemenang bisa saja menopang campaign untuk sementara, tetapi kelelahan audiens (creative fatigue) pasti datang. Portofolio ide melindung stabilitas akun dalam jangka panjang.</LI>
-        <LI><strong>“Makin banyak iklan makin bagus.”</strong> Salah. Menguji hipotesis baru yang berbeda itu bagus. Mengunggah 50 duplikasi yang hanya beda subtitle justru membingungkan alokasi budget.</LI>
-        <LI><strong>“Algoritma sudah tahu bisnis kita.”</strong> Salah. Algoritma hanya tahu apa yang bisa ia amati dari sinyal data. Operator manusialah yang harus mendefinisikan mana prospek berkualitas dan mana margin yang sehat.</LI>
+        <LI><strong>“Targeting manual sudah mati total.”</strong> Salah. Pengaturan audience interest memang berkurang perannya di kampanye Advantage+, tetapi batasan geografi, batasan penawaran, customer list exclusions, dan regulasi bisnis tetap mutlak dikontrol manusia.</LI>
+        <LI><strong>“Cukup punya 1 ad pemenang.”</strong> Salah. Satu iklan winning bisa saja menopang kampanye untuk sementara, tetapi kelelahan audiens (creative fatigue) pasti datang. Portofolio ide yang beragam melindungi stabilitas akun jangka panjang.</LI>
+        <LI><strong>“Makin banyak iklan makin bagus.”</strong> Salah. Menguji hipotesis baru yang berbeda itu penting. Mengunggah 50 duplikasi yang hanya beda subtitle justru membingungkan alokasi budget sistem.</LI>
+        <LI><strong>“Algoritma sudah tahu bisnis kita.”</strong> Salah. Algoritma hanya tahu apa yang bisa ia amati dari sinyal data. Operator manusialah yang harus mendefinisikan mana prospek bernilai tinggi dan mana batas margin yang sehat.</LI>
       </UL>
 
       <H2>Prinsip Utama Operator</H2>
-      <P>Andromeda adalah pengingat bahwa paid media kini bergerak menyerupai mesin rekomendasi (recommendation engine) dan semakin jauh dari tuas setelan manual. Sistem memiliki kapasitas komputasi pencarian yang luar biasa besar. Tugas operator adalah memberinya materi yang berkualitas tinggi untuk dicari.</P>
+      <P>Andromeda adalah pengingat bahwa paid media kini bekerja layaknya mesin rekomendasi konten, bukan lagi sekadar panel setelan teknis manual. Mesin Meta memiliki kapasitas pencarian yang masif; tugas operator adalah menyuplai materi berkualitas tinggi yang layak ditemukan.</P>
       <P>Pondasi itu bertumpu pada empat pilar:</P>
       <UL>
         <LI>Penawaran yang tajam dengan struktur margin yang sehat.</LI>
         <LI>Portofolio materi iklan yang bervariasi secara konseptual.</LI>
-        <LI>Data akun terkonsolidasi dan sinyal telemetri yang bersih.</LI>
+        <LI>Struktur akun terkonsolidasi dan sinyal data yang bersih.</LI>
         <LI>Disiplin pengukuran yang menghubungkan iklan langsung ke revenue kas nyata.</LI>
       </UL>
-      <P>Inovasi engineering Andromeda Meta itu nyata. Namun godaan untuk menjadikannya sekadar jargon kosong juga sama besarnya. Sikap yang tepat bukanlah panik ataupun menyerahkan segalanya secara buta pada mesin, melainkan merancang input bisnis yang lebih matang, membangun variasi kreatif yang lebih cerdas, dan mempererat siklus antara iklan, penjualan, dan realitas bisnis Anda.</P>
+      <P>Kemajuan engineering pada Meta Andromeda memang nyata, tapi jangan terjebak menjadikannya sekadar buzzword baru. Sikap yang tepat bukanlah panik atau menyerahkan semuanya secara buta pada mesin, melainkan merumuskan input bisnis yang lebih matang, memproduksi variasi kreatif yang lebih berbobot, dan menghubungkan performa iklan langsung ke laba riil perusahaan.</P>
 
       <Tags items={meta.tags} />
       <Disclaimer>

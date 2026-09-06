@@ -19,7 +19,7 @@ function Figure({ src, alt, caption }) {
 export const meta = {
   slug: 'sea-social-behaviour-2026',
   title: 'How Southeast Asia actually buys in 2026',
-  titleId: 'Bagaimana Konsumen Asia Tenggara Berbelanja di Tahun 2026',
+  titleId: 'Bagaimana Konsumen Asia Tenggara Sebenarnya Berbelanja di 2026',
   shortTitle: 'How Southeast Asia actually buys in 2026',
   category: 'Research · Southeast Asia',
   kind: 'Paper',
@@ -32,7 +32,7 @@ export const meta = {
   standfirst:
     "Social in Southeast Asia is no longer a media channel. It is now the search bar, the shopping mall, and the trust layer of commerce. This paper maps what matters to SEA consumers, what content actually converts, which storytelling is effective, and how buying decisions changed through 2026.",
   standfirstId:
-    "Media sosial di Asia Tenggara bukan lagi sekadar kanal periklanan. Media sosial kini telah menjadi search bar utama, pusat perbelanjaan digital, sekaligus lapisan kepercayaan (trust layer) dalam transaksi komersial. Riset ini membedah apa yang benar-benar penting bagi konsumen Asia Tenggara, format konten mana yang menghasilkan konversi riil, gaya storytelling apa yang efektif, dan bagaimana peta keputusan belanja bergeser drastis sepanjang 2026.",
+    'Media sosial di Asia Tenggara bukan lagi sekadar kanal promosi—melainkan mesin pencari utama, pusat belanja, dan lapisan penentu rasa percaya konsumen. Riset ini membedah format konten yang terbukti mengonversi dan pergeseran pola belanja menuju closed-loop social commerce di 2026.',
   img: 'https://storage.googleapis.com/bluestark_explorer/infinitiworks/seasocialreport2026.jpg',
   tags: ['Southeast Asia', 'Social Commerce', 'Creator Economy', 'Marketing 2026', 'Indonesia', 'Consumer Behaviour'],
 };
@@ -201,13 +201,13 @@ export function BodyId() {
       />
 
       <H2>Kekuatan Storytelling Emosional</H2>
-      <P>Storytelling terbukti menjadi bentuk narasi paling kuat di kawasan ini. Sekitar 79% pengguna media sosial di Asia Tenggara lebih engaged dengan konten kreator yang membawakan cerita dibanding iklan terang-terangan, dan campaign berbasis kreator menghasilkan engagement rata-rata 3,5 kali lebih tinggi dibanding paid ads biasa (WARC Benchmark 2025).</P>
-      <P>Pola yang menang bukanlah product placement kaku, melainkan <em>emotional placement</em>: brand masuk secara natural ke dalam momen kehidupan nyata, tetap bersahaja di alur cerita, namun hadir nyata di hasil akhirnya.</P>
+      <P>Storytelling terbukti menjadi bentuk narasi paling kuat di kawasan ini. Sekitar 79% pengguna media sosial di Asia Tenggara merasa lebih terhubung dengan konten kreator yang membawakan cerita dibanding iklan langsung, dan kampanye berbasis kreator mencatatkan engagement rata-rata 3,5 kali lebih tinggi dibanding paid ads biasa (WARC Benchmark 2025).</P>
+      <P>Pola yang menang bukanlah product placement kaku, melainkan <em>emotional placement</em>: brand hadir secara natural di momen kehidupan nyata tanpa mendominasi alur cerita, namun menjadi solusi yang nyata pada hasil akhirnya.</P>
 
-      <Pull>Storytelling berhasil ketika brand bersahaja di dalam cerita dan hadir nyata di hasil akhir.</Pull>
+      <Pull>Storytelling berhasil ketika brand tidak mendominasi alur cerita, melainkan hadir sebagai solusi nyata di hasil akhir.</Pull>
 
       <H2>Pergeseran Keputusan Belanja di 2026: Closed-Loop Commerce</H2>
-      <P>Funnel belum mati, tetapi jalurnya telah termampatkan. Lebih dari 60% penemuan produk baru kini berawal di TikTok, Instagram, dan YouTube. Namun, sekitar 85% konsumen rawan drop-off jika harus berpindah-pindah aplikasi antara melihat ulasan dan melakukan pembayaran. TikTok Shop dan fitur in-app checkout mengompres penemuan, ulasan, dan pembayaran dalam satu aliran layar tunggal tanpa jeda.</P>
+      <P>Funnel belum mati, tetapi jalurnya kini jauh lebih rapat. Lebih dari 60% penemuan produk baru berawal di TikTok, Instagram, dan YouTube. Namun, sekitar 85% calon pembeli rawan drop-off jika harus berpindah aplikasi untuk melakukan pembayaran. TikTok Shop dan fitur in-app checkout menyatukan penemuan, pembuktian ulasan, dan transaksi langsung dalam satu layar tanpa jeda.</P>
 
       <Figure
         src={FIGURES.commerce}

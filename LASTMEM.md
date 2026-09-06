@@ -457,3 +457,20 @@ End of LASTMEM. Update this file when you ship anything material. It's committed
      - Trimmed both English and Indonesian standfirsts by ~35% for consistent reading density.
 - Verified build and SSG prerender across all 31 routes. Zero errors.
 
+## Session AB300 · 2026-09-06
+- Conducted full-spectrum linguistic and tonal polish across all Indonesian translations:
+  1. Removed literal/machine-translation patterns ("translationese") in favor of natural, executive-level Indonesian operator voice.
+  2. `/blog/andromeda-ads-engine-what-matters/`:
+     - Updated `titleId` to "Membedah Meta Andromeda: Apa yang Benar-Benar Berdampak bagi Pengiklan".
+     - Replaced stiff jargon ("ruang likuiditas", "bervariasi nyata") with fluent industry terminology. Fixed typos.
+  3. `/blog/sea-social-behaviour-2026/`:
+     - Condensed `standfirstId` to 39 punchy words.
+     - Replaced literal phrases ("termampatkan" → "jauh lebih rapat", "tetap bersahaja di alur cerita" → "hadir natural tanpa mendominasi cerita").
+  4. `/blog/dental-clinic-multi-branch-growth/`:
+     - Replaced awkward phrases ("sistem digitalnya bocor" → "kehilangan banyak potensi di kanal digital").
+     - Enforced third-person operator consistency (eliminated "kami", "saya").
+  5. `/blog/google-messy-middle-funnel-checkpoints/`:
+     - Replaced raw loanwords ("diconvert" → "dikonversi") and tightened operational voice.
+- Verified build and SSG prerender across all 31 routes. Zero errors.
+
+

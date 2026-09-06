@@ -208,7 +208,7 @@ export function BodyId() {
         caption="Jebakan subsidi kompetitor: Hook viral Anda menyadarkan problem audiens, tetapi karena Anda tidak punya checkpoint evaluasi yang matang, mereka justru checkout di kompetitor yang funnel dan penawarannya lebih siap."
       />
 
-      <P>Jika bisnis Anda tidak merancang gravity checkpoints untuk mengawal proses evaluasi tersebut, audiens yang sudah Anda edukasi menggunakan biaya produksi dan ad spend Anda tadi akan diconvert oleh kompetitor yang penawaran, bukti receipt, dan sistemnya jauh lebih siap. Anda menanggung biaya edukasi pasar, kompetitor yang memanen marginnya.</P>
+      <P>Jika bisnis Anda tidak merancang gravity checkpoints untuk mengawal proses evaluasi tersebut, audiens yang sudah Anda edukasi menggunakan biaya produksi dan ad spend Anda tadi akan dikonversi oleh kompetitor yang penawaran, bukti receipt, dan sistemnya jauh lebih siap. Anda menanggung biaya edukasi pasar, kompetitor yang memanen marginnya.</P>
 
       <ConstraintCallout
         badge="Audit Leaking Margin Bisnis Anda"
@@ -216,12 +216,12 @@ export function BodyId() {
         ctaText="Daftar 90-Minute Growth Audit"
         ctaLink="/dal/"
       >
-        Kebanyakan brand menghabiskan budget untuk konten hook viral sementara checkpoint komersialnya bocor tanpa sinyal. Dalam 90-Minute Constraint Audit, kita isolasi bottleneck spesifik antara demand, pelacakan sinyal, dan kapasitas bisnis Anda sebelum Anda mengeluarkan budget lebih banyak.
+        Kebanyakan brand menghabiskan budget untuk konten hook viral sementara checkpoint komersialnya bocor tanpa sinyal. Dalam 90-Minute Constraint Audit, Aditya mengisolasi bottleneck spesifik antara demand, pelacakan sinyal, dan kapasitas bisnis Anda sebelum Anda mengeluarkan budget lebih banyak.
       </ConstraintCallout>
 
       <H2>AIDA adalah Kerangka Pesan, Funnel adalah Aliran Data Bisnis</H2>
       <P>Kebingungan di industri periklanan berakar dari anggapan bahwa AIDA (Attention, Interest, Desire, Action) sama persis dengan Funnel bisnis.</P>
-      <P>AIDA, yang dicetuskan oleh E. St. Elmo Lewis pada tahun 1898, adalah framework komunikasi. Fungsinya mengatur bagaimana sebuah pesan mempersuasi perhatian manusia. AIDA bisa diselesaikan tuntas hanya dalam satu naskah video 45 detik, satu halaman landing page, atau satu email empat kalimat. AIDA adalah formula penyampaian pesan.</P>
+      <P>AIDA, yang diperkenalkan oleh E. St. Elmo Lewis pada 1898, adalah framework komunikasi. Fungsinya mengatur bagaimana sebuah pesan mempersuasi perhatian manusia. AIDA bisa diselesaikan tuntas hanya dalam satu naskah video 45 detik, satu halaman landing page, atau satu email empat kalimat. AIDA adalah formula penyampaian pesan.</P>
       <P>Sebaliknya, Funnel adalah sistem checkpoint operasional. Funnel menentukan status riil bisnis: siapa yang sudah angkat tangan, siapa yang lolos kualifikasi, berapa nilai konversi yang tercipta, dan di checkpoint mana terjadi kebocoran cash flow.</P>
 
       <Figure
@@ -230,7 +230,7 @@ export function BodyId() {
         caption="AIDA menyusun struktur pesan di dalam iklan atau landing page. Funnel melacak status operasional bisnis dan menyuplai data bersih ke pipeline telemetri Anda."
       />
 
-      <P>Ketika marketer menyatakan bahwa funnel sudah usang hanya karena pembeli tidak berpikir secara bertahap ala AIDA, mereka sedang mencampuradukkan teknik copywriting dengan sistem telemetri enterprise.</P>
+      <P>Ketika marketer menyatakan bahwa funnel sudah usang hanya karena pembeli tidak berpikir secara bertahap ala AIDA, mereka sedang mencampuradukkan teknik copywriting dengan sistem pelacakan data operasional bisnis.</P>
 
       <H2>Kenapa AI Justru Menuntut Checkpoint Linear yang Lebih Ketat</H2>
       <P>Di era machine learning modern—seperti mesin retrieval Meta Andromeda dan model Smart Bidding Google—checkpoint funnel yang linear justru menjadi syarat operasional mutlak.</P>
