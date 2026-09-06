@@ -432,7 +432,18 @@ End of LASTMEM. Update this file when you ship anything material. It's committed
 - Cleaned up unused `visualFrameworks` data constant.
 - Verified build and SSG prerender across all 31 routes. Zero errors.
 
-
-
-
-
+## Session AB298 · 2026-09-06
+- Implemented in-page bilingual (English & Indonesian) switcher ("Option A") for the 4 latest blog articles:
+  1. Updated `src/pages/BlogPost.jsx`:
+     - Added `lang` state (`'en'` | `'id'`) initialized from `localStorage('abayu_article_lang') || 'en'`.
+     - Added an inline language switcher pill `[ 🇬🇧 EN | 🇮🇩 ID ]` in the top header next to `← Writing` (only rendered when `post.BodyId` exists).
+     - Dynamically swaps article title (`currentTitle`), standfirst (`currentStandfirst`), and body component (`CurrentBody`) without reloading or changing URLs.
+     - Persists user language preference to `localStorage`.
+  2. Updated `src/posts/index.js`:
+     - Exported `BodyId`, `titleId`, and `standfirstId` from post modules to the aggregated `posts` registry.
+  3. Added comprehensive, idiomatic Indonesian translations (`titleId`, `standfirstId`, and full `BodyId`) for the 4 targeted articles:
+     - `/blog/google-messy-middle-funnel-checkpoints/` ("4 Checkpoint Funnel Penentu di 'Messy Middle' Google").
+     - `/blog/andromeda-ads-engine-what-matters/` ("Bedah Algoritma Andromeda Ads Engine: Metrik & Sinyal yang Benar-Benar Berdampak").
+     - `/blog/sea-social-behaviour-2026/` ("Dinamika Perilaku Media Sosial Asia Tenggara 2026: Algoritma, Kurasi AI, & Komunitas").
+     - `/blog/dental-clinic-multi-branch-growth/` ("Studi Kasus Pertumbuhan Multi-Cabang Klinik Gigi: 6 Menjadi 10 Cabang Tanpa Mengorbankan Margin").
+- Verified `npm run build` with all 31 SSG prerendered pages passing cleanly.

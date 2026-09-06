@@ -1,3 +1,4 @@
+import { useState } from 'react';
 import { motion } from 'framer-motion';
 import { Link, useParams } from 'react-router-dom';
 import Seo from '../components/Seo';
@@ -14,6 +15,22 @@ export default function BlogPost({ slug: slugProp }) {
   const slug = slugProp || params.slug;
   const post = postBySlug[slug];
 
+  // Language switcher state: 'en' | 'id'
+  const [lang, setLang] = useState(() => {
+    try {
+      return localStorage.getItem('abayu_article_lang') || 'en';
+    } catch {
+      return 'en';
+    }
+  });
+
+  const handleLangChange = (newLang) => {
+    setLang(newLang);
+    try {
+      localStorage.setItem('abayu_article_lang', newLang);
+    } catch {}
+  };
+
   if (!post) {
     return (
       <div className="wrap py-32 text-center">
@@ -23,12 +40,18 @@ export default function BlogPost({ slug: slugProp }) {
     );
   }
 
-  const { Body } = post;
+  const hasIdVersion = Boolean(post.BodyId);
+  const activeLang = hasIdVersion ? lang : 'en';
+
+  const CurrentBody = activeLang === 'id' && post.BodyId ? post.BodyId : post.Body;
+  const currentTitle = activeLang === 'id' && post.titleId ? post.titleId : post.title;
+  const currentStandfirst = activeLang === 'id' && post.standfirstId ? post.standfirstId : post.standfirst;
+
   const path = `/blog/${post.slug}/`;
   const jsonLd = {
     '@context': 'https://schema.org',
     '@type': 'BlogPosting',
-    headline: post.title,
+    headline: currentTitle,
     description: post.description,
     image: post.img || site.url + '/og-image.png',
     datePublished: post.date,
@@ -42,25 +65,59 @@ export default function BlogPost({ slug: slugProp }) {
   return (
     <>
       <Seo
-              title={`${post.title} · ${site.name}`}
-              description={post.description}
-              path={path}
-              type="article"
-              image={post.img || '/og-image.png'}
-              published={post.date}
-              jsonLd={jsonLd}
-            />
+        title={`${currentTitle} · ${site.name}`}
+        description={post.description}
+        path={path}
+        type="article"
+        image={post.img || '/og-image.png'}
+        published={post.date}
+        jsonLd={jsonLd}
+      />
 
       <div className="blog-light">
         <article className="wrap pb-[50px] pt-20 sm:pt-24">
-          {/* Top Back Nav */}
+          {/* Top Back Nav & Optional Language Switcher */}
           <motion.div
             initial={{ opacity: 0, y: 14 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.45 }}
-            className="mb-6"
+            className="mb-6 flex flex-wrap items-center justify-between gap-4"
           >
             <Link to="/blog/" className="text-sm text-muted transition-colors hover:text-ink">← Writing</Link>
+
+            {/* Language Switcher Pill */}
+            {hasIdVersion && (
+              <div className="inline-flex items-center rounded-full border border-[#dfe4eb] bg-[#f8fafc] p-1 shadow-sm">
+                <button
+                  type="button"
+                  onClick={() => handleLangChange('en')}
+                  className={`flex items-center gap-1.5 rounded-full px-3 py-1 font-display text-xs font-semibold transition-all ${
+                    activeLang === 'en'
+                      ? 'bg-[#1C3D73] !text-white shadow-xs'
+                      : 'text-muted hover:text-ink'
+                  }`}
+                  style={activeLang === 'en' ? { color: '#ffffff' } : {}}
+                  aria-label="Read in English"
+                >
+                  <span>🇬🇧</span>
+                  <span>EN</span>
+                </button>
+                <button
+                  type="button"
+                  onClick={() => handleLangChange('id')}
+                  className={`flex items-center gap-1.5 rounded-full px-3 py-1 font-display text-xs font-semibold transition-all ${
+                    activeLang === 'id'
+                      ? 'bg-[#1C3D73] !text-white shadow-xs'
+                      : 'text-muted hover:text-ink'
+                  }`}
+                  style={activeLang === 'id' ? { color: '#ffffff' } : {}}
+                  aria-label="Baca dalam Bahasa Indonesia"
+                >
+                  <span>🇮🇩</span>
+                  <span>ID</span>
+                </button>
+              </div>
+            )}
           </motion.div>
 
           {/* 70/30 Grid Layout starting from the top */}
@@ -90,14 +147,14 @@ export default function BlogPost({ slug: slugProp }) {
                   <time dateTime={post.date}>{post.dateLabel}</time>
                 </div>
                 <h1 className="mt-4 font-display text-3xl font-semibold leading-tight tracking-tight text-balance sm:text-4xl lg:text-[2.5rem]">
-                  {post.title}
+                  {currentTitle}
                 </h1>
-                <p className="mt-5 font-serif text-lg leading-relaxed text-muted text-pretty">{post.standfirst}</p>
+                <p className="mt-5 font-serif text-lg leading-relaxed text-muted text-pretty">{currentStandfirst}</p>
               </motion.header>
 
               <div className="mt-10">
                 <Prose>
-                  <Body />
+                  <CurrentBody />
                 </Prose>
                 <OperatorBridge />
               </div>

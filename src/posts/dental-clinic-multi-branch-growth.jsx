@@ -3,6 +3,7 @@ import { H2, H3, P, UL, LI, FigureGrid, Pull, Tags, Disclaimer, Src } from '../c
 export const meta = {
   slug: 'dental-clinic-multi-branch-growth',
   title: 'Scaling a Jakarta dental clinic from 6 to 10 branches with a full-funnel growth system',
+  titleId: 'Scaling Klinik Gigi Jakarta dari 6 ke 10 Cabang dengan Full-Funnel Growth System',
   shortTitle: 'Scaling a Jakarta dental clinic from 6 to 10 branches',
   category: 'Healthcare · Growth System',
   kind: 'Case study',
@@ -14,6 +15,8 @@ export const meta = {
     'A 360 growth system for a multi-branch Jakarta dental group: performance ads, a website funnel, AI-assisted WhatsApp CS, and a custom CRM. Leads grew from 120 to 421 per month at 6 to 7x ROAS.',
   standfirst:
     'A multi-branch Jakarta dental group had strong offline credibility, but the digital system was leaking opportunities. The work was not "more ads." It was a connected acquisition engine: performance media, a website rebuilt as a funnel, AI-assisted WhatsApp CS, and a custom CRM. In three months, monthly leads went from 120 to 421, digital-influenced revenue reached Rp300 million per month, and ROAS held at 6 to 7x while the brand expanded from 6 to 10 branches.',
+  standfirstId:
+    'Sebuah grup klinik gigi multi-cabang di Jakarta memiliki reputasi offline yang solid, namun sistem digitalnya mengalami banyak kebocoran peluang. Solusinya bukan sekadar "tambah budget iklan." Kuncinya adalah menyatukan mesin akuisisi terpadu: performance ads, website yang dirombak menjadi funnel, CS WhatsApp bertenaga AI, dan CRM kustom. Dalam 3 bulan, leads bulanan melonjak dari 120 menjadi 421, revenue terpengaruh digital mencapai Rp300 juta/bulan, dan ROAS terjaga stabil di 6–7x sembari klinik berekspansi dari 6 menjadi 10 cabang.',
   img: 'https://storage.googleapis.com/bluestark_explorer/scalingdentalclinic.jpg',
   tags: ['Healthcare', 'Multi-branch', 'Performance', 'CRM', 'AI CS', 'Funnel'],
 };
@@ -94,6 +97,87 @@ export function Body() {
       <Tags items={meta.tags} />
       <Disclaimer>
         Reported case figures reflect contributions to team outcomes during the engagement described, not sole-authored results. Work delivered via Calibreworks. Client kept anonymous under NDA.
+      </Disclaimer>
+    </>
+  );
+}
+
+export function BodyId() {
+  return (
+    <>
+      <H2>Konteks Bisnis</H2>
+      <P>Klinik ini adalah grup klinik gigi terpercaya di Jakarta dengan 6 cabang dan reputasi offline yang solid. Namun, pertumbuhan pasien terhambat di lapisan digital. Hanya sekitar 120 leads yang masuk per bulan, mayoritas dari iklan Meta mendasar dan pesan organik sporadis. Websitenya berfungsi kaku layaknya brosur cetak, penanganan CS WhatsApp masih manual dan tidak seragam antar cabang, serta atribusi data terpecah-pecah—sehingga manajemen tidak bisa membedakan campaign mana yang menghasilkan pasien riil versus iklan yang hanya buang-buang klik.</P>
+
+      <H2>Akar Masalah</H2>
+      <UL>
+        <LI><strong>Akuisisi leads tidak konsisten:</strong> ~120 leads/bulan tanpa sistem prediktif di balik volumenya.</LI>
+        <LI><strong>Website tidak bekerja sebagai funnel:</strong> Pengunjung bisa melihat daftar treatment, namun jalur menuju konsultasi dan booking sangat lemah.</LI>
+        <LI><strong>Respon CS lambat dan manual:</strong> Chat WhatsApp menumpuk, follow-up sering terlewat, dan standar jawaban berbeda di tiap cabang.</LI>
+        <LI><strong>Tanpa pelacakan terpusat:</strong> Leads berceceran dari Meta, Google, WhatsApp, formulir web, dan walk-in tanpa atribusi jelas ke materi iklan atau cabang.</LI>
+        <LI><strong>Kapasitas cabang timpang:</strong> Cabang tertentu penuh antrean sementara cabang lain memiliki kursi kosong, tanpa pengaturan routing digital.</LI>
+      </UL>
+
+      <H2>Sasaran Program 360°</H2>
+      <P muted>Empat target utama disepakati bersama manajemen:</P>
+      <UL>
+        <LI><strong>Primer:</strong> Melipatgandakan jumlah konsultasi dan booking pasien baru setiap bulan.</LI>
+        <LI><strong>Revenue:</strong> Menyentuh Rp300 juta per bulan revenue terpengaruh digital dalam waktu 3 bulan.</LI>
+        <LI><strong>Efisiensi:</strong> Mempertahankan ROAS paid media di kisaran 6–7x selama scaling.</LI>
+        <LI><strong>Operasional:</strong> Membangun infrastruktur akuisisi dan tindak lanjut yang siap menopang ekspansi cabang baru.</LI>
+      </UL>
+
+      <H2>Pendekatan Eksekusi: 4 Mesin Pertumbuhan</H2>
+      <P>Diagnosa ditegakkan terlebih dahulu: masalahnya bukan kurang traffic, melainkan ekosistem konversinya yang belum siap. Kami merekonstruksi sistem akuisisi di atas 4 mesin utama:</P>
+
+      <H3>1. Performance Marketing di Meta dan Google Search</H3>
+      <P>Budget media dimulai dari Rp15 juta/bulan dan di-scale secara terukur seiring pembuktian profitabilitas funnel. Meta fokus memicu demand dan retargeting, sementara Google Search menangkap audiens dengan niat beli tinggi (high-intent).</P>
+      <P>Angle iklan Meta: konsultasi gratis periksa gigi, behel transparan (aligner), promo scaling & whitening, perawatan gigi anak, makeover senyum veneer, dan konsultasi implan gigi. Kelompok kata kunci Google Search: <em>dokter gigi Jakarta, klinik gigi terdekat, scaling gigi Jakarta, pasang behel Jakarta, veneer gigi Jakarta, klinik gigi implan Jakarta</em>. Retargeting diarahkan ke pengunjung halaman treatment dengan video profil dokter, bukti ulasan pasien, dan CTA WhatsApp langsung.</P>
+
+      <H3>2. Website Dirombak Total Menjadi Funnel</H3>
+      <P>Website profil lama yang pasif ditransformasikan menjadi conversion engine. Setiap layanan bernilai tinggi dibuatkan landing page khusus: behel & ortodonti, veneer, bleaching/whitening, implan gigi, scaling, dan dokter gigi anak.</P>
+      <P>Setiap landing page dibekali conversion stack yang seragam: tombol sticky WhatsApp, pemilih cabang terdekat, jadwal dokter, formulir promo terbatas, FAQ, edukasi before-after, dan trust signals (jumlah cabang, tim dokter spesialis, ulasan Google Maps). Pengunjung dingin diedukasi, pengunjung hangat diarahkan ke WhatsApp, dan pengunjung berniat tinggi bisa langsung booking jadwal.</P>
+
+      <H3>3. CS WhatsApp Berbasis AI via Cekat.ai</H3>
+      <P>Terobosan terbesar pada kecepatan respon dan standarisasi layanan. Kami melatih <Src>Cekat.ai</Src> menggunakan ratusan percakapan riil: rincian estimasi biaya, lokasi cabang, jadwal dokter, detail promo, durasi tindakan, pertanyaan rasa sakit/keamanan, perbandingan behel vs aligner, hingga prosedur booking.</P>
+      <P>Model AI ini di-tuning mingguan berdasarkan data chat aktual: penanganan keberatan yang lebih natural dalam Bahasa Indonesia, routing otomatis ke cabang terdekat, pemulihan chat yang terabaikan, serta eskalasi cerdas ke staf manusia saat pasien siap melakukan pembayaran/tindakan medis. Kecepatan respon pertama (speed-to-lead) melesat drastis dan klinik mampu menampung lonjakan chat tanpa perlu menambah headcount CS seketika.</P>
+
+      <H3>4. CRM Kustom oleh Calibreworks</H3>
+      <P>Untuk menutup kebocoran data dan operasi, <Src>Calibreworks</Src> membangun CRM kustom. Setiap data pasien membawa informasi lengkap: sumber kampanye, ad set, materi visual iklan, kata kunci Google, preferensi cabang, status chat, jadwal appointment, status kehadiran (show-up), hingga nilai transaksi tindakan medis.</P>
+      <P>Dashboard manajemen menyajikan metrik Cost per Lead per channel, rasio Lead-to-Booking, rasio Booking-to-Show, revenue per cabang, ROAS per materi iklan, hingga performa individual CS. Pertanyaan evaluasi bulanan bergeser dari "iklan mana yang leads-nya murah" menjadi "iklan mana yang benar-benar mendatangkan pasien berbayar dan profit nyata ke klinik."</P>
+
+      <H2>Hasil Nyata (The Outcome)</H2>
+      <FigureGrid
+        items={[
+          { n: '120 → 421', l: 'Leads bulanan (~+251%)' },
+          { n: 'Rp300 Juta', l: 'Revenue bulanan digital di Bulan ke-3' },
+          { n: '6 – 7x', l: 'Rata-rata ROAS paid media terjaga stabil' },
+          { n: '6 → 10', l: 'Ekspansi cabang di area Jabodetabek' },
+        ]}
+      />
+      <P muted>Perkembangan performa bertahap:</P>
+      <UL>
+        <LI><strong>Bulan 1:</strong> 168 leads, ~Rp95 juta revenue terpengaruh digital, 6,3x ROAS, spend Rp15 juta.</LI>
+        <LI><strong>Bulan 2:</strong> 201 leads, ~Rp170 juta revenue terpengaruh digital, 6,8x ROAS, spend Rp25 juta.</LI>
+        <LI><strong>Bulan 3:</strong> 421 leads, ~Rp300 juta revenue terpengaruh digital, 6,7x ROAS, spend Rp45 juta.</LI>
+      </UL>
+
+      <H2>Mengapa Sistem Ini Berhasil</H2>
+      <UL>
+        <LI><strong>Website menjadi funnel terarah:</strong> Pengunjung dituntun melakukan reservasi, bukan sekadar membaca artikel umum.</LI>
+        <LI><strong>AI CS memangkas waktu respon:</strong> Pertanyaan prospek dijawab dalam detik pertama, disaring dengan tepat, dan di-follow up secara konsisten.</LI>
+        <LI><strong>Pelacakan CRM transparan:</strong> Manajemen mengetahui persis iklan mana yang menghasilkan kas nyata, bukan metrik semu.</LI>
+        <LI><strong>Alokasi budget berbasis profitabilitas treatment:</strong> Belanja media dialihkan ke tindakan ber-margin tinggi: behel, veneer, whitening, dan implan.</LI>
+        <LI><strong>Routing cabang menyeimbangkan kapasitas:</strong> Pasien diarahkan ke cabang berdasarkan domisili dan ketersediaan jadwal kursi dokter.</LI>
+      </UL>
+
+      <Pull>Klinik tidak bisa scaling hanya dengan menambah iklan. Klinik tumbuh karena sistem terpadu: traffic, funnel, respon AI, pelacakan CRM, dan eksekusi layanan di cabang.</Pull>
+
+      <H2>Prinsip Operasional Lanjutan</H2>
+      <P>Inilah blueprint sistemik yang terus saya terapkan pada bisnis jasa multi-cabang. Akuisisi hanyalah satu dari empat roda penggerak: Konversi, Kualifikasi, Atribusi, dan Routing. Setiap bagian harus dikelola secara operasional, jika tidak, budget iklan Anda hanya menyubsidi kebocoran sistem di bagian hilir yang tidak terlihat.</P>
+
+      <Tags items={meta.tags} />
+      <Disclaimer>
+        Angka studi kasus mencerminkan kontribusi hasil tim selama periode engagement melalui Calibreworks. Identitas klien dilindungi di bawah perjanjian kerahasiaan (NDA).
       </Disclaimer>
     </>
   );

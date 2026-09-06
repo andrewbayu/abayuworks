@@ -19,6 +19,7 @@ function Figure({ src, alt, caption }) {
 export const meta = {
   slug: 'sea-social-behaviour-2026',
   title: 'How Southeast Asia actually buys in 2026',
+  titleId: 'Bagaimana Konsumen Asia Tenggara Berbelanja di Tahun 2026',
   shortTitle: 'How Southeast Asia actually buys in 2026',
   category: 'Research · Southeast Asia',
   kind: 'Paper',
@@ -30,6 +31,8 @@ export const meta = {
     "Aditya Indra Bayu's 2026 research mapping Southeast Asian social behaviour: trust over polish, creator-led storytelling, and the shift to closed-loop social commerce with Indonesia as the centre of gravity.",
   standfirst:
     "Social in Southeast Asia is no longer a media channel. It is now the search bar, the shopping mall, and the trust layer of commerce. This paper maps what matters to SEA consumers, what content actually converts, which storytelling is effective, and how buying decisions changed through 2026.",
+  standfirstId:
+    "Media sosial di Asia Tenggara bukan lagi sekadar kanal periklanan. Media sosial kini telah menjadi search bar utama, pusat perbelanjaan digital, sekaligus lapisan kepercayaan (trust layer) dalam transaksi komersial. Riset ini membedah apa yang benar-benar penting bagi konsumen Asia Tenggara, format konten mana yang menghasilkan konversi riil, gaya storytelling apa yang efektif, dan bagaimana peta keputusan belanja bergeser drastis sepanjang 2026.",
   img: 'https://storage.googleapis.com/bluestark_explorer/infinitiworks/seasocialreport2026.jpg',
   tags: ['Southeast Asia', 'Social Commerce', 'Creator Economy', 'Marketing 2026', 'Indonesia', 'Consumer Behaviour'],
 };
@@ -145,6 +148,105 @@ export function Body() {
       <Tags items={meta.tags} />
       <Disclaimer>
         Reported figures are market and campaign contributions drawn from public 2026 sources and case studies, used for direction and planning rather than as sole-authored audit results.
+      </Disclaimer>
+    </>
+  );
+}
+
+export function BodyId() {
+  return (
+    <>
+      <UL>
+        <LI><strong>01 · Kepercayaan (Trust).</strong> Keluarga, teman, dan kreator berada jauh di atas reputasi brand ataupun rekomendasi mesin dalam hierarki pengaruh.</LI>
+        <LI><strong>02 · Konten (Content).</strong> Video pendek, live commerce, UGC otentik, dan micro-drama menghasilkan konversi nyata. Iklan studio yang kelewat kinclong justru diabaikan.</LI>
+        <LI><strong>03 · Cerita (Story).</strong> Storytelling berbasis pengalaman nyata kreator mengalahkan iklan siaran satu arah (broadcast).</LI>
+        <LI><strong>04 · Komersial (Commerce).</strong> Proses belanja kini adalah loop tertutup (closed-loop): temukan, verifikasi bukti, dan bayar di satu layar yang sama.</LI>
+      </UL>
+
+      <H2>Pergeseran Mendasar</H2>
+      <P>Perjalanan belanja konsumen Asia Tenggara di tahun 2026 bukan lagi funnel linear konvensional. Penemuan produk (discovery), pembangunan kepercayaan (trust), dan transaksi (purchase) telah melebur langsung di dalam feed media sosial. Porsi social commerce melesat dari di bawah 5% total GMV e-commerce regional menjadi sekitar 20% hingga 25% hanya dalam kurun waktu kurang dari empat tahun. Ini adalah pasar bernilai $47,6 miliar di tahun 2025 yang diproyeksikan menyentuh $186,5 miliar pada 2030, tumbuh sekitar 31% per tahun—kira-kira 2,5 kali lebih cepat dibanding e-commerce tradisional.</P>
+      <P>Implikasi praktis bagi setiap pemilik brand dan CMO: hadir di tempat audiens menemukan inspirasi (discovery) kini jauh lebih krusial dibanding hanya beriklan di tempat transaksi dulu berada. Mayoritas brand masih sibuk mengoptimalkan satu titik konversi, padahal pasar sudah berpindah ke ekosistem terpadu.</P>
+
+      <H2>Mengapa Audiens Membeli</H2>
+      <P>Saat ditanya siapa yang paling mereka percayai saat hendak membayar, pembeli Asia Tenggara menempatkan keluarga dan sahabat di urutan pertama (skor 2,42 dari 4,0), ulasan online independen di urutan kedua (2,36), dan konten kreator di urutan ketiga (1,98). Asisten AI berada di posisi paling buncit. Sekitar 67% konsumen mengaku pernah membeli suatu produk secara spesifik karena rekomendasi dari seorang kreator.</P>
+      <P>Gap tingkat konversinya sangat mencolok: rekomendasi micro-influencer menghasilkan tingkat konversi rata-rata sekitar 82%, dibandingkan 1% hingga 2% pada toko online tradisional. Itu adalah peningkatan efektivitas hingga 40 kali lipat. Di kawasan ini, komunitas terbentuk mengelilingi figur kreator jauh sebelum mereka melirik logo sebuah brand.</P>
+
+      <FigureGrid
+        items={[
+          { n: '82%', l: 'Tingkat konversi rekomendasi micro-influencer' },
+          { n: '~40X', l: 'Keunggulan konversi dibanding e-commerce web biasa' },
+          { n: '67%', l: 'Pernah checkout karena rekomendasi kreator' },
+          { n: '1-2%', l: 'Rata-rata konversi checkout e-commerce klasik' },
+        ]}
+      />
+
+      <Figure
+        src={FIGURES.trust}
+        alt="Diagram hierarki kepercayaan audiens Asia Tenggara: keluarga, ulasan, kreator, brand, dan asisten AI"
+        caption="Hierarki kepercayaan konsumen Asia Tenggara: kedekatan personal dan pembuktian nyata kreator jauh mengalahkan otoritas klaim korporasi."
+      />
+
+      <H2>Format Konten yang Menghasilkan Transaksi</H2>
+      <P>Audiens Asia Tenggara tidak membenci konten promosi. Mereka hanya membenci iklan yang terasa asing dan dibuat-buat. Format yang paling tinggi menghasilkan konversi adalah:</P>
+      <UL>
+        <LI><strong>Video Pendek Shoppable:</strong> Konten vertikal 30–60 detik yang langsung terhubung ke keranjang kuning/checkout tanpa perlu pindah aplikasi.</LI>
+        <LI><strong>Live Commerce:</strong> Sesi interaktif tanya-jawab real-time yang membedah detail fisik produk secara transparan.</LI>
+        <LI><strong>UGC Berbasis Masalah Nyata:</strong> Pengguna biasa yang memperlihatkan bagaimana produk menyelesaikan masalah sehari-hari mereka.</LI>
+      </UL>
+
+      <Figure
+        src={FIGURES.content}
+        alt="Diagram format konten yang mengonversi vs format yang ditinggalkan"
+        caption="Format yang mengonversi: konten otentik kreator, live interaktif, dan micro-drama menggeser produksi iklan studio mewah yang kaku."
+      />
+
+      <H2>Kekuatan Storytelling Emosional</H2>
+      <P>Storytelling terbukti menjadi bentuk narasi paling kuat di kawasan ini. Sekitar 79% pengguna media sosial di Asia Tenggara lebih engaged dengan konten kreator yang membawakan cerita dibanding iklan terang-terangan, dan campaign berbasis kreator menghasilkan engagement rata-rata 3,5 kali lebih tinggi dibanding paid ads biasa (WARC Benchmark 2025).</P>
+      <P>Pola yang menang bukanlah product placement kaku, melainkan <em>emotional placement</em>: brand masuk secara natural ke dalam momen kehidupan nyata, tetap bersahaja di alur cerita, namun hadir nyata di hasil akhirnya.</P>
+
+      <Pull>Storytelling berhasil ketika brand bersahaja di dalam cerita dan hadir nyata di hasil akhir.</Pull>
+
+      <H2>Pergeseran Keputusan Belanja di 2026: Closed-Loop Commerce</H2>
+      <P>Funnel belum mati, tetapi jalurnya telah termampatkan. Lebih dari 60% penemuan produk baru kini berawal di TikTok, Instagram, dan YouTube. Namun, sekitar 85% konsumen rawan drop-off jika harus berpindah-pindah aplikasi antara melihat ulasan dan melakukan pembayaran. TikTok Shop dan fitur in-app checkout mengompres penemuan, ulasan, dan pembayaran dalam satu aliran layar tunggal tanpa jeda.</P>
+
+      <Figure
+        src={FIGURES.commerce}
+        alt="Diagram perjalanan closed-loop commerce dari discover, trust, prove, hingga purchase"
+        caption="Jalur tercepat bukanlah menambah jangkauan tayangan, melainkan memangkas friksi perpindahan aplikasi antara penemuan, pembuktian, dan pembayaran."
+      />
+
+      <H2>Indonesia Sebagai Pusat Gravitasi Regional</H2>
+      <P>Indonesia memiliki sekitar 180 juta pengguna aktif media sosial (naik 26% dalam setahun) dari total 230 juta pengguna internet. Indonesia adalah pasar audiens iklan TikTok terbesar di dunia. Rata-rata orang Indonesia menghabiskan 38 jam 26 menit per bulan di TikTok, tertinggi dibanding platform mana pun.</P>
+      <P>Sekitar 82% pengguna Indonesia meriset produk langsung di media sosial, dan WhatsApp adalah alat komunikasi wajib sehari-hari. Catatan penting bagi praktisi: Indonesia bukanlah satu pasar monolitik. Karakter audiens di Jakarta, Surabaya, dan kota tier 2/3 memiliki sensitivitas harga dan nilai budaya yang sangat berbeda.</P>
+
+      <FigureGrid
+        items={[
+          { n: '180 Juta', l: 'Pengguna media sosial aktif di Indonesia' },
+          { n: '#1', l: 'Indonesia adalah pasar audiens iklan TikTok terbesar di dunia' },
+          { n: '38j 26m', l: 'Rata-rata waktu bulanan per pengguna di TikTok' },
+          { n: '82%', l: 'Meriset produk langsung di kanal media sosial' },
+        ]}
+      />
+
+      <Figure
+        src={FIGURES.local}
+        alt="Peta Indonesia menunjukkan perbedaan konteks budaya, platform, dan daya beli antar kota"
+        caption="Indonesia adalah episentrum regional, tetapi pasarnya sangat majemuk. Lokalisasikan pendekatan budayanya, bukan sekadar menerjemahkan bahasanya."
+      />
+
+      <H2>Langkah Strategis untuk Brand & Pemilik Bisnis</H2>
+      <UL>
+        <LI><strong>Balikkan Arah Funnel:</strong> Mulai dari tempat penemuan terjadi. Pasang materi kreatif di feed tempat audiens berkumpul, bukan hanya menunggu di halaman checkout lama.</LI>
+        <LI><strong>Utamakan Micro-Influencer:</strong> Berikan creative brief yang ringkas dan fleksibel. Tentukan batasan produk, namun biarkan kreator menyuarakan narasi dengan gaya otentik mereka.</LI>
+        <LI><strong>Bangun Closed-Loop Commerce:</strong> Hilangkan klik dan langkah yang memicu kebocoran konversi dengan memanfaatkan shoppable video dan chat commerce WhatsApp terpadu.</LI>
+        <LI><strong>Gunakan Storytelling Berkelanjutan:</strong> Libatkan brand ke dalam momen nyata secara berseri (episodik) agar rasa percaya audiens terakumulasi.</LI>
+        <LI><strong>Lokalisasi Budaya:</strong> Humor lokal, ritme bahasa sehari-hari, dan momentum musiman (Lebaran, Imlek, Harbolnas) jauh lebih efektif dibanding adaptasi iklan global yang kaku.</LI>
+        <LI><strong>Manfaatkan AI untuk Skala, Manusia untuk Trust:</strong> Gunakan AI untuk riset dan kecepatan produksi, tetapi pastikan sentuhan manusia tetap mengawal interaksi dan closing penjualan.</LI>
+      </UL>
+
+      <Tags items={meta.tags} />
+      <Disclaimer>
+        Angka dan data pasar dikompilasi dari laporan publik regional 2026 dan studi kasus industri sebagai acuan perencanaan strategis.
       </Disclaimer>
     </>
   );

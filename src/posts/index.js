@@ -15,7 +15,13 @@ const modules = [messyMiddle, andromeda, seaSocial, dental, kicaufest, wse, bpr,
 
 // Newest first.
 export const posts = modules
-  .map((m) => ({ ...m.meta, Body: m.Body }))
+  .map((m) => ({
+    ...m.meta,
+    Body: m.Body,
+    BodyId: m.BodyId,
+    titleId: m.meta.titleId,
+    standfirstId: m.meta.standfirstId,
+  }))
   .sort((a, b) => new Date(b.date) - new Date(a.date));
 
 export const postBySlug = Object.fromEntries(posts.map((p) => [p.slug, p]));
