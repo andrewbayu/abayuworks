@@ -33,7 +33,7 @@ export const meta = {
   standfirst:
     "Customer journeys wander. Business processes cannot. While buyer psychology loops between exploration and evaluation in Google's Messy Middle, the commercial funnel remains a deterministic state machine: disciplined checkpoints that provide clean telemetry for AI ad engines to scale sustainably.",
   standfirstId:
-    'Customer journey boleh berputar, tetapi proses bisnis tidak boleh. Ketika psikologi audiens berulang antara eksplorasi dan evaluasi di Messy Middle Google, funnel komersial tetaplah state machine deterministik: checkpoint disiplin yang memasok telemetri sinyal bersih agar mesin iklan AI bisa scaling berkelanjutan.',
+    'Customer journey boleh saja berliku, tapi alur bisnis tidak boleh ikut berantakan. Di tengah audiens yang bolak-balik menimbang opsi di Messy Middle, funnel komersial tetap butuh checkpoint yang presisi: memasok sinyal konversi yang bersih agar mesin iklan AI bisa scaling berkelanjutan.',
   img: 'https://storage.googleapis.com/bluestark_explorer/infinitiworks/funnelgooglemessymiddle.png',
   tags: ['Messy Middle', 'Funnel Architecture', 'AI Telemetry', 'Meta Andromeda', 'Performance Marketing', 'Growth Systems'],
 };
@@ -176,15 +176,15 @@ export function Body() {
 export function BodyId() {
   return (
     <>
-      <P>Sebuah mitos berbahaya kini menyebar luas di berbagai ruang meeting growth dan komunitas marketing: klaim bahwa karena perilaku beli audiens itu tidak linear, maka funnel bisnis sudah mati.</P>
-      <P>Banyak marketer berulang kali mengutip riset Messy Middle dari Google (2020) sebagai dalih pembenaran. Argumen mereka biasanya terdengar seperti ini: pembeli tidak lagi bergerak lurus dari awareness ke pembelian. Mereka scrolling, tersesat, membanding-bandingkan opsi, terdistraksi, dan berputar tanpa henti. Karena itu, membangun blueprint funnel dianggap kuno dan sia-sia. Hal terbaik yang bisa dilakukan hanyalah membanjiri feed dengan konten ber-hook tinggi yang viral, lalu berharap audiens akan mengonversi dirinya sendiri menjadi omset.</P>
-      <P>Kesimpulan tersebut bukan sekadar keliru. Itu adalah salah satu kesalahpahaman paling mahal dalam strategi growth modern.</P>
-      <P>Dalam praktik operasional saya, ini adalah cacat logika mendasar. Menyamakan psikologi konsumen dengan arsitektur komersial bisnis akan merusak mesin pertumbuhan Anda. Audiens Anda berhak penuh untuk berputar-putar dan tersesat di Messy Middle. Tetapi infrastruktur bisnis yang menangkap, melacak, dan memproses demand mereka sama sekali tidak boleh ikut berantakan.</P>
+      <P>Ada mitos yang sering beredar di ruang meeting: anggapan bahwa karena perilaku belanja konsumen makin tidak linear, maka funnel bisnis sudah mati.</P>
+      <P>Banyak marketer mengutip riset Messy Middle dari Google (2020) sebagai alasan untuk mengabaikan funnel. Argumennya klise: pembeli masa kini tidak lagi bergerak lurus dari awareness ke transaksi. Mereka scrolling, membandingkan opsi, terdistraksi, dan bolak-balik menimbang pilihan. Kesimpulan naifnya: merancang funnel terstruktur itu sia-sia; cukup banjiri feed dengan konten viral ber-hook tinggi, lalu tunggu audiens membeli dengan sendirinya.</P>
+      <P>Secara operasional, ini kekeliruan yang sangat mahal.</P>
+      <P>Menyamakan psikologi konsumen dengan arsitektur bisnis adalah kesalahan fatal. Konsumen memang wajar menjelajah dan menimbang opsi di Messy Middle. Tetapi sistem bisnis yang menangkap dan mengonversi demand tersebut tidak boleh ikut-ikutan berantakan.</P>
 
       <Figure
         src={FIGURES.telemetry}
         alt="Diagram dua lapis membandingkan mental wandering konsumen di messy middle dengan funnel telemetri komersial linear yang memberi makan AI"
-        caption="Psikologi audiens memang berputar antara eksplorasi dan evaluasi. Namun sistem komersial bisnis tetaplah sebuah deterministic state machine: setiap checkpoint transaksi menyuplai telemetri sinyal yang bersih ke algoritma AI dan sistem penjualan."
+        caption="Psikologi audiens memang dinamis antara eksplorasi dan evaluasi. Namun sistem komersial bisnis tetaplah mesin status deterministik: setiap checkpoint transaksi menyuplai sinyal data bersih ke algoritma AI dan pipeline penjualan."
       />
 
       <H2>Ringkasan Eksekutif</H2>
@@ -243,7 +243,7 @@ export function BodyId() {
         caption="Mesin iklan AI belajar dari kualitas data yang Anda kirimkan. Metrik hook dangkal hanya mendatangkan penonton pasif. Telemetri checkpoint yang disiplin melatih AI menemukan pembeli yang menghasilkan margin nyata."
       />
 
-      <P>Berdasarkan pengalaman saya memegang growth di berbagai industri, scaling yang sehat menuntut kita memberi makan algoritma dengan milestone sinyal yang runtut dan terverifikasi:</P>
+      <P>Dalam praktik operasional di berbagai industri, scaling yang sehat menuntut kita memberi makan algoritma dengan milestone sinyal yang runtut dan terverifikasi:</P>
       <UL>
         <LI><code>ViewContent:</code> Memastikan audiens mendarat di penawaran yang relevan, bukan sekadar klik bouncing.</LI>
         <LI><code>AddToCart / Start Order:</code> Memastikan pesan dan harga cukup kuat untuk memicu intensi finansial.</LI>
