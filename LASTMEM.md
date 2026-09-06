@@ -417,8 +417,16 @@ End of LASTMEM. Update this file when you ship anything material. It's committed
   1. Removed container background (`bg-white`) and border frames around the mockup image across `DesktopStickyRail`, `MobileBookmarkDrawer`, `OperatorBridge`, and `PreflightChecklist` landing page. Mockup now floats cleanly with drop-shadow.
   2. Changed ambiguous `FREE FIELD GUIDE` badge to high-clarity, high-urgency `FREE DOWNLOAD` badge with active pulse indicator (`bg-[#FFE8D4] text-[#1C3D73] animate-pulse`).
   3. Replaced generic copy with high-urgency hook: *"Stop Bleeding Ad Spend on Broken Signals. Meta's AI decides who sees your ads. Don't let it guess with your budget. Grab the battle-tested 5-point gate to catch costly tracking leaks and offer flaws before you spend another rupiah."*
-  4. Added attention-grabbing animated gradient glow button (`.btn-gradient-glow` in `src/styles/index.css`) with smooth shifting gradient between deep navy, vibrant blue, and electric fiery red (`#D9381E`) + hover acceleration.
+## Session AB296 · 2026-09-06
+- Revamped Meta Ads Pre-Flight Checklist from free lead magnet to paid product offer:
+  1. Set pricing to Rp49.000 (discounted 62% from Rp129.000 normal price).
+  2. Directed all purchase CTAs directly to checkout endpoint: `https://lynk.id/growthlab/k3ryx868xg2r`.
+  3. Removed all "free" indications ("FREE DOWNLOAD", "free field guide") across `BlogSidebar.jsx` (DesktopStickyRail & MobileBookmarkDrawer), `OperatorBridge.jsx`, `Home.jsx`, and `site.js`.
+  4. Updated `BlogSidebar.jsx` and `OperatorBridge.jsx` cards with `FIELD GUIDE · EBOOK` badge, live pricing pills (`Rp49.000` with `Rp129.000` strike-through), and direct external link to Lynk.id with animated gradient glow buttons (`.btn-gradient-glow`).
+  5. Updated `Home.jsx` resource band to showcase the special offer box linking directly to Lynk.id checkout.
+  6. Updated `PreflightChecklist.jsx` with corrected `LYNK_CHECKOUT_URL` (`https://lynk.id/growthlab/k3ryx868xg2r`).
 - Verified build and SSG prerender across all 31 routes. Zero errors.
+
 
 
 

@@ -25,23 +25,36 @@ export function DesktopStickyRail() {
         </div>
       </div>
 
-      {/* 2. Top Offer: Free Download (Meta Ads Pre-Flight Checklist) */}
+      {/* 2. Top Offer: Premium Field Guide (Meta Ads Pre-Flight Checklist) */}
       <div className="overflow-hidden rounded-card border border-[#dfe4eb] bg-[#f8fafc] p-4 shadow-sm">
-        <div className="inline-flex items-center gap-1.5 rounded-full bg-[#FFE8D4] px-2.5 py-0.5 text-[10px] font-bold uppercase tracking-wider text-[#1C3D73] border border-[#1C3D73]/15">
-          <span className="h-1.5 w-1.5 rounded-full bg-[#1C3D73] animate-pulse" />
-          FREE DOWNLOAD
+        <div className="flex items-center justify-between gap-2">
+          <div className="inline-flex items-center gap-1.5 rounded-full bg-[#FFE8D4] px-2.5 py-0.5 text-[10px] font-bold uppercase tracking-wider text-[#1C3D73] border border-[#1C3D73]/15">
+            <span className="h-1.5 w-1.5 rounded-full bg-emerald-500 animate-pulse" />
+            FIELD GUIDE · EBOOK
+          </div>
+          <div className="flex items-baseline gap-1.5">
+            <span className="font-display text-sm font-bold text-ink">Rp49.000</span>
+            <span className="text-[11px] text-faint line-through">Rp129.000</span>
+          </div>
         </div>
         
         {/* Direct raw mockup image - no background, no border container */}
         <div className="mt-2 text-center">
-          <img
-            src="https://storage.googleapis.com/bluestark_explorer/infinitiworks/Preflight-checklist-mockup.png"
-            alt="Meta Ads Pre-Flight Checklist Mockup"
-            width="600"
-            height="340"
-            loading="lazy"
-            className="mx-auto w-full max-w-[210px] h-auto object-contain drop-shadow-md transition-transform duration-300 hover:scale-105"
-          />
+          <a
+            href="https://lynk.id/growthlab/k3ryx868xg2r"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="inline-block group"
+          >
+            <img
+              src="https://storage.googleapis.com/bluestark_explorer/infinitiworks/Preflight-checklist-mockup.png"
+              alt="Meta Ads Pre-Flight Checklist Mockup"
+              width="600"
+              height="340"
+              loading="lazy"
+              className="mx-auto w-full max-w-[210px] h-auto object-contain drop-shadow-md transition-transform duration-300 group-hover:scale-105"
+            />
+          </a>
         </div>
 
         <h4 className="mt-2.5 font-display text-[15px] font-bold leading-snug text-ink">
@@ -51,13 +64,15 @@ export function DesktopStickyRail() {
           Meta's AI decides who sees your ads. Don't let it guess with your budget. Grab the battle-tested 5-point gate to catch costly tracking leaks and offer flaws before you spend another rupiah.
         </p>
         <div className="mt-3.5">
-          <Link
-            to="/preflight-checklist/"
+          <a
+            href="https://lynk.id/growthlab/k3ryx868xg2r"
+            target="_blank"
+            rel="noopener noreferrer"
             style={{ color: '#ffffff' }}
             className="btn-gradient-glow inline-flex w-full items-center justify-center gap-2 rounded-card px-3.5 py-2.5 font-display text-xs font-bold uppercase tracking-wider transition-all hover:-translate-y-0.5"
           >
-            Download Free Checklist <span aria-hidden="true">→</span>
-          </Link>
+            Beli Ebook — Rp49.000 <span className="line-through text-white/70 text-[10px] font-normal">Rp129.000</span> <span aria-hidden="true">→</span>
+          </a>
         </div>
       </div>
 
@@ -182,21 +197,35 @@ export function MobileBookmarkDrawer() {
                 </div>
               </div>
 
-              {/* 1. Free Download (First) */}
+              {/* 1. Product Offer (First) */}
               <div className="mt-5 overflow-hidden rounded-xl border border-[#dfe4eb] bg-[#f8fafc] p-4">
-                <div className="inline-flex items-center gap-1.5 rounded-full bg-[#FFE8D4] px-2.5 py-0.5 text-[10px] font-bold uppercase tracking-wider text-[#1C3D73] border border-[#1C3D73]/15">
-                  <span className="h-1.5 w-1.5 rounded-full bg-[#1C3D73] animate-pulse" />
-                  FREE DOWNLOAD
+                <div className="flex items-center justify-between gap-2">
+                  <div className="inline-flex items-center gap-1.5 rounded-full bg-[#FFE8D4] px-2.5 py-0.5 text-[10px] font-bold uppercase tracking-wider text-[#1C3D73] border border-[#1C3D73]/15">
+                    <span className="h-1.5 w-1.5 rounded-full bg-emerald-500 animate-pulse" />
+                    FIELD GUIDE · EBOOK
+                  </div>
+                  <div className="flex items-baseline gap-1.5">
+                    <span className="font-display text-sm font-bold text-ink">Rp49.000</span>
+                    <span className="text-[11px] text-faint line-through">Rp129.000</span>
+                  </div>
                 </div>
                 <div className="mt-2 text-center">
-                  <img
-                    src="https://storage.googleapis.com/bluestark_explorer/infinitiworks/Preflight-checklist-mockup.png"
-                    alt="Meta Ads Pre-Flight Checklist Mockup"
-                    width="600"
-                    height="340"
-                    loading="lazy"
-                    className="mx-auto w-full max-w-[190px] h-auto object-contain drop-shadow-md"
-                  />
+                  <a
+                    href="https://lynk.id/growthlab/k3ryx868xg2r"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    onClick={() => setOpen(false)}
+                    className="inline-block"
+                  >
+                    <img
+                      src="https://storage.googleapis.com/bluestark_explorer/infinitiworks/Preflight-checklist-mockup.png"
+                      alt="Meta Ads Pre-Flight Checklist Mockup"
+                      width="600"
+                      height="340"
+                      loading="lazy"
+                      className="mx-auto w-full max-w-[190px] h-auto object-contain drop-shadow-md"
+                    />
+                  </a>
                 </div>
                 <h3 className="mt-2 font-display text-[15px] font-bold leading-snug text-ink">
                   Stop Bleeding Ad Spend on Broken Signals.
@@ -205,14 +234,16 @@ export function MobileBookmarkDrawer() {
                   Audit tracking, creative hooks, and telemetry before launch with our 5-point field gate.
                 </p>
                 <div className="mt-3.5">
-                  <Link
-                    to="/preflight-checklist/"
+                  <a
+                    href="https://lynk.id/growthlab/k3ryx868xg2r"
+                    target="_blank"
+                    rel="noopener noreferrer"
                     onClick={() => setOpen(false)}
                     style={{ color: '#ffffff' }}
                     className="btn-gradient-glow inline-flex w-full items-center justify-center gap-2 rounded-card px-3.5 py-2.5 font-display text-xs font-bold uppercase tracking-wider transition-all"
                   >
-                    Download Free Checklist <span aria-hidden="true">→</span>
-                  </Link>
+                    Beli Ebook — Rp49.000 <span className="line-through text-white/70 text-[10px] font-normal">Rp129.000</span> <span aria-hidden="true">→</span>
+                  </a>
                 </div>
               </div>
 

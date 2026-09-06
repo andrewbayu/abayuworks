@@ -2,7 +2,6 @@ import Contact from '../sections/Contact';
 import { Link } from 'react-router-dom';
 import Seo from '../components/Seo';
 import PostCover from '../components/PostCover';
-import { OptInForm } from './PreflightChecklist';
 import { posts } from '../posts';
 import { site, receipts } from '../data/site';
 import DalClientMarquee from '../components/DalClientMarquee';
@@ -170,11 +169,42 @@ export default function Home() {
         </div>
       </section>
 
-      {/* LEAD MAGNET — the cheap escalation */}
+      {/* OPERATOR ASSET / EBOOK — The Meta Ads Pre-Flight Checklist */}
       <section className="home-resource-band">
         <div className="wrap grid gap-8 py-16 sm:py-20 lg:grid-cols-[.9fr_1.1fr] lg:items-center">
-          <div><p className="eyebrow mb-4">Free field guide</p><h2 className="font-display text-4xl font-semibold leading-tight tracking-tight sm:text-5xl">Before you spend on Meta ads, check the system.</h2><p className="mt-5 max-w-xl font-serif leading-7 text-muted">Get the same 5-point pre-flight gate we use to catch wasted budget before launch.</p></div>
-          <div className="home-optin"><OptInForm id="homepage-preflight" cta="Send me the checklist" /></div>
+          <div>
+            <div className="inline-flex items-center gap-2 rounded-full border border-cream/20 bg-surface/80 px-3 py-1 mb-3">
+              <span className="h-1.5 w-1.5 rounded-full bg-emerald-400 animate-pulse" />
+              <span className="text-[11px] font-bold uppercase tracking-wider text-cream">
+                EBOOK · DISKON 62%
+              </span>
+            </div>
+            <h2 className="font-display text-4xl font-semibold leading-tight tracking-tight sm:text-5xl">
+              Sebelum Anda bakar satu rupiah pun di Meta Ads: check the system.
+            </h2>
+            <p className="mt-4 max-w-xl font-serif leading-7 text-muted">
+              Get the exact 5-point pre-flight gate we use at InfinitiLabs to catch wasted ad budget, faulty telemetry, and broken offer hooks before launch.
+            </p>
+          </div>
+          <div className="home-optin flex flex-col sm:flex-row items-start sm:items-center justify-between gap-5 rounded-card border border-line bg-surface p-6 shadow-sm">
+            <div>
+              <p className="text-xs uppercase tracking-wider text-muted font-display font-semibold">Special Offer</p>
+              <div className="mt-1 flex items-baseline gap-2.5">
+                <span className="font-display text-3xl font-bold text-ink">Rp49.000</span>
+                <span className="text-sm text-faint line-through">Rp129.000</span>
+              </div>
+              <p className="mt-1 text-xs text-muted">Akses instan PDF A5 + Google Docs Master</p>
+            </div>
+            <a
+              href="https://lynk.id/growthlab/k3ryx868xg2r"
+              target="_blank"
+              rel="noopener noreferrer"
+              style={{ color: '#ffffff' }}
+              className="btn-gradient-glow inline-flex shrink-0 items-center justify-center gap-2 rounded-card px-6 py-3.5 font-display text-sm font-bold uppercase tracking-wider text-white shadow-md transition-all hover:-translate-y-0.5"
+            >
+              Beli Ebook Sekarang →
+            </a>
+          </div>
         </div>
       </section>
 

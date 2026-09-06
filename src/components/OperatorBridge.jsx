@@ -90,23 +90,36 @@ export default function OperatorBridge() {
           </div>
         </div>
 
-        {/* Tier 2: Mid-Intent Self-Service (The Free Operating Tool) */}
+        {/* Tier 2: Mid-Intent Self-Service (The Operating Tool / Ebook) */}
         <div className="flex flex-col justify-between rounded-card border border-[#dfe4eb] bg-[#f8fafc] p-6">
           <div>
-            <div className="inline-flex items-center gap-1.5 rounded-full bg-[#FFE8D4] px-2.5 py-0.5 text-micro font-bold uppercase tracking-wider text-[#1C3D73] border border-[#1C3D73]/15">
-              <span className="h-1.5 w-1.5 rounded-full bg-[#1C3D73] animate-pulse" />
-              FREE DOWNLOAD
+            <div className="flex items-center justify-between gap-2">
+              <div className="inline-flex items-center gap-1.5 rounded-full bg-[#FFE8D4] px-2.5 py-0.5 text-micro font-bold uppercase tracking-wider text-[#1C3D73] border border-[#1C3D73]/15">
+                <span className="h-1.5 w-1.5 rounded-full bg-emerald-500 animate-pulse" />
+                FIELD GUIDE · EBOOK
+              </div>
+              <div className="flex items-baseline gap-1.5">
+                <span className="font-display text-base font-bold text-ink">Rp49.000</span>
+                <span className="text-xs text-faint line-through">Rp129.000</span>
+              </div>
             </div>
             
             <div className="mt-3 text-center">
-              <img
-                src="https://storage.googleapis.com/bluestark_explorer/infinitiworks/Preflight-checklist-mockup.png"
-                alt="Meta Ads Pre-Flight Checklist Mockup"
-                width="600"
-                height="340"
-                loading="lazy"
-                className="mx-auto w-full max-w-[220px] h-auto object-contain drop-shadow-md transition-transform duration-300 hover:scale-105"
-              />
+              <a
+                href="https://lynk.id/growthlab/k3ryx868xg2r"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="inline-block group"
+              >
+                <img
+                  src="https://storage.googleapis.com/bluestark_explorer/infinitiworks/Preflight-checklist-mockup.png"
+                  alt="Meta Ads Pre-Flight Checklist Mockup"
+                  width="600"
+                  height="340"
+                  loading="lazy"
+                  className="mx-auto w-full max-w-[220px] h-auto object-contain drop-shadow-md transition-transform duration-300 group-hover:scale-105"
+                />
+              </a>
             </div>
 
             <h4 className="mt-4 font-display text-lg font-bold leading-snug text-ink">
@@ -126,18 +139,20 @@ export default function OperatorBridge() {
               </li>
               <li className="flex items-start gap-2">
                 <span className="mt-1 h-1 w-1 rounded-full bg-[#1C3D73] flex-shrink-0" />
-                <span>Instant PDF download. 100% free, no spam.</span>
+                <span>A5 PDF Guide + Editable Google Docs Master File.</span>
               </li>
             </ul>
           </div>
           <div className="mt-6 pt-4 border-t border-[#e2e8f0]">
-            <Link
-              to="/preflight-checklist/"
+            <a
+              href="https://lynk.id/growthlab/k3ryx868xg2r"
+              target="_blank"
+              rel="noopener noreferrer"
               style={{ color: '#ffffff' }}
               className="btn-gradient-glow inline-flex w-full items-center justify-center gap-2 rounded-card px-4 py-3 font-display text-sm font-bold uppercase tracking-wider transition-all hover:-translate-y-0.5"
             >
-              Download Free Checklist <span aria-hidden="true">→</span>
-            </Link>
+              Beli Ebook — Rp49.000 <span className="line-through text-white/70 text-xs font-normal">Rp129.000</span> <span aria-hidden="true">→</span>
+            </a>
           </div>
         </div>
       </div>
