@@ -1,4 +1,5 @@
 import { motion } from 'framer-motion';
+import { Link } from 'react-router-dom';
 import { fadeUp, inView } from '../lib/motion';
 
 // Shared building blocks for blog post bodies. Dark premium styling.
@@ -76,6 +77,33 @@ export function Disclaimer({ children }) {
 
 export function Src({ children }) {
   return <span className="font-medium text-ink">{children}</span>;
+}
+
+export function ConstraintCallout({
+  badge = 'Diagnosing Your Revenue Constraint',
+  title = 'Where is your growth engine leaking margin?',
+  children = 'Most brands spend on creative hooks while their commercial checkpoints leak margin. In the 90-minute Constraint Audit, we isolate the exact bottleneck between demand, sales signals, and capacity before you spend another rupiah.',
+  ctaText = 'Apply for a growth diagnostic',
+  ctaLink = '/dal/',
+}) {
+  return (
+    <div className="my-10 overflow-hidden rounded-card border border-[#dfe4eb] bg-[#f8fafc] p-6 shadow-sm sm:p-7">
+      <div className="flex items-center gap-2">
+        <span className="h-2 w-2 rounded-full bg-[#1C3D73]" aria-hidden="true" />
+        <span className="font-display text-micro font-bold uppercase tracking-wider text-[#1C3D73]">{badge}</span>
+      </div>
+      <h3 className="mt-2.5 font-display text-xl font-semibold tracking-tight text-ink">{title}</h3>
+      <p className="mt-2.5 font-serif text-sm leading-relaxed text-[#44474f]">{children}</p>
+      <div className="mt-5">
+        <Link
+          to={ctaLink}
+          className="inline-flex items-center gap-2 rounded-card bg-[#1C3D73] px-5 py-2.5 font-display text-xs font-semibold uppercase tracking-wider text-white shadow-sm transition-transform hover:-translate-y-0.5 hover:bg-[#2A5499]"
+        >
+          {ctaText} <span aria-hidden="true">→</span>
+        </Link>
+      </div>
+    </div>
+  );
 }
 
 // Animated wrapper for a post header block.

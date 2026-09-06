@@ -1,4 +1,4 @@
-import { H2, H3, P, UL, LI, FigureGrid, Pull, Tags, Disclaimer } from '../components/Prose';
+import { H2, H3, P, UL, LI, FigureGrid, Pull, Tags, Disclaimer, ConstraintCallout } from '../components/Prose';
 
 const FIGURES = {
   telemetry: '/images/blog/google-messy-middle-funnel-checkpoints/funnel-telemetry-doodle.jpg',
@@ -72,6 +72,15 @@ export function Body() {
       />
 
       <P>You spent the media budget to trigger category interest, while your competitor collected the revenue. That is the competitor subsidy trap. High-hook creative without commercial checkpoints is merely free awareness for your industry.</P>
+
+      <ConstraintCallout
+        badge="Diagnosing Your Funnel Leaks"
+        title="Are you paying to subsidize your competitors?"
+        ctaText="Apply for a 90-minute Constraint Audit"
+        ctaLink="/dal/"
+      >
+        If your ad spend increases while qualified pipeline stays flat, your messy middle has leaks between demand, evaluation assets, and sales follow-up. In the 90-minute Constraint Audit, we isolate the exact bottleneck holding your revenue back before you spend another rupiah.
+      </ConstraintCallout>
 
       <H2>What Google actually wrote</H2>
       <P>Google’s 2020 study, <em>Decoding Decisions: Making Sense of the Messy Middle</em> by Alistair Rennie and Jonny Protheroe, never advised brands to surrender to chaos.</P>

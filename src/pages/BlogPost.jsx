@@ -3,6 +3,7 @@ import { Link, useParams } from 'react-router-dom';
 import Seo from '../components/Seo';
 import PostCover from '../components/PostCover';
 import { Prose } from '../components/Prose';
+import OperatorBridge from '../components/OperatorBridge';
 import { postBySlug } from '../posts';
 import { site } from '../data/site';
 import { fadeUp } from '../lib/motion';
@@ -89,12 +90,14 @@ export default function BlogPost({ slug: slugProp }) {
         </motion.header>
 
         <div className="mt-10">
-                  <Prose>
-                    <Body />
-                  </Prose>
-                </div>
-                </article>
-              </div>
-            </>
-          );
-        }
+          <Prose>
+            <Body />
+          </Prose>
+        </div>
+
+        <OperatorBridge />
+      </article>
+    </div>
+    </>
+  );
+}
