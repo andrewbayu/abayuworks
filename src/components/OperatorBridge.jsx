@@ -29,16 +29,16 @@ export default function OperatorBridge() {
         {/* Verified Receipts Strip */}
         <div className="mt-5 grid grid-cols-3 gap-2 border-t border-[#e2e8f0] pt-4 text-center sm:gap-4">
           <div className="p-2">
-            <div className="font-display text-base font-bold text-[#1C3D73] sm:text-lg">Rp300M+/mo</div>
-            <div className="mt-0.5 font-serif text-xs text-[#718096]">Healthcare Clinic Scale</div>
+            <div className="font-display text-base font-bold text-[#1C3D73] sm:text-lg">$8.9M</div>
+            <div className="mt-0.5 font-serif text-xs leading-tight text-[#718096]">Accumulated Revenue</div>
           </div>
           <div className="p-2 border-x border-[#e2e8f0]">
-            <div className="font-display text-base font-bold text-[#1C3D73] sm:text-lg">8X ROAS</div>
-            <div className="mt-0.5 font-serif text-xs text-[#718096]">Hacktiv8 Data Science</div>
+            <div className="font-display text-base font-bold text-[#1C3D73] sm:text-lg">300K+</div>
+            <div className="mt-0.5 font-serif text-xs leading-tight text-[#718096]">Leads via Proven Systems</div>
           </div>
           <div className="p-2">
-            <div className="font-display text-base font-bold text-[#1C3D73] sm:text-lg">Turnaround</div>
-            <div className="mt-0.5 font-serif text-xs text-[#718096]">Wall Street English</div>
+            <div className="font-display text-base font-bold text-[#1C3D73] sm:text-lg">+230%</div>
+            <div className="mt-0.5 font-serif text-xs leading-tight text-[#718096]">Productivity via AI Systems</div>
           </div>
         </div>
 
