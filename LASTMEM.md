@@ -479,3 +479,14 @@ End of LASTMEM. Update this file when you ship anything material. It's committed
   2. Stat 2: `300K+` — "Leads via Proven Systems" (replaces 8X ROAS Hacktiv8 Data Science).
   3. Stat 3: `+230%` — "Productivity via AI Systems" (replaces Turnaround Wall Street English).
 - Verified `npm run build` with all 31 SSG prerendered pages passing cleanly.
+
+## Session AB302 · 2026-09-07
+- Relocated and redesigned `DesktopStickyRail` for article pages (`/blog/:slug`):
+  1. Relocated rail to the **left** column (`lg:col-span-4`) in `src/pages/BlogPost.jsx`, keeping the article reading content in the right column (`lg:col-span-8`) with `lg:items-start` for reliable viewport sticky scroll.
+  2. Compacted dimensions across all 3 cards in `src/components/BlogSidebar.jsx` (`DesktopStickyRail`) so all cards fit cleanly within the viewport height on standard laptop screens without vertical cutoffs:
+     - Avatar reduced from 44px to 36px (`h-9 w-9`), container padding reduced to `px-3.5 py-2.5`.
+     - Ebook mockup reduced to `max-w-[130px]` (from 210px), tightened spacing and typography (`text-xs`, `text-[11px]`).
+     - Consultation card compacted with tighter padding (`p-3`) and concise copy.
+     - Top stickiness offset adjusted to `sticky top-20` with `space-y-3`.
+- Verified `npm run build` with all 31 SSG prerendered routes passing cleanly.
+

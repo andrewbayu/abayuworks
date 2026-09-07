@@ -4,21 +4,21 @@ import { AnimatePresence, motion } from 'framer-motion';
 
 export function DesktopStickyRail() {
   return (
-    <div className="sticky top-28 space-y-4">
+    <div className="sticky top-20 space-y-3">
       {/* 1. Author Profile Card */}
-      <div className="rounded-card border border-[#dfe4eb] bg-white p-4 shadow-sm">
-        <div className="flex items-center gap-3">
+      <div className="rounded-card border border-[#dfe4eb] bg-white px-3.5 py-2.5 shadow-sm">
+        <div className="flex items-center gap-2.5">
           <img
             src="/aditya-bayu.webp"
             alt="Aditya Indra Bayu"
-            width="44"
-            height="44"
-            className="h-11 w-11 rounded-full border border-white object-cover shadow-sm"
+            width="36"
+            height="36"
+            className="h-9 w-9 rounded-full border border-white object-cover shadow-sm shrink-0"
             loading="lazy"
           />
-          <div>
-            <div className="font-display text-sm font-semibold text-ink">Aditya Indra Bayu</div>
-            <div className="text-[11px] font-semibold uppercase tracking-wider text-[#1C3D73]">
+          <div className="min-w-0">
+            <div className="font-display text-xs font-semibold text-ink truncate">Aditya Indra Bayu</div>
+            <div className="text-[10px] font-semibold uppercase tracking-wider text-[#1C3D73] truncate">
               Fractional CMO · InfinitiLabs
             </div>
           </div>
@@ -26,20 +26,20 @@ export function DesktopStickyRail() {
       </div>
 
       {/* 2. Top Offer: Premium Field Guide (Meta Ads Pre-Flight Checklist) */}
-      <div className="overflow-hidden rounded-card border border-[#dfe4eb] bg-[#f8fafc] p-4 shadow-sm">
-        <div className="flex items-center justify-between gap-2">
-          <div className="inline-flex items-center gap-1.5 rounded-full bg-[#FFE8D4] px-2.5 py-0.5 text-[10px] font-bold uppercase tracking-wider text-[#1C3D73] border border-[#1C3D73]/15">
+      <div className="overflow-hidden rounded-card border border-[#dfe4eb] bg-[#f8fafc] p-3 shadow-sm">
+        <div className="flex items-center justify-between gap-1.5">
+          <div className="inline-flex items-center gap-1 rounded-full bg-[#FFE8D4] px-2 py-0.5 text-[9px] font-bold uppercase tracking-wider text-[#1C3D73] border border-[#1C3D73]/15">
             <span className="h-1.5 w-1.5 rounded-full bg-emerald-500 animate-pulse" />
             FIELD GUIDE · EBOOK
           </div>
-          <div className="flex items-baseline gap-1.5">
-            <span className="font-display text-sm font-bold text-ink">Rp49.000</span>
-            <span className="text-[11px] text-faint line-through">Rp129.000</span>
+          <div className="flex items-baseline gap-1">
+            <span className="font-display text-xs font-bold text-ink">Rp49.000</span>
+            <span className="text-[10px] text-faint line-through">Rp129.000</span>
           </div>
         </div>
         
-        {/* Direct raw mockup image - no background, no border container */}
-        <div className="mt-2 text-center">
+        {/* Compact mockup image */}
+        <div className="mt-1.5 text-center">
           <a
             href="https://lynk.id/growthlab/k3ryx868xg2r"
             target="_blank"
@@ -52,47 +52,47 @@ export function DesktopStickyRail() {
               width="600"
               height="340"
               loading="lazy"
-              className="mx-auto w-full max-w-[210px] h-auto object-contain drop-shadow-md transition-transform duration-300 group-hover:scale-105"
+              className="mx-auto w-full max-w-[130px] h-auto object-contain drop-shadow-sm transition-transform duration-300 group-hover:scale-105"
             />
           </a>
         </div>
 
-        <h4 className="mt-2.5 font-display text-[15px] font-bold leading-snug text-ink">
+        <h4 className="mt-1.5 font-display text-xs font-bold leading-snug text-ink">
           Stop Bleeding Ad Spend on Broken Signals.
         </h4>
-        <p className="mt-1 font-serif text-xs leading-relaxed text-[#44474f]">
-          Meta's AI decides who sees your ads. Don't let it guess with your budget. Grab the battle-tested 5-point gate to catch costly tracking leaks and offer flaws before you spend another rupiah.
+        <p className="mt-1 font-serif text-[11px] leading-relaxed text-[#44474f]">
+          Meta's AI decides who sees your ads. Catch costly tracking leaks & offer flaws before spending another rupiah.
         </p>
-        <div className="mt-3.5">
+        <div className="mt-2.5">
           <a
             href="https://lynk.id/growthlab/k3ryx868xg2r"
             target="_blank"
             rel="noopener noreferrer"
             style={{ color: '#ffffff' }}
-            className="btn-gradient-glow inline-flex w-full items-center justify-center gap-2 rounded-card px-3.5 py-2.5 font-display text-xs font-bold uppercase tracking-wider transition-all hover:-translate-y-0.5"
+            className="btn-gradient-glow inline-flex w-full items-center justify-center gap-1.5 rounded-card px-2.5 py-2 font-display text-[11px] font-bold uppercase tracking-wider transition-all hover:-translate-y-0.5"
           >
-            Beli Ebook — Rp49.000 <span className="line-through text-white/70 text-[10px] font-normal">Rp129.000</span> <span aria-hidden="true">→</span>
+            Beli Ebook — Rp49.000 <span aria-hidden="true">→</span>
           </a>
         </div>
       </div>
 
       {/* 3. Bottom Offer: 1-on-1 Consultation (The 90-Minute Constraint Audit) */}
-      <div className="rounded-card border-2 border-[#1C3D73] bg-white p-4 shadow-sm">
-        <div className="inline-flex items-center gap-1.5 rounded-full bg-[#1C3D73]/10 px-2 py-0.5 text-[10px] font-bold uppercase tracking-wider text-[#1C3D73]">
+      <div className="rounded-card border-2 border-[#1C3D73] bg-white p-3 shadow-sm">
+        <div className="inline-flex items-center gap-1 rounded-full bg-[#1C3D73]/10 px-2 py-0.5 text-[9px] font-bold uppercase tracking-wider text-[#1C3D73]">
           <span className="h-1.5 w-1.5 rounded-full bg-[#1C3D73]" />
           Direct Consultation
         </div>
-        <h4 className="mt-2 font-display text-sm font-semibold leading-snug text-ink">
+        <h4 className="mt-1.5 font-display text-xs font-semibold leading-snug text-ink">
           Revenue capped? Find your bottleneck.
         </h4>
-        <p className="mt-1 font-serif text-xs leading-relaxed text-[#44474f]">
-          1-on-1 diagnostic directly with Aditya. Full Digital Advantage Scorecard across 5 stages and a 90-day action plan.
+        <p className="mt-1 font-serif text-[11px] leading-relaxed text-[#44474f]">
+          1-on-1 diagnostic directly with Aditya. Digital Advantage Scorecard & 90-day action plan.
         </p>
-        <div className="mt-3.5">
+        <div className="mt-2.5">
           <Link
             to="/dal/"
             style={{ color: '#ffffff' }}
-            className="!text-white inline-flex w-full items-center justify-center gap-1.5 rounded-card bg-[#1C3D73] px-3 py-2.5 font-display text-xs font-semibold shadow-sm transition-all hover:bg-[#2A5499] hover:-translate-y-0.5"
+            className="!text-white inline-flex w-full items-center justify-center gap-1.5 rounded-card bg-[#1C3D73] px-2.5 py-2 font-display text-[11px] font-semibold shadow-sm transition-all hover:bg-[#2A5499] hover:-translate-y-0.5"
           >
             Apply for Audit <span aria-hidden="true">→</span>
           </Link>
