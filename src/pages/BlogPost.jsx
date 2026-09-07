@@ -120,14 +120,9 @@ export default function BlogPost({ slug: slugProp }) {
             )}
           </motion.div>
 
-          {/* 70/30 Grid Layout: Sticky Rail on the Left, Article on the Right */}
+          {/* 70/30 Grid Layout: Article on Left, Sticky Rail on Right */}
           <div className="lg:grid lg:grid-cols-12 lg:gap-8 xl:gap-12 lg:items-start">
-            {/* Left Column (Sticky rail on desktop: Author & Offers) */}
-            <aside className="hidden lg:col-span-4 lg:block" aria-label="Author & Operating Tools">
-              <DesktopStickyRail />
-            </aside>
-
-            {/* Right Column (Reading content: Cover, Header, Body, Bridge) */}
+            {/* Left Column (Reading content: Cover, Header, Body, Bridge) */}
             <div className="lg:col-span-8 min-w-0">
               <motion.div
                 initial={{ opacity: 0, y: 20 }}
@@ -164,6 +159,11 @@ export default function BlogPost({ slug: slugProp }) {
                 <OperatorBridge />
               </div>
             </div>
+
+            {/* Right Column (Sticky rail on desktop: Author & Offers) */}
+            <aside className="hidden lg:col-span-4 lg:block sticky top-24 self-start" aria-label="Author & Operating Tools">
+              <DesktopStickyRail />
+            </aside>
           </div>
 
           {/* Floating Bookmark Drawer on mobile (< lg) */}

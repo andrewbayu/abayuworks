@@ -4,7 +4,7 @@ import { AnimatePresence, motion } from 'framer-motion';
 
 export function DesktopStickyRail() {
   return (
-    <div className="sticky top-20 space-y-3">
+    <div className="space-y-3">
       {/* 1. Author Profile Card */}
       <div className="rounded-card border border-[#dfe4eb] bg-white px-3.5 py-2.5 shadow-sm">
         <div className="flex items-center gap-2.5">
