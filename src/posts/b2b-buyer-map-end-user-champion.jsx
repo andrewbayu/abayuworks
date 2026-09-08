@@ -1,5 +1,16 @@
 import { H2, H3, P, UL, LI, FigureGrid, Pull, Tags, Disclaimer } from '../components/Prose';
 
+const FIGURE = '/images/blog/b2b-buyer-map-end-user-champion/b2b-buyer-map-doodle.png';
+
+function Figure({ src, alt, caption }) {
+  return (
+    <figure className="mt-8 overflow-hidden rounded-card border border-line bg-surface">
+      <img src={src} alt={alt} loading="lazy" className="w-full" />
+      <figcaption className="px-4 py-3 font-serif text-sm leading-relaxed text-muted">{caption}</figcaption>
+    </figure>
+  );
+}
+
 export const meta = {
   slug: 'b2b-buyer-map-end-user-champion',
   title: 'The Director Illusion: why B2B deals are won with users, not titles',
@@ -33,7 +44,7 @@ export function Body() {
       <Pull>The signature is an event. The pain is the decision engine.</Pull>
 
       <H2>The buyer is a system, not a title</H2>
-      <P>In a real B2B purchase, different people perform different jobs in the decision. Treating the director as the whole buying process is like treating a landing page as the whole funnel.</P>
+      <P>In a real B2B purchase, different people perform different jobs in the decision. Treating the director as the whole buying process is like treating a landing page as the whole funnel. Satu orang bisa memegang beberapa role, but jangan assume that without evidence.</P>
       <FigureGrid
         items={[
           { n: 'User', l: 'Feels the problem and validates day-to-day fit' },
@@ -41,6 +52,11 @@ export function Body() {
           { n: 'Influencer', l: 'Shapes criteria, risk, and shortlists' },
           { n: 'DM', l: 'Owns budget and the final commercial yes' },
         ]}
+      />
+      <Figure
+        src={FIGURE}
+        alt="Hand-drawn B2B buyer map connecting end user, champion, and decision with a proof and feedback loop"
+        caption="The buying path is not a straight line from lead to sale. It moves from lived problem, to internal momentum, to commercial decision — and proof has to travel back through the system."
       />
       <UL>
         <LI><strong>End user.</strong> They will operate the product, process, or system. Their job is to tell you whether it solves a real problem without creating a new one.</LI>
@@ -56,7 +72,7 @@ export function Body() {
       <P>The missing piece was not another follow-up deck. It was a user-backed case the buyer could trust.</P>
 
       <H2>Map the deal before you book the meeting</H2>
-      <P>Before an important call, make a one-page map. It does not need software or a complicated account plan. Write down the five roles, one name for each where possible, the problem they own, what they stand to gain, and what could make them say no.</P>
+      <P>Before an important call, make a one-page map. It does not need software or a complicated account plan. Tulis lima role tersebut, satu nama untuk masing-masing jika possible, problem yang mereka own, what they stand to gain, and what could make them say no.</P>
       <UL>
         <LI><strong>Start with the workflow.</strong> Ask: who touches this problem every day? Interview or observe them before deciding what the pitch should emphasize.</LI>
         <LI><strong>Find the champion signal.</strong> Look for the person asking detailed questions, volunteering internal context, or helping you navigate the buying process. Then give them material they can reuse.</LI>
@@ -67,7 +83,7 @@ export function Body() {
 
       <H3>A simple example</H3>
       <P>Say you sell an AI reporting workflow to a multi-branch business. The marketing analyst is the end user; they currently compile reports by hand. The marketing manager is a likely champion because their team loses time and misses campaign insights. Finance influences the cost case. IT assesses data access. The CMO or director approves the budget.</P>
-      <P>A generic director demo says, “Our AI makes reporting faster.” A mapped deal says, “The analyst stops spending two days consolidating weekly reports; the manager sees branch performance sooner; finance gets a measurable time-saving case; IT sees the access boundaries; the CMO gets faster decisions without adding headcount.” The offer did not change. The buying case did.</P>
+      <P>A generic director demo says, “Our AI makes reporting faster.” A mapped deal says, “The analyst stops spending two days consolidating weekly reports; the manager sees branch performance sooner; finance gets a measurable time-saving case; IT sees the access boundaries; the CMO gets faster decisions without adding headcount.” The offer did not change. The buying case did. Inilah bedanya selling a feature dengan building an internal case.</P>
 
       <H2>Map people, then build the evaluation infrastructure</H2>
       <P>Buyer mapping is only half the job. A champion still needs a credible way to compare options, answer objections, and move the discussion forward. That is where evaluation infrastructure matters: the proof, checkpoints, use cases, implementation plan, risk answers, and ROI logic that make an internal recommendation easy to defend.</P>
