@@ -1,6 +1,10 @@
 import { H2, H3, P, UL, LI, FigureGrid, Pull, Tags, Disclaimer } from '../components/Prose';
 
-const FIGURE = '/images/blog/b2b-buyer-map-end-user-champion/b2b-buyer-map-doodle.png';
+const FIGURES = {
+  map: '/images/blog/b2b-buyer-map-end-user-champion/b2b-buyer-map-doodle.png',
+  committee: '/images/blog/b2b-buyer-map-end-user-champion/buyer-committee-doodle.png',
+  evaluation: '/images/blog/b2b-buyer-map-end-user-champion/evaluation-path-doodle.png',
+};
 
 function Figure({ src, alt, caption }) {
   return (
@@ -54,7 +58,7 @@ export function Body() {
         ]}
       />
       <Figure
-        src={FIGURE}
+        src={FIGURES.map}
         alt="Hand-drawn B2B buyer map connecting end user, champion, and decision with a proof and feedback loop"
         caption="The buying path is not a straight line from lead to sale. It moves from lived problem, to internal momentum, to commercial decision — and proof has to travel back through the system."
       />
@@ -88,6 +92,16 @@ export function Body() {
       <H2>Map people, then build the evaluation infrastructure</H2>
       <P>Buyer mapping is only half the job. A champion still needs a credible way to compare options, answer objections, and move the discussion forward. That is where evaluation infrastructure matters: the proof, checkpoints, use cases, implementation plan, risk answers, and ROI logic that make an internal recommendation easy to defend.</P>
       <P>Without it, the champion has enthusiasm but no ammunition. With it, the buying committee can evaluate the deal on the right criteria instead of defaulting to price, familiarity, or inertia.</P>
+      <Figure
+        src={FIGURES.committee}
+        alt="Hand-drawn B2B buying committee with end user, champion, influencer, and decision maker feeding one buying case"
+        caption="The buying case is assembled by several roles. Each person contributes a different kind of confidence before the decision can move."
+      />
+      <Figure
+        src={FIGURES.evaluation}
+        alt="Hand-drawn B2B evaluation path from problem to proof, plan, and internal yes"
+        caption="A champion needs more than enthusiasm: the evaluation path must connect the problem to credible proof, an executable plan, and a defensible internal yes."
+      />
       <P>For the complementary framework, read <a className="text-cream underline underline-offset-4" href="https://www.adityabayu.com/blog/google-messy-middle-funnel-checkpoints/">Google’s messy middle funnel checkpoints</a>.</P>
 
       <H2>The operator rule</H2>
