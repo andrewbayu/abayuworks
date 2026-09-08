@@ -22,7 +22,7 @@ export const meta = {
   summary: 'A practical buyer map for B2B teams: identify the end user, champion, influencer, decision maker, and gatekeeper before the first sales meeting.',
   description: 'Why the person with the highest title is rarely the only buyer in a B2B deal—and how to map the people who can make, shape, or stop the decision.',
   standfirst: 'I used to think getting in front of a director meant a B2B deal was nearly closed. It was a costly illusion. The signature may come from the top, but urgency is usually created by the people who live with the problem every day.',
-  img: 'https://storage.googleapis.com/bluestark_explorer/infinitiworks/b2b-buyer-map.jpg',
+  img: 'https://storage.googleapis.com/bluestark_explorer/b2bdeals.jpg',
   tags: ['B2B Sales', 'Buyer Map', 'Champion', 'End User', 'Go-to-Market'],
 };
 
