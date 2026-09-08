@@ -40,7 +40,7 @@ export default function BlogPost({ slug: slugProp }) {
     );
   }
 
-  const hasIdVersion = Boolean(post.BodyId);
+  const hasIdVersion = true;
   const activeLang = hasIdVersion ? lang : 'en';
 
   const CurrentBody = activeLang === 'id' && post.BodyId ? post.BodyId : post.Body;

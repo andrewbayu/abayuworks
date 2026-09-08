@@ -20,7 +20,8 @@ export const posts = modules
   .map((m) => ({
     ...m.meta,
     Body: m.Body,
-    BodyId: m.BodyId,
+    // Every article exposes the language feature; untranslated bodies fall back to English.
+    BodyId: m.BodyId || m.Body,
     titleId: m.meta.titleId,
     standfirstId: m.meta.standfirstId,
   }))
