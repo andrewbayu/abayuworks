@@ -3,6 +3,7 @@ import { H2, P, UL, LI, FigureGrid, Pull, Tags, Disclaimer } from '../components
 const FIGURES = {
   touchpoints: '/images/blog/why-funnel-is-not-dead/fragmented-touchpoints-doodle.png',
   loop: '/images/blog/why-funnel-is-not-dead/modern-funnel-loop-doodle.png',
+  checkpoints: '/images/blog/why-funnel-is-not-dead/measurement-checkpoints-doodle.png',
 };
 
 function Figure({ src, alt, caption }) {
@@ -159,6 +160,11 @@ export function Body() {
         Every stage measurable. Every handoff tracked. That's the operating system — not a page, not a tool, a system
         that runs while I'm running the other nine ventures.
       </P>
+      <Figure
+        src={FIGURES.checkpoints}
+        alt="Hand-drawn funnel checkpoints from attention to trust, intent, and revenue"
+        caption="The funnel only becomes useful when every stage has a question: did they notice, believe, act, and create revenue?"
+      />
 
       <H2>The part I actually care about</H2>
       <P>
@@ -273,6 +279,11 @@ export function BodyId() {
         src={FIGURES.loop}
         alt="Loop funnel modern yang menghubungkan attract, engage, convert, dan learn"
         caption="Funnel modern bekerja sebagai operating loop: attract, engage, convert, lalu learn untuk memperbaiki sistem berikutnya."
+      />
+      <Figure
+        src={FIGURES.checkpoints}
+        alt="Checkpoint funnel dari attention ke trust, intent, dan revenue"
+        caption="Funnel perlu diukur per tahap: apakah mereka notice, percaya, bertindak, dan akhirnya menghasilkan revenue?"
       />
 
       <H2>Yang perlu Anda lakukan sekarang</H2>
