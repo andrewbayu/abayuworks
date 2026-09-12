@@ -32,16 +32,12 @@ export function DesktopStickyRail() {
             <span className="h-1.5 w-1.5 rounded-full bg-emerald-500 animate-pulse" />
             FIELD GUIDE · EBOOK
           </div>
-          <div className="flex items-baseline gap-1">
-            <span className="font-display text-xs font-bold text-ink">Rp49.000</span>
-            <span className="text-[10px] text-faint line-through">Rp129.000</span>
-          </div>
         </div>
         
         {/* Compact mockup image */}
         <div className="mt-1.5 text-center">
           <a
-            href="https://lynk.id/growthlab/k3ryx868xg2r"
+            href="/preflight-checklist/"
             target="_blank"
             rel="noopener noreferrer"
             className="inline-block group"
@@ -65,13 +61,13 @@ export function DesktopStickyRail() {
         </p>
         <div className="mt-2.5">
           <a
-            href="https://lynk.id/growthlab/k3ryx868xg2r"
+            href="/preflight-checklist/"
             target="_blank"
             rel="noopener noreferrer"
             style={{ color: '#ffffff' }}
             className="btn-gradient-glow inline-flex w-full items-center justify-center gap-1.5 rounded-card px-2.5 py-2 font-display text-[11px] font-bold uppercase tracking-wider transition-all hover:-translate-y-0.5"
           >
-            Beli Ebook — Rp49.000 <span aria-hidden="true">→</span>
+            See the field guide <span aria-hidden="true">→</span>
           </a>
         </div>
       </div>
@@ -204,14 +200,10 @@ export function MobileBookmarkDrawer() {
                     <span className="h-1.5 w-1.5 rounded-full bg-emerald-500 animate-pulse" />
                     FIELD GUIDE · EBOOK
                   </div>
-                  <div className="flex items-baseline gap-1.5">
-                    <span className="font-display text-sm font-bold text-ink">Rp49.000</span>
-                    <span className="text-[11px] text-faint line-through">Rp129.000</span>
-                  </div>
                 </div>
                 <div className="mt-2 text-center">
                   <a
-                    href="https://lynk.id/growthlab/k3ryx868xg2r"
+                    href="/preflight-checklist/"
                     target="_blank"
                     rel="noopener noreferrer"
                     onClick={() => setOpen(false)}
@@ -235,14 +227,14 @@ export function MobileBookmarkDrawer() {
                 </p>
                 <div className="mt-3.5">
                   <a
-                    href="https://lynk.id/growthlab/k3ryx868xg2r"
+                    href="/preflight-checklist/"
                     target="_blank"
                     rel="noopener noreferrer"
                     onClick={() => setOpen(false)}
                     style={{ color: '#ffffff' }}
                     className="btn-gradient-glow inline-flex w-full items-center justify-center gap-2 rounded-card px-3.5 py-2.5 font-display text-xs font-bold uppercase tracking-wider transition-all"
                   >
-                    Beli Ebook — Rp49.000 <span className="line-through text-white/70 text-[10px] font-normal">Rp129.000</span> <span aria-hidden="true">→</span>
+                    See the field guide <span aria-hidden="true">→</span>
                   </a>
                 </div>
               </div>

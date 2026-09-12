@@ -314,7 +314,7 @@ export default function PreflightChecklist() {
           {/* Authority strip */}
           <motion.div
             variants={fadeUp}
-            className="mt-7 flex items-center gap-3 border-t border-line pt-5"
+            className="hidden mt-7 flex items-center gap-3 border-t border-line pt-5"
           >
             <img
               src="/aditya-bayu.webp"
@@ -331,7 +331,7 @@ export default function PreflightChecklist() {
           </motion.div>
 
           {/* Problem Agitation Section */}
-          <motion.section {...inView} variants={stagger(0.07)} className="mt-16 border-t border-line pt-12">
+          <motion.section {...inView} variants={stagger(0.07)} className="hidden mt-16 border-t border-line pt-12">
             <motion.p variants={fadeUp} className="eyebrow">
               REALITAS LAPANGAN
             </motion.p>
@@ -381,7 +381,7 @@ export default function PreflightChecklist() {
           <motion.blockquote
             {...inView}
             variants={fadeUp}
-            className="mt-14 border-l-2 border-cream/70 pl-5 sm:pl-6 bg-surface/40 py-3 rounded-r-card"
+            className="hidden mt-14 border-l-2 border-cream/70 pl-5 sm:pl-6 bg-surface/40 py-3 rounded-r-card"
           >
             <p className="font-display text-xl font-semibold leading-snug text-ink sm:text-2xl">
               "Jika mesin tidak bisa membaca siapa target iklan Anda dalam 3 detik pertama, mesin akan menebak. Dan ia akan menebak menggunakan budget Anda."
@@ -392,7 +392,7 @@ export default function PreflightChecklist() {
           </motion.blockquote>
 
           {/* What's inside: The 5 Phases */}
-          <motion.section {...inView} variants={stagger(0.07)} className="mt-16">
+          <motion.section {...inView} variants={stagger(0.07)} className="hidden mt-16">
             <motion.p variants={fadeUp} className="eyebrow">
               ISI CHECKLIST LENGKAP
             </motion.p>
@@ -435,7 +435,7 @@ export default function PreflightChecklist() {
 
 
           {/* What This Fixes Immediately */}
-          <motion.section {...inView} variants={stagger(0.07)} className="mt-16 border-t border-line pt-12">
+          <motion.section {...inView} variants={stagger(0.07)} className="hidden mt-16 border-t border-line pt-12">
             <motion.p variants={fadeUp} className="eyebrow">
               MANFAAT NYATA &amp; PAIN POINTS TERATASI
             </motion.p>
@@ -459,6 +459,72 @@ export default function PreflightChecklist() {
                   <p className="mt-1.5 text-xs leading-relaxed text-muted">
                     {item.desc}
                   </p>
+                </motion.div>
+              ))}
+            </div>
+          </motion.section>
+
+          {/* What this book is */}
+          <motion.section {...inView} variants={fadeUp} className="mt-16 border-t border-line pt-12">
+            <motion.p variants={fadeUp} className="eyebrow">INI BUKU APA?</motion.p>
+            <motion.h2 variants={fadeUp} className="mt-2 font-display text-2xl font-bold tracking-tight text-ink sm:text-3xl">
+              A pre-flight field guide sebelum budget Meta Ads Anda lepas landas.
+            </motion.h2>
+            <motion.p variants={fadeUp} className="mt-4 text-muted leading-relaxed">
+              Ini bukan ebook tentang tombol-tombol di Ads Manager. Ini adalah checklist operator untuk memeriksa apakah
+              offer, creative, tracking, dan struktur akun Anda sudah cukup sehat sebelum mesin AI mulai mengalokasikan budget.
+            </motion.p>
+          </motion.section>
+
+          {/* What is inside */}
+          <motion.section {...inView} variants={stagger(0.07)} className="mt-16">
+            <motion.p variants={fadeUp} className="eyebrow">ISINYA TENTANG APA?</motion.p>
+            <motion.h2 variants={fadeUp} className="mt-2 font-display text-2xl font-bold tracking-tight text-ink sm:text-3xl">
+              Lima gerbang yang menentukan apakah campaign siap jalan.
+            </motion.h2>
+            <motion.p variants={fadeUp} className="mt-3 text-muted leading-relaxed">
+              Kisi-kisinya sederhana. Detail verifikasinya yang membuatnya berguna.
+            </motion.p>
+            <div className="mt-6 grid gap-3 sm:grid-cols-2">
+              {[
+                ['01', 'Sinyal', 'Apakah Meta menerima data conversion yang bisa dipercaya?'],
+                ['02', 'Struktur', 'Apakah budget dan account architecture memberi ruang untuk belajar?'],
+                ['03', 'Hook', 'Apakah pesan utama terbaca sebelum orang scroll pergi?'],
+                ['04', 'Creative', 'Apakah Anda menguji ide yang berbeda, bukan kosmetik yang berbeda?'],
+                ['05', 'Metrik', 'Kapan harus tahan, memperbaiki, atau scale—berdasarkan evidence?'],
+              ].map(([no, title, text]) => (
+                <motion.div key={no} variants={fadeUp} className="card p-4 sm:p-5">
+                  <div className="flex items-start gap-3">
+                    <span className="font-display text-xl font-bold text-cream">{no}</span>
+                    <div>
+                      <h3 className="font-display font-bold text-ink">{title}</h3>
+                      <p className="mt-1 text-sm leading-relaxed text-muted">{text}</p>
+                    </div>
+                  </div>
+                </motion.div>
+              ))}
+            </div>
+          </motion.section>
+
+          {/* What the reader gets */}
+          <motion.section {...inView} variants={stagger(0.07)} className="mt-16 border-t border-line pt-12">
+            <motion.p variants={fadeUp} className="eyebrow">SETELAH BACA, DAPAT APA?</motion.p>
+            <motion.h2 variants={fadeUp} className="mt-2 font-display text-2xl font-bold tracking-tight text-ink sm:text-3xl">
+              Anda tidak lagi launch berdasarkan feeling.
+            </motion.h2>
+            <motion.p variants={fadeUp} className="mt-4 text-muted leading-relaxed">
+              Anda punya keputusan yang lebih jelas sebelum uang masuk ke auction: mana yang sudah ready, mana yang harus
+              diperbaiki, dan kenapa perbaikannya matters.
+            </motion.p>
+            <div className="mt-6 grid gap-3 sm:grid-cols-3">
+              {[
+                ['A go / no-go gate', 'Tahu apakah campaign layak diluncurkan atau masih menyimpan risiko yang mahal.'],
+                ['A repeatable SOP', 'Tim atau agency punya urutan pemeriksaan yang sama setiap kali membuat campaign.'],
+                ['Better learning', 'Meta mendapat signal yang lebih bersih, sementara Anda membaca hasil dengan lebih tenang.'],
+              ].map(([title, text]) => (
+                <motion.div key={title} variants={fadeUp} className="card bg-elevated/50 p-5">
+                  <h3 className="font-display font-bold text-ink">{title}</h3>
+                  <p className="mt-2 text-sm leading-relaxed text-muted">{text}</p>
                 </motion.div>
               ))}
             </div>
