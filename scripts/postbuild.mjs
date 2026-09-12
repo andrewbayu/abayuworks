@@ -1,5 +1,5 @@
 // Postbuild: normalize blog output to folder-style clean URLs + generate sitemap.
-import { readdirSync, mkdirSync, renameSync, writeFileSync, existsSync, statSync } from 'node:fs';
+import { readdirSync, mkdirSync, renameSync, writeFileSync, existsSync, statSync, readFileSync } from 'node:fs';
 import { join } from 'node:path';
 
 const dist = 'dist';
@@ -83,6 +83,31 @@ ${urls
 </urlset>
 `;
 writeFileSync(join(dist, 'sitemap.xml'), sitemap);
+
+// Keep client-side navigation working even if the deployment drops the
+// generated manifest file. The SSG runtime uses this global before fetching
+// the manifest, so embedding it also prevents a 404 HTML response from being
+// parsed as JSON.
+const manifestFile = readdirSync(dist).find((f) => /^static-loader-data-manifest-.+\.json$/.test(f));
+if (!manifestFile) throw new Error('[postbuild] vite-react-ssg loader manifest is missing');
+const manifest = readFileSync(join(dist, manifestFile), 'utf8').trim().replace(/</g, '\\u003c');
+const loaderDataScript = `<script>window.__VITE_REACT_SSG_STATIC_LOADER_DATA__=${manifest};</script>`;
+
+function inlineLoaderData(dir) {
+  for (const entry of readdirSync(dir, { withFileTypes: true })) {
+    const path = join(dir, entry.name);
+    if (entry.isDirectory()) {
+      inlineLoaderData(path);
+    } else if (entry.name.endsWith('.html')) {
+      const html = readFileSync(path, 'utf8');
+      if (!html.includes('__VITE_REACT_SSG_STATIC_LOADER_DATA__')) {
+        writeFileSync(path, html.replace('</body>', `${loaderDataScript}</body>`));
+      }
+    }
+  }
+}
+
+inlineLoaderData(dist);
 
 console.log(
   `[postbuild] ${slugs.length} posts + ${learnSlugs.length} lessons foldered, sitemap with ${urls.length} urls.`
