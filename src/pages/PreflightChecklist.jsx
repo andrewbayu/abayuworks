@@ -481,10 +481,11 @@ export default function PreflightChecklist() {
           <motion.section {...inView} variants={stagger(0.07)} className="mt-16">
             <motion.p variants={fadeUp} className="eyebrow">ISINYA TENTANG APA?</motion.p>
             <motion.h2 variants={fadeUp} className="mt-2 font-display text-2xl font-bold tracking-tight text-ink sm:text-3xl">
-              Lima gerbang yang menentukan apakah campaign siap jalan.
+              5 Secret Variables yang akan membuat campaign dan iklan Anda lebih optimal.
             </motion.h2>
             <motion.p variants={fadeUp} className="mt-3 text-muted leading-relaxed">
-              Kisi-kisinya sederhana. Detail verifikasinya yang membuatnya berguna.
+              Tested di salah satu client <a href="https://weareinfiniti.id/" target="_blank" rel="noreferrer" className="text-cream underline underline-offset-4">InfinitiLabs</a>.
+              Baru implement 1 hal saja berhasil menurunkan Cost per WA-Chat dari Rp14.000 menjadi Rp6.000 dalam 7 hari.
             </motion.p>
             <div className="mt-6 grid gap-3 sm:grid-cols-2">
               {[
