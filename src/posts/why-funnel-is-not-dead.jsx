@@ -1,5 +1,19 @@
 import { H2, P, UL, LI, FigureGrid, Pull, Tags, Disclaimer } from '../components/Prose';
 
+const FIGURES = {
+  touchpoints: '/images/blog/why-funnel-is-not-dead/fragmented-touchpoints-doodle.png',
+  loop: '/images/blog/why-funnel-is-not-dead/modern-funnel-loop-doodle.png',
+};
+
+function Figure({ src, alt, caption }) {
+  return (
+    <figure className="mt-8 overflow-hidden rounded-card border border-line bg-surface">
+      <img src={src} alt={alt} loading="lazy" className="w-full" />
+      <figcaption className="px-4 py-3 font-serif text-sm leading-relaxed text-muted">{caption}</figcaption>
+    </figure>
+  );
+}
+
 export const meta = {
   slug: 'why-funnel-is-not-dead',
   title: 'The Funnel Is Not Dead — It Just Evolved',
@@ -14,6 +28,7 @@ export const meta = {
     "Aditya Bayu on why the funnel isn't dead: 10 ventures, IDR 4B+ in ad budgets, 300K+ leads. The one-page cold-traffic funnel is dying, but the system that sequences a stranger into a buyer is more important than ever.",
   standfirst:
     "Every few months a guru announces the funnel is dead. I've run 10 ventures across 5 industries, managed IDR 4B+ in ad budgets, and generated 300K+ qualified leads. Here's why they're wrong — and what the funnel actually looks like now.",
+  img: '/images/blog/why-funnel-is-not-dead/funnel-evolved-featured.png',
   tags: ['Funnel', 'Growth OS', 'Venture Building', 'Digital Marketing', 'AEO'],
 };
 
@@ -64,6 +79,11 @@ export function Body() {
         </LI>
       </UL>
       <P>Both statements are about weak execution wearing a costume of bold insight.</P>
+      <Figure
+        src={FIGURES.touchpoints}
+        alt="Hand-drawn diagram of social, search, creator, email, and AI answer touchpoints flowing into trust and conversation"
+        caption="The modern funnel starts with fragmented touchpoints. The job is to sequence them into trust and conversation, not pretend the first click should close the deal."
+      />
 
       <H2>How the funnel actually evolved</H2>
       <P>
@@ -96,6 +116,11 @@ export function Body() {
           { n: '+200%', l: 'Hacktiv8 registration growth' },
           { n: 'IDR 4B+', l: 'Marketing budget managed' },
         ]}
+      />
+      <Figure
+        src={FIGURES.loop}
+        alt="Hand-drawn circular funnel loop connecting attract, engage, convert, and learn"
+        caption="A modern funnel is an operating loop: attract attention, build trust, convert intent, then use measurement to improve the next cycle."
       />
       <P>
         Here's the uncomfortable part most funnel-doomers skip: <strong>the more the world fragments, the more you need
@@ -162,6 +187,111 @@ export function Body() {
       <Disclaimer>
         Reported figures reflect contributions to team and client outcomes across Aditya's engagements, not sole-authored
         results. This is an opinion piece grounded in those engagements.
+      </Disclaimer>
+    </>
+  );
+}
+
+export function BodyId() {
+  return (
+    <>
+      <P>
+        <strong>Semua orang bilang funnel sudah mati.</strong> Saya menjalankan 10 venture di 5 industri, mengelola
+        lebih dari IDR 4 miliar budget iklan, dan menghasilkan lebih dari 300 ribu qualified leads. Jadi, mari kita
+        bedah apa yang benar-benar berubah—dan apa yang sebenarnya masih wajib ada.
+      </P>
+
+      <H2>Klaim yang tidak pernah mati</H2>
+      <P>
+        Setiap beberapa bulan ada guru marketing yang mengumumkan bahwa funnel sudah tidak relevan. Customer journey
+        berubah, buyer semakin pintar, attention span semakin pendek. Lalu kita diminta berhenti membangun funnel dan
+        mulai melakukan sesuatu yang baru.
+      </P>
+      <P>
+        Hook itu menjual karena terdengar berani. Tetapi funnel bukan sekadar template landing page. Funnel adalah cara
+        kita memindahkan orang asing menjadi buyer melalui langkah yang disengaja, sambil mengukur di mana mereka drop.
+      </P>
+      <Pull>Yang mati adalah one-page funnel dengan cold traffic. Bukan logika funnelnya.</Pull>
+
+      <H2>Apa sebenarnya arti funnel?</H2>
+      <P>
+        Strip away the jargon: seseorang yang belum mengenal Anda perlu menemukan konteks, memahami masalahnya,
+        mempercayai solusi, lalu merasa cukup aman untuk mengambil keputusan. Transisi itu punya bentuk. Marketer
+        menyebutnya funnel; engineer mungkin menyebutnya state machine.
+      </P>
+      <UL>
+        <LI><strong>Funnel lama.</strong> Beli traffic → landing page → pitch → close.</LI>
+        <LI><strong>Funnel modern.</strong> Banyak touchpoint → trust → conversation → decision → feedback.</LI>
+      </UL>
+      <P>
+        Jadi saat seseorang berkata “funnel sudah mati,” biasanya mereka sedang mengkritik funnel tertentu yang memang
+        tidak lagi bekerja—bukan kebutuhan untuk merancang perjalanan menuju purchase.
+      </P>
+
+      <H2>Bagaimana funnel berevolusi</H2>
+      <P>
+        Di bagian atas, funnel menjadi lebih lebar dan lebih berantakan. Orang bisa pertama kali menemukan brand lewat
+        social post, search result, creator, AI answer, komentar, atau newsletter. Mereka bertemu brand dalam potongan
+        kecil, bukan satu landing page yang rapi.
+      </P>
+      <P>
+        Di bagian tengah, trust menjadi lebih mahal. Saat AI dan konten murah membuat semua brand terdengar mirip,
+        authority tidak cukup dibangun lewat desain yang terlihat profesional. Orang perlu proof, pengalaman, dan alasan
+        untuk percaya.
+      </P>
+      <P>
+        Di bagian bawah, keputusan justru bisa lebih cepat—jika trust sudah dibangun. Closing step tidak mati; ia menjadi
+        lebih pendek dan lebih surgical.
+      </P>
+      <FigureGrid
+        items={[
+          { n: '300K+', l: 'Qualified leads yang dihasilkan' },
+          { n: 'Rp156B', l: 'All-time-high revenue Wall Street English' },
+          { n: '+200%', l: 'Pertumbuhan registrasi Hacktiv8' },
+          { n: 'IDR 4B+', l: 'Marketing budget yang dikelola' },
+        ]}
+      />
+      <Figure
+        src={FIGURES.touchpoints}
+        alt="Diagram touchpoint social, search, creator, email, dan AI answer menuju trust dan conversation"
+        caption="Awareness sekarang tersebar di banyak touchpoint. Tugas funnel adalah menghubungkan fragmen tersebut menjadi trust dan percakapan yang bermakna."
+      />
+
+      <H2>Terjemahan yang lebih jujur</H2>
+      <P>
+        Funnel tidak mati. Tetapi “post more content” tanpa pipeline juga bukan strategi. Modern funnel adalah sistem
+        touchpoint, trust, dan tracking yang mengurutkan perjalanan stranger sampai menjadi buyer.
+      </P>
+      <H2>Bentuk modern funnel dari sisi operator</H2>
+      <UL>
+        <LI><strong>Attract.</strong> Personal brand, short-form, search, creator, dan content yang menghentikan scroll dengan suara yang nyata.</LI>
+        <LI><strong>Engage.</strong> Case study, breakdown, behind-the-build story, dan proof—bukan janji kosong.</LI>
+        <LI><strong>Convert.</strong> Lead magnet spesifik yang menyaring buyer serius, lalu offer yang jelas dan conversation.</LI>
+        <LI><strong>Learn.</strong> Data dari sales, CRM, content, dan revenue dipakai untuk memperbaiki siklus berikutnya.</LI>
+      </UL>
+      <Figure
+        src={FIGURES.loop}
+        alt="Loop funnel modern yang menghubungkan attract, engage, convert, dan learn"
+        caption="Funnel modern bekerja sebagai operating loop: attract, engage, convert, lalu learn untuk memperbaiki sistem berikutnya."
+      />
+
+      <H2>Yang perlu Anda lakukan sekarang</H2>
+      <P>
+        Berhenti memperdebatkan metafornya. Audit pipeline Anda: touchpoint pertama datang dari mana, proof apa yang
+        membangun trust, siapa yang follow up, dan di mana revenue benar-benar tercipta.
+      </P>
+      <P>
+        Pertanyaan utamanya bukan “apakah funnel sudah mati?” tetapi: <strong>apakah pipeline saya sebuah sistem, atau
+        saya hanya posting lalu berharap?</strong>
+      </P>
+      <P>
+        Mulai dari <a href="/dal/">Digital Advantage Lab</a> untuk memetakan intent, acquisition framework, channel,
+        dan actionables sebelum Anda membakar budget berikutnya.
+      </P>
+
+      <Tags items={meta.tags} />
+      <Disclaimer>
+        Angka yang disebutkan mencerminkan kontribusi terhadap hasil tim dan client dalam berbagai engagement, bukan hasil sole-authored.
       </Disclaimer>
     </>
   );
