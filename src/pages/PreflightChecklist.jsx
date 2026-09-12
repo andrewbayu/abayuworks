@@ -468,11 +468,12 @@ export default function PreflightChecklist() {
           <motion.section {...inView} variants={fadeUp} className="mt-16 border-t border-line pt-12">
             <motion.p variants={fadeUp} className="eyebrow">INI BUKU APA?</motion.p>
             <motion.h2 variants={fadeUp} className="mt-2 font-display text-2xl font-bold tracking-tight text-ink sm:text-3xl">
-              A pre-flight field guide sebelum budget Meta Ads Anda lepas landas.
+              Panduan checklist sebelum Anda mulai beriklan di Meta Ads.
             </motion.h2>
             <motion.p variants={fadeUp} className="mt-4 text-muted leading-relaxed">
-              Ini bukan ebook tentang tombol-tombol di Ads Manager. Ini adalah checklist operator untuk memeriksa apakah
-              offer, creative, tracking, dan struktur akun Anda sudah cukup sehat sebelum mesin AI mulai mengalokasikan budget.
+              Preflight Checklist adalah ebook yang membantu Anda mendapatkan clarity sebelum beriklan. Isinya panduan
+              checklist untuk memastikan campaign sudah siap, sehingga Anda tidak membuang budget dan bisa mengoptimalkan
+              iklan berdasarkan best practice terbaru dari Meta Andromeda Ads Engine.
             </motion.p>
           </motion.section>
 
