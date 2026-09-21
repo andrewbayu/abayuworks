@@ -490,3 +490,15 @@ End of LASTMEM. Update this file when you ship anything material. It's committed
      - Consultation card compacted with tighter padding (`p-3`) and concise copy.
 - Verified `npm run build` with all 31 SSG prerendered routes passing cleanly.
 
+## Session PF414 · 2026-09-21
+- Added Episode 1 of the Marketing Playbook Series: "The Healthcare & Aesthetic Clinic Growth Playbook: Scaling Multi-Branch Revenue Without Bleeding Ad Spend" (`/blog/healthcare-aesthetic-clinic-playbook/`).
+- Created and registered `src/posts/healthcare-aesthetic-clinic-playbook.jsx` with full bilingual support (`Body` in English, `BodyId` in Indonesian, `titleId`, `standfirstId`).
+- Strictly enforced all site guardrails: third-person operator voice ("Aditya", "he" / "ia"), zero em dashes, zero prohibited corporate buzzwords, and mandatory team outcome disclaimer.
+- Generated two custom 4:3 editorial doodle diagrams adhering to `adityabayu-com-visual-editorial` (warm paper, charcoal ink, cobalt-blue and yellow accents, handwritten labels):
+  1. `clinic-funnel-architecture-doodle.jpg`: 5-stage clinic patient acquisition pipeline (Decoupled Treatment Ads → Dedicated Funnel → WhatsApp AI Triage → In-Clinic Showup with Deposit → Patient Recall Loop).
+  2. `clinic-triage-matrix-doodle.jpg`: 4-point clinic diagnostic triage (Traffic Leak vs Speed Leak vs No-Show Leak vs Value Leak).
+- Saved image assets under `public/images/blog/healthcare-aesthetic-clinic-playbook/`.
+- Registered module in `src/posts/index.js` (newest first).
+- Verified production build and SSG pre-rendering (`dist/blog/healthcare-aesthetic-clinic-playbook/index.html` - 41.44 KiB, 32 routes rendered, sitemap updated).
+
+
