@@ -4,10 +4,12 @@ import { join } from 'node:path';
 
 const dist = 'dist';
 const blogDir = join(dist, 'blog');
+const cmoDir = join(dist, 'fractional-cmo');
 const SITE = 'https://adityabayu.com';
 const LEARN_SITE = 'https://learn.adityabayu.com';
 
 const slugs = [];
+const cmoSlugs = [];
 const learnSlugs = [];
 
 // Fold dist/<section>/<slug>.html -> dist/<section>/<slug>/index.html, returning
@@ -31,10 +33,13 @@ function foldSection(dir) {
 // 1. Move dist/blog/<slug>.html -> dist/blog/<slug>/index.html
 slugs.push(...foldSection(blogDir));
 
-// 1b. Same for the course: dist/learn/<slug>.html -> dist/learn/<slug>/index.html
+// 1b. Same for fractional-cmo: dist/fractional-cmo/<slug>.html -> dist/fractional-cmo/<slug>/index.html
+cmoSlugs.push(...foldSection(cmoDir));
+
+// 1c. Same for the course: dist/learn/<slug>.html -> dist/learn/<slug>/index.html
 learnSlugs.push(...foldSection(join(dist, 'learn')));
 
-// 1c. Fold nested standalone subpages, e.g. /preflight-checklist/thank-you.html
+// 1d. Fold nested standalone subpages, e.g. /preflight-checklist/thank-you.html
 // -> /preflight-checklist/thank-you/index.html (the landing page's own index is
 // foldered by the standalone-pages step below).
 foldSection(join(dist, 'preflight-checklist'));
@@ -47,7 +52,14 @@ if (existsSync(blogHtml)) {
   renameSync(blogHtml, join(blogDir, 'index.html'));
 }
 
-// 2b. Fold standalone top-level pages: dist/<name>.html -> dist/<name>/index.html
+// 2b. Move dist/fractional-cmo.html -> dist/fractional-cmo/index.html
+const cmoHtml = join(dist, 'fractional-cmo.html');
+if (existsSync(cmoHtml)) {
+  mkdirSync(cmoDir, { recursive: true });
+  renameSync(cmoHtml, join(cmoDir, 'index.html'));
+}
+
+// 2c. Fold standalone top-level pages: dist/<name>.html -> dist/<name>/index.html
 for (const name of ['links', 'preflight-checklist', 'playbook-fnb', 'learn']) {
   const f = join(dist, `${name}.html`);
   if (existsSync(f) && statSync(f).isFile()) {
@@ -65,10 +77,12 @@ const publicLearnLessons = learnSlugs.filter((s) => FREE_LESSON_SLUGS.includes(s
 const urls = [
   { loc: `${SITE}/`, freq: 'monthly', pri: '1.0' },
   { loc: `${SITE}/blog/`, freq: 'weekly', pri: '0.8' },
+  { loc: `${SITE}/fractional-cmo/`, freq: 'weekly', pri: '0.8' },
   { loc: `${SITE}/links/`, freq: 'monthly', pri: '0.5' },
   { loc: `${SITE}/preflight-checklist/`, freq: 'monthly', pri: '0.6' },
   { loc: `${SITE}/playbook-fnb/`, freq: 'monthly', pri: '0.6' },
   ...slugs.sort().map((s) => ({ loc: `${SITE}/blog/${s}/`, freq: 'monthly', pri: '0.7' })),
+  ...cmoSlugs.sort().map((s) => ({ loc: `${SITE}/fractional-cmo/${s}/`, freq: 'monthly', pri: '0.8' })),
   { loc: `${LEARN_SITE}/`, freq: 'monthly', pri: '0.7' },
   ...publicLearnLessons.sort().map((s) => ({ loc: `${LEARN_SITE}/${s}/`, freq: 'monthly', pri: '0.6' })),
 ];
@@ -110,5 +124,5 @@ function inlineLoaderData(dir) {
 inlineLoaderData(dist);
 
 console.log(
-  `[postbuild] ${slugs.length} posts + ${learnSlugs.length} lessons foldered, sitemap with ${urls.length} urls.`
+  `[postbuild] ${slugs.length} posts + ${cmoSlugs.length} cmo tracks + ${learnSlugs.length} lessons foldered, sitemap with ${urls.length} urls.`
 );

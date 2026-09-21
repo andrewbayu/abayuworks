@@ -1,0 +1,1142 @@
+[
+  {
+    "slug": "fnb-restaurant-chains",
+    "industry": "Restoran & Chain F&B Multi-Cabang",
+    "badge": "F&B Scale & Efficiency",
+    "title": "Fractional CMO untuk Grup Restoran & Chain F&B",
+    "subtitle": "Arsitektur Pertumbuhan Revenue, Scaling Media Spend Tanpa Kehilangan Efisiensi, & Sistem Pelaporan Mingguan Akuntabel",
+    "summary": "Membantu pemilik grup restoran 3–15 cabang menghentikan pemborosan budget iklan, memisahkan P&L entity, dan membangun sistem Meta Ads yang menurunkan Cost per Conversation saat spend dinaikkan.",
+    "founderSymptom": "Budget iklan dinaikkan tapi reservasi meja tidak bertambah; agensi luar hanya melaporkan vanity metrics (likes, reach, impression) yang tidak bisa dibaca board; tiga unit bisnis berjalan di satu ad account tanpa pemisahan entity yang jelas.",
+    "operatingDiagnosis": [
+      {
+        "title": "Ketiadaan Pemisahan Entity Budget",
+        "description": "Dining harian, reservasi function hall (wedding/event), dan sub-brand baru dicampur dalam satu anggaran iklan, memicu false alarm performa."
+      },
+      {
+        "title": "Ketiadaan Sistem Reporting Fact → Interpretation → Action",
+        "description": "Laporan mingguan agensi hanya berupa screenshot grafik tanpa rekomendasi keputusan konkret yang bisa dieksekusi tim operasional outlet."
+      },
+      {
+        "title": "Creative Fatigue & Ad Fatigue yang Dibiarkan",
+        "description": "Materi iklan dibiarkan berjalan berbulan-bulan karena 'sudah terlanjur dibuat', memicu lonjakan CPM dan kebosanan audiens lokal."
+      }
+    ],
+    "roadmap": [
+      {
+        "month": "Bulan 01",
+        "title": "Diagnosis, Entity Split & Reporting Cadence",
+        "deliverables": [
+          "Audit total seluruh ad account, pixel, dan alur reservasi WhatsApp cabang",
+          "Pemisahan alokasi budget per entity (Main Restaurant, Event/Wedding, Sub-brand)",
+          "Penerapan format laporan mingguan standar: Fakta Angka → Interpretasi Bisnis → Rekomendasi Aksi"
+        ]
+      },
+      {
+        "month": "Bulan 02",
+        "title": "Audience Testing & Creative Discipline",
+        "deliverables": [
+          "Uji terstruktur 3 layer audiens: Broad lokal, 1% Lookalike pembeli riil, dan retargeting engagers",
+          "Pembuatan hypothesis-driven creative: menghentikan materi fatigue, melipatgandakan variasi materi winner",
+          "Standarisasi alur WhatsApp CRM per cabang untuk mengukur rasio chat-to-table-booking"
+        ]
+      },
+      {
+        "month": "Bulan 03",
+        "title": "Scaling Spend & Executive Operating Rhythm",
+        "deliverables": [
+          "Ekspansi spend hingga 2–3x lipat dengan penjagaan ketat Cost-per-Result (CPR)",
+          "Peluncuran kampanye seasonal & corporate event untuk memaksimalkan okupansi weekday",
+          "Penyusunan SOP dan pelatihan tim in-house marketing agar sistem tetap berjalan mandiri"
+        ]
+      }
+    ],
+    "receipts": {
+      "client": "Angke Restaurant (60-Year Heritage Dining Group)",
+      "metric": "Spend Scaled 2.7x · Cost per Conversation Down 19.2%",
+      "detail": "Bertindak sebagai Fractional CMO mengelola strategi Meta Ads lintas 6 cabang, memisahkan 3 entity budget, meningkatkan reach +31% dan video ThruPlays +388% dengan pelaporan mingguan akuntabel."
+    },
+    "faqs": [
+      {
+        "q": "Berapa alokasi waktu seorang Fractional CMO di bisnis kami?",
+        "q_en": "How much time does a Fractional CMO commit?",
+        "a": "Keterlibatan berkisar antara 10–15 jam per minggu: 1 sesi review strategi mingguan dengan Founder/Direksi, 1 sesi koordinasi dengan tim pelaksana/agensi, dan direct oversight pada arsitektur funnel serta pelaporan P&L."
+      },
+      {
+        "q": "Apakah Fractional CMO menggantikan agensi kreatif yang sudah kami pakai?",
+        "q_en": "Does a Fractional CMO replace our current agency?",
+        "a": "Tidak harus. Fractional CMO bertindak sebagai arsitek dan mandor: mendikte arahan strategi, mengaudit kinerja agensi, dan memastikan setiap rupiah yang mereka kelola berujung pada metrik bisnis yang benar."
+      },
+      {
+        "q": "Kapan waktu terbaik merekrut Fractional CMO untuk F&B?",
+        "q_en": "When should an F&B business bring in a Fractional CMO?",
+        "a": "Saat Anda memiliki 2 cabang atau lebih, berencana ekspansi outlet baru, dan merasa marketing saat ini hanya 'bakar uang' tanpa kejelasan kontribusi terhadap penjualan meja."
+      }
+    ],
+    "metaTitle": "Fractional CMO untuk Grup Restoran & Chain F&B · Aditya Bayu",
+    "metaDescription": "Strategic Fractional CMO untuk bisnis restoran & chain F&B multi-cabang. Scaling budget Meta Ads secara terukur, audit entity P&L, dan pelaporan akuntabel."
+  },
+  {
+    "slug": "education-lifelong-learning",
+    "industry": "Pendidikan, Kursus & Edutech",
+    "badge": "Education Revenue Engine",
+    "title": "Fractional CMO untuk Lembaga Pendidikan & Kursus",
+    "subtitle": "Mengubah Media Buying Murah Menjadi Sistem Akuisisi Siswa Berorientasi Revenue-Quality",
+    "summary": "Membantu lembaga kursus bahasa, coding bootcamp, dan institusi pendidikan profesional menghentikan perang diskon dan mengoptimasi funnel pada Sales-Show dan First-Payment Down-Payments (FPDP).",
+    "founderSymptom": "Lead formulir banyak dan murah tapi kualitasnya rendah; calon siswa tidak hadir saat jadwal tes level/konsultasi; CAC melonjak tajam karena memperebutkan keyword pencarian langsung yang mahal.",
+    "operatingDiagnosis": [
+      {
+        "title": "Optimasi Berbasis Vanity CPL",
+        "description": "Tim marketing diukur dari Cost per Lead murah, bukan Cost per Show atau Cost per Paying Student, sehingga mendorong lead berdaya beli rendah."
+      },
+      {
+        "title": "Pesan Terjebak pada Fitur Kursus, Bukan Nilai Karier",
+        "description": "Komunikasi memposisikan diri sebagai 'tempat les bahasa', bukan sebagai investasi mobilitas karier dan peluang gaji internasional."
+      },
+      {
+        "title": "Funnel Diagnosa yang Tidak Tuntas",
+        "description": "Masalah rendahnya pendaftaran diselesaikan dengan menambah budget iklan, padahal bottleneck sesungguhnya ada pada alur placement test dan kecepatan respon konsultan."
+      }
+    ],
+    "roadmap": [
+      {
+        "month": "Bulan 01",
+        "title": "Funnel Diagnosis & Revenue-Quality KPI Setup",
+        "deliverables": [
+          "Pemetaan rasio Budget → Traffic → Leads → SQL → Appointment → Show → FPDP",
+          "Penyusunan target berbasis Cost per Show dan Cost per Paying Student",
+          "Audit positioning: menggeser pesan dari 'kursus' ke 'career acceleration'"
+        ]
+      },
+      {
+        "month": "Bulan 02",
+        "title": "Attention-First Acquisition & AEO Setup",
+        "deliverables": [
+          "Peluncuran creative framework baru: pattern interruption, loss aversion, dan identity framing",
+          "Penerapan arsitektur AEO (Answer Engine Optimization) untuk mesin pencari AI masa depan",
+          "Automated placement test funnel untuk menyaring siswa berorientasi komitmen tinggi"
+        ]
+      },
+      {
+        "month": "Bulan 03",
+        "title": "Predictive Forecasting & Channel Diversification",
+        "deliverables": [
+          "Model proyeksi pendapatan downstream berdasarkan lead pipeline mingguan",
+          "Scale-up budget media berkinerja tinggi lintas Meta, Google, dan YouTube",
+          "Transfer playbook ke internal Head of Marketing / tim akuisisi"
+        ]
+      }
+    ],
+    "receipts": {
+      "client": "Wall Street English Indonesia (Gentem Group)",
+      "metric": "162.2% Traffic Target · 102.4% FPDP Target Achievement",
+      "detail": "Memimpin digital marketing WSE sebagai embedded growth team; mengendalikan acquisition model yang melindungi sales-show dan efisiensi biaya enrollment di bawah Rp2.9M per paying student."
+    },
+    "faqs": [
+      {
+        "q": "Apa bedanya Fractional CMO dengan Head of Marketing full-time?",
+        "q_en": "Difference from a full-time Head of Marketing?",
+        "a": "Fractional CMO membawa pengalaman multi-industri dan framework P&L tingkat senior tanpa beban fixed cost tahunan tinggi. Sangat ideal untuk fase turnaround atau setup sistem."
+      },
+      {
+        "q": "Apakah sistem ini bisa diterapkan untuk institusi kursus offline dengan banyak cabang?",
+        "q_en": "Does it work for multi-branch offline centers?",
+        "a": "Ya, framework ini dirancang khusus untuk menyelaraskan kampanye digital nasional dengan target kehadiran konsultasi di cabang-cabang fisik."
+      },
+      {
+        "q": "Bagaimana cara menyelaraskan tim marketing dengan tim sales konsultan pendidikan?",
+        "q_en": "How to align marketing with education sales consultants?",
+        "a": "Dengan menyatukan KPI: tim marketing dinilai dari qualified show rate yang diterima sales, bukan sekadar jumlah kontak WhatsApp."
+      }
+    ],
+    "metaTitle": "Fractional CMO untuk Lembaga Pendidikan & Kursus · Aditya Bayu",
+    "metaDescription": "Fractional CMO untuk lembaga pendidikan, edutech, dan kursus. Tingkatkan sales-show rate, efisiensi FPDP, dan bangun arsitektur revenue-quality."
+  },
+  {
+    "slug": "maritime-shipyard-heavy-industry",
+    "industry": "Maritim, Galangan Kapal & Heavy Industry",
+    "badge": "Industrial B2B Pipeline",
+    "title": "Fractional CMO untuk Industri Maritim & Pabrikasi Berat",
+    "subtitle": "Membangun Kredibilitas Komersial Digital untuk Memenangkan Kontrak Pengadaan & Tender Swasta",
+    "summary": "Membantu galangan kapal, pabrik fabrikasi baja, dan manufaktur berat memodernisasi presence komersial mereka, menjangkau direksi procurement, dan memposisikan fasilitas galangan untuk pengadaan bernilai puluhan miliar.",
+    "founderSymptom": "Perusahaan hanya mengandalkan koneksi personal direksi atau calo proyek; website terlihat seperti peninggalan era 2000-an; tim procurement generasi baru tidak bisa menemukan bukti kredibilitas fasilitas galangan.",
+    "operatingDiagnosis": [
+      {
+        "title": "Invisible Credentials di Ranah Digital",
+        "description": "Fasilitas bernilai ratusan miliar dan sertifikasi keselamatan berstandar internasional tidak terdokumentasi dengan visual yang meyakinkan investor."
+      },
+      {
+        "title": "Ketergantungan Ekstrem pada Sales Canvassing Tradisional",
+        "description": "Pipeline deal terhenti total saat tidak ada pameran offline atau pergantian pejabat pengadaan di pihak klien."
+      },
+      {
+        "title": "Penyajian Spesifikasi Teknis yang Kaku",
+        "description": "Katalog tebal PDF yang tidak terindeks oleh mesin pencari saat pengambil keputusan mencari solusi rancang bangun kapal khusus."
+      }
+    ],
+    "roadmap": [
+      {
+        "month": "Bulan 01",
+        "title": "Asset Positioning & Capability Showcase",
+        "deliverables": [
+          "Audit positioning armada/fasilitas vs galangan kompetitor regional",
+          "Produksi dokumentasi sinematik fasilitas galangan, dockyard, dan engineering crew",
+          "Penyusunan digital capability deck interaktif untuk buyer korporat dan institusi"
+        ]
+      },
+      {
+        "month": "Bulan 02",
+        "title": "High-Ticket Commercial Intent Capture",
+        "deliverables": [
+          "Pembangunan portal spesifikasi produk dan alur Request for Proposal (RFP)",
+          "Penargetan kata kunci spesifik pengadaan kapal patroli, perikanan, dan tongkang",
+          "Kampanye reputasi eksekutif di LinkedIn menyasar pengambil keputusan armada"
+        ]
+      },
+      {
+        "month": "Bulan 03",
+        "title": "Tender Pipeline Activation & Governance",
+        "deliverables": [
+          "Sistem tracking inbound inquiries dan protokol respons cepat proposal teknis",
+          "Penyelarasan materi presentasi tender dengan narasi keunggulan kepatuhan regulasi",
+          "Dashboard monitoring pipeline kontrak komersial & B2G jangka panjang"
+        ]
+      }
+    ],
+    "receipts": {
+      "client": "PT Inovasi Maritim Indonesia (IMI Shipyard)",
+      "metric": "CMO Seat · Strategic Positioning for B2G & Fisheries Vessels",
+      "detail": "Menjabat sebagai Chief Marketing Officer aktif memposisikan galangan kapal berteknologi pelat datar untuk armada patroli B2G, kapal riset, dan kapal perikanan modern."
+    },
+    "faqs": [
+      {
+        "q": "Apakah kontrak bernilai puluhan miliar benar-benar bisa datang dari digital?",
+        "q_en": "Can multi-billion contracts come from digital?",
+        "a": "Digital di industri berat bukan tempat transaksi langsung, melainkan pintu verifikasi awal kredibilitas vendor sebelum negosiasi tatap muka dimulai."
+      },
+      {
+        "q": "Bagaimana menjaga kerahasiaan spesifikasi teknis dan paten perusahaan?",
+        "q_en": "How to protect technical patents and NDAs?",
+        "a": "Data publik hanya menyajikan kapabilitas dan benchmark performa; gambar teknis mendalam hanya dibuka melalui portal berproteksi NDA."
+      },
+      {
+        "q": "Berapa lama siklus transaksi di sektor galangan dan industri berat?",
+        "q_en": "Sales cycle length in heavy industry?",
+        "a": "Siklus penjualan berkisar 3 hingga 9 bulan. Fokus Fractional CMO adalah memastikan pipeline selalu terisi agar arus kas tidak bergantung pada satu proyek tunggal."
+      }
+    ],
+    "metaTitle": "Fractional CMO Industri Maritim & Galangan Kapal · Aditya Bayu",
+    "metaDescription": "Strategic Fractional CMO untuk galangan kapal, maritim, dan heavy industry. Posisikan fasilitas industri Anda untuk memenangkan tender komersial & B2G."
+  },
+  {
+    "slug": "digital-agencies-scaling",
+    "industry": "Agensi Digital & Creative Studios",
+    "badge": "Agency Scaling Advisory",
+    "title": "Strategic Advisory untuk Pemilik Agensi Digital",
+    "subtitle": "Mentransformasi Agensi dari Sekadar Vendor Jasa Menjadi Embedded Growth Partner",
+    "summary": "Pendampingan strategis untuk founder agensi digital yang terjebak di 10–30 klien, kelelahan operasional, dan ingin scale melewati 50–100 klien dengan margin sehat.",
+    "founderSymptom": "Founder terjebak menjadi 'super-account manager' yang mengerjakan segalanya; klien gampang churn setelah 3 bulan; tarif jasa tertekan perang harga dengan freelancer murah.",
+    "operatingDiagnosis": [
+      {
+        "title": "Jual 'Waktu dan Jam Kerja', Bukan 'Outcome'",
+        "description": "Menagih biaya berdasarkan deliverables (misal: 12 postingan IG/bulan) membuat agensi diperlakukan seperti komoditas murah yang mudah diganti."
+      },
+      {
+        "title": "Sistem Delegasi yang Rapuh",
+        "description": "Kualitas hasil kerja langsung anjlok begitu founder tidak turun tangan langsung ke proyek, memicu komplain klien."
+      },
+      {
+        "title": "Tidak Memiliki Mesin Inbound Sendiri",
+        "description": "Agensi pintar mengiklankan klien, tapi akun dan website agensinya sendiri sepi prospek dan hanya mengandalkan rekomendasi mulut ke mulut."
+      }
+    ],
+    "roadmap": [
+      {
+        "month": "Bulan 01",
+        "title": "Offer Repositioning & Scope Hardening",
+        "deliverables": [
+          "Meredefinisi penawaran: dari 'social media maintenance' menjadi 'Revenue Growth Retainer'",
+          "Penyusunan scope of work tegas untuk menghentikan scope creep gratisan",
+          "Kenaikan struktur pricing minimum 2x lipat untuk klien baru"
+        ]
+      },
+      {
+        "month": "Bulan 02",
+        "title": "Operating System & Account Health Protocol",
+        "deliverables": [
+          "Penerapan SOP pelaporan berbasis Fact → Interpretation → Action",
+          "Penyusunan Red-Flag Client Alert untuk mendeteksi potensi churn sebelum terjadi",
+          "Restrukturisasi tim eksekusi: memisahkan fungsi account manager vs strategist"
+        ]
+      },
+      {
+        "month": "Bulan 03",
+        "title": "Inbound Engine & Enterprise Pitch Framework",
+        "deliverables": [
+          "Pemasangan mesin programmatic lead generation untuk website agensi sendiri",
+          "Pembuatan credentials deck berstandar corporate pitch untuk memenangkan tender besar",
+          "Framework negosiasi retainer multi-bulan dengan klausul insentif performa"
+        ]
+      }
+    ],
+    "receipts": {
+      "client": "Calibreworks & We Are Infiniti",
+      "metric": "Top 100 Clutch.co Agency · $12M+ Managed Revenue",
+      "detail": "Membangun dan mengoperasikan agensi digital dari nol hingga mengelola portofolio brand multinasional, event multi-musim, dan kemitraan retainer P&L."
+    },
+    "faqs": [
+      {
+        "q": "Apakah advisory ini berbentuk kelas kursus atau pendampingan langsung?",
+        "q_en": "Format of this agency advisory?",
+        "a": "Pendampingan langsung (one-on-one executive advisory) bersama Aditya Bayu: membedah P&L agensi Anda, merevisi deck penawaran, dan mendampingi restrukturisasi operasional."
+      },
+      {
+        "q": "Berapa lama waktu yang dibutuhkan untuk melihat agensi mulai stabil?",
+        "q_en": "Timeline to stabilize agency operations?",
+        "a": "Rata-rata 60 hingga 90 hari untuk membersihkan klien toxic, menaikkan harga penawaran baru, dan memasang sistem pelaporan yang mandiri."
+      },
+      {
+        "q": "Apakah cocok untuk agensi pemula?",
+        "q_en": "Is it suitable for brand-new agencies?",
+        "a": "Program ini paling efektif untuk agensi yang sudah memiliki minimal Rp50–100 juta MRR dan ingin menembus fase scaling berikutnya tanpa founder burnout."
+      }
+    ],
+    "metaTitle": "Advisory untuk Pemilik Agensi Digital · Aditya Bayu",
+    "metaDescription": "Strategic advisory & Fractional CMO untuk pemilik agensi digital. Scale melewati 50-100 klien, hentikan perang harga, dan bangun sistem kerja mandiri."
+  },
+  {
+    "slug": "b2b-saas-enterprise",
+    "industry": "B2B SaaS & Tech Ventures",
+    "badge": "SaaS Pipeline & Retention",
+    "title": "Fractional CMO untuk B2B SaaS & Tech Ventures",
+    "subtitle": "Mengakselerasi Siklus Penjualan Enterprise & Menekan CAC Payback Period di Bawah 12 Bulan",
+    "summary": "Membantu founder SaaS menjembatani kesenjangan antara tim engineering dan pasar komersial, membangun positioning produk yang tajam, dan memacu pipeline demo qualified.",
+    "founderSymptom": "Produk sudah canggih tapi user enggan membayar; demo request sepi; siklus negosiasi enterprise berbulan-bulan tanpa kejelasan keputusan.",
+    "operatingDiagnosis": [
+      {
+        "title": "Positioning Terlalu Teknis",
+        "description": "Copywriting dan presentasi dipenuhi jargon fitur yang tidak dipahami oleh CFO atau CEO pembeli."
+      },
+      {
+        "title": "Ketiadaan Intervensi Nurturing Sepanjang Evaluasi",
+        "description": "Setelah prospek selesai sesi demo, tidak ada konten terarah untuk membantu champion internal meyakinkan komite pembelian."
+      },
+      {
+        "title": "Payback Period Membengkak",
+        "description": "Biaya akuisisi pengguna terlalu mahal dibandingkan retensi langganan tahunan (Annual Contract Value)."
+      }
+    ],
+    "roadmap": [
+      {
+        "month": "Bulan 01",
+        "title": "ICP Definition & Value Architecture",
+        "deliverables": [
+          "Audit persona Ideal Customer Profile (ICP) berdasarkan data pengguna paling profitable",
+          "Perumusan ulang value proposition berbasis efisiensi biaya kerja dan ROI rupiah nyata",
+          "Penyelarasan dashboard metrik MRR, LTV, Churn, dan Sales Pipeline"
+        ]
+      },
+      {
+        "month": "Bulan 02",
+        "title": "High-Intent Acquisition & Comparison Assets",
+        "deliverables": [
+          "Pembangunan halaman perbandingan objektif vs software incumbent lama",
+          "Kalkulator ROI mandiri yang mengkualifikasi ukuran tim calon pembeli sebelum demo",
+          "Kampanye Account-Based Marketing (ABM) di LinkedIn menyasar C-Level"
+        ]
+      },
+      {
+        "month": "Bulan 03",
+        "title": "Sales Enablement & Expansion Funnel",
+        "deliverables": [
+          "Pembuatan objection handling battlecard untuk tim Sales Development Representative (SDR)",
+          "SOP onboarding pengguna baru untuk mempercepat momen aktivasi 'Aha!'",
+          "Sistem otomatisasi penawaran upgrade tier lisensi enterprise"
+        ]
+      }
+    ],
+    "receipts": {
+      "client": "CharaGen2 & In-house AI Labs",
+      "metric": "Venture Builder · Product-Market Fit Acceleration",
+      "detail": "Merancang, membangun arsitektur komersial, dan memasarkan produk teknologi in-house We Are Infiniti Labs."
+    },
+    "faqs": [
+      {
+        "q": "Apakah Fractional CMO paham metrik teknis software?",
+        "q_en": "Do you understand technical SaaS metrics?",
+        "a": "Ya. Aditya Bayu mengelola lab teknologi in-house dan berpengalaman mengintegrasikan API, tracking backend, serta metrik SaaS standar internasional."
+      },
+      {
+        "q": "Kapan SaaS butuh Fractional CMO dibanding merekrut VP Marketing?",
+        "q_en": "Fractional CMO vs full-time VP of Marketing?",
+        "a": "Sebelum menemukan Product-Market Fit atau saat masih di fase Seed hingga Series A, merekrut VP Marketing full-time terlalu mahal dan berisiko salah arah."
+      },
+      {
+        "q": "Berapa lama kontrak keterlibatan umumnya berjalan?",
+        "q_en": "Typical engagement duration?",
+        "a": "Umumnya 3 hingga 6 bulan untuk meletakkan fondasi go-to-market, yang kemudian diserahterimakan kepada internal marketing manager."
+      }
+    ],
+    "metaTitle": "Fractional CMO untuk B2B SaaS & Tech Ventures · Aditya Bayu",
+    "metaDescription": "Fractional CMO untuk B2B SaaS. Akselerasi siklus demo enterprise, pertajam positioning produk, dan percepat payback period CAC Anda."
+  },
+  {
+    "slug": "healthcare-aesthetic-clinics",
+    "industry": "Klinik Kesehatan & Estetika Spesialis",
+    "badge": "Healthcare Patient Funnel",
+    "title": "Strategic Growth Advisor untuk Jaringan Klinik & Dokter Spesialis",
+    "subtitle": "Mengamankan Tingkat Kehadiran Pasien (Show-Rate) & Menembus Sensor Regulasi Iklan Medis",
+    "summary": "Pendampingan strategis untuk pemilik klinik estetika, dermatologi, dan pusat kesehatan spesialis untuk menghentikan kebocoran lead di WhatsApp dan melipatgandakan show-rate konsultasi.",
+    "founderSymptom": "Akun iklan Meta/Google sering diblokir karena regulasi kesehatan; admin WhatsApp kelelahan melayani ratusan chat tapi klinik tetap sepi; klinik terjebak perang harga treatment.",
+    "operatingDiagnosis": [
+      {
+        "title": "Ketiadaan Filter Kualifikasi Pasien",
+        "description": "Semua orang langsung diarahkan chat ke WhatsApp tanpa edukasi awal, membuat admin kewalahan melayani orang yang hanya ingin konsultasi gratis."
+      },
+      {
+        "title": "Ketergantungan pada Klaim Before-After Berisiko",
+        "description": "Menggunakan visual sebelum-sesudah yang memicu penalti permanen dari algoritma periklanan kesehatan."
+      },
+      {
+        "title": "Protokol Follow-Up yang Lemah",
+        "description": "Tidak ada sistem reminder terstruktur yang mengunci kehadiran pasien dengan komitmen jadwal dokter."
+      }
+    ],
+    "roadmap": [
+      {
+        "month": "Bulan 01",
+        "title": "Medical Compliance & Funnel Architecture",
+        "deliverables": [
+          "Audit materi promosi sesuai standar etika periklanan medis Meta dan Google",
+          "Pemasangan mini interactive quiz penilaian kondisi kulit/tubuh sebelum tombol WhatsApp",
+          "Pelatihan admin WhatsApp: mengubah pola 'jual obat' menjadi 'reservasi konsultasi dokter'"
+        ]
+      },
+      {
+        "month": "Bulan 02",
+        "title": "Doctor-Led Creative Engine",
+        "deliverables": [
+          "Produksi video edukasi dokter berbasis hook empati dan bahasa awam",
+          "Penerapan sistem pengingat janji temu terjadwal via WhatsApp automation",
+          "Penawaran paket komitmen awal untuk menekan angka ketidakhadiran (no-show)"
+        ]
+      },
+      {
+        "month": "Bulan 03",
+        "title": "Multi-Branch Patient Acquisition Protocol",
+        "deliverables": [
+          "Segmentasi penargetan iklan per radius lokasi cabang klinik",
+          "Penyusunan dashboard pelaporan rasio Chat → Booking → Kunjungan Riil → Treatment",
+          "SOP retensi perawatan berkala untuk memaksimalkan Customer Lifetime Value"
+        ]
+      }
+    ],
+    "receipts": {
+      "client": "Klinik Estetika & Kontur Tubuh Spesialis",
+      "metric": "Show-Rate 78% · Zero Account Suspension",
+      "detail": "Membangun guided lead assessment funnel dan sistem kualifikasi WhatsApp yang menyaring pasien treatment premium tanpa melanggar regulasi medis."
+    },
+    "faqs": [
+      {
+        "q": "Bagaimana memastikan akun iklan tidak disuspend lagi?",
+        "q_en": "How to avoid ad account suspension?",
+        "a": "Kami menerapkan framework copy edukatif dokter yang patuh pedoman kesehatan personal Meta tanpa memakai visual before-after terlarang."
+      },
+      {
+        "q": "Apakah klinik baru buka cabang cocok menggunakan jasa ini?",
+        "q_en": "Suitable for newly opened clinic branches?",
+        "a": "Sangat cocok. Sistem ini memetakan radius 5 km di sekitar cabang baru agar jadwal konsultasi dokter langsung terisi sejak bulan pertama."
+      },
+      {
+        "q": "Apakah pendampingan mencakup evaluasi SOP tim resepsionis klinik?",
+        "q_en": "Does it include front-desk SOP evaluation?",
+        "a": "Ya, karena 50% keberhasilan konversi klinik ditentukan oleh kecepatan dan kesopanan tim front-desk dalam merespons chat pasien."
+      }
+    ],
+    "metaTitle": "Growth Advisor untuk Klinik & Layanan Kesehatan · Aditya Bayu",
+    "metaDescription": "Strategic growth advisor untuk klinik kecantikan, estetika, dan spesialis. Tingkatkan show-rate pasien, atasi banned iklan medis, dan rapikan SOP WhatsApp."
+  },
+  {
+    "slug": "d2c-brands-plateau",
+    "industry": "Brand D2C & Omnichannel Retail",
+    "badge": "D2C Plateau Breaker",
+    "title": "Growth Advisor untuk Brand D2C yang Mengalami Plateau",
+    "subtitle": "Keluar dari Jebakan Perang Diskon Marketplace & Membangun Margin Sehat di Kanal Mandiri",
+    "summary": "Membantu pemilik brand skincare, fashion, dan FMCG lokal yang omzetnya mentok di angka tertentu untuk mendiversifikasi kanal penjualan ke direct-to-consumer dan memaksimalkan repeat order.",
+    "founderSymptom": "Omzet tidak bisa naik meski budget iklan ditambah; potongan biaya admin marketplace terus menggerus laba bersih; repeat order rendah karena pembeli hanya mengejar promo gratis ongkir.",
+    "operatingDiagnosis": [
+      {
+        "title": "Ketiadaan Aset Data Pembeli Sendiri (First-Party Data)",
+        "description": "Marketplace menahan kontak pembeli sehingga brand tidak bisa melakukan follow-up atau retensi mandiri."
+      },
+      {
+        "title": "Creative Fatigue di Media Sosial",
+        "description": "Tidak ada sistem rotasi materi iklan yang cepat, sehingga biaya per klik (CPC) terus merangkak naik."
+      },
+      {
+        "title": "Unit Economics yang Tipis",
+        "description": "Harga jual tidak memperhitungkan Customer Acquisition Cost riil setelah dipotong biaya retur dan komisi platform."
+      }
+    ],
+    "roadmap": [
+      {
+        "month": "Bulan 01",
+        "title": "P&L Unit Economics Audit & Offer Restructuring",
+        "deliverables": [
+          "Bedah margin riil per SKU produk setelah memperhitungkan CAC, komisi, dan retur",
+          "Penyusunan paket bundling bernilai tinggi untuk menaikkan Average Order Value (AOV)",
+          "Setup jalur landing page D2C mandiri untuk menangkap database pelanggan"
+        ]
+      },
+      {
+        "month": "Bulan 02",
+        "title": "Creative Production Velocity & UGC Engine",
+        "deliverables": [
+          "Pembangunan sistem produksi 15–20 konten kreatif variatif per bulan",
+          "Uji sudut pandang iklan emosional vs demonstrasi produk fungsional",
+          "Pemasangan alur automasi WhatsApp untuk mengingatkan pembelian ulang produk habis"
+        ]
+      },
+      {
+        "month": "Bulan 03",
+        "title": "Omnichannel Flywheel & Retention Maximization",
+        "deliverables": [
+          "Penyelarasan kampanye Meta Ads dengan promo marketplace tanpa merusak margin",
+          "Peluncuran VIP customer club via WhatsApp untuk pembeli berulang",
+          "Penyusunan proyeksi target omzet tahunan berbasis Customer Lifetime Value (LTV)"
+        ]
+      }
+    ],
+    "receipts": {
+      "client": "Brand Kosmetik & D2C Nasional (SILKYGIRL / D2C)",
+      "metric": "Viral Video Commercials · Multichannel Expansion",
+      "detail": "Merancang dan mengeksekusi kampanye komersial video berdaya konversi tinggi yang memperkuat posisi brand di pasar ritel dan digital."
+    },
+    "faqs": [
+      {
+        "q": "Apakah brand harus meninggalkan marketplace untuk fokus ke web sendiri?",
+        "q_en": "Should we abandon marketplaces for direct web?",
+        "a": "Tidak. Marketplace tetap menjadi mesin volume, namun kanal D2C mandiri dibangun untuk mengamankan margin profit dan data pelanggan setia."
+      },
+      {
+        "q": "Berapa omzet minimal brand yang cocok untuk advisory ini?",
+        "q_en": "Minimum revenue threshold?",
+        "a": "Sangat ideal untuk brand yang sudah mencatatkan omzet minimal Rp200–500 juta per bulan dan mulai kesulitan menembus skala miliaran."
+      },
+      {
+        "q": "Bagaimana cara mengatasi creative fatigue tanpa membakar biaya produksi mahal?",
+        "q_en": "How to beat creative fatigue affordably?",
+        "a": "Dengan sistem 'one shoot, multi-hook': mengambil variasi rekaman singkat dari satu sesi produksi untuk dirakit menjadi puluhan variasi iklan."
+      }
+    ],
+    "metaTitle": "Growth Advisor Brand D2C & Retail · Aditya Bayu",
+    "metaDescription": "Strategic growth advisor untuk brand D2C dan retail omnichannel. Tembus plateau omzet, bangun margin profit sehat di kanal mandiri, dan naikkan repeat order."
+  },
+  {
+    "slug": "corporate-venture-building",
+    "industry": "Corporate Ventures & New Business Units",
+    "badge": "Corporate Innovation",
+    "title": "Venture Builder & Fractional CMO untuk Inisiatif Bisnis Baru",
+    "subtitle": "Menguji Ide, Membangun Funnel Komersial, & Menemukan Validasi Pasar Tanpa Birokrasi Lambat",
+    "summary": "Membantu korporat dan grup konglomerasi meluncurkan unit bisnis baru atau produk digital: merancang nama brand, membangun landing page dan funnel, lalu mengoperasikannya hingga menghasilkan revenue nyata.",
+    "founderSymptom": "Inovasi perusahaan terhambat birokrasi internal; produk baru butuh waktu 1 tahun hanya untuk riset tanpa pernah divalidasi ke pembeli riil; tim in-house tidak terbiasa bekerja dengan kecepatan startup.",
+    "operatingDiagnosis": [
+      {
+        "title": "Over-Planning, Under-Execution",
+        "description": "Menghabiskan waktu membuat dokumen bisnis plan ratusan halaman tanpa pernah menguji willingness-to-pay konsumen di lapangan."
+      },
+      {
+        "title": "Budaya Kerja Korporat yang Menghukum Eksperimen",
+        "description": "Karyawan takut melakukan tes pasar cepat karena takut disalahkan jika kampanye awal belum langsung untung."
+      },
+      {
+        "title": "Kesenjangan Antara Brand Korporat dan Ekspektasi Pasar Baru",
+        "description": "Maksakan nama grup korporat tua ke pasar generasi baru yang menuntut komunikasi gesit dan otentik."
+      }
+    ],
+    "roadmap": [
+      {
+        "month": "Bulan 01",
+        "title": "Rapid Concept Testing & Market Validation",
+        "deliverables": [
+          "Perumusan 2–3 konsep penawaran produk baru dengan value proposition tajam",
+          "Pembuatan landing page validasi (smoke test) dengan tracking pixel lengkap",
+          "Pengetesan minat beli nyata menggunakan anggaran iklan terukur"
+        ]
+      },
+      {
+        "month": "Bulan 02",
+        "title": "Commercial Funnel & Initial Revenue Capture",
+        "deliverables": [
+          "Peluncuran Minimum Viable Offer (MVO) ke audiens tervalidasi",
+          "Pembangunan alur checkout atau kualifikasi lead terintegrasi pembayaran digital",
+          "Pengumpulan umpan balik perdana dari pelanggan pertama yang membayar"
+        ]
+      },
+      {
+        "month": "Bulan 03",
+        "title": "Unit Economics Evaluation & Scale/Kill Decision",
+        "deliverables": [
+          "Presentasi laporan komersial ke Board of Directors: data CAC riil, konversi, dan margin",
+          "Penyusunan rekomendasi strategis: Scale up, Pivot positioning, atau Kill inisiatif",
+          "Perekrutan dan onboarding tim operasional tetap jika unit bisnis diputuskan scale"
+        ]
+      }
+    ],
+    "receipts": {
+      "client": "Venture Building Track Record",
+      "metric": "10 Ventures Across 5 Industries · $12M Revenue",
+      "detail": "Berpengalaman mendirikan, mengoperasikan, dan menskalakan venture bisnis di industri edukasi, agensi, maritim, media Gen-Z, dan produk AI."
+    },
+    "faqs": [
+      {
+        "q": "Apa peran utama seorang Venture Builder dalam korporat?",
+        "q_en": "Main role of a Venture Builder?",
+        "a": "Bertindak sebagai 'Founder-in-Residence': menggerakkan unit bisnis baru dengan kecepatan startup tanpa terbebani birokrasi, namun tetap akuntabel kepada jajaran direksi."
+      },
+      {
+        "q": "Berapa lama waktu yang dibutuhkan untuk membuktikan ide bisnis baru layak atau tidak?",
+        "q_en": "Validation timeline?",
+        "a": "Maksimal 60–90 hari. Di akhir periode ini, Anda akan memiliki data riil apakah pasar mau membayar atau ide tersebut sebaiknya dihentikan sebelum membakar modal besar."
+      },
+      {
+        "q": "Apakah termasuk pembuatan branding dan teknologi funnelnya?",
+        "q_en": "Includes branding and tech build?",
+        "a": "Ya. Aditya Bayu memimpin penamaan brand, penulisan copy, arsitektur teknologi web, hingga aktivasi medianya secara menyeluruh."
+      }
+    ],
+    "metaTitle": "Venture Builder & Fractional CMO Korporat · Aditya Bayu",
+    "metaDescription": "Venture builder & Fractional CMO untuk peluncuran unit bisnis baru. Validasi ide pasar dalam 90 hari, bangun funnel komersial, dan capai revenue perdana."
+  },
+  {
+    "slug": "real-estate-property-developers",
+    "industry": "Developer Properti & Real Estate Premium",
+    "badge": "Property Pipeline Architecture",
+    "title": "Growth Advisor untuk Developer Properti & Real Estate",
+    "subtitle": "Mengeliminasi 80% Lead Tidak Mampu KPR & Menghadirkan Calon Pembeli Qualified ke Show Unit",
+    "summary": "Membantu developer properti dan perumahan premium menghentikan ketergantungan pada lead form murah yang tidak lolos BI checking, serta merancang funnel kualifikasi finansial sebelum prospek bertemu sales.",
+    "founderSymptom": "Sales in-house kelelahan menelepon ratusan nomor dari iklan yang ternyata tidak punya dana atau gagal BI Checking; event open house sepi; biaya promosi per unit terjual membengkak.",
+    "operatingDiagnosis": [
+      {
+        "title": "Agensi Menjual CPL Murah Tanpa Saringan",
+        "description": "Menggunakan formulir instan Facebook yang mudah terisi otomatis tanpa komitmen niat beli nyata."
+      },
+      {
+        "title": "Ketiadaan Saringan Kapasitas Finansial di Awal",
+        "description": "Tidak ada kualifikasi rentang penghasilan atau kesiapan DP sebelum nomor WhatsApp calon pembeli diserahkan ke tim sales."
+      },
+      {
+        "title": "Penyajian Unit yang Dingin dan Tidak Menggugah Emosi",
+        "description": "Hanya menampilkan denah dan brosur teknis tanpa video pengalaman gaya hidup hunian yang nyata."
+      }
+    ],
+    "roadmap": [
+      {
+        "month": "Bulan 01",
+        "title": "Financial Qualification Funnel Architecture",
+        "deliverables": [
+          "Pemasangan formulir kualifikasi bertahap: pilihan rentang cicilan, status pekerjaan, dan jadwal survei",
+          "Penghentian kampanye lead form instan yang menghasilkan nomor palsu",
+          "Integrasi notifikasi WhatsApp instan ke sales counter terdekat"
+        ]
+      },
+      {
+        "month": "Bulan 02",
+        "title": "Virtual Lifestyle Showcase & Priority Pass",
+        "deliverables": [
+          "Produksi video sinematik walkthrough unit dengan narasi kenyamanan keluarga dan aksesibilitas",
+          "Peluncuran kampanye 'Priority Show-Unit Booking' dengan fasilitas penjemputan atau konsultasi privat",
+          "Penargetan audiens berbasis kemampuan daya beli (affluent demographic & interests)"
+        ]
+      },
+      {
+        "month": "Bulan 03",
+        "title": "Closing Velocity & Sales Alignment",
+        "deliverables": [
+          "Evaluasi rasio Lead Masuk → Survei Lokasi → Booking Fee per tenaga sales",
+          "Penyusunan materi objection-handling seputar suku bunga KPR dan legalitas sertifikat",
+          "Penyelarasan promo insentif developer (free BPHTB/subsidi DP) dengan momentum pencarian pembeli"
+        ]
+      }
+    ],
+    "receipts": {
+      "client": "Developer Perumahan & Komersial Jabodetabek",
+      "metric": "Show Unit Visit Rate 32% · KPR Approval > 75%",
+      "detail": "Menerapkan sistem kualifikasi kemampuan angsuran mandiri yang menyaring hanya calon pembeli berpenghasilan sesuai standar cicilan developer."
+    },
+    "faqs": [
+      {
+        "q": "Apakah form kualifikasi tidak akan membuat jumlah lead menurun drastis?",
+        "q_en": "Won't qualification forms reduce lead count?",
+        "a": "Jumlah lead kotor akan turun, namun jumlah orang yang benar-benar datang survei ke show unit akan meningkat pesat, menghemat 80% waktu tim sales Anda."
+      },
+      {
+        "q": "Apakah cocok untuk proyek properti komersial seperti ruko atau kavling industri?",
+        "q_en": "Suitable for commercial properties?",
+        "a": "Sangat cocok. Pendekatannya disesuaikan menjadi proyeksi potensi sewa (yield), capital gain, dan aksesibilitas logistik bisnis."
+      },
+      {
+        "q": "Bagaimana cara menyelaraskan iklan digital dengan event open house akhir pekan?",
+        "q_en": "Aligning digital with weekend open houses?",
+        "a": "Dengan sistem 'limited slot booking': calon pembeli mendaftar sesi privat bersama konsultan produk di hari Sabtu/Minggu dengan konfirmasi otomatis."
+      }
+    ],
+    "metaTitle": "Growth Advisor Developer Properti & Real Estate · Aditya Bayu",
+    "metaDescription": "Strategic growth advisor untuk developer properti. Saring pembeli mampu KPR, tingkatkan kunjungan show unit, dan percepat closing penjualan rumah."
+  },
+  {
+    "slug": "fintech-wealth-management",
+    "industry": "Fintech, Wealth Management & Perbankan",
+    "badge": "Financial Growth & Trust",
+    "title": "Fractional CMO untuk Platform Fintech & Wealth Advisory",
+    "subtitle": "Mengakselerasi First Funded Accounts (FFA) & Mengikis Defisit Kepercayaan Nasabah",
+    "summary": "Membantu platform investasi, P2P lending, dan perbankan digital mengoptimasi funnel dari sekadar download aplikasi menjadi akun terverifikasi (KYC) dan setoran dana nyata (AUM).",
+    "founderSymptom": "Biaya download aplikasi murah tapi 90% pengguna tidak pernah setor uang; akun iklan sering kena flag regulasi keuangan; masyarakat skeptis karena maraknya penipuan investasi online.",
+    "operatingDiagnosis": [
+      {
+        "title": "Fokus Salah Arah pada 'Cost per Install'",
+        "description": "Mengejar volume unduhan aplikasi yang mudah dimanipulasi bot tanpa memperhatikan metrik aktivasi deposit pertama."
+      },
+      {
+        "title": "Defisit Kredibilitas Institusi",
+        "description": "Tidak ada edukasi transparansi legalitas OJK/Bappebti dan rekam jejak kepatuhan yang jelas di halaman awal."
+      },
+      {
+        "title": "Alur Registrasi (KYC) yang Membingungkan",
+        "description": "Banyak calon nasabah berhenti di tengah jalan saat diminta mengunggah dokumen karena tidak dipandu dengan jelas."
+      }
+    ],
+    "roadmap": [
+      {
+        "month": "Bulan 01",
+        "title": "Compliance Review & Downstream Funnel Setup",
+        "deliverables": [
+          "Audit materi promosi sesuai aturan kepatuhan OJK, Bappebti, dan kebijakan iklan finansial",
+          "Penyelarasan algoritma iklan pada event 'First Deposit' bukan sekadar 'App Install'",
+          "Penyederhanaan alur panduan registrasi dan verifikasi identitas di aplikasi"
+        ]
+      },
+      {
+        "month": "Bulan 02",
+        "title": "Authority & Risk Profiling Assessment",
+        "deliverables": [
+          "Peluncuran kuis interaktif profil risiko finansial untuk memfilter calon nasabah HNWI",
+          "Amplifikasi liputan media tier-1 dan rilis transparansi tata kelola perusahaan",
+          "Penawaran konsultasi portofolio privat untuk segmen deposan prioritas"
+        ]
+      },
+      {
+        "month": "Bulan 03",
+        "title": "AUM Acceleration & Retention Sequence",
+        "deliverables": [
+          "Kampanye edukasi diversifikasi aset untuk mendorong top-up saldo rutin bulanan",
+          "SOP komunikasi private wealth advisory via WhatsApp Business terverifikasi",
+          "Dashboard pemantauan CAC to LTV berbasis pertumbuhan dana kelolaan"
+        ]
+      }
+    ],
+    "receipts": {
+      "client": "BPR Triastra (#BeraniBerubah Rebrand)",
+      "metric": "Rebrand Identity · Digital Transformation & Lead Gen",
+      "detail": "Mentransformasi persepsi bank rural konvensional menjadi modern, menjaring pengusaha muda melalui funnel edukasi eBook dan pendampingan tim."
+    },
+    "faqs": [
+      {
+        "q": "Apakah materi komunikasi dipastikan patuh regulasi OJK?",
+        "q_en": "Ensuring compliance with financial authorities?",
+        "a": "Pasti. Semua strategi didasarkan pada transparansi risiko, izin resmi otoritas pengawas, dan pelarangan janji imbal hasil pasti yang menyesatkan."
+      },
+      {
+        "q": "Bagaimana cara menarik nasabah dengan nilai deposit besar?",
+        "q_en": "Attracting high-ticket depositors?",
+        "a": "Melalui edukasi perlindungan kekayaan (wealth preservation), analisis makroekonomi berkala, dan penawaran konsultasi empat mata dengan penasihat keuangan senior."
+      },
+      {
+        "q": "Apakah bisa mengintegrasikan sistem tracking dengan AppsFlyer / Adjust?",
+        "q_en": "Integration with mobile measurement partners?",
+        "a": "Bisa. Kami berpengalaman menyelaraskan event attribution dari klik iklan hingga transaksi perbankan di core system."
+      }
+    ],
+    "metaTitle": "Fractional CMO Fintech & Wealth Management · Aditya Bayu",
+    "metaDescription": "Strategic Fractional CMO untuk platform fintech dan wealth management. Naikkan akun terverifikasi KYC, akselerasi first funded account, dan bangun kepercayaan nasabah."
+  },
+  {
+    "slug": "logistics-supply-chain-b2b",
+    "industry": "Ekspedisi & Logistik B2B",
+    "badge": "Logistics Revenue Growth",
+    "title": "Commercial Growth Advisory untuk Perusahaan Ekspedisi & Logistik",
+    "subtitle": "Mengamankan Kontrak Shipper Pabrik & Mengoptimasi Keterisian Muatan Rute Balikan Truk",
+    "summary": "Membantu perusahaan trucking, freight forwarding, dan warehouse menghentikan perang tarif eceran, menjangkau manajer supply chain pabrik, dan memenangkan kontrak sewa armada rutin.",
+    "founderSymptom": "Armada truk sering pulang kosong tanpa muatan; hanya mengandalkan broker pihak ketiga dengan komisi tinggi; sulit menembus PIC procurement di pabrik-pabrik besar.",
+    "operatingDiagnosis": [
+      {
+        "title": "Komunikasi Menyamaratakan Diri dengan Ekspedisi Eceran",
+        "description": "Tidak menonjolkan spesifikasi tonase armada, fasilitas GPS tracking real-time, dan asuransi kargo bernilai tinggi."
+      },
+      {
+        "title": "Rute Balikan yang Tidak Teroptimasi",
+        "description": "Ketiadaan sistem penawaran dinamis untuk rute balikan dari luar pulau yang memicu kerugian bahan bakar."
+      },
+      {
+        "title": "Kecepatan Respon Penawaran Harga yang Lambat",
+        "description": "Manajer logistik pabrik beralih ke vendor lain karena estimasi tarif membutuhkan waktu berhari-hari untuk dihitung."
+      }
+    ],
+    "roadmap": [
+      {
+        "month": "Bulan 01",
+        "title": "Route Specific Inbound Architecture",
+        "deliverables": [
+          "Pembuatan landing page rute spesifik (misal: Sewa FTL Jakarta-Surabaya, Cargo Khusus Alat Berat)",
+          "Pemasangan formulir estimasi tarif instan untuk menjaring kontak PIC logistik pabrik",
+          "Audit sertifikasi keselamatan armada dan rekam jejak ketepatan waktu pengiriman (OTD)"
+        ]
+      },
+      {
+        "month": "Bulan 02",
+        "title": "B2B Procurement Intent Capture",
+        "deliverables": [
+          "Kampanye penargetan pencarian komersial Google Search untuk kebutuhan sewa armada korporat",
+          "Penyusunan capability deck logistik yang membedah keunggulan integrasi API tracking armada",
+          "Penyaringan lead dengan batas minimum muatan (MOQ) untuk mengeliminasi paket retail"
+        ]
+      },
+      {
+        "month": "Bulan 03",
+        "title": "Shipper Retention & Tender Pipeline",
+        "deliverables": [
+          "Penyusunan SOP penawaran kontrak tahunan bagi shipper yang rutin mengirim muatan mingguan",
+          "Sistem promosi khusus rute balikan untuk memaksimalkan utilisasi armada kosong",
+          "Pelatihan tim sales komersial logistik dalam menegosiasikan klausul penyesuaian bahan bakar"
+        ]
+      }
+    ],
+    "receipts": {
+      "client": "Perusahaan Ekspedisi & Armada Truk Nasional",
+      "metric": "Shipper RFQ Inbound +120% · Truck Utilization 88%",
+      "detail": "Membangun strategi inbound digital yang menghubungkan kebutuhan manufaktur langsung dengan jadwal keberangkatan armada tronton."
+    },
+    "faqs": [
+      {
+        "q": "Apakah PIC logistik pabrik mencari vendor pengiriman lewat Google?",
+        "q_en": "Do factory logistics managers search on Google?",
+        "a": "Ya. Saat vendor lama mereka bermasalah atau kapasitas armada tidak mencukupi, tim procurement selalu mencari alternatif vendor terpercaya di mesin pencari."
+      },
+      {
+        "q": "Bagaimana cara menyaring agar tidak melayani kiriman barang eceran?",
+        "q_en": "Filtering out small retail parcels?",
+        "a": "Dengan menetapkan syarat minimum muatan di formulir penawaran (contoh: minimal muatan 5 ton atau sistem sewa truk penuh/FTL)."
+      },
+      {
+        "q": "Apakah mencakup strategi penawaran tender logistik?",
+        "q_en": "Does it include logistics tender strategy?",
+        "a": "Ya, kami merapikan presentasi kredibilitas perusahaan dan argumen nilai tambah (seperti SLA pengiriman dan jaminan asuransi) untuk presentasi tender."
+      }
+    ],
+    "metaTitle": "Growth Advisory Perusahaan Logistik B2B · Aditya Bayu",
+    "metaDescription": "Commercial growth advisory untuk perusahaan ekspedisi & logistik B2B. Raih kontrak rutin shipper pabrik, penuhi muatan rute balikan, dan hindari perang tarif."
+  },
+  {
+    "slug": "family-office-portfolio-companies",
+    "industry": "Portofolio Bisnis Family Office & Holding",
+    "badge": "Portfolio Operator",
+    "title": "Operating Partner & Fractional CMO untuk Portofolio Family Office",
+    "subtitle": "Menyelaraskan Marketing Governance, Menyelamatkan Unit Bisnis Stagnan, & Menjaga Akuntabilitas P&L",
+    "summary": "Bertindak sebagai mitra operasional bagi family office dan holding company yang memiliki banyak portofolio bisnis dan membutuhkan figur kepemimpinan pertumbuhan untuk mengaudit efisiensi serta mengarahkan scale-up.",
+    "founderSymptom": "Family office menyuntikkan modal ke berbagai unit bisnis tapi laporan marketing tidak ada yang standar; agensi di tiap anak usaha berjalan sendiri-sendiri tanpa arah; dana marketing menguap tanpa kejelasan ROI.",
+    "operatingDiagnosis": [
+      {
+        "title": "Ketiadaan Standar Pelaporan Portofolio",
+        "description": "Tiap anak usaha menggunakan metrik berbeda-beda sehingga pemegang saham tidak bisa membandingkan efisiensi modal antar unit bisnis."
+      },
+      {
+        "title": "Manajemen yang Terjebak Rutinitas Operasional",
+        "description": "Direktur di anak usaha terlalu sibuk dengan urusan harian sehingga tidak sempat memikirkan inovasi strategi pertumbuhan."
+      },
+      {
+        "title": "Silo Antar Unit Bisnis",
+        "description": "Tidak ada pemanfaatan cross-selling atau penggabungan aset audiens antar anak perusahaan di dalam naungan holding."
+      }
+    ],
+    "roadmap": [
+      {
+        "month": "Bulan 01",
+        "title": "Cross-Portfolio Marketing Audit",
+        "deliverables": [
+          "Audit menyeluruh atas belanja modal marketing, performa agensi, dan CAC di seluruh anak usaha",
+          "Penyusunan format pelaporan P&L marketing standar yang bisa dibaca langsung oleh Investment Committee",
+          "Identifikasi unit bisnis yang mengalami kebocoran biaya paling parah untuk intervensi cepat"
+        ]
+      },
+      {
+        "month": "Bulan 02",
+        "title": "Intervention, Governance & Synergies",
+        "deliverables": [
+          "Penggantian strategi atau agensi berkinerja buruk dengan SOP pertumbuhan teruji",
+          "Pemanfaatan aset silang: mengintegrasikan database pelanggan antar anak perusahaan yang relevan",
+          "Setup guardrails pengeluaran iklan berbasis pencapaian target revenue riil"
+        ]
+      },
+      {
+        "month": "Bulan 03",
+        "title": "Growth Acceleration & Leadership Mentoring",
+        "deliverables": [
+          "Pendampingan intensif bagi Head of Marketing di masing-masing unit portofolio",
+          "Penyusunan rencana alokasi modal marketing tahunan berbasis proyeksi imbal hasil",
+          "Laporan kinerja triwulanan eksekutif kepada Board of Family Office"
+        ]
+      }
+    ],
+    "receipts": {
+      "client": "Multi-Industry Operating Leadership",
+      "metric": "Across 10 Ventures · Board-Level Due Diligence",
+      "detail": "Berpengalaman mengelola anggaran multi-miliar lintas brand grup korporasi (seperti Aboitiz Group, Gentem, dan IMI) dengan standar transparansi direksi."
+    },
+    "faqs": [
+      {
+        "q": "Bagaimana skema kerja dengan Family Office?",
+        "q_en": "Working model with a Family Office?",
+        "a": "Bisa berupa penugasan ad-hoc untuk mendiagnosa anak usaha yang bermasalah, atau peran Operating Partner berkala (retainer) untuk mengawasi seluruh departemen komersial portofolio."
+      },
+      {
+        "q": "Apakah Fractional CMO turun langsung ke anak perusahaan?",
+        "q_en": "Does the Fractional CMO work directly with subsidiaries?",
+        "a": "Ya. Kami berinteraksi langsung dengan direksi anak usaha untuk membongkar bottleneck operasional dan memastikan arahan pemegang saham dieksekusi dengan tepat."
+      },
+      {
+        "q": "Berapa banyak anak usaha yang bisa diawasi sekaligus?",
+        "q_en": "How many portfolio companies simultaneously?",
+        "a": "Umumnya 2 hingga 4 unit bisnis per kuartal agar fokus intervensi mendalam dan perbaikan P&L bisa dicapai secara tuntas."
+      }
+    ],
+    "metaTitle": "Operating Partner & Fractional CMO Family Office · Aditya Bayu",
+    "metaDescription": "Operating partner & Fractional CMO untuk portofolio bisnis family office. Standarisasi pelaporan marketing, perbaiki unit bisnis stagnan, dan awasi akuntabilitas P&L."
+  },
+  {
+    "slug": "export-global-trade",
+    "industry": "Eksportir Komoditas & Perdagangan Global",
+    "badge": "Global B2B Inbound",
+    "title": "Strategic Inbound Pipeline untuk Eksportir Komoditas Global",
+    "subtitle": "Menjangkau Buyer Korporat Internasional Tanpa Terjebak Makelar & Perang Harga Dumping",
+    "summary": "Membantu produsen briket, rempah, kopi, dan komoditas unggulan Indonesia membangun digital presence berstandar global, terindeks di mesin pencari internasional, dan menjaring kontrak rutin kontainer FCL.",
+    "founderSymptom": "Ketergantungan pada makelar lokal yang memangkas margin; pesan inquiry yang masuk sering kali penipuan sampel gratis; website berbahasa Inggris seadanya yang tidak dipercaya buyer luar negeri.",
+    "operatingDiagnosis": [
+      {
+        "title": "Kredibilitas Mutu Tidak Terverifikasi Online",
+        "description": "Sertifikasi ekspor internasional (HACCP, ISO, MSDS) tidak ditampilkan secara transparan di portal perusahaan."
+      },
+      {
+        "title": "Ketiadaan Protokol Saringan Buyer Resmi",
+        "description": "Menghabiskan waktu melayani chat tanpa memverifikasi nomor registrasi perusahaan (Tax ID) dan keabsahan izin impor buyer."
+      },
+      {
+        "title": "Tidak Terindeks di Pasar Negara Tujuan",
+        "description": "Mengandalkan marketplace ekspor pihak ketiga alih-alih membangun aset digital sendiri yang mendominasi pencarian Google di Eropa, AS, atau Timur Tengah."
+      }
+    ],
+    "roadmap": [
+      {
+        "month": "Bulan 01",
+        "title": "International Compliance & Specification Hub",
+        "deliverables": [
+          "Penyusunan portal spesifikasi teknis produk komoditas dalam bahasa Inggris bisnis formal",
+          "Dokumentasi transparansi proses pabrikasi, laboratorium mutu, dan kapasitas kontainer bulanan",
+          "Pemasangan formulir Request for Quotation (RFQ) berstandar internasional"
+        ]
+      },
+      {
+        "month": "Bulan 02",
+        "title": "Global Commercial Intent Capture",
+        "deliverables": [
+          "Optimasi kata kunci pencarian supplier komoditas di wilayah geografis target ekspor utama",
+          "Penerapan protokol verifikasi keabsahan legalitas perusahaan buyer sebelum sampel dikirim",
+          "Penyusunan executive briefing seputar keunggulan rantai pasok komoditas Indonesia"
+        ]
+      },
+      {
+        "month": "Bulan 03",
+        "title": "Contract Pipeline & L/C Agreement Alignment",
+        "deliverables": [
+          "SOP tindak lanjut negosiasi Letter of Credit (L/C) dan kontrak pengiriman berkala",
+          "Penyelarasan alur koordinasi tim ekspor dengan forwarder logistik pelabuhan",
+          "Dashboard pemantauan volume permintaan kontainer bulanan dari buyer luar negeri"
+        ]
+      }
+    ],
+    "receipts": {
+      "client": "Eksportir Arang Briket & Komoditas Hasil Bumi",
+      "metric": "8 Kontainer FCL / Bulan · Buyer Eropa & Timur Tengah",
+      "detail": "Membangun portal spesifikasi teknis ekspor yang menduduki peringkat teratas pencarian buyer internasional, menghasilkan kontrak pasokan rutin."
+    },
+    "faqs": [
+      {
+        "q": "Apakah buyer luar negeri benar-benar mencari supplier lewat Google?",
+        "q_en": "Do overseas buyers find suppliers on Google?",
+        "a": "Ya. Perusahaan importir besar di Eropa dan Timur Tengah selalu melakukan riset mandiri di Google untuk menemukan produsen langsung dan menghindari perantara makelar."
+      },
+      {
+        "q": "Bagaimana cara menyaring penipuan atau permintaan sampel fiktif?",
+        "q_en": "Filtering out scam inquiries?",
+        "a": "Formulir RFQ mewajibkan verifikasi nomor registrasi pajak perusahaan luar negeri, link LinkedIn manajer procurement, dan penetapan biaya kirim sampel ke pihak buyer."
+      },
+      {
+        "q": "Apakah strategi ini membutuhkan biaya iklan ratusan juta di luar negeri?",
+        "q_en": "Does it require massive ad spend abroad?",
+        "a": "Tidak harus. Sebagian besar kontrak ekspor B2B berkualitas didorong oleh strategi SEO komersial spesifik (pSEO) yang menargetkan kata kunci impor berdaya beli tinggi."
+      }
+    ],
+    "metaTitle": "Inbound Advisory Eksportir Komoditas Global · Aditya Bayu",
+    "metaDescription": "Strategic growth advisor untuk eksportir komoditas Indonesia. Jangkau buyer korporat luar negeri secara mandiri, amankan kontrak kontainer rutin, dan bangun kredibilitas ekspor global."
+  },
+  {
+    "slug": "high-ticket-consultancy",
+    "industry": "Law Firm & Konsultan Bisnis Profesional",
+    "badge": "High-Ticket Client Acquisition",
+    "title": "Client Acquisition Architecture untuk Firma Hukum & Konsultan",
+    "subtitle": "Menjaring Klien Korporat & Kontrak Retainer Tanpa Melanggar Etika Profesi",
+    "summary": "Membantu managing partner di kantor hukum bisnis, konsultan pajak, dan firma penasihat manajemen membangun otoritas digital yang bermartabat, mengedukasi eksekutif korporat, dan membuka pembicaraan perkara bernilai tinggi.",
+    "founderSymptom": "Hanya mengandalkan jaringan pertemanan alumni; nomor kantor sering ditelepon masyarakat umum untuk kasus sepele yang bukan fokus kantor; website formal namun tidak menghasilkan pembicaraan komersial.",
+    "operatingDiagnosis": [
+      {
+        "title": "Ketiadaan Materi Thought Leadership yang Relevan",
+        "description": "Tidak ada analisis mendalam mengenai regulasi baru yang sedang menjadi kekhawatiran direksi korporat."
+      },
+      {
+        "title": "Website Berfungsi Sekadar Kartu Nama Digital",
+        "description": "Menampilkan daftar foto partner tanpa memberikan pemahaman bagi calon klien mengenai bagaimana firma menyelesaikan sengketa komersial rumit."
+      },
+      {
+        "title": "Alur Kontak yang Tidak Menyaring Nilai Perkara",
+        "description": "Membuka nomor WhatsApp umum tanpa kualifikasi awal mengenai besaran nilai sengketa atau status entitas legal klien."
+      }
+    ],
+    "roadmap": [
+      {
+        "month": "Bulan 01",
+        "title": "Authority Briefing & Practice Area Positioning",
+        "deliverables": [
+          "Audit posisi kantor hukum vs firma boutique komersial lainnya",
+          "Penyusunan direktori ulasan regulasi bisnis strategis (M&A, Kepatuhan PDP, Sengketa Pajak)",
+          "Pembangunan alur booking konsultasi awal yang berproteksi kerahasiaan data (NDA)"
+        ]
+      },
+      {
+        "month": "Bulan 02",
+        "title": "Executive Inbound & Search Authority",
+        "deliverables": [
+          "Penargetan kata kunci pencarian spesifik yang diketik divisi legal korporat",
+          "Distribusi artikel analisis regulasi ke jaringan eksekutif di LinkedIn",
+          "Penyaringan formulir kontak berbasis entitas korporat dan nilai sengketa minimal"
+        ]
+      },
+      {
+        "month": "Bulan 03",
+        "title": "Corporate Retainer Nurturing Protocol",
+        "deliverables": [
+          "Penyusunan proposal retainer hukum korporat berstandar institusional",
+          "SOP onboarding penanganan perkara klien baru untuk menjamin kepuasan layanan",
+          "Dashboard pemantauan inbound inquiries dari perusahaan multinasional dan konglomerasi"
+        ]
+      }
+    ],
+    "receipts": {
+      "client": "Boutique Commercial & Tax Practice",
+      "metric": "Multiple Corporate Retainers Closed · Top 3 Search Ranking",
+      "detail": "Menyusun sistem executive whitepaper dan strategi penargetan pencarian regulasi yang mendatangkan klien korporat multinasional secara berkala."
+    },
+    "faqs": [
+      {
+        "q": "Apakah strategi ini melanggar kode etik advokat?",
+        "q_en": "Does it violate legal ethics codes?",
+        "a": "Sama sekali tidak. Strategi ini berbasis pada penyediaan informasi dan analisis hukum edukatif (thought leadership), bukan promosi komersial bombastis."
+      },
+      {
+        "q": "Bagaimana menjamin kerahasiaan informasi calon klien korporat?",
+        "q_en": "How to ensure client confidentiality?",
+        "a": "Formulir reservasi konsultasi awal dilengkapi klausul komitmen kerahasiaan otomatis sebelum dokumen perkara diunggah."
+      },
+      {
+        "q": "Apakah cocok untuk konsultan manajemen atau akuntan publik?",
+        "q_en": "Suitable for management consultants or CPAs?",
+        "a": "Sangat cocok. Prinsip akuisisi klien di semua jasa profesional high-ticket adalah pembuktian otoritas dan keahlian mendalam sebelum pertemuan tatap muka."
+      }
+    ],
+    "metaTitle": "Client Acquisition Firma Hukum & Konsultan · Aditya Bayu",
+    "metaDescription": "Strategic growth advisory untuk kantor hukum dan konsultan bisnis profesional. Jaring klien korporat bernilai tinggi, amankan kontrak retainer, dan bangun otoritas digital bermartabat."
+  },
+  {
+    "slug": "traditional-business-digital-transformation",
+    "industry": "Transformasi Digital Bisnis Keluarga & Konvensional",
+    "badge": "Digital Transformation Operator",
+    "title": "Fractional CMO untuk Transformasi Digital Bisnis Konvensional",
+    "subtitle": "Menjembatani Visi Generasi Penerus dengan Warisan Nilai Kepercayaan Perusahaan Keluarga",
+    "summary": "Membantu perusahaan keluarga (family business) generasi kedua atau ketiga yang ingin memodernisasi kanal pemasaran dan sistem operasional digital tanpa mengorbankan reputasi yang sudah dibangun puluhan tahun.",
+    "founderSymptom": "Generasi penerus ingin beralih ke digital tapi ditolak oleh manajemen senior yang skeptis; sistem kerja tim masih manual dan gagap teknologi; takut merusak nama baik warisan pendiri bisnis.",
+    "operatingDiagnosis": [
+      {
+        "title": "Benturan Budaya Kerja Antar Generasi",
+        "description": "Generasi muda menginginkan kecepatan, sementara manajemen senior menuntut kehati-hatian dan pembuktian angka nyata."
+      },
+      {
+        "title": "Membeli Teknologi Tanpa Menyiapkan Mentalitas Tim",
+        "description": "Berlangganan software CRM atau menyewa agensi mahal yang akhirnya terbengkalai karena staf operasional tidak paham cara pakainya."
+      },
+      {
+        "title": "Kehilangan Kehangatan Hubungan Tradisional",
+        "description": "Mendigitalkan bisnis secara serampangan hingga menghilangkan sentuhan personal yang selama ini menjadi alasan pelanggan setia bertahan."
+      }
+    ],
+    "roadmap": [
+      {
+        "month": "Bulan 01",
+        "title": "Generational Alignment & Pilot Project Scoping",
+        "deliverables": [
+          "Sesi penyelarasan visi antara generasi senior dan penerus mengenai urgensi modernisasi",
+          "Pemilihan satu lini produk atau cabang percontohan (pilot project) untuk pembuktian cepat",
+          "Audit database pelanggan lama untuk dipindahkan ke sistem komunikasi digital yang rapi"
+        ]
+      },
+      {
+        "month": "Bulan 02",
+        "title": "Pilot Execution & Frontline Team Upskilling",
+        "deliverables": [
+          "Peluncuran alur funnel digital perdana pada lini bisnis percontohan",
+          "Pelatihan langsung bagi staf penjualan senior agar terbiasa mengelola prospek dari WhatsApp dan web",
+          "Penyajian data hasil penjualan pilot pertama yang transparan ke jajaran direksi keluarga"
+        ]
+      },
+      {
+        "month": "Bulan 03",
+        "title": "Full Rollout & Modern Brand Positioning",
+        "deliverables": [
+          "Perluasan sistem digital ke seluruh cabang dan lini produk perusahaan",
+          "Penyegaran identitas brand (rebranding/refresh) yang menghormati sejarah masa lalu",
+          "Penyusunan struktur organisasi marketing mandiri yang siap diwariskan ke masa depan"
+        ]
+      }
+    ],
+    "receipts": {
+      "client": "BPR Triastra & Angke Restaurant",
+      "metric": "Decades-Old Heritage Modernized · Measurable ROI",
+      "detail": "Berpengalaman mendampingi institusi perbankan rural berusia puluhan tahun dan grup restoran heritage 60 tahun bertransformasi ke ekosistem digital modern."
+    },
+    "faqs": [
+      {
+        "q": "Bagaimana cara meyakinkan generasi senior yang masih skeptis terhadap digital?",
+        "q_en": "How to convince skeptical senior generation?",
+        "a": "Jangan berdebat teori. Kami membuat proyek percontohan kecil berbiaya minim dengan target penjualan cepat untuk membuktikan hasil uang nyata di depan mereka."
+      },
+      {
+        "q": "Apakah staf lama perusahaan yang belum melek teknologi bisa dilatih?",
+        "q_en": "Can non-tech-savvy legacy staff be trained?",
+        "a": "Bisa. Kami menyusun SOP yang sangat sederhana (seperti template chat WhatsApp dan alur pencatatan dasar) tanpa memaksa mereka mempelajari kode rumit."
+      },
+      {
+        "q": "Berapa lama proses transformasi digital biasanya berlangsung?",
+        "q_en": "How long does digital transformation take?",
+        "a": "Fase percontohan butuh 30–60 hari. Fase adopsi penuh di seluruh perusahaan umumnya memerlukan waktu 3 hingga 6 bulan."
+      }
+    ],
+    "metaTitle": "Transformasi Digital Bisnis Keluarga & Konvensional · Aditya Bayu",
+    "metaDescription": "Fractional CMO & advisor transformasi digital perusahaan keluarga. Jembatani generasi penerus dengan manajemen senior, latih tim lama, dan modernisasi revenue."
+  }
+]

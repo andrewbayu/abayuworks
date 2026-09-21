@@ -12,6 +12,7 @@ export const site = {
     { label: 'Receipts', href: '/receipts/' },
     { label: 'Built', href: '/built/' },
     { label: 'Writing', href: '/blog/' },
+    { label: 'Advisory', href: '/fractional-cmo/' },
     { label: 'DAL', href: '/dal/' },
     { label: 'Contact', href: '/#contact' },
   ],

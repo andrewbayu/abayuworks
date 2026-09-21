@@ -12,8 +12,11 @@ import Lesson from './pages/Lesson';
 import Dal from './pages/Dal';
 import DalApply from './pages/DalApply';
 import SectionPage from './pages/SectionPage';
+import FractionalCmoHub from './pages/FractionalCmoHub';
+import FractionalCmoPage from './pages/FractionalCmoPage';
 import { postSlugs } from './posts';
 import { lessonSlugs } from './course/curriculum';
+import { cmoSlugs } from './data/fractionalCmoSolutions';
 
 // Full route tree, used for SSG prerender (Node has no `window`, so the course
 // pages are generated under /learn/*) and for the apex site on the client.
@@ -27,6 +30,17 @@ const siteRoutes = [
       { path: 'receipts', element: <SectionPage kind="receipts" /> },
       { path: 'built', element: <SectionPage kind="built" /> },
       { path: 'dal', element: <Dal /> },
+      {
+        path: 'fractional-cmo',
+        children: [
+          { index: true, element: <FractionalCmoHub /> },
+          {
+            path: ':slug',
+            element: <FractionalCmoPage />,
+            getStaticPaths: () => cmoSlugs.map((s) => `/fractional-cmo/${s}`),
+          },
+        ],
+      },
       {
         path: 'blog',
         children: [
