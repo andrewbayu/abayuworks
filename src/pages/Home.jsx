@@ -284,14 +284,18 @@ export default function Home() {
       <section className="home-dark-section">
         <div className="wrap grid gap-10 py-16 sm:py-24 lg:grid-cols-[1fr_.8fr] lg:items-center">
           <div>
-            <p className="eyebrow mb-4">The offer</p>
-            <h2 className="font-display text-4xl font-semibold leading-tight tracking-tight sm:text-5xl">90 minutes. Free. No pitch, no walk-aways.</h2>
-            <p className="mt-5 max-w-2xl font-serif text-lg leading-8 text-white/70">If you&rsquo;re a fit and we don&rsquo;t find a leak worth acting on, that&rsquo;s on us — and you keep the audit. Book it now and find out exactly what&rsquo;s costing you.</p>
-            <Link to="/dal/" className="home-button mt-8">{DIAG_CTA} <span aria-hidden>→</span></Link>
+            <p className="eyebrow mb-4">The offer · Digital Advantage Lab</p>
+            <h2 className="font-display text-4xl font-semibold leading-tight tracking-tight sm:text-5xl">Two sessions. Five days of work. One clear diagnosis.</h2>
+            <p className="mt-5 max-w-2xl font-serif text-lg leading-8 text-white/70">Not your typical surface-level consultation. Digital Advantage Lab is a private diagnostic that examines your market, offer, ads, and conversion pipeline — moving from a 90-minute Discovery Call to five days of deep-dive research and an executive Clarity Session. Find the leak before you fund the fix.</p>
+            <div className="mt-8 flex flex-col sm:flex-row items-start sm:items-center gap-4">
+              <Link to="/dal/" className="home-button">{DIAG_CTA} <span aria-hidden>→</span></Link>
+              <span className="text-xs text-white/50">Limited to 5 businesses per month</span>
+            </div>
           </div>
-          <div className="border border-white/15 p-6">
-            <p className="font-display text-sm font-bold uppercase tracking-[.12em] text-white/60">What you leave with</p>
-            <p className="mt-5 font-serif text-2xl leading-9 text-white">One named constraint, the evidence behind it, and the three moves worth making next — whether or not you ever work with us again.</p>
+          <div className="border border-white/15 p-6 sm:p-8">
+            <p className="font-display text-sm font-bold uppercase tracking-[.12em] text-white/60">What you walk away with</p>
+            <p className="mt-5 font-serif text-xl sm:text-2xl leading-9 text-white">Your current level on the Digital Advantage Scorecard, the single bottleneck holding back revenue, and a practical 8-part strategic PDF report with the three highest-leverage moves for the next 90 days.</p>
+            <p className="mt-4 font-mono text-xs tracking-wider text-[#ffe8d4] uppercase">Two Sessions · 5 Days Research · Decision-Ready PDF</p>
           </div>
         </div>
       </section>
