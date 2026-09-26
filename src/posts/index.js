@@ -9,12 +9,13 @@ import * as growthCurve from './growth-curve-method-2026.jsx';
 import * as xniper from './xniper-hybrid-behavioral-synthetic-modeling.jsx';
 import * as seaSocial from './sea-social-behaviour-2026.jsx';
 import * as andromeda from './andromeda-ads-engine-what-matters.jsx';
+import * as cmoGuide from './fractional-cmo-indonesia-growth-guide.jsx';
 import * as clinicPlaybook from './healthcare-aesthetic-clinic-playbook.jsx';
 import * as messyMiddle from './google-messy-middle-funnel-checkpoints.jsx';
 import * as b2bBuyerMap from './b2b-buyer-map-end-user-champion.jsx';
 import * as funnel from './why-funnel-is-not-dead.jsx';
 
-const modules = [clinicPlaybook, b2bBuyerMap, messyMiddle, andromeda, seaSocial, dental, kicaufest, wse, bpr, hypebuzz, hacktiv8, growthCurve, xniper, funnel];
+const modules = [cmoGuide, clinicPlaybook, b2bBuyerMap, messyMiddle, andromeda, seaSocial, dental, kicaufest, wse, bpr, hypebuzz, hacktiv8, growthCurve, xniper, funnel];
 
 // Newest first.
 export const posts = modules

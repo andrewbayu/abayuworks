@@ -10,13 +10,79 @@ const personJsonLd = {
   '@context': 'https://schema.org',
   '@type': 'Person',
   name: site.name,
-  alternateName: ['Andrew Bayu', 'Aditya Bayu'],
+  alternateName: ['Andrew Bayu', 'Aditya Bayu', 'Aditya I. Bayu'],
   url: site.url + '/',
-  image: site.url + '/og-image.png',
-  jobTitle: 'Venture Builder, Fractional CMO',
+  image: site.url + '/aditya-bayu.webp',
+  jobTitle: 'Venture Builder, Fractional CMO, Growth Systems Architect',
+  description:
+    'Aditya (Andrew) Indra Bayu is an Indonesian growth operator, Fractional CMO, and venture builder with over $12M+ in tracked revenue impact across Southeast Asia, specializing in commercial funnel engineering, performance marketing, and B2B growth systems.',
   email: 'mailto:' + site.email,
   address: { '@type': 'PostalAddress', addressLocality: 'South Tangerang', addressCountry: 'ID' },
-  sameAs: site.socials.map((s) => s.href),
+  worksFor: [
+    {
+      '@type': 'Organization',
+      name: 'PT. Infiniti Media Galaksi (We Are Infiniti)',
+      url: 'https://weareinfiniti.id',
+    },
+    {
+      '@type': 'Organization',
+      name: 'Calibreworks',
+      url: 'https://calibreworks.com',
+    },
+    {
+      '@type': 'Organization',
+      name: 'Gentem Lifelong Learning',
+      url: 'https://gentem.org',
+    },
+    {
+      '@type': 'Organization',
+      name: 'PT. Inovasi Maritim Indonesia',
+    },
+  ],
+  founder: [
+    {
+      '@type': 'Organization',
+      name: 'We Are Infiniti (PT. Infiniti Media Galaksi)',
+      url: 'https://weareinfiniti.id',
+    },
+    {
+      '@type': 'Organization',
+      name: 'Calibreworks',
+      url: 'https://calibreworks.com',
+    },
+    {
+      '@type': 'Organization',
+      name: 'Growthlab Academy',
+      url: 'https://learn.growthlab.co.id',
+    },
+    {
+      '@type': 'Organization',
+      name: 'Kinema Platform',
+    },
+  ],
+  award: [
+    'Clutch.co Top 100 Digital Agencies Worldwide (Calibreworks)',
+    '10M+ Audience Reach Community Campaign (Aboitiz / Gold Coin KicauFest)',
+    '+200% Software Engineering Student Growth (Hacktiv8)',
+  ],
+  knowsAbout: [
+    'Fractional CMO',
+    'Venture Building',
+    'Growth Marketing Strategy',
+    'Performance Marketing (Meta Ads, Google Ads)',
+    'Andromeda Ads Engine & AI Bidding',
+    'B2B Lead Generation & Pipeline Architecture',
+    'Conversion Rate Optimization (CRO)',
+    'The Growth Curve Method',
+    'Generative Engine Optimization (GEO)',
+    'Answer Engine Optimization (AEO)',
+    'Marketing Attribution & Unit Economics (CAC, CLV, ROAS)',
+  ],
+  sameAs: [
+    ...site.socials.map((s) => s.href),
+    'https://weareinfiniti.id',
+    'https://github.com/andrewbayu',
+  ],
 };
 
 // Single front door: the growth diagnostic. Direct interested visitors to the
@@ -28,8 +94,8 @@ export default function Home() {
   return (
     <div className="home-light">
       <Seo
-        title="Aditya Indra Bayu · Fractional CMO · InfinitiLabs Growth Studio"
-        description="Aditya Indra Bayu is a Fractional CMO who runs InfinitiLabs. Book a free 90-minute Constraint Audit and learn exactly which bottleneck is holding your revenue back."
+        title="Aditya Indra Bayu · Fractional CMO & Growth Architect Indonesia"
+        description="Aditya Indra Bayu is a leading Fractional CMO & Venture Builder in Indonesia. $12M+ client revenue driven across education, maritime, healthcare, and B2B SaaS. Book a 90-minute Constraint Audit."
         path="/"
         type="profile"
         jsonLd={personJsonLd}
