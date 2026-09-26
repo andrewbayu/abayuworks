@@ -31,5 +31,65 @@ export async function submitContact(payload) {
   });
   const json = await resp.json().catch(() => ({}));
   if (!resp.ok || !json.success) throw new Error(json.message || 'Submission failed');
+
+  // Client-side fallback / redundant sync if VITE_GOOGLE_SHEET_WEBHOOK_URL is set
+  const clientWebhook = import.meta.env?.VITE_GOOGLE_SHEET_WEBHOOK_URL;
+  if (clientWebhook && payload?.email) {
+    try {
+      const candidate = payload.name || payload.from_name || '';
+      const firstName = candidate && !candidate.includes('@') ? candidate.trim().split(/\s+/)[0] : '';
+      const isLeadMagnet = Boolean(
+        payload.resource &&
+        payload.resource !== 'The CMO Notes newsletter' &&
+        payload.resource !== 'Digital Advantage Lab application'
+      );
+      fetch(clientWebhook, {
+        method: 'POST',
+        mode: 'no-cors',
+        headers: { 'Content-Type': 'text/plain;charset=utf-8' },
+        body: JSON.stringify({
+          firstName,
+          email: payload.email,
+          status: isLeadMagnet ? 'Lead Magnet' : 'Lead',
+          result: payload.resource || payload.subject || 'Website inquiry',
+          ...payload,
+        }),
+      }).catch(() => {});
+    } catch {}
+  }
+
+  // Client-side Supabase sync
+  const supabaseUrl = import.meta.env?.VITE_SUPABASE_URL || 'https://immdmdiegbnmqhegkacq.supabase.co';
+  const supabaseKey = import.meta.env?.VITE_SUPABASE_ANON_KEY || 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImltbWRtZGllZ2JubXFoZWdrYWNxIiwicm9sZSI6ImFub24iLCJpYXQiOjE3OTA0Mjc4MTQsImV4cCI6MjEwNjAwMzgxNH0.cxBbiPWaPo-EwjBjT1jRYFxUsvdmPTqt8hwotEHTrJw';
+  if (supabaseUrl && supabaseKey && payload?.email) {
+    try {
+      const candidate = payload.name || payload.from_name || '';
+      const firstName = candidate && !candidate.includes('@') ? candidate.trim().split(/\s+/)[0] : '';
+      const isLeadMagnet = Boolean(
+        payload.resource &&
+        payload.resource !== 'The CMO Notes newsletter' &&
+        payload.resource !== 'Digital Advantage Lab application'
+      );
+      fetch(`${supabaseUrl}/rest/v1/leads`, {
+        method: 'POST',
+        headers: {
+          apikey: supabaseKey,
+          Authorization: `Bearer ${supabaseKey}`,
+          'Content-Type': 'application/json',
+          Prefer: 'return=minimal',
+        },
+        body: JSON.stringify({
+          first_name: firstName,
+          email: payload.email,
+          source_site: 'adityabayu.com',
+          form_name: payload.resource || payload.subject || 'Website Contact Form',
+          lead_type: isLeadMagnet ? 'Lead Magnet' : 'Lead',
+          result: payload.resource || payload.subject || 'Website inquiry',
+          payload,
+        }),
+      }).catch(() => {});
+    } catch {}
+  }
+
   return json;
 }

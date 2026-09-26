@@ -75,6 +75,83 @@ async function triggerResendAutomation({ email, resource, ref_id, payload = {}, 
   }
 }
 
+// Sync incoming lead directly to Google Sheets (Newsletter Campaign sheet).
+// Best-effort: failures are logged and swallowed so contact form never breaks.
+async function addToGoogleSheet({
+  firstName = '',
+  email = '',
+  status = 'Lead',
+  result = '',
+  raw = {},
+}) {
+  const webhookUrl = process.env.GOOGLE_SHEET_WEBHOOK_URL;
+  if (!webhookUrl || !email) return;
+
+  try {
+    const resp = await fetch(webhookUrl, {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({
+        firstName,
+        email,
+        status,
+        result,
+        ...raw,
+      }),
+    });
+    if (!resp.ok) {
+      console.warn('google sheet sync non-ok:', resp.status, await resp.text().catch(() => ''));
+    }
+  } catch (err) {
+    console.warn('google sheet sync failed:', err);
+  }
+}
+
+// Sync incoming lead directly to Supabase Central Leads Database (table: public.leads)
+// Best-effort: failures are logged and swallowed so contact form never breaks.
+async function addToSupabase({
+  firstName = '',
+  email = '',
+  formName = '',
+  leadType = 'Lead',
+  result = '',
+  payload = {},
+}) {
+  const supabaseUrl = process.env.SUPABASE_URL || 'https://immdmdiegbnmqhegkacq.supabase.co';
+  const supabaseKey =
+    process.env.SUPABASE_SERVICE_ROLE_KEY ||
+    process.env.SUPABASE_ANON_KEY ||
+    'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImltbWRtZGllZ2JubXFoZWdrYWNxIiwicm9sZSI6ImFub24iLCJpYXQiOjE3OTA0Mjc4MTQsImV4cCI6MjEwNjAwMzgxNH0.cxBbiPWaPo-EwjBjT1jRYFxUsvdmPTqt8hwotEHTrJw';
+
+  if (!supabaseUrl || !email) return;
+
+  try {
+    const resp = await fetch(`${supabaseUrl}/rest/v1/leads`, {
+      method: 'POST',
+      headers: {
+        apikey: supabaseKey,
+        Authorization: `Bearer ${supabaseKey}`,
+        'Content-Type': 'application/json',
+        Prefer: 'return=minimal',
+      },
+      body: JSON.stringify({
+        first_name: firstName,
+        email,
+        source_site: 'adityabayu.com',
+        form_name: formName,
+        lead_type: leadType,
+        result,
+        payload,
+      }),
+    });
+    if (!resp.ok) {
+      console.warn('supabase lead insert non-ok:', resp.status, await resp.text().catch(() => ''));
+    }
+  } catch (err) {
+    console.warn('supabase lead insert failed:', err);
+  }
+}
+
 export default async function handler(req, res) {
   if (req.method !== 'POST') {
     res.setHeader('Allow', 'POST');
@@ -188,6 +265,53 @@ export default async function handler(req, res) {
         eventName: process.env.RESEND_NEWSLETTER_AUTOMATION_EVENT || 'newsletter.subscribed',
       });
     }
+
+    // Capture the lead directly to Google Sheets (Newsletter Campaign sheet).
+    // Maps FirstName, Email, Status ("Lead Magnet" or "Lead"), Result.
+    const leadFirstName = (name || from_name || '').trim().split(/\s+/)[0] || '';
+    const leadStatus = isNewsletterSignup ? 'Lead' : (resource && !isDalApplication ? 'Lead Magnet' : 'Lead');
+    const leadResult = isDalApplication
+      ? `Digital Advantage Lab application${company ? ` (${company})` : ''}`
+      : (resource || subject || 'Website inquiry');
+
+    await addToGoogleSheet({
+      firstName: leadFirstName,
+      email,
+      status: leadStatus,
+      result: leadResult,
+      raw: {
+        company,
+        message,
+        ref_id,
+        dal_website,
+        dal_offer,
+        dal_challenge,
+        dal_tried,
+        dal_goal,
+      },
+    });
+
+    // Capture the lead directly to Supabase Central Leads Database
+    await addToSupabase({
+      firstName: leadFirstName,
+      email,
+      formName: resource || subject || 'Website Contact Form',
+      leadType: leadStatus,
+      result: leadResult,
+      payload: {
+        name,
+        company,
+        message,
+        ref_id,
+        dal_website,
+        dal_offer,
+        dal_challenge,
+        dal_tried,
+        dal_goal,
+        consent,
+      },
+    });
+
     return res.status(200).json({ success: true });
   } catch (err) {
     console.error('contact mail send failed:', err);
