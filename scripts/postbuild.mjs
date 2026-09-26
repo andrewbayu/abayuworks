@@ -1,5 +1,5 @@
 // Postbuild: normalize blog output to folder-style clean URLs + generate sitemap.
-import { readdirSync, mkdirSync, renameSync, writeFileSync, existsSync, statSync, readFileSync } from 'node:fs';
+import { readdirSync, mkdirSync, renameSync, writeFileSync, existsSync, statSync, readFileSync, copyFileSync } from 'node:fs';
 import { join } from 'node:path';
 
 const dist = 'dist';
@@ -85,6 +85,7 @@ const urls = [
   ...cmoSlugs.sort().map((s) => ({ loc: `${SITE}/fractional-cmo/${s}/`, freq: 'monthly', pri: '0.8' })),
   { loc: `${LEARN_SITE}/`, freq: 'monthly', pri: '0.7' },
   ...publicLearnLessons.sort().map((s) => ({ loc: `${LEARN_SITE}/${s}/`, freq: 'monthly', pri: '0.6' })),
+  { loc: `${SITE}/pricing.md`, freq: 'monthly', pri: '0.6' },
 ];
 const sitemap = `<?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
@@ -97,6 +98,15 @@ ${urls
 </urlset>
 `;
 writeFileSync(join(dist, 'sitemap.xml'), sitemap);
+
+// 4. Ensure machine-readable AI context files are copied into dist
+for (const file of ['llms.txt', 'llms-full.txt', 'pricing.md', 'robots.txt']) {
+  const src = join('public', file);
+  const dest = join(dist, file);
+  if (existsSync(src)) {
+    copyFileSync(src, dest);
+  }
+}
 
 // Keep client-side navigation working even if the deployment drops the
 // generated manifest file. The SSG runtime uses this global before fetching
