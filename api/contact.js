@@ -9,6 +9,132 @@
 //   SMTP_HOST, SMTP_PORT, SMTP_USER, SMTP_PASS, CONTACT_TO
 import nodemailer from 'nodemailer';
 
+// Catalog of downloadable lead magnets and their direct links
+const DOWNLOAD_RESOURCES = {
+  'Playbook Marketing F&B 2026': {
+    title: 'Playbook Marketing F&B 2026: Meja Penuh, Kas Kosong',
+    subject: '[Akses Unduhan] Playbook Marketing F&B 2026 — Aditya Bayu',
+    directDownloadUrl: 'https://drive.google.com/uc?export=download&id=1MZ-kkNyoLVQmFjiP_rwSNVH3SKUoHFFT',
+    driveViewUrl: 'https://drive.google.com/file/d/1MZ-kkNyoLVQmFjiP_rwSNVH3SKUoHFFT/view',
+    advice: 'Buka bagian Diagnostik 60 Detik di halaman awal untuk langsung memetakan kebocoran terbesar kas & retensi pelanggan di bisnis F&B Anda sebelum melangkah ke strategi promosi.',
+  },
+  'Meta Ads Pre-Flight Checklist (Vol. 01)': {
+    title: 'Meta Ads Pre-Flight Checklist (Vol. 01)',
+    subject: '[Akses Unduhan] Meta Ads Pre-Flight Checklist — Aditya Bayu',
+    directDownloadUrl: 'https://drive.google.com/uc?export=download&id=1yBIGJkJ4pTgw1LAwJhRTNmmYCKIDACns',
+    driveViewUrl: 'https://drive.google.com/file/d/1yBIGJkJ4pTgw1LAwJhRTNmmYCKIDACns/view',
+    advice: 'Gunakan checklist ini setiap kali sebelum Anda menyalakan atau menaikkan budget kampanye iklan Meta untuk memastikan sinyal pixel, penawaran, dan tracking sudah terpasang dengan benar.',
+  },
+};
+
+// Send download link email directly to requester upon lead-magnet form submission.
+// Best-effort: any failure is logged and caught so it never breaks the user flow.
+async function sendDownloadAutoReply({
+  transporter,
+  mailFrom,
+  smtpUser,
+  replyTo,
+  toEmail,
+  recipientName,
+  resource,
+}) {
+  const resourceData = DOWNLOAD_RESOURCES[resource];
+  if (!resourceData || !toEmail || !transporter) return false;
+
+  const firstName =
+    recipientName && recipientName.trim() && !recipientName.includes('@')
+      ? recipientName.trim().split(/\s+/)[0]
+      : 'Rekan';
+
+  const textBody = `Halo ${firstName},
+
+Terima kasih sudah mendaftar untuk mengunduh ${resourceData.title}.
+
+Anda dapat langsung membaca dan mengunduh filenya melalui tautan berikut:
+
+👉 Unduh Langsung (PDF):
+${resourceData.directDownloadUrl}
+
+👉 Buka di Google Drive:
+${resourceData.driveViewUrl}
+
+Saran awal:
+${resourceData.advice}
+
+Jika ada bagian di dalam panduan ini yang ingin didiskusikan lebih lanjut seputar implementasinya di bisnis Anda, silakan langsung balas (reply) email ini.
+
+Salam hangat,
+Aditya Bayu
+Fractional CMO & Growth Operator
+https://adityabayu.com`;
+
+  const htmlBody = `<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <style>
+    body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif; line-height: 1.6; color: #1e293b; background-color: #f8fafc; margin: 0; padding: 24px; }
+    .card { max-width: 580px; margin: 0 auto; background: #ffffff; border: 1px solid #e2e8f0; border-radius: 12px; padding: 32px; box-shadow: 0 4px 12px rgba(0,0,0,0.03); }
+    .btn { display: inline-block; background-color: #1e3a8a; color: #ffffff !important; text-decoration: none; padding: 12px 24px; border-radius: 8px; font-weight: 600; margin: 16px 0; }
+    .box { background-color: #f1f5f9; border-left: 4px solid #1e3a8a; padding: 14px 16px; margin: 20px 0; border-radius: 4px; font-size: 14px; }
+    .footer { margin-top: 32px; padding-top: 20px; border-top: 1px solid #e2e8f0; font-size: 13px; color: #64748b; }
+    a { color: #2563eb; }
+  </style>
+</head>
+<body>
+  <div class="card">
+    <p style="font-size: 16px;">Halo <strong>${firstName}</strong>,</p>
+    <p>Terima kasih sudah meminta akses ke <strong>${resourceData.title}</strong>.</p>
+    <p>Sesuai janji, Anda dapat langsung mengunduh dan membaca filenya sekarang:</p>
+    
+    <p style="text-align: center;">
+      <a href="${resourceData.directDownloadUrl}" class="btn" target="_blank">Unduh File (PDF) ↓</a>
+    </p>
+    <p style="font-size: 13px; text-align: center; color: #64748b;">
+      Atau buka via Google Drive: <a href="${resourceData.driveViewUrl}" target="_blank">Klik di sini</a>
+    </p>
+
+    <div class="box">
+      <strong>Saran awal:</strong> ${resourceData.advice}
+    </div>
+
+    <p style="font-size: 14px; color: #475569;">
+      Jika ada hal yang ingin didiskusikan atau ditanyakan seputar implementasinya di bisnis Anda, silakan langsung balas (reply) email ini.
+    </p>
+
+    <div class="footer">
+      <strong>Aditya Bayu</strong><br>
+      Fractional CMO & Growth Operator<br>
+      <a href="https://adityabayu.com">adityabayu.com</a>
+    </div>
+  </div>
+</body>
+</html>`;
+
+  try {
+    const fromAddress =
+      mailFrom ||
+      (smtpUser && smtpUser.includes('@')
+        ? `"Aditya Bayu" <${smtpUser}>`
+        : '"Aditya Bayu" <hi@adityabayu.com>');
+    const replyToAddress =
+      replyTo || (smtpUser && smtpUser.includes('@') ? smtpUser : 'hi.andrewbayu@gmail.com');
+
+    await transporter.sendMail({
+      from: fromAddress,
+      to: toEmail,
+      replyTo: replyToAddress,
+      subject: resourceData.subject,
+      text: textBody,
+      html: htmlBody,
+    });
+    return true;
+  } catch (err) {
+    console.warn('lead magnet auto-reply failed:', err);
+    return false;
+  }
+}
+
 // Add a lead to the Resend Audience (marketing/newsletter list). Best-effort:
 // any failure is logged and swallowed so it never breaks the contact form.
 // Reuses the Resend API key already configured for SMTP (SMTP_PASS) unless a
@@ -116,6 +242,8 @@ async function addToSupabase({
   formName = '',
   leadType = 'Lead',
   result = '',
+  status = 'New',
+  aiNotes = null,
   payload = {},
 }) {
   const supabaseUrl = (process.env.SUPABASE_URL || 'https://immdmdiegbnmqhegkacq.supabase.co').trim().replace(/\/+$/, '');
@@ -143,6 +271,8 @@ async function addToSupabase({
         form_name: formName,
         lead_type: leadType,
         result,
+        status,
+        ai_notes: aiNotes,
         payload,
       }),
     });
@@ -302,6 +432,20 @@ export default async function handler(req, res) {
       },
     });
 
+    // Auto-responder: send download link email directly to requester
+    let isAutoDelivered = false;
+    if (resource && DOWNLOAD_RESOURCES[resource]) {
+      isAutoDelivered = await sendDownloadAutoReply({
+        transporter,
+        mailFrom: MAIL_FROM,
+        smtpUser: SMTP_USER,
+        replyTo: CONTACT_TO,
+        toEmail: email,
+        recipientName: name || from_name,
+        resource,
+      });
+    }
+
     // Capture the lead directly to Supabase Central Leads Database
     await addToSupabase({
       firstName: leadFirstName,
@@ -310,6 +454,8 @@ export default async function handler(req, res) {
       formName: resource || subject || 'Website Contact Form',
       leadType: leadStatus,
       result: leadResult,
+      status: isAutoDelivered ? 'Delivered' : 'New',
+      aiNotes: isAutoDelivered ? `Auto-delivered ${resource} download link via email.` : null,
       payload: {
         name,
         company,
