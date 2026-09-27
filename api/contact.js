@@ -18,13 +18,6 @@ const DOWNLOAD_RESOURCES = {
     driveViewUrl: 'https://drive.google.com/file/d/1MZ-kkNyoLVQmFjiP_rwSNVH3SKUoHFFT/view',
     advice: 'Buka bagian Diagnostik 60 Detik di halaman awal untuk langsung memetakan kebocoran terbesar kas & retensi pelanggan di bisnis F&B Anda sebelum melangkah ke strategi promosi.',
   },
-  'Meta Ads Pre-Flight Checklist (Vol. 01)': {
-    title: 'Meta Ads Pre-Flight Checklist (Vol. 01)',
-    subject: '[Akses Unduhan] Meta Ads Pre-Flight Checklist — Aditya Bayu',
-    directDownloadUrl: 'https://drive.google.com/uc?export=download&id=1yBIGJkJ4pTgw1LAwJhRTNmmYCKIDACns',
-    driveViewUrl: 'https://drive.google.com/file/d/1yBIGJkJ4pTgw1LAwJhRTNmmYCKIDACns/view',
-    advice: 'Gunakan checklist ini setiap kali sebelum Anda menyalakan atau menaikkan budget kampanye iklan Meta untuk memastikan sinyal pixel, penawaran, dan tracking sudah terpasang dengan benar.',
-  },
 };
 
 // Send download link email directly to requester upon lead-magnet form submission.

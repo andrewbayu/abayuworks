@@ -1,89 +1,12 @@
 import { useState } from 'react';
 import { motion } from 'framer-motion';
-import { Link, useNavigate } from 'react-router-dom';
+import { Link } from 'react-router-dom';
 import Seo from '../components/Seo';
 import { site } from '../data/site';
-import { genRefId, submitContact } from '../lib/forms';
 import { fadeUp, stagger, inView } from '../lib/motion';
 
 // URL checkout Lynk.id
 export const LYNK_CHECKOUT_URL = 'https://lynk.id/growthlab/k3ryx868xg2r';
-
-const RESOURCE = 'Meta Ads Pre-Flight Checklist (Vol. 01)';
-const THANK_YOU = '/preflight-checklist/thank-you';
-
-const inputCls =
-  'w-full rounded-card border border-line bg-elevated px-4 py-3 text-base text-ink placeholder:text-faint focus:border-cream focus:outline-none focus:ring-2 focus:ring-cream/30';
-
-export function OptInForm({ id, cta = 'Send me the checklist' }) {
-  const navigate = useNavigate();
-  const [state, setState] = useState('idle'); // idle | sending | error
-  const [email, setEmail] = useState('');
-  const [consent, setConsent] = useState(false);
-
-  const onSubmit = async (e) => {
-    e.preventDefault();
-    setState('sending');
-    try {
-      const ref = genRefId();
-      await submitContact({
-        subject: `Lead magnet request: ${RESOURCE} (${ref})`,
-        from_name: email,
-        email,
-        resource: RESOURCE,
-        ref_id: ref,
-        consent: true,
-      });
-      navigate(THANK_YOU);
-    } catch {
-      setState('error');
-    }
-  };
-
-  return (
-    <div className="w-full">
-      <form
-        onSubmit={onSubmit}
-        className="flex flex-col gap-2.5 sm:flex-row"
-        aria-label="Get the checklist"
-      >
-        <label htmlFor={id} className="sr-only">
-          Email address
-        </label>
-        <input
-          id={id}
-          type="email"
-          required
-          autoComplete="email"
-          value={email}
-          onChange={(e) => setEmail(e.target.value)}
-          placeholder="you@email.com"
-          className={inputCls}
-        />
-        <button
-          type="submit"
-          disabled={state === 'sending'}
-          className="btn-gradient-glow inline-flex shrink-0 items-center justify-center gap-2 rounded-card px-5 py-3 font-medium text-white transition-all disabled:opacity-60 sm:px-6"
-        >
-          {state === 'sending' ? 'Sending…' : `${cta} →`}
-        </button>
-      </form>
-      <label className="mt-2 flex items-start gap-2 text-xs leading-relaxed text-faint">
-        <input
-          type="checkbox"
-          required
-          checked={consent}
-          onChange={(e) => setConsent(e.target.checked)}
-          className="mt-0.5 accent-cream"
-        />
-        <span>Send the checklist and practical follow-up notes. Unsubscribe anytime.</span>
-      </label>
-      {state === 'error' && (
-        <p className="mt-2 text-sm text-red-400">Couldn’t send just now — try again in a moment.</p>
-      )}
-    </div>
-  );
-}
 
 const jsonLd = {
   '@context': 'https://schema.org',

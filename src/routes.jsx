@@ -1,10 +1,10 @@
+import { Navigate } from 'react-router-dom';
 import Layout from './components/Layout';
 import Home from './pages/Home';
 import BlogIndex from './pages/BlogIndex';
 import BlogPost from './pages/BlogPost';
 import Links from './pages/Links';
 import PreflightChecklist from './pages/PreflightChecklist';
-import PreflightThankYou from './pages/PreflightThankYou';
 import PlaybookFnb from './pages/PlaybookFnb';
 import PlaybookFnbThankYou from './pages/PlaybookFnbThankYou';
 import LearnHome from './pages/LearnHome';
@@ -14,7 +14,6 @@ import DalApply from './pages/DalApply';
 import SectionPage from './pages/SectionPage';
 import FractionalCmoHub from './pages/FractionalCmoHub';
 import FractionalCmoPage from './pages/FractionalCmoPage';
-import CmoTest from './pages/CmoTest';
 import { postSlugs } from './posts';
 import { lessonSlugs } from './course/curriculum';
 import { cmoSlugs } from './data/fractionalCmoSolutions';
@@ -58,15 +57,13 @@ const siteRoutes = [
   },
   // Standalone link-in-bio page — no shared nav/footer chrome.
   { path: '/links', element: <Links /> },
-  // Standalone lead-magnet landing page (Meta Ads pre-flight checklist) +
-  // post-opt-in thank-you page where the download link lives.
+  // Standalone landing page (Meta Ads pre-flight checklist ebook)
   { path: '/preflight-checklist', element: <PreflightChecklist /> },
-  { path: '/preflight-checklist/thank-you', element: <PreflightThankYou /> },
+  { path: '/preflight-checklist/thank-you', element: <Navigate to="/preflight-checklist" replace /> },
   // Lead-magnet funnel: Playbook Marketing F&B 2026 landing + thank-you.
   { path: '/playbook-fnb', element: <PlaybookFnb /> },
   { path: '/playbook-fnb/thank-you', element: <PlaybookFnbThankYou /> },
   { path: '/dal-apply', element: <DalApply /> },
-  { path: '/cmo-test', element: <CmoTest /> },
   // Paid course. On adityabayu.com it lives at /learn/*; the learn.* subdomain
   // serves the same prerendered HTML via the Vercel Edge Middleware rewrite.
   {
@@ -98,12 +95,4 @@ const learnHostRoutes = [
 const onLearnHost =
   typeof window !== 'undefined' && window.location.host.startsWith('learn.');
 
-const onCmoTestHost =
-  typeof window !== 'undefined' && window.location.hostname === 'cmotest.adityabayu.com';
-
-const cmoTestHostRoutes = [
-  { path: '/', element: <CmoTest /> },
-  { path: '/*', element: <CmoTest /> },
-];
-
-export const routes = onCmoTestHost ? cmoTestHostRoutes : onLearnHost ? learnHostRoutes : siteRoutes;
+export const routes = onLearnHost ? learnHostRoutes : siteRoutes;
