@@ -14,6 +14,7 @@ import DalApply from './pages/DalApply';
 import SectionPage from './pages/SectionPage';
 import FractionalCmoHub from './pages/FractionalCmoHub';
 import FractionalCmoPage from './pages/FractionalCmoPage';
+import CmoTest from './pages/CmoTest';
 import { postSlugs } from './posts';
 import { lessonSlugs } from './course/curriculum';
 import { cmoSlugs } from './data/fractionalCmoSolutions';
@@ -65,6 +66,7 @@ const siteRoutes = [
   { path: '/playbook-fnb', element: <PlaybookFnb /> },
   { path: '/playbook-fnb/thank-you', element: <PlaybookFnbThankYou /> },
   { path: '/dal-apply', element: <DalApply /> },
+  { path: '/cmo-test', element: <CmoTest /> },
   // Paid course. On adityabayu.com it lives at /learn/*; the learn.* subdomain
   // serves the same prerendered HTML via the Vercel Edge Middleware rewrite.
   {
@@ -96,4 +98,12 @@ const learnHostRoutes = [
 const onLearnHost =
   typeof window !== 'undefined' && window.location.host.startsWith('learn.');
 
-export const routes = onLearnHost ? learnHostRoutes : siteRoutes;
+const onCmoTestHost =
+  typeof window !== 'undefined' && window.location.hostname === 'cmotest.adityabayu.com';
+
+const cmoTestHostRoutes = [
+  { path: '/', element: <CmoTest /> },
+  { path: '/*', element: <CmoTest /> },
+];
+
+export const routes = onCmoTestHost ? cmoTestHostRoutes : onLearnHost ? learnHostRoutes : siteRoutes;

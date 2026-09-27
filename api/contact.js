@@ -112,16 +112,18 @@ async function addToGoogleSheet({
 async function addToSupabase({
   firstName = '',
   email = '',
+  sourceSite = 'adityabayu.com',
   formName = '',
   leadType = 'Lead',
   result = '',
   payload = {},
 }) {
-  const supabaseUrl = process.env.SUPABASE_URL || 'https://immdmdiegbnmqhegkacq.supabase.co';
-  const supabaseKey =
+  const supabaseUrl = (process.env.SUPABASE_URL || 'https://immdmdiegbnmqhegkacq.supabase.co').trim().replace(/\/+$/, '');
+  const supabaseKey = (
     process.env.SUPABASE_SERVICE_ROLE_KEY ||
     process.env.SUPABASE_ANON_KEY ||
-    'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImltbWRtZGllZ2JubXFoZWdrYWNxIiwicm9sZSI6ImFub24iLCJpYXQiOjE3OTA0Mjc4MTQsImV4cCI6MjEwNjAwMzgxNH0.cxBbiPWaPo-EwjBjT1jRYFxUsvdmPTqt8hwotEHTrJw';
+    'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImltbWRtZGllZ2JubXFoZWdrYWNxIiwicm9sZSI6ImFub24iLCJpYXQiOjE3OTA0Mjc4MTQsImV4cCI6MjEwNjAwMzgxNH0.cxBbiPWaPo-EwjBjT1jRYFxUsvdmPTqt8hwotEHTrJw'
+  ).trim();
 
   if (!supabaseUrl || !email) return;
 
@@ -137,7 +139,7 @@ async function addToSupabase({
       body: JSON.stringify({
         first_name: firstName,
         email,
-        source_site: 'adityabayu.com',
+        source_site: sourceSite,
         form_name: formName,
         lead_type: leadType,
         result,
@@ -153,6 +155,14 @@ async function addToSupabase({
 }
 
 export default async function handler(req, res) {
+  res.setHeader('Access-Control-Allow-Origin', '*');
+  res.setHeader('Access-Control-Allow-Methods', 'POST,OPTIONS');
+  res.setHeader('Access-Control-Allow-Headers', 'Content-Type,Authorization');
+
+  if (req.method === 'OPTIONS') {
+    return res.status(200).end();
+  }
+
   if (req.method !== 'POST') {
     res.setHeader('Allow', 'POST');
     return res.status(405).json({ success: false, message: 'Method not allowed' });
@@ -163,6 +173,7 @@ export default async function handler(req, res) {
     name = '',
     email = '',
     company = '',
+    source_site = 'adityabayu.com',
     engagement_type = '',
     message = '',
     subject = '',
@@ -295,6 +306,7 @@ export default async function handler(req, res) {
     await addToSupabase({
       firstName: leadFirstName,
       email,
+      sourceSite: source_site || 'adityabayu.com',
       formName: resource || subject || 'Website Contact Form',
       leadType: leadStatus,
       result: leadResult,

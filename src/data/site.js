@@ -178,132 +178,60 @@ export const contact = {
 
 // Link-in-bio page (/links) — shared across social media bios.
 export const linkPage = {
-  tagline: 'Venture Builder · Fractional CMO',
+  tagline: 'Pembangun Bisnis · CMO Paruh Waktu',
   intro:
-    'Aditya (Andrew) Indra Bayu builds and scales companies across education, maritime, agency, film, and AI. He names the brand, ships the funnel, builds the AI tools, then takes an operating seat until the venture finds revenue.',
-  // Featured link buttons. Edit freely; add { label, sub, href, tag, external }.
-  links: [
-    {
-      label: 'The Operator Playbook',
-      sub: 'Paid self-paced course — how Aditya builds & scales ventures',
-      href: 'https://learn.adityabayu.com/',
-      tag: 'Course',
-      external: true,
-    },
-    {
-      label: 'Xniper',
-      sub: 'AI content generator for marketing teams',
-      href: 'https://xniper.cloud',
-      tag: 'AI tool',
-      external: true,
-    },
-  ],
-  cta: { label: 'Work with Aditya', href: '/#contact' },
+    'Aditya membangun dan mengembangkan bisnis lewat strategi, pemasaran, dan sistem operasional. Pengalamannya mencakup bidang pendidikan, maritim, agensi, media, dan teknologi AI.',
+  cta: { label: 'Mulai dengan Digital Advantage Lab', href: '/dal/' },
 };
 
-// Featured case studies for the /links carousel. Top picks, edit freely.
-// `image` is the featured image (also reused as the post cover when set). Leave
-// null to show the branded gradient placeholder until a real image is provided.
-export const featuredCaseStudies = [
-  {
-    slug: 'wall-street-english-turnaround',
-    title: 'Rebuilding strategy at Wall Street English Indonesia',
-    category: 'Education',
-    kind: 'Case study',
-    image: null,
-  },
-  {
-    slug: 'dental-clinic-multi-branch-growth',
-    title: 'Scaling a Jakarta dental clinic from 6 to 10 branches',
-    category: 'Healthcare',
-    kind: 'Case study',
-    image: null,
-  },
-  {
-    slug: 'hypebuzz-brand-from-zero',
-    title: 'HypeBuzz: building a trend-media brand from zero',
-    category: 'Media',
-    kind: 'Case study',
-    image: null,
-  },
-];
-
-// Lead-magnet carousel (shown on /links). Two card types:
-//   type: 'download' -> email-gated. Set `file` to a URL when ready; until then
-//         the email is still captured (Web3Forms) and Aditya delivers manually.
-//   type: 'guide'    -> ungated link (internal blog or external). Set `href`.
-// `image` is the featured image shown on each card (also intended as the
-// resource's featured/OG image). Leave null to show the branded gradient
-// placeholder until a real image is provided.
+// Featured products on /links. Keep each card linked to an available destination.
 export const resources = [
   {
-    title: 'Playbook Marketing F&B 2026',
-    blurb: 'Yang viral tutup. Yang diingat jadi unicorn. Sistem pemasaran F&B yang membangun pelanggan yang kembali — audit 60 detik + rencana 7 hari.',
-    audience: 'Untuk pemilik kafe & restoran di Indonesia',
+    title: 'Playbook Pemasaran F&B 2026',
+    blurb: 'Audit 60 detik dan rencana 7 hari untuk membantu kafe dan restoran membangun pelanggan yang kembali.',
+    audience: 'Untuk pemilik kafe dan restoran',
     type: 'link',
-    tag: 'Playbook',
+    tag: 'Panduan gratis',
     format: 'PDF',
     image: null,
     href: '/playbook-fnb/',
     cta: 'Ambil playbook',
+    icon: 'book',
   },
   {
-    title: 'Meta Ads Pre-Flight Checklist (Ebook)',
-    blurb: 'SOP pre-flight Meta Ads 2026 di era AI Andromeda. Diskon 62%: Rp49.000 (Normal Rp129.000). Termasuk A5 Field Guide PDF & Google Docs Master.',
-    audience: 'Untuk marketer, founder, dan media buyer yang menjalankan Meta Ads',
+    title: 'Meta Ads Pre-Flight Checklist',
+    blurb: 'Periksa sinyal, penawaran, dan kesiapan kampanye Meta Ads sebelum anggaran mulai berjalan.',
+    audience: 'Untuk pengelola iklan Meta dan pemilik bisnis',
     type: 'link',
     tag: 'Ebook · Rp49.000',
     format: 'PDF + Docs',
     image: 'https://storage.googleapis.com/bluestark_explorer/infinitiworks/Preflight-checklist-mockup.png',
     href: 'https://lynk.id/growthlab/k3ryx868xg2r',
-    cta: 'Beli Ebook (Rp49.000)',
+    cta: 'Beli ebook',
+    icon: 'checklist',
   },
   {
-    title: 'ContentStrategist Toolkit',
-    blurb: 'Persona worksheets, strategy cards, content routes, a hook library, and AI prompts.',
-    audience: 'For founders building a content system',
-    type: 'download',
-    tag: 'Toolkit',
-    format: 'PDF',
+    title: 'The Operator Playbook',
+    blurb: 'Pelajari cara membaca bisnis, menemukan hambatan pertumbuhan, membangun mesin permintaan, dan mengatur ritme operasional.',
+    audience: 'Untuk pemilik bisnis, pengelola, dan pemasar. Pelajaran pertama gratis.',
+    type: 'link',
+    tag: 'Kursus berbayar',
+    format: 'Kursus online',
     image: null,
-    file: null,
+    href: '/learn/',
+    cta: 'Lihat kursus',
+    icon: 'system',
   },
   {
-    title: 'Level Ads Framework',
-    blurb: 'Awareness levels mapped to funnel stages and creative angles. Budget, testing, and scaling in one playbook.',
-    audience: 'For paid-ads and performance marketers',
-    type: 'download',
-    tag: 'Framework',
-    format: 'PDF',
+    title: 'Xniper',
+    blurb: 'Alat AI untuk memahami audiens dan membuat materi pemasaran dengan konteks merek yang konsisten.',
+    audience: 'Platform AI untuk tim pemasaran',
+    type: 'link',
+    tag: 'Platform AI',
+    format: 'Aplikasi web',
     image: null,
-    file: null,
-  },
-  {
-    title: 'Ad-in-a-Box Kit',
-    blurb: 'AI-powered production kit for hooks, angles, and rapid creative variants.',
-    audience: 'For founders with no creative team yet',
-    type: 'download',
-    tag: 'Kit',
-    format: 'PDF',
-    image: null,
-    file: null,
-  },
-  {
-    title: 'Growth Curve Method',
-    blurb: 'Pillar, supporting, and content routes. The framework that moves brands from random posting to a system.',
-    audience: 'For content-led founders',
-    type: 'guide',
-    tag: 'Guide',
-    image: null,
-    href: '/blog/growth-curve-method-2026/',
-  },
-  {
-    title: 'Xniper HBSM Paper',
-    blurb: 'Audience simulation before campaign spend: 100 digital humans, 20,000 Monte Carlo data points.',
-    audience: 'For data-driven marketers',
-    type: 'guide',
-    tag: 'Paper',
-    image: null,
-    href: '/blog/xniper-hybrid-behavioral-synthetic-modeling/',
+    href: 'https://xniper.cloud',
+    cta: 'Jelajahi Xniper',
+    icon: 'spark',
   },
 ];

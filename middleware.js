@@ -15,12 +15,19 @@ export const config = {
 };
 
 const LEARN_HOST = 'learn.adityabayu.com';
+const CMO_TEST_HOST = 'cmotest.adityabayu.com';
 
 export default function middleware(request) {
   const host = request.headers.get('host') || '';
-  if (host !== LEARN_HOST) return next();
+  if (host !== LEARN_HOST && host !== CMO_TEST_HOST) return next();
 
   const url = new URL(request.url);
+  if (host === CMO_TEST_HOST) {
+    if (url.pathname.startsWith('/cmo-test')) return next();
+    url.pathname = url.pathname === '/' ? '/cmo-test/' : `/cmo-test${url.pathname}`;
+    return rewrite(url);
+  }
+
   if (url.pathname.startsWith('/learn')) return next();
 
   // Trailing slash on purpose (trailingSlash:true) so /learn/ resolves to the

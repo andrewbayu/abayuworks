@@ -40,3 +40,5 @@ npm-debug.log
 __pycache__/
 *.pyc
 legacy/
+.vercel
+.env*
