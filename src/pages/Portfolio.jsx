@@ -101,31 +101,27 @@ export default function Portfolio() {
 
               {/* Action Buttons */}
               <div className="pt-2 flex flex-wrap items-center gap-3 no-print">
+                <a
+                  href="mailto:hi@adityabayu.com"
+                  className="home-button text-sm"
+                >
+                  <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
+                  </svg>
+                  <span>Inquire / Contact Operator</span>
+                  <span aria-hidden>→</span>
+                </a>
+
                 <button
                   type="button"
                   onClick={() => window.print()}
-                  className="home-button cursor-pointer text-sm"
+                  className="home-button-secondary cursor-pointer text-sm"
                 >
                   <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M17 17h2a2 2 0 002-2v-4a2 2 0 00-2-2H5a2 2 0 00-2 2v4a2 2 0 002 2h2m2 4h6a2 2 0 002-2v-4a2 2 0 00-2-2H9a2 2 0 00-2 2v4a2 2 0 002 2zm8-12V5a2 2 0 00-2-2H9a2 2 0 00-2 2v4h10z" />
                   </svg>
                   <span>Save PDF / Print CV</span>
                 </button>
-
-                <a href="/dal/" className="home-button-secondary text-sm">
-                  <span>Book 90-Min Diagnostic</span>
-                  <span aria-hidden>→</span>
-                </a>
-
-                <a
-                  href="mailto:hi@adityabayu.com"
-                  className="inline-flex items-center gap-1.5 px-3.5 py-2.5 rounded text-xs font-bold text-[#4b5563] hover:text-[#1c3d73] border border-[#dfe4eb] bg-white transition-colors"
-                >
-                  <svg className="w-3.5 h-3.5 text-[#1c3d73]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
-                  </svg>
-                  <span>hi@adityabayu.com</span>
-                </a>
 
                 <a
                   href="https://www.linkedin.com/in/aditya-indra-bayu-38a11271/"
@@ -218,26 +214,31 @@ export default function Portfolio() {
       </section>
 
       {/* CONSOLIDATED METRICS BENTO STRIP */}
-      <section className="home-band py-10">
+      <section className="home-band py-12 sm:py-14">
         <div className="wrap">
-          <div className="mb-4 flex items-center justify-between">
+          <div className="mb-6 flex items-center justify-between">
             <h2 className="eyebrow">Consolidated Career High-Water Marks</h2>
             <span className="text-xs font-mono text-[#718096]">2014 – 2026 Audit</span>
           </div>
 
-          <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-3">
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
             {[
-              { val: '$12M+', label: 'Client Revenue Driven', sub: 'Across education, maritime, luxury, healthcare & SaaS' },
-              { val: '300K+', label: 'Qualified Leads', sub: 'High-intent conversions generated across APAC' },
-              { val: 'IDR 2B', label: 'Peak Monthly Budget', sub: 'Scaled across Google, Meta, TikTok & ASA' },
-              { val: 'Top 100', label: 'Clutch.co Global', sub: 'Digital Agency, Web Dev & Branding awards' },
-              { val: '10 / 5', label: 'Ventures & Sectors', sub: 'Companies built or operated across 5 industries' },
-              { val: '30+', label: 'Founders Mentored', sub: 'Early-stage startup founders coached to PMF' },
+              { val: '$12M+', label: 'Client Revenue Driven', sub: 'Verified commercial growth across education, maritime, luxury, healthcare & SaaS.' },
+              { val: '300K+', label: 'Qualified Leads Generated', sub: 'High-intent commercial conversions and qualified prospects across APAC.' },
+              { val: 'IDR 2B', label: 'Peak Monthly Budget Managed', sub: 'Scaled profitably across Google Ads, Meta Ads, TikTok & Apple Search Ads.' },
+              { val: 'Top 100', label: 'Clutch.co Global Recognition', sub: 'Ranked in Global Top 100 Digital Agency, Web Dev & Branding awards.' },
+              { val: '10 / 5', label: 'Ventures Built & Operated', sub: '10 commercial enterprises operated across 5 diversified business sectors.' },
+              { val: '30+', label: 'Founders Mentored to PMF', sub: 'Early-stage tech & agency founders coached to product-market fit and revenue.' },
             ].map((m) => (
-              <div key={m.label} className="bg-white border border-[#dfe4eb] rounded p-4 shadow-sm">
-                <div className="home-stat font-bold text-2xl sm:text-3xl text-[#1c3d73]">{m.val}</div>
-                <div className="text-xs font-bold text-[#111] mt-1 uppercase font-display tracking-tight">{m.label}</div>
-                <div className="text-[11px] text-[#64748b] mt-1 leading-snug font-serif">{m.sub}</div>
+              <div
+                key={m.label}
+                className="home-card p-6 bg-white border border-[#dfe4eb] rounded-xl flex flex-col justify-between hover:border-[#1c3d73]/40 hover:shadow-md transition-all duration-200"
+              >
+                <div>
+                  <div className="home-stat font-bold text-3xl sm:text-4xl text-[#1c3d73] tracking-tight">{m.val}</div>
+                  <div className="text-xs font-mono font-bold text-[#111] mt-2.5 uppercase tracking-wider">{m.label}</div>
+                  <div className="text-xs text-[#64748b] mt-2 leading-relaxed font-serif">{m.sub}</div>
+                </div>
               </div>
             ))}
           </div>
@@ -245,7 +246,7 @@ export default function Portfolio() {
       </section>
 
       {/* INTERACTIVE CONTROLS (TABS & LIVE SEARCH) */}
-      <section className="wrap pt-10 pb-4 no-print border-b border-[#e6e8ec]">
+      <section className="wrap pt-10 pb-6 no-print border-b border-[#e6e8ec]">
         <div className="flex flex-col md:flex-row items-stretch md:items-center justify-between gap-4">
           
           {/* Category Tabs */}
@@ -321,7 +322,7 @@ export default function Portfolio() {
             </p>
           </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-5">
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
             {[
               {
                 brand: 'Wall Street English Indonesia (Gentem Group)',
@@ -364,6 +365,14 @@ export default function Portfolio() {
                 scope: 'Rebuilt patient acquisition engine combining Meta & Google ads, automated AI triage (Cekat.ai), and CRM tracking. Grew monthly patient leads from 120 to 421 and maintained Rp300M+/month revenue across branches.',
               },
               {
+                brand: 'PT Inovasi Maritim Indonesia (IMI)',
+                tag: 'Maritime Shipyard · B2G Tender',
+                badge: 'Shipyard Pipeline',
+                metric: '100%',
+                metricLabel: 'TKDN positioning & institutional pipeline',
+                scope: 'Restructured commercial brand and technical engineering positioning for Indonesian government procurement (KKP, Bakamla, TNI AL). Built full-funnel digital collateral, visual vessel configurators, and B2G institutional pipeline.',
+              },
+              {
                 brand: 'HypeBuzz Digital Media Network',
                 tag: 'Media & IP · Zero-to-One',
                 badge: 'Organic Virality',
@@ -390,25 +399,27 @@ export default function Portfolio() {
             ]
               .filter((r) => isVisible('receipts', `${r.brand} ${r.tag} ${r.metric} ${r.scope}`))
               .map((r) => (
-                <article key={r.brand} className="home-card relative overflow-hidden group">
-                  <div className="flex items-start justify-between gap-3">
-                    <div>
-                      <div className="text-xs font-mono font-bold uppercase tracking-wider text-[#1c3d73]">{r.tag}</div>
-                      <h3 className="font-display text-lg font-bold text-[#111] mt-1 group-hover:text-[#1c3d73] transition-colors">
-                        {r.brand}
-                      </h3>
+                <article
+                  key={r.brand}
+                  className="home-card p-6 bg-white border border-[#dfe4eb] rounded-xl flex flex-col justify-between group hover:border-[#1c3d73]/40 hover:shadow-md transition-all duration-200"
+                >
+                  <div>
+                    <div className="flex items-start justify-between gap-2">
+                      <span className="text-xs font-mono font-bold uppercase tracking-wider text-[#1c3d73]">{r.tag}</span>
+                      <span className="shrink-0 text-xs font-mono font-bold px-2.5 py-0.5 rounded bg-[#f2f5fa] text-[#1c3d73] border border-[#d6e0f0]">
+                        {r.badge}
+                      </span>
                     </div>
-                    <span className="shrink-0 text-xs font-mono font-bold px-2 py-0.5 rounded bg-[#f2f5fa] text-[#1c3d73] border border-[#d6e0f0]">
-                      {r.badge}
-                    </span>
+                    <h3 className="font-display text-lg font-bold text-[#111] mt-2 group-hover:text-[#1c3d73] transition-colors leading-snug">
+                      {r.brand}
+                    </h3>
+                    <div className="mt-4 pt-3 border-t border-[#f0f2f5] flex items-baseline gap-2">
+                      <span className="font-display text-3xl font-extrabold text-[#1c3d73] tracking-tight">{r.metric}</span>
+                      <span className="text-xs font-mono text-[#64748b]">{r.metricLabel}</span>
+                    </div>
                   </div>
 
-                  <div className="mt-4 flex items-baseline gap-2">
-                    <span className="font-display text-3xl font-extrabold text-[#1c3d73] tracking-tight">{r.metric}</span>
-                    <span className="text-xs font-mono text-[#64748b]">{r.metricLabel}</span>
-                  </div>
-
-                  <p className="mt-3 font-serif text-sm leading-relaxed text-[#4b5563]">
+                  <p className="mt-4 font-serif text-xs leading-relaxed text-[#4b5563]">
                     {r.scope}
                   </p>
                 </article>
@@ -430,10 +441,10 @@ export default function Portfolio() {
             </p>
           </div>
 
-          <div className="space-y-6">
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-6">
             {[
               {
-                role: 'Head of Digital Marketing / Strategic Marketing Partner',
+                role: 'Head of Digital Marketing / Strategic Partner',
                 company: 'Gentem Lifelong Learning Group (Wall Street English · CURIOOkids · INDIES)',
                 period: 'Feb 2025 – Present',
                 location: 'Jakarta / Tangerang, ID',
@@ -469,7 +480,7 @@ export default function Portfolio() {
                 points: [
                   'Recognized in Clutch.co Global Top 100 Digital Agencies, Top 100 Web Dev, and Top 100 Branding Agencies.',
                   'Official Facebook / Meta Certified Marketing Partner.',
-                  'Created InfinitiLabs and Digital Advantage Lab (DAL), the 90-minute private constraint diagnostic practice.',
+                  'Created InfinitiLabs and Digital Advantage Lab (DAL), the private constraint diagnostic practice.',
                   'Guided 300+ external business owners and brands through full-funnel redesigns and performance marketing.',
                 ],
               },
@@ -479,36 +490,42 @@ export default function Portfolio() {
                 period: '2020 – Present',
                 location: 'Tangerang, ID',
                 tag: 'EdTech & Founder Mentorship',
-                desc: 'Productized proprietary growth architectures into practical toolkits (ContentStrategist Toolkit, Growth Curve Method, Sales Funnel Secrets). Directly mentored 30+ startup founders and 50+ young entrepreneurs, facilitating the incorporation of 15+ startups.',
-                points: [],
+                desc: 'Productized proprietary growth architectures into practical toolkits (ContentStrategist Toolkit, Growth Curve Method, Sales Funnel Secrets) for founders.',
+                points: [
+                  'Productized proprietary growth architectures (ContentStrategist Toolkit, Growth Curve Method, Sales Funnel Secrets).',
+                  'Directly mentored 30+ early-stage startup founders and 50+ young entrepreneurs across digital product incubation and PMF.',
+                  'Facilitated the formal incorporation and go-to-market launch of 15+ Indonesian technology startups.',
+                ],
               },
             ]
               .filter((e) => isVisible('experience', `${e.role} ${e.company} ${e.tag} ${e.desc} ${e.points.join(' ')}`))
               .map((e) => (
-                <div key={e.role} className="home-card p-6 bg-white border border-[#dfe4eb]">
-                  <div className="flex flex-col sm:flex-row sm:items-start justify-between gap-2 border-b border-[#e6e8ec] pb-4">
-                    <div>
-                      <div className="text-xs font-mono font-bold uppercase tracking-wider text-[#1c3d73]">{e.tag}</div>
-                      <h3 className="font-display text-xl font-bold text-[#111] mt-0.5">{e.role}</h3>
-                      <div className="font-display font-medium text-sm text-[#4b5563] mt-0.5">{e.company}</div>
+                <div key={e.role} className="home-card p-6 sm:p-7 bg-white border border-[#dfe4eb] rounded-xl flex flex-col justify-between hover:border-[#1c3d73]/40 hover:shadow-md transition-all duration-200">
+                  <div>
+                    <div className="flex flex-col sm:flex-row sm:items-start justify-between gap-2 border-b border-[#e6e8ec] pb-4">
+                      <div>
+                        <div className="text-xs font-mono font-bold uppercase tracking-wider text-[#1c3d73]">{e.tag}</div>
+                        <h3 className="font-display text-xl font-bold text-[#111] mt-1">{e.role}</h3>
+                        <div className="font-display font-medium text-sm text-[#4b5563] mt-1">{e.company}</div>
+                      </div>
+                      <div className="text-left sm:text-right shrink-0">
+                        <span className="inline-block px-2.5 py-1 rounded bg-[#f2f5fa] text-[#1c3d73] font-mono text-xs font-bold border border-[#d6e0f0]">
+                          {e.period}
+                        </span>
+                        <div className="text-xs font-mono text-[#718096] mt-1">{e.location}</div>
+                      </div>
                     </div>
-                    <div className="text-left sm:text-right shrink-0">
-                      <span className="inline-block px-2.5 py-1 rounded bg-[#f2f5fa] text-[#1c3d73] font-mono text-xs font-bold border border-[#d6e0f0]">
-                        {e.period}
-                      </span>
-                      <div className="text-xs font-mono text-[#718096] mt-1">{e.location}</div>
-                    </div>
+
+                    <p className="mt-4 font-serif text-sm leading-relaxed text-[#4b5563]">
+                      {e.desc}
+                    </p>
                   </div>
 
-                  <p className="mt-4 font-serif text-sm leading-relaxed text-[#4b5563]">
-                    {e.desc}
-                  </p>
-
                   {e.points.length > 0 && (
-                    <ul className="mt-3 space-y-1.5 text-xs text-[#4b5563] font-serif list-disc list-inside">
+                    <ul className="mt-4 pt-3 border-t border-[#f0f2f5] space-y-2 text-xs text-[#4b5563] font-serif list-disc list-inside">
                       {e.points.map((pt) => (
                         <li key={pt} className="leading-relaxed">
-                          <span className="text-[#111] font-medium">{pt}</span>
+                          <span className="text-[#111] font-medium font-sans">{pt}</span>
                         </li>
                       ))}
                     </ul>
@@ -532,7 +549,7 @@ export default function Portfolio() {
             </p>
           </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
             {[
               {
                 name: 'Calibreworks',
@@ -544,7 +561,7 @@ export default function Portfolio() {
                 name: 'We Are Infiniti',
                 tag: 'Agency · Owned',
                 role: 'Founder & Operator · PT Infiniti Media Galaksi',
-                desc: 'Digital growth, branding, and conversion studio. The internal engineering engine that ships every other venture while serving 300+ external corporate brands.',
+                desc: 'Digital growth, branding, and conversion studio. The internal engineering engine that ships ventures while serving 300+ external corporate and mid-market brands.',
               },
               {
                 name: 'PT Inovasi Maritim Indonesia',
@@ -562,7 +579,7 @@ export default function Portfolio() {
                 name: 'Growthlab Academy',
                 tag: 'EdTech · Owned',
                 role: 'Founder · learn.growthlab.co.id',
-                desc: "EdTech venture productising Aditya's playbooks: ContentStrategist Toolkit, Growth Curve Method, and founder mentorship for 30+ early-stage startups.",
+                desc: "EdTech venture productising proprietary playbooks: ContentStrategist Toolkit, Growth Curve Method, and founder mentorship for 30+ early-stage startups.",
               },
               {
                 name: 'Kinema',
@@ -583,33 +600,53 @@ export default function Portfolio() {
                 desc: 'Recreational passenger speedboats and sport-fishing vessels. Brand positioning, 3D hull visual direction, and go-to-market architecture incubated alongside IMI.',
               },
               {
-                name: 'InfinitiLabs / Digital Advantage Lab',
-                tag: 'Growth Practice · Owned',
-                role: 'Principal Operator · adityabayu.com/dal/',
-                desc: 'Private 90-minute constraint diagnostic and 5-day research sprint delivering the Digital Advantage Scorecard, bottleneck diagnosis, and 90-day execution roadmap.',
-              },
-              {
-                name: 'Street Talk · UrbanLuxe · Skelup',
-                tag: 'Incubation Sandbox · Multi-Brand',
-                role: 'Founder & Builder',
-                desc: 'Active incubation sandbox: speaking-first conversational English brand, luxury boutique retail concept, and Skelup (an AI-powered solopreneur operational hub).',
+                name: 'Alcaster.com',
+                tag: 'B2B SaaS · Owned',
+                role: 'Founder & Bootstrapped Builder',
+                desc: 'No-code funnel and landing page SaaS for Indonesian marketers. Bootstrapped with zero VC capital; achieved Rp428M first-year ARR across 84 active paying corporate accounts.',
               },
             ]
               .filter((v) => isVisible('ventures', `${v.name} ${v.tag} ${v.role} ${v.desc}`))
               .map((v) => (
-                <div key={v.name} className="home-card p-5 bg-white border border-[#dfe4eb]">
-                  <div className="flex items-center justify-between">
-                    <span className="text-xs font-mono font-bold text-[#1c3d73] uppercase tracking-wider">{v.tag}</span>
-                    <span className="text-[11px] font-mono px-2 py-0.5 rounded bg-[#f7f8fa] text-[#4b5563] border border-[#e6e8ec]">
-                      {v.role.split('·')[0]}
-                    </span>
+                <div
+                  key={v.name}
+                  className="home-card p-6 bg-white border border-[#dfe4eb] rounded-xl flex flex-col justify-between hover:border-[#1c3d73]/40 hover:shadow-md transition-all duration-200"
+                >
+                  <div>
+                    <div className="flex items-center justify-between">
+                      <span className="text-xs font-mono font-bold text-[#1c3d73] uppercase tracking-wider">{v.tag}</span>
+                      <span className="text-[11px] font-mono px-2 py-0.5 rounded bg-[#f7f8fa] text-[#4b5563] border border-[#e6e8ec]">
+                        {v.role.split('·')[0].trim()}
+                      </span>
+                    </div>
+                    <h3 className="font-display text-lg font-bold text-[#111] mt-2">{v.name}</h3>
+                    <div className="text-xs font-mono text-[#718096] mt-0.5">{v.role}</div>
+                    <p className="mt-3 font-serif text-xs leading-relaxed text-[#4b5563]">{v.desc}</p>
                   </div>
-                  <h3 className="font-display text-lg font-bold text-[#111] mt-1.5">{v.name}</h3>
-                  <div className="text-xs font-mono text-[#718096] mt-0.5">{v.role}</div>
-                  <p className="mt-3 font-serif text-xs leading-relaxed text-[#4b5563]">{v.desc}</p>
                 </div>
               ))}
           </div>
+
+          {/* Incubation Sandbox Card */}
+          {isVisible('ventures', 'Street Talk UrbanLuxe Skelup sandbox incubation') && (
+            <div className="mt-6 home-card p-6 bg-[#fbfcfd] border border-dashed border-[#cbd5e1] rounded-xl flex flex-col md:flex-row md:items-center justify-between gap-4">
+              <div>
+                <div className="flex items-center gap-2">
+                  <span className="text-xs font-mono font-bold text-[#1c3d73] uppercase tracking-wider">Active Incubation Sandbox</span>
+                  <span className="text-[11px] font-mono px-2 py-0.5 rounded bg-white text-[#4b5563] border border-[#dfe4eb]">3 Live Experiments</span>
+                </div>
+                <h3 className="font-display text-lg font-bold text-[#111] mt-1.5">
+                  Street Talk · UrbanLuxe · Skelup
+                </h3>
+                <p className="mt-1 font-serif text-xs leading-relaxed text-[#4b5563] max-w-3xl">
+                  Active internal testing sandbox: conversational English brand for young professionals (Street Talk), luxury retail & pre-loved goods concept (UrbanLuxe), and an AI-powered solopreneur operational workflow suite (Skelup).
+                </p>
+              </div>
+              <div className="shrink-0 text-xs font-mono font-bold text-[#718096] uppercase tracking-wider">
+                Studio Lab R&D
+              </div>
+            </div>
+          )}
         </section>
       )}
 
@@ -626,7 +663,7 @@ export default function Portfolio() {
             </p>
           </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
             {[
               {
                 kind: 'AI Revenue Copilot',
@@ -703,13 +740,16 @@ export default function Portfolio() {
             ]
               .filter((t) => isVisible('systems', `${t.kind} ${t.name} ${t.note} ${t.tag}`))
               .map((t) => (
-                <div key={t.name} className="home-card p-5 bg-white border border-[#dfe4eb] flex flex-col justify-between">
+                <div
+                  key={t.name}
+                  className="home-card p-6 bg-white border border-[#dfe4eb] rounded-xl flex flex-col justify-between hover:border-[#1c3d73]/40 hover:shadow-md transition-all duration-200"
+                >
                   <div>
-                    <div className="text-xs font-mono font-bold text-[#1c3d73] uppercase mb-1">{t.kind}</div>
-                    <h3 className="font-display text-base font-bold text-[#111]">{t.name}</h3>
-                    <p className="mt-2 font-serif text-xs leading-relaxed text-[#4b5563]">{t.note}</p>
+                    <div className="text-xs font-mono font-bold text-[#1c3d73] uppercase tracking-wider mb-2">{t.kind}</div>
+                    <h3 className="font-display text-base font-bold text-[#111] leading-snug">{t.name}</h3>
+                    <p className="mt-2.5 font-serif text-xs leading-relaxed text-[#4b5563]">{t.note}</p>
                   </div>
-                  <div className="mt-4 pt-3 border-t border-[#e6e8ec] text-[11px] font-mono text-[#718096]">
+                  <div className="mt-4 pt-3 border-t border-[#f0f2f5] text-[11px] font-mono text-[#718096] uppercase tracking-wider">
                     {t.tag}
                   </div>
                 </div>
@@ -731,24 +771,24 @@ export default function Portfolio() {
             </p>
           </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4">
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
             {[
               {
                 sector: 'Education & EdTech',
                 items: [
-                  ['Wall Street English Indonesia', 'Acting CMO, ad budget, 300K leads, Rp156B rev'],
+                  ['Wall Street English Indonesia', 'Acting CMO, ad budget governance, 300K leads, Rp156B rev'],
                   ['Hacktiv8 Indonesia', 'Data Science Bootcamp & Scholarship PR, 8X ROAS'],
-                  ['CURIOOkids Indonesia', 'GTM strategy, center launch, and lead funnels'],
-                  ['Universitas Prasetiya Mulya', 'Guest lecturer & incubator program mentor'],
+                  ['CURIOOkids Indonesia', 'GTM strategy, center launch, and parent lead funnels'],
+                  ['Universitas Prasetiya Mulya', 'Guest lecturer & undergraduate business incubator mentor'],
                 ],
               },
               {
                 sector: 'Healthcare & Aesthetics',
                 items: [
-                  ['Akasia 365mc Indonesia', 'LAMS contouring patient acquisition (5,622 chats)'],
+                  ['Akasia 365mc Indonesia', 'LAMS body contouring acquisition architecture (5,622 chats)'],
                   ['Jakarta Dental Clinic Chain', 'Scaled 6→10 branches, Rp300M/mo, 6-7X ROAS'],
-                  ['Alodokter', 'High-intent patient acquisition funnels'],
-                  ['GSK & GermKiller', 'eCommerce marketing & consumer sanitization launch'],
+                  ['Alodokter', 'High-intent patient acquisition funnels & triage'],
+                  ['GSK & GermKiller', 'eCommerce marketing & consumer sanitization market launch'],
                 ],
               },
               {
@@ -756,17 +796,17 @@ export default function Portfolio() {
                 items: [
                   ['PT Inovasi Maritim Indonesia', 'CMO seat, B2G government patrol vessels & yard GTM'],
                   ['PT Kansai Paint Indonesia', 'Industrial company profile video & B2B collateral'],
-                  ['Pertamina Int. Shipping', 'Corporate executive English training proposal'],
-                  ['Sarana Steel', 'Digital marketing & industrial steel pipeline'],
+                  ['Pertamina Int. Shipping', 'Corporate executive English training pipeline proposal'],
+                  ['Sarana Steel', 'Digital marketing & industrial steel buyer pipeline'],
                 ],
               },
               {
                 sector: 'Banking, FMCG & Retail',
                 items: [
                   ['Aboitiz Group (Philippines)', 'IDR 2B budget, 10M reach, 3 seasons of KicauFest'],
-                  ['BPR Triastra (Hisobhan)', 'Complete brand repositioning & #BeraniBerubah'],
+                  ['BPR Triastra (Hisobhan)', 'Complete brand repositioning & #BeraniBerubah campaign'],
                   ['CIMB Niaga & Bank Jateng', 'Branchless banking portals & digital asset creation'],
-                  ['Flash Coffee & Angke Restaurant', 'F&B performance marketing & high-volume dining bookings'],
+                  ['Flash Coffee & Angke Restaurant', 'F&B performance marketing & high-volume dining reservations'],
                 ],
               },
             ]
@@ -774,18 +814,26 @@ export default function Portfolio() {
                 isVisible('clients', `${c.sector} ${c.items.map((i) => i.join(' ')).join(' ')}`)
               )
               .map((c) => (
-                <div key={c.sector} className="home-card p-5 bg-white border border-[#dfe4eb]">
-                  <div className="text-xs font-mono font-bold text-[#1c3d73] uppercase mb-2">{c.sector}</div>
-                  <ul className="text-xs text-[#4b5563] space-y-2.5 mt-3">
-                    {c.items.map(([name, desc]) => (
-                      <li key={name} className="pb-2 border-b border-[#e6e8ec] last:border-0 last:pb-0">
-                        <strong className="text-[#111] block font-display">{name}</strong>
-                        <span className="font-serif text-[11px] text-[#64748b] leading-tight block mt-0.5">
-                          {desc}
-                        </span>
-                      </li>
-                    ))}
-                  </ul>
+                <div
+                  key={c.sector}
+                  className="home-card p-6 bg-white border border-[#dfe4eb] rounded-xl flex flex-col justify-between hover:border-[#1c3d73]/40 hover:shadow-md transition-all duration-200"
+                >
+                  <div>
+                    <div className="flex items-center justify-between pb-3 border-b border-[#e6e8ec]">
+                      <span className="text-xs font-mono font-bold text-[#1c3d73] uppercase tracking-wider">{c.sector}</span>
+                      <span className="text-[11px] font-mono text-[#718096]">Selected Track Record</span>
+                    </div>
+                    <ul className="text-xs text-[#4b5563] space-y-3.5 mt-4">
+                      {c.items.map(([name, desc]) => (
+                        <li key={name} className="pb-3 border-b border-[#f0f2f5] last:border-0 last:pb-0">
+                          <strong className="text-[#111] block font-display text-sm font-semibold">{name}</strong>
+                          <span className="font-serif text-xs text-[#64748b] leading-relaxed block mt-0.5">
+                            {desc}
+                          </span>
+                        </li>
+                      ))}
+                    </ul>
+                  </div>
                 </div>
               ))}
           </div>
@@ -805,89 +853,103 @@ export default function Portfolio() {
             </p>
           </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-5">
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
             {/* Education */}
-            <div className="home-card p-5 bg-white border border-[#dfe4eb]">
-              <div className="text-xs font-mono font-bold text-[#1c3d73] uppercase mb-1">Academic Degree</div>
-              <h3 className="font-display text-base font-bold text-[#111]">Universitas Indonesia</h3>
-              <p className="text-xs font-mono text-[#718096] mt-0.5">2008 – 2012</p>
-              <div className="mt-3 font-serif text-xs text-[#4b5563] space-y-2">
-                <p>
-                  <strong className="text-[#111] font-sans">Bachelor of Mechanical Engineering (B.Eng)</strong>
-                </p>
-                <p>Specialized in Aerodynamics & Automation Engineering.</p>
-                <p className="italic border-l-2 border-[#1c3d73]/40 pl-2 text-[#64748b]">
-                  Thesis: "Design of vertical axis wind turbine Savonius optimized for low wind velocity environments."
-                </p>
+            <div className="home-card p-6 bg-white border border-[#dfe4eb] rounded-xl flex flex-col justify-between hover:border-[#1c3d73]/40 hover:shadow-md transition-all duration-200">
+              <div>
+                <div className="text-xs font-mono font-bold text-[#1c3d73] uppercase tracking-wider mb-1">Academic Degree</div>
+                <h3 className="font-display text-base font-bold text-[#111]">Universitas Indonesia</h3>
+                <p className="text-xs font-mono text-[#718096] mt-0.5">2008 – 2012</p>
+                <div className="mt-4 font-serif text-xs text-[#4b5563] space-y-2 leading-relaxed">
+                  <p>
+                    <strong className="text-[#111] font-sans">Bachelor of Mechanical Engineering (B.Eng)</strong>
+                  </p>
+                  <p>Specialized in Aerodynamics & Automation Engineering.</p>
+                  <p className="italic border-l-2 border-[#1c3d73]/40 pl-2 text-[#64748b] mt-2">
+                    Thesis: "Design of vertical axis wind turbine Savonius optimized for low wind velocity environments."
+                  </p>
+                </div>
               </div>
             </div>
 
             {/* Speaking */}
-            <div className="home-card p-5 bg-white border border-[#dfe4eb]">
-              <div className="text-xs font-mono font-bold text-[#1c3d73] uppercase mb-1">Speaking & Mentorship</div>
-              <h3 className="font-display text-base font-bold text-[#111]">Keynotes & Mentoring</h3>
-              <p className="text-xs font-mono text-[#718096] mt-0.5">Industry Events</p>
-              <ul className="mt-3 font-serif text-xs text-[#4b5563] space-y-2.5">
-                <li>
-                  <strong className="text-[#111] font-sans block">IDEAFEST 2023</strong>
-                  <span>Keynote Speaker & MC: "AI for Creative Industry & Autonomous Agencies."</span>
-                </li>
-                <li>
-                  <strong className="text-[#111] font-sans block">Universitas Prasetiya Mulya</strong>
-                  <span>Guest Lecturer & Mentor for undergraduate business incubators.</span>
-                </li>
-                <li>
-                  <strong className="text-[#111] font-sans block">Growthlab Academy</strong>
-                  <span>Trained 30+ startup founders on the Growth Curve Method.</span>
-                </li>
-              </ul>
+            <div className="home-card p-6 bg-white border border-[#dfe4eb] rounded-xl flex flex-col justify-between hover:border-[#1c3d73]/40 hover:shadow-md transition-all duration-200">
+              <div>
+                <div className="text-xs font-mono font-bold text-[#1c3d73] uppercase tracking-wider mb-1">Speaking & Mentorship</div>
+                <h3 className="font-display text-base font-bold text-[#111]">Keynotes & Mentoring</h3>
+                <p className="text-xs font-mono text-[#718096] mt-0.5">Industry Events</p>
+                <ul className="mt-4 font-serif text-xs text-[#4b5563] space-y-3 leading-relaxed">
+                  <li className="pb-2.5 border-b border-[#f0f2f5]">
+                    <strong className="text-[#111] font-sans block font-semibold">IDEAFEST 2023</strong>
+                    <span className="text-[#64748b] text-[11px] block mt-0.5">Keynote Speaker & MC: "AI for Creative Industry & Autonomous Agencies."</span>
+                  </li>
+                  <li className="pb-2.5 border-b border-[#f0f2f5]">
+                    <strong className="text-[#111] font-sans block font-semibold">Universitas Prasetiya Mulya</strong>
+                    <span className="text-[#64748b] text-[11px] block mt-0.5">Guest Lecturer & Mentor for undergraduate business incubators.</span>
+                  </li>
+                  <li>
+                    <strong className="text-[#111] font-sans block font-semibold">Growthlab Academy</strong>
+                    <span className="text-[#64748b] text-[11px] block mt-0.5">Trained 30+ startup founders on the Growth Curve Method.</span>
+                  </li>
+                </ul>
+              </div>
             </div>
 
             {/* Publications */}
-            <div className="home-card p-5 bg-white border border-[#dfe4eb]">
-              <div className="text-xs font-mono font-bold text-[#1c3d73] uppercase mb-1">Selected Publications</div>
-              <h3 className="font-display text-base font-bold text-[#111]">The CMO Notes</h3>
-              <p className="text-xs font-mono text-[#718096] mt-0.5">adityabayu.com/blog/</p>
-              <ul className="mt-3 text-xs space-y-2 font-display">
-                {[
-                  ['The Fractional CMO in Indonesia (2026)', '/blog/fractional-cmo-indonesia-growth-guide/'],
-                  ['Healthcare Clinic Growth Playbook', '/blog/healthcare-aesthetic-clinic-playbook/'],
-                  ['The Director Illusion: B2B Buyer Maps', '/blog/b2b-buyer-map-end-user-champion/'],
-                  ['Why Funnels are Linear in Messy Middle', '/blog/google-messy-middle-funnel-checkpoints/'],
-                ].map(([title, link]) => (
-                  <li key={title}>
-                    <a
-                      href={link}
-                      className="text-[#1c3d73] hover:underline flex items-center justify-between font-medium"
-                    >
-                      <span>{title}</span>
-                      <span aria-hidden>→</span>
-                    </a>
-                  </li>
-                ))}
-              </ul>
+            <div className="home-card p-6 bg-white border border-[#dfe4eb] rounded-xl flex flex-col justify-between hover:border-[#1c3d73]/40 hover:shadow-md transition-all duration-200">
+              <div>
+                <div className="text-xs font-mono font-bold text-[#1c3d73] uppercase tracking-wider mb-1">Selected Publications</div>
+                <h3 className="font-display text-base font-bold text-[#111]">The CMO Notes</h3>
+                <p className="text-xs font-mono text-[#718096] mt-0.5">adityabayu.com/blog/</p>
+                <ul className="mt-4 text-xs space-y-2.5 font-display">
+                  {[
+                    ['The Fractional CMO in Indonesia (2026)', '/blog/fractional-cmo-indonesia-growth-guide/'],
+                    ['Healthcare Clinic Growth Playbook', '/blog/healthcare-aesthetic-clinic-playbook/'],
+                    ['The Director Illusion: B2B Buyer Maps', '/blog/b2b-buyer-map-end-user-champion/'],
+                    ['Why Funnels are Linear in Messy Middle', '/blog/google-messy-middle-funnel-checkpoints/'],
+                  ].map(([title, link]) => (
+                    <li key={title} className="pb-2 border-b border-[#f0f2f5] last:border-0 last:pb-0">
+                      <a
+                        href={link}
+                        className="text-[#1c3d73] hover:underline flex items-center justify-between font-medium group"
+                      >
+                        <span className="group-hover:text-[#2A5499]">{title}</span>
+                        <span aria-hidden className="text-[#718096] group-hover:text-[#1c3d73]">→</span>
+                      </a>
+                    </li>
+                  ))}
+                </ul>
+              </div>
             </div>
           </div>
         </section>
       )}
 
       {/* FOOTER CALL-TO-ACTION BAND */}
-      <section className="home-dark-section py-16">
+      <section className="home-dark-section py-16 sm:py-20">
         <div className="wrap text-center max-w-3xl mx-auto space-y-5">
-          <p className="eyebrow text-[#ffe8d4]">Ready to isolate your growth bottleneck?</p>
-          <h2 className="font-display text-3xl sm:text-4xl font-semibold text-white tracking-tight">
-            Book a 90-Minute Private Growth Diagnostic.
+          <p className="eyebrow text-[#ffe8d4]">Operating Seats & Executive Inquiries</p>
+          <h2 className="font-display text-3xl sm:text-4xl font-semibold text-white tracking-[-0.03em]">
+            Open for Fractional CMO & Strategic Operating Roles.
           </h2>
           <p className="font-serif text-base text-[#b4afa8] leading-relaxed">
-            Walk away knowing the single constraint holding back revenue before you approve another rupiah of ad spend. Limited to 5 companies per month.
+            Evaluating select growth-stage or enterprise mandates requiring hands-on commercial architecture, P&L ownership, or AI-accelerated marketing systems across APAC.
           </p>
-          <div className="pt-2 flex flex-wrap items-center justify-center gap-3 no-print">
-            <a href="/dal/" className="home-button">
-              <span>Apply for Digital Advantage Lab</span>
+          <div className="pt-3 flex flex-wrap items-center justify-center gap-4 no-print">
+            <a
+              href="mailto:hi@adityabayu.com"
+              className="home-button text-sm"
+            >
+              <span>Initiate Executive Discussion</span>
               <span aria-hidden>→</span>
             </a>
-            <a href="mailto:hi@adityabayu.com" className="home-button-secondary !border-white !text-white hover:!bg-white/10">
-              <span>Direct Inquiries: hi@adityabayu.com</span>
+            <a
+              href="https://www.linkedin.com/in/aditya-indra-bayu-38a11271/"
+              target="_blank"
+              rel="noreferrer"
+              className="home-button-secondary !border-white !text-white hover:!bg-white/10 text-sm"
+            >
+              <span>Connect on LinkedIn</span>
             </a>
           </div>
           <p className="pt-4 text-xs font-mono text-[#718096]">
