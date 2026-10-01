@@ -11,6 +11,7 @@ export const site = {
     { label: 'Ventures', href: '/ventures/' },
     { label: 'Receipts', href: '/receipts/' },
     { label: 'Built', href: '/built/' },
+    { label: 'Portfolio', href: '/portfolio/' },
     { label: 'Writing', href: '/blog/' },
     { label: 'Advisory', href: '/fractional-cmo/' },
     { label: 'DAL', href: '/dal/' },

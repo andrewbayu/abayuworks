@@ -500,7 +500,16 @@ End of LASTMEM. Update this file when you ship anything material. It's committed
   1. `clinic-funnel-architecture-doodle.jpg`: 5-stage clinic patient acquisition pipeline (Decoupled Treatment Ads → Dedicated Funnel → WhatsApp AI Triage → In-Clinic Showup with Deposit → Patient Recall Loop).
   2. `clinic-triage-matrix-doodle.jpg`: 4-point clinic diagnostic triage (Traffic Leak vs Speed Leak vs No-Show Leak vs Value Leak).
 - Saved image assets under `public/images/blog/healthcare-aesthetic-clinic-playbook/`.
-- Registered module in `src/posts/index.js` (newest first).
 - Verified production build and SSG pre-rendering (`dist/blog/healthcare-aesthetic-clinic-playbook/index.html` - 41.44 KiB, 32 routes rendered, sitemap updated).
+
+## Session AB303 · 2026-10-01
+- Built and integrated centralized executive CV & portfolio landing page at `/portfolio/` (`src/pages/Portfolio.jsx`):
+  1. Matches `adityabayu.com`'s editorial light design system (`.home-light`, General Sans headings + Libre Baskerville body + `#1c3d73` royal blue accents + `#dfe4eb` hairline `.home-card` components).
+  2. Features executive identity header with portrait (`/aditya-bayu.webp`), action bar with print-to-PDF export, and 6-metric bento high-water marks strip ($12M+ revenue, 300K+ leads, IDR 2B/mo peak budget, Clutch Top 100, 10 ventures, 30+ founders mentored).
+  3. Interactive category filter tabs (All, The Receipts, Operating Seats, Ventures, AI Systems, Clients, Credentials) and real-time live search filter.
+  4. Covers 10 quantified receipts, 4 operating leadership seats, 10-venture portfolio, 12 proprietary AI systems & frameworks, multi-sector client roster, and education/speaking credentials.
+  5. Added print-to-PDF stylesheet (`@media print`) for clean A4 physical/PDF output.
+  6. Registered route in `src/routes.jsx`, added to `site.nav` in `src/data/site.js`, updated `scripts/postbuild.mjs` for folder-style clean URL generation and sitemap inclusion.
+- Verified production build (`npm run build`): SSG prerendered `dist/portfolio/index.html` (65.4 KiB) across 53 static routes with updated sitemap.
 
 

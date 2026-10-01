@@ -60,7 +60,7 @@ if (existsSync(cmoHtml)) {
 }
 
 // 2c. Fold standalone top-level pages: dist/<name>.html -> dist/<name>/index.html
-for (const name of ['links', 'preflight-checklist', 'playbook-fnb', 'learn']) {
+for (const name of ['links', 'preflight-checklist', 'playbook-fnb', 'learn', 'portfolio', 'ventures', 'receipts', 'built', 'dal']) {
   const f = join(dist, `${name}.html`);
   if (existsSync(f) && statSync(f).isFile()) {
     const dir = join(dist, name);
@@ -76,8 +76,13 @@ const FREE_LESSON_SLUGS = ['operators-first-30-days'];
 const publicLearnLessons = learnSlugs.filter((s) => FREE_LESSON_SLUGS.includes(s));
 const urls = [
   { loc: `${SITE}/`, freq: 'monthly', pri: '1.0' },
+  { loc: `${SITE}/portfolio/`, freq: 'weekly', pri: '0.9' },
   { loc: `${SITE}/blog/`, freq: 'weekly', pri: '0.8' },
   { loc: `${SITE}/fractional-cmo/`, freq: 'weekly', pri: '0.8' },
+  { loc: `${SITE}/ventures/`, freq: 'monthly', pri: '0.8' },
+  { loc: `${SITE}/receipts/`, freq: 'monthly', pri: '0.8' },
+  { loc: `${SITE}/built/`, freq: 'monthly', pri: '0.8' },
+  { loc: `${SITE}/dal/`, freq: 'monthly', pri: '0.8' },
   { loc: `${SITE}/links/`, freq: 'monthly', pri: '0.5' },
   { loc: `${SITE}/preflight-checklist/`, freq: 'monthly', pri: '0.6' },
   { loc: `${SITE}/playbook-fnb/`, freq: 'monthly', pri: '0.6' },

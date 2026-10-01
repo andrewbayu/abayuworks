@@ -9,6 +9,7 @@
 # Strategic docs — kept locally, not pushed
 PRODUCT.md
 DESIGN.md
+The-CMO-Playbook-Practical-guide-to-scale-your-business.md
 
 # Paid course content — MUST stay out of the public repo (lives in Supabase).
 # Drafts + generated seed SQL are local-only.
@@ -42,3 +43,6 @@ __pycache__/
 legacy/
 .vercel
 .env*
+.agents/
+thecmo-test/
+tmp/
