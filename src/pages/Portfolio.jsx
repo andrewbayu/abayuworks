@@ -128,18 +128,6 @@ export default function Portfolio() {
                 </a>
 
                 <a
-                  href="https://wa.me/6285212924950"
-                  target="_blank"
-                  rel="noreferrer"
-                  className="inline-flex items-center gap-1.5 px-3.5 py-2.5 rounded text-xs font-bold text-[#4b5563] hover:text-emerald-700 border border-[#dfe4eb] bg-white transition-colors"
-                >
-                  <svg className="w-3.5 h-3.5 text-emerald-600" fill="currentColor" viewBox="0 0 24 24">
-                    <path d="M12.04 2c-5.46 0-9.91 4.45-9.91 9.91 0 1.75.46 3.45 1.32 4.95L2.05 22l5.25-1.38c1.45.79 3.08 1.21 4.74 1.21 5.46 0 9.91-4.45 9.91-9.91 0-2.65-1.03-5.14-2.9-7.01A9.816 9.816 0 0012.04 2z" />
-                  </svg>
-                  <span>+62 8521-2924-950</span>
-                </a>
-
-                <a
                   href="https://www.linkedin.com/in/aditya-indra-bayu-38a11271/"
                   target="_blank"
                   rel="noreferrer"
