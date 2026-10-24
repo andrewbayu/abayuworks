@@ -11,6 +11,10 @@ export default function Built() {
         title="Tools and frameworks."
         intro="One person can't run ten ventures by hand. AI copilots, ads engines, content systems, and proprietary frameworks. The same tooling runs across the entire portfolio."
       />
+      <a href="/108-strategi-bisnis/" className="card mb-4 block p-5">
+        <h3 className="font-display text-lg font-semibold">108 Strategi Mengembangkan Bisnis ↗</h3>
+        <p className="mt-2 text-sm leading-relaxed text-muted">Panduan praktis untuk pemilik bisnis Indonesia. Cari strategi, baca contoh penerapan, dan susun prioritas eksekusi.</p>
+      </a>
       <motion.div variants={stagger(0.04)} {...inView} className="grid gap-4 sm:grid-cols-2">
         {tools.map((t) => (
           <motion.div key={t.name} variants={fadeUp} className="card p-5">

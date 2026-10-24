@@ -533,5 +533,36 @@ End of LASTMEM. Update this file when you ship anything material. It's committed
 - Maintained zero em dashes, zero prohibited buzzwords, third-person perspective.
 - Verified production build (`npm run build`): SSG prerendered `dist/blog/fnb-restaurant-growth-playbook.html` (40.15 KiB) passing cleanly across all routes.
 
+## Session GP628 · 2026-10-24
+- Added `/108-strategi-bisnis/`, an ungated Bahasa Indonesia growth playbook for Indonesian business owners. Exactly 108 unique strategies across 12 chapters, each with action, illustrative local business example, metric, and relative execution effort.
+- Added live search, goal/category/effort filters, empty/reset state, local-browser saved priorities, and print/PDF styling. The diagnostic CTA points to the existing `/dal/` page without inventing offer terms.
+- Reused shared navigation, footer and Seo; Seo now accepts an optional `lang` prop (default remains English). Added Indonesian metadata, CollectionPage/ItemList schema, clean URL folding, sitemap entry, and a discovery link from `/built/`.
+- Verified production build, 108-item/12x9 data integrity, prerendered content/canonical/language/sitemap, browser search and combined filtering, details, save/remove and persistence after reload. Checked 390px and 360px widths without horizontal overflow; browser reported no errors or warnings.
+- Work is local on `feat/108-strategi-bisnis`; not pushed or deployed. Development preview runs on port 5189.
+
+## Session CH741 · 2026-10-24
+- Revised the growth playbook into an interactive selector at the user's request: the initial page shows 12 area choices, and strategy cards render only after a choice, search, or filter.
+- Added six-card pagination, responsive three/two/one-column layouts, staggered Framer Motion entrances and reduced-motion support. All 108 strategies remain accessible over 18 pages in the all-strategies view.
+- Retained saved priorities, examples/metrics, and print support (current six cards or saved plan). Restored direct strategy and legacy area hash links into the matching category/page. Reset returns to the area chooser.
+- Verified initial zero-card/12-choice state, category results (6 then 3 cards), all-strategies pagination, no-match/reset behavior, and expandable examples in the browser. No push or deployment.
+
+## Session HR352 · 2026-10-24
+- Removed the growth playbook hero eyebrow and its unused styles/top spacing per browser annotations.
+- Rewrote the hero description to explain the tool's 108 options, business challenges, interactive strategy cards, practical steps, Indonesian examples, success metrics, and saved execution priorities. Local change only.
+
+## Session HK436 · 2026-10-24
+- Shortened the growth playbook hero after user feedback: "Bisnis stagnan? Temukan langkah berikutnya." Description now explains choosing a challenge to find relevant strategies from 108 options with practical steps and examples, in two sentences. CTA changed to "Cari strategi bisnis saya".
+- Removed the decorative "INDONESIA" cover label in the preceding annotation edit. Changes remain local.
+
+## Session CP582 · 2026-10-24
+- Applied the user's exact replacement hero copy: eyebrow "Bisnis stuck?", headline "Coba 108 Strategi yang bisa kamu terapkan dalam 30 hari kedepan.", and the supplied conversational subheadline. Restored the eyebrow styling as explicitly requested. Local only.
+
+## Session FS284 · 2026-10-25
+- Doubled "Bisnis stuck?" from 0.9rem to 1.8rem (28.8px), with 1.3 line height and mobile/desktop spacing of 0.75rem/1rem. Verified computed size and no horizontal overflow at a 360px CSS viewport. Local only.
+
+## Session DP935 · 2026-10-25
+- User authorized commit, push, and production deployment of the 108-strategy page and reviewed refinements. Simplified effort guidance to "Ringan: bisa dikerjakan sendiri. Menengah: perlu persiapan. Intensif: perlu bantuan tim."
+- Final production build passed across 54 routes; data integrity confirmed 108 unique strategies in 12 chapters. Release targets the existing `abayuworks` Vercel project and `adityabayu.com` through the `main` Git integration.
+
 
 

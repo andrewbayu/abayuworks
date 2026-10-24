@@ -60,7 +60,7 @@ if (existsSync(cmoHtml)) {
 }
 
 // 2c. Fold standalone top-level pages: dist/<name>.html -> dist/<name>/index.html
-for (const name of ['links', 'preflight-checklist', 'playbook-fnb', 'learn', 'portfolio', 'ventures', 'receipts', 'built', 'dal']) {
+for (const name of ['links', 'preflight-checklist', 'playbook-fnb', 'learn', 'portfolio', 'ventures', 'receipts', 'built', 'dal', '108-strategi-bisnis']) {
   const f = join(dist, `${name}.html`);
   if (existsSync(f) && statSync(f).isFile()) {
     const dir = join(dist, name);
@@ -82,6 +82,7 @@ const urls = [
   { loc: `${SITE}/ventures/`, freq: 'monthly', pri: '0.8' },
   { loc: `${SITE}/receipts/`, freq: 'monthly', pri: '0.8' },
   { loc: `${SITE}/built/`, freq: 'monthly', pri: '0.8' },
+  { loc: `${SITE}/108-strategi-bisnis/`, freq: 'monthly', pri: '0.8' },
   { loc: `${SITE}/dal/`, freq: 'monthly', pri: '0.8' },
   { loc: `${SITE}/links/`, freq: 'monthly', pri: '0.5' },
   { loc: `${SITE}/preflight-checklist/`, freq: 'monthly', pri: '0.6' },

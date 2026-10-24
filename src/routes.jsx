@@ -13,6 +13,7 @@ import Dal from './pages/Dal';
 import DalApply from './pages/DalApply';
 import SectionPage from './pages/SectionPage';
 import Portfolio from './pages/Portfolio';
+import GrowthStrategies from './pages/GrowthStrategies';
 import FractionalCmoHub from './pages/FractionalCmoHub';
 import FractionalCmoPage from './pages/FractionalCmoPage';
 import { postSlugs } from './posts';
@@ -30,6 +31,7 @@ const siteRoutes = [
       { path: 'ventures', element: <SectionPage kind="ventures" /> },
       { path: 'receipts', element: <SectionPage kind="receipts" /> },
       { path: 'built', element: <SectionPage kind="built" /> },
+      { path: '108-strategi-bisnis', element: <GrowthStrategies /> },
       { path: 'portfolio', element: <Portfolio /> },
       { path: 'dal', element: <Dal /> },
       {

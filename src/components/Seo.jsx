@@ -11,6 +11,7 @@ export default function Seo({
   jsonLd,
   published,
   noindex = false,
+  lang = 'en',
   // Override the canonical/OG host (e.g. the learn.* subdomain). Defaults to the
   // apex site.url so existing pages are unaffected.
   origin = site.url,
@@ -21,7 +22,7 @@ export default function Seo({
 
   return (
     <Head>
-      <html lang="en" />
+      <html lang={lang} />
       <title>{fullTitle}</title>
       <meta name="description" content={description} />
       {noindex && <meta name="robots" content="noindex, nofollow" />}
