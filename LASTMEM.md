@@ -529,8 +529,9 @@ End of LASTMEM. Update this file when you ship anything material. It's committed
   4. `fnb-nano-vs-macro-kol-doodle.jpg`: Unit economics comparison (30 Local Nano-Foodies vs 1 Macro Food Vlogger).
   5. `fnb-30day-turnaround-doodle.jpg`: 30-day restaurant turnaround roadmap (4-week execution sequence).
 - Updated `src/posts/fnb-restaurant-growth-playbook.jsx` wiring all 5 figures with complete bilingual captions into both `Body()` (English) and `BodyId()` (Indonesian) sections.
+- Updated featured cover image (`meta.img`) to `https://storage.googleapis.com/bluestark_explorer/multioutlet-playbook.png`.
 - Maintained zero em dashes, zero prohibited buzzwords, third-person perspective.
-- Verified production build (`npm run build`): SSG prerendered `dist/blog/fnb-restaurant-growth-playbook.html` (40.19 KiB) passing cleanly across all routes.
+- Verified production build (`npm run build`): SSG prerendered `dist/blog/fnb-restaurant-growth-playbook.html` (40.15 KiB) passing cleanly across all routes.
 
 
 

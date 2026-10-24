@@ -34,7 +34,7 @@ export const meta = {
     'Weekend queues and packed dining rooms often conceal negative unit margins. Across casual dining networks and family restaurants, cash flow bleeds through 30% delivery commissions, one-off viral food vlogger spikes, and zero guest data capture at the cash register. Here is the operational system built to capture direct local demand and maximize table profitability.',
   standfirstId:
     'Antrean akhir pekan dan meja yang penuh sering kali menutupi kenyataan bahwa arus kas restoran sedang tercekik. Pada jaringan resto keluarga dan casual dining, margin tergerus komisi ojol 20 hingga 30 persen, lonjakan sesaat food vlogger makro, dan hilangnya data kontak pelanggan di meja kasir. Inilah arsitektur operasional untuk mengamankan permintaan lokal langsung dan mendongkrak profitabilitas per meja.',
-  img: '/images/blog/fnb-restaurant-growth-playbook/fnb-growth-flywheel-doodle.jpg',
+  img: 'https://storage.googleapis.com/bluestark_explorer/multioutlet-playbook.png',
   tags: ['F&B', 'Restaurant Marketing', 'Multi-outlet', 'Unit Economics', 'High-AOV', 'WhatsApp CRM', 'O2O Flywheel'],
 };
 
