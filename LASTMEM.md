@@ -512,4 +512,13 @@ End of LASTMEM. Update this file when you ship anything material. It's committed
   6. Registered route in `src/routes.jsx`, added to `site.nav` in `src/data/site.js`, updated `scripts/postbuild.mjs` for folder-style clean URL generation and sitemap inclusion.
 - Verified production build (`npm run build`): SSG prerendered `dist/portfolio/index.html` (65.4 KiB) across 53 static routes with updated sitemap.
 
+## Session WQ662 · 2026-10-24
+- Added Episode 2 of the Marketing Playbook Series: "The Multi-Outlet Restaurant Growth Playbook: Escaping the Full Tables, Empty Bank Account Trap" (`/blog/fnb-restaurant-growth-playbook/`).
+- Created and registered `src/posts/fnb-restaurant-growth-playbook.jsx` with full bilingual support (`Body` in English, `BodyId` in Indonesian, `titleId`, `standfirstId`).
+- Enforced all site guardrails: third-person operator voice ("Aditya", "he" / "ia"), zero em dashes, zero prohibited corporate buzzwords, and mandatory team outcome disclaimer (Angke Restaurant 532K+ reach in 9 days, 145+ qualified WA orders; 30 nano-influencer unit economics).
+- Generated custom 4:3 editorial doodle diagram adhering to `adityabayu-com-visual-editorial` (warm paper, charcoal ink, cobalt-blue and yellow accents, handwritten labels): `fnb-growth-flywheel-doodle.jpg` (5-stage restaurant growth machine: Geofence Local Ads → VIP & Group Menu → WhatsApp VIP Desk → Committed Table → O2O Retention Loop).
+- Saved image asset under `public/images/blog/fnb-restaurant-growth-playbook/`.
+- Registered module in `src/posts/index.js` (newest first).
+- Verified production build and SSG pre-rendering (`dist/blog/fnb-restaurant-growth-playbook.html` - 37.49 KiB, 54 routes rendered, sitemap updated).
+
 
