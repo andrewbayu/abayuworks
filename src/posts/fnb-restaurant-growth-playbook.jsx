@@ -1,7 +1,11 @@
 import { H2, H3, P, UL, LI, FigureGrid, Pull, Tags, Disclaimer, ConstraintCallout } from '../components/Prose';
 
 const FIGURES = {
+  triage: '/images/blog/fnb-restaurant-growth-playbook/fnb-diagnostic-triage-doodle.jpg',
   flywheel: '/images/blog/fnb-restaurant-growth-playbook/fnb-growth-flywheel-doodle.jpg',
+  telemetry: '/images/blog/fnb-restaurant-growth-playbook/fnb-offline-telemetry-doodle.jpg',
+  unitEconomics: '/images/blog/fnb-restaurant-growth-playbook/fnb-nano-vs-macro-kol-doodle.jpg',
+  roadmap: '/images/blog/fnb-restaurant-growth-playbook/fnb-30day-turnaround-doodle.jpg',
 };
 
 function Figure({ src, alt, caption }) {
@@ -54,6 +58,11 @@ export function Body() {
 
       <H2>The 4-point F&B diagnostic triage</H2>
       <P>When a multi-branch restaurant experiences plateaued profits despite full weekend dining rooms, the operator must resist launching random promotional discounts. Instead, conduct an operational triage across four core friction points where culinary revenue quietly bleeds.</P>
+      <Figure
+        src={FIGURES.triage}
+        alt="The 4-point F&B diagnostic triage matrix mapping aggregator commission tax, ephemeral food vloggers, paper receipt data loss, and uncommitted table bookings to their operator fixes"
+        caption="The 4-point F&B diagnostic triage matrix: mapping the four silent operational leaks (Aggregator Tax, Ephemeral Macro KOLs, Cashier Receipt Void, and Uncommitted Table Bookings) to their systematic operator fixes."
+      />
 
       <H3>1. The delivery aggregator commission trap</H3>
       <P>Online food delivery platforms offer convenient distribution, but building a brand entirely dependent on aggregator algorithms is financial suicide. When an outlet offers 35% subsidized promotions on top of the platform's standard 20% to 25% commission fee, the restaurant operates at a net loss on every order packaged.</P>
@@ -137,6 +146,11 @@ export function Body() {
         <LI><strong>Event 2: DineIn_Invoice_Settled:</strong> Triggered when the physical bill is cleared at the cashier, transmitting real basket value.</LI>
       </UL>
       <P>Over 30 to 60 days of continuous data feedback, ad delivery algorithms recalibrate away from low-intent teenagers and automatically allocate budget toward high-spending local family coordinators and corporate event planners, driving down customer acquisition cost while lifting average ticket size.</P>
+      <Figure
+        src={FIGURES.telemetry}
+        alt="The offline telemetry architecture diagram connecting physical POS cashier transaction values to Meta Conversions API via SHA-256 hashing to retarget high-AOV diners"
+        caption="Closing the telemetry loop: synchronizing physical POS cashier transaction values back to Meta Conversions API via SHA-256 hashing, training the Andromeda ad delivery engine to seek high-AOV banquet dining patrons."
+      />
 
       <H2>Proven operator benchmarks</H2>
       <P>When this operating architecture was executed for heritage multi-branch dining groups like Angke Restaurant and casual dining networks in Indonesia, the performance outcomes spoke with concrete precision:</P>
@@ -148,6 +162,11 @@ export function Body() {
           { n: '6–8x ROAS', l: 'Sustained return on ad spend across direct dine-in and private room bookings.' },
         ]}
       />
+      <Figure
+        src={FIGURES.unitEconomics}
+        alt="Unit economics comparison matrix between 30 local nano-foodies and 1 macro food vlogger showing cost, local reach, and business impact"
+        caption="Unit economics comparison: deploying 30 localized nano-foodies generates a compounding 45-day local echo chamber at approximately Rp909 per engagement, outperforming a single transient macro food vlogger spike."
+      />
 
       <H2>The 30-day operator execution plan</H2>
       <P>For culinary founders, managing directors, and marketing heads ready to transition from chaotic promotion to systematic retention, Aditya outlines a disciplined four-week roadmap:</P>
@@ -157,6 +176,11 @@ export function Body() {
         <LI><strong>Week 3 (Geofenced Demand & Nano Whitelisting):</strong> Launch 3 km Meta geofenced campaigns targeting group coordinators, paired with whitelisted content from 30 local nano-foodies.</LI>
         <LI><strong>Week 4 (Telemetry & Recall Automation):</strong> Connect POS settled invoice data to Meta CAPI and activate automated WhatsApp milestone re-engagement sequences.</LI>
       </UL>
+      <Figure
+        src={FIGURES.roadmap}
+        alt="The 30-day restaurant turnaround roadmap illustrating four weekly milestones from unit economics triage to local geofenced scale"
+        caption="The 30-day restaurant turnaround roadmap: a disciplined 4-week execution sequence progressing from unit economics triage and physical hospitality up to banquet re-packaging and local geofenced scale."
+      />
 
       <P>Operating a thriving restaurant network is not about chasing the latest TikTok food stunt. It is a predictable discipline: capturing local demand directly, locking high-AOV table reservations with mutual commitment, and turning first-time diners into lifelong brand regulars.</P>
 
@@ -187,6 +211,11 @@ export function BodyId() {
 
       <H2>Diagnostik triage 4 titik kebocoran restoran</H2>
       <P>Ketika jaringan restoran mengalami stagnasi profitabilitas padahal meja selalu penuh di akhir pekan, seorang pengelola pantang buru-buru menyebar voucher diskon sembarangan. Mulailah dengan melakukan audit diagnostik pada empat titik kebocoran utama tempat potensi laba kuliner menguap.</P>
+      <Figure
+        src={FIGURES.triage}
+        alt="Matriks diagnostik triage 4 kebocoran operasional F&B yang memetakan komisi ojol, KOL makro sesaat, kehilangan data kasir, dan pembatalan meja ke solusi sistemik"
+        caption="Matriks diagnostik triage 4 kebocoran operasional F&B: memetakan empat titik kebocoran margin (Pajak Ojol, Lonjakan Sesaat KOL Makro, Kebocoran Data Struk Kasir, dan Batal Reservasi Meja) beserta solusi sistemiknya."
+      />
 
       <H3>1. Jebakan komisi platform agregator pengantaran</H3>
       <P>Aplikasi pesan-antar makanan memang menawarkan kenyamanan distribusi, namun membangun bisnis yang seratus persen bergantung pada algoritma ojol adalah jalan pintas menuju kebangkrutan. Ketika sebuah gerai memberikan subsidi diskon 35 persen di atas potongan komisi standar platform sebesar 20 hingga 25 persen, restoran praktis menanggung rugi bersih pada setiap kotak makanan yang dikemas.</P>
@@ -270,6 +299,11 @@ export function BodyId() {
         <LI><strong>Pencapaian 2: DineIn_Invoice_Settled:</strong> Dikirimkan saat tagihan fisik dilunasi di meja kasir beserta nominal transaksi belanja nyata.</LI>
       </UL>
       <P>Dalam 30 hingga 60 hari akumulasi data transaksi, algoritma penayangan iklan secara mandiri memindahkan anggaran promosi dari pemburu diskon ke profil koordinator keluarga dan penyelenggara acara kantor yang terbukti berbelanja besar, menekan biaya akuisisi sekaligus mendongkrak rata-rata nilai transaksi per meja.</P>
+      <Figure
+        src={FIGURES.telemetry}
+        alt="Diagram arsitektur telemetri offline yang menghubungkan nilai transaksi kasir POS fisik ke Meta Conversions API via enkripsi SHA-256 untuk penargetan ulang tamu berbelanja tinggi"
+        caption="Menutup siklus telemetri: sinkronisasi data transaksi kasir fisik POS ke Meta Conversions API via enkripsi SHA-256 untuk melatih algoritma AI iklan berburu tamu perjamuan keluarga ber-AOV tinggi."
+      />
 
       <H2>Tolok ukur operasional yang teruji</H2>
       <P>Ketika arsitektur operasional ini dijalankan untuk jaringan restoran keluarga ternama seperti Angke Restaurant dan grup casual dining di Indonesia, hasilnya terbukti melalui angka pencapaian nyata:</P>
@@ -281,6 +315,11 @@ export function BodyId() {
           { n: '6–8x ROAS', l: 'Efisiensi belanja iklan berkelanjutan untuk pesanan langsung dan ruang VIP.' },
         ]}
       />
+      <Figure
+        src={FIGURES.unitEconomics}
+        alt="Matriks perbandingan unit economics antara 30 nano-foodies lokal vs 1 food vlogger makro yang memperlihatkan perbandingan biaya, jangkauan lokal, dan dampak bisnis"
+        caption="Perbandingan unit economics: mengerahkan 30 nano-foodies lokal menciptakan gaung teritorial 45 hari nonstop dengan biaya Rp909 per interaksi, jauh mengungguli lonjakan sesaat 72 jam food vlogger makro."
+      />
 
       <H2>Rencana eksekusi operator 30 hari</H2>
       <P>Bagi pemilik restoran, direktur operasional, dan pimpinan pemasaran yang ingin beralih dari promosi sporadis menuju sistem retensi yang teratur, Aditya menyusun peta jalan empat pekan yang terarah:</P>
@@ -290,6 +329,11 @@ export function BodyId() {
         <LI><strong>Pekan 3 (Permintaan Geofence dan Nano Creator):</strong> Luncurkan kampanye Meta Ads radius 3 kilometer untuk koordinator acara, dipadukan materi otentik dari 30 nano-creator lokal.</LI>
         <LI><strong>Pekan 4 (Telemetri Kasir dan Otomasi Retensi):</strong> Sambungkan data kasir ke Meta CAPI dan aktifkan rangkaian pesan otomatis WhatsApp untuk perayaan momen penting pelanggan.</LI>
       </UL>
+      <Figure
+        src={FIGURES.roadmap}
+        alt="Peta jalan pemulihan restoran 30 hari yang mengilustrasikan empat tonggak mingguan dari audit unit economics hingga ekspansi skala geofence lokal"
+        caption="Peta jalan pemulihan restoran 30 hari: urutan eksekusi 4 minggu yang terdisiplin, mulai dari audit margin dan keramahan fasilitas fisik hingga paket perjamuan meja dan ekspansi iklan geofence lokal."
+      />
 
       <P>Mengelola jaringan restoran yang menguntungkan bukanlah tentang mengejar aksi heboh kuliner viral berikutnya di media sosial. Ini adalah disiplin operasional yang konsisten: menangkap permintaan warga lokal secara langsung, melindungi kapasitas meja dengan komitmen reservasi yang jelas, dan mengubah tamu yang baru pertama kali datang menjadi pelanggan setia seumur hidup.</P>
 

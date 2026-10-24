@@ -521,4 +521,16 @@ End of LASTMEM. Update this file when you ship anything material. It's committed
 - Registered module in `src/posts/index.js` (newest first).
 - Verified production build and SSG pre-rendering (`dist/blog/fnb-restaurant-growth-playbook.html` - 37.49 KiB, 54 routes rendered, sitemap updated).
 
+## Session KM819 · 2026-10-24
+- Expanded visual editorial assets for Episode 2: `/blog/fnb-restaurant-growth-playbook/` to a full suite of 5 sketchnote doodle diagrams adhering strictly to `adityabayu-com-visual-editorial` (hand-drawn charcoal line art on warm-white textured paper with cobalt-blue and muted-yellow accents):
+  1. `fnb-diagnostic-triage-doodle.jpg`: 4-point F&B diagnostic triage matrix (Aggregator Tax, Ephemeral Macro KOLs, Cashier Receipt Void, Uncommitted Table Bookings).
+  2. `fnb-growth-flywheel-doodle.jpg`: 5-stage restaurant growth machine (Geofence Ads → VIP & Group Menu → WhatsApp Desk → Committed Table → O2O Recall).
+  3. `fnb-offline-telemetry-doodle.jpg`: Closed-loop offline conversion tracking (POS Cashier Bill → SHA-256 Hashed Sync → Meta CAPI → Andromeda Ad Engine → High-AOV Diners Return).
+  4. `fnb-nano-vs-macro-kol-doodle.jpg`: Unit economics comparison (30 Local Nano-Foodies vs 1 Macro Food Vlogger).
+  5. `fnb-30day-turnaround-doodle.jpg`: 30-day restaurant turnaround roadmap (4-week execution sequence).
+- Updated `src/posts/fnb-restaurant-growth-playbook.jsx` wiring all 5 figures with complete bilingual captions into both `Body()` (English) and `BodyId()` (Indonesian) sections.
+- Maintained zero em dashes, zero prohibited buzzwords, third-person perspective.
+- Verified production build (`npm run build`): SSG prerendered `dist/blog/fnb-restaurant-growth-playbook.html` (40.19 KiB) passing cleanly across all routes.
+
+
 
